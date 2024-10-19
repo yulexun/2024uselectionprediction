@@ -9,18 +9,12 @@
 
 
 #### Workspace setup ####
-library(opendatatoronto)
 library(tidyverse)
-# [...UPDATE THIS...]
 
 #### Download data ####
-# [...ADD CODE HERE TO DOWNLOAD...]
+# Specify the download URL from FiveThirtyEight
+url <- "https://projects.fivethirtyeight.com/polls/data/president_polls.csv"
 
+# Save the data csv
+download.file(url, "data/01-raw_data/president_polls.csv")
 
-
-#### Save data ####
-# [...UPDATE THIS...]
-# change the_raw_data to whatever name you assigned when you downloaded it.
-write_csv(the_raw_data, "inputs/data/raw_data.csv") 
-
-         
