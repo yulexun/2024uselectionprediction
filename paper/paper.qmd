@@ -1,13 +1,13 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
+title: "Prediction of US election with linear model"
 author: 
-  - First author
-  - Another author
-thanks: "Code and data are available at: [https://github.com/RohanAlexander/starter_folder](https://github.com/RohanAlexander/starter_folder)."
+  - Colin Sihan Yang
+  - Lexun Yu
+  - Siddharth Gowda
+thanks: "Code and data are available at: [https://github.com/yulexun/uselection](https://github.com/yulexun/uselection)."
 date: today
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "This paper forecast the winner of the upcoming US presidential election using “poll-of-polls” by building a linear model."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -23,20 +23,7 @@ library(palmerpenguins)
 ```
 
 
-# Introduction
-
-Overview paragraph
-
-Estimand paragraph
-
-Results paragraph
-
-Why it matters paragraph
-
-Telegraphing paragraph: The remainder of this paper is structured as follows. @sec-data....
-
-
-
+# Introduction {#sec-intro}
 
 
 

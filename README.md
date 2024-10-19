@@ -1,7 +1,7 @@
 # Prediction of US election
 
 ## Overview
-
+This paper forecast the winner of the upcoming US presidential election using “poll-of-polls” by building a linear model.
 
 ## File Structure
 
