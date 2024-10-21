@@ -1,6 +1,6 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of Australian electoral divisions, including the
-# state and party that won each division.
+# Purpose: Simulates a dataset of Australian electoral divisions, including the 
+  #state and party that won each division.
 # Author: Rohan Alexander
 # Date: 26 September 2024
 # Contact: rohan.alexander@utoronto.ca
@@ -17,22 +17,69 @@ set.seed(853)
 #### Simulate data ####
 # State names
 states <- c(
-  "New South Wales",
-  "Victoria",
-  "Queensland",
-  "South Australia",
-  "Western Australia",
-  "Tasmania",
-  "Northern Territory",
-  "Australian Capital Territory"
+  "National",
+  "Colorado",
+  "Oklahoma",
+  "Wisconsin",
+  "Washington",
+  "Oregon",
+  "Florida",
+  "Arizona",
+  "Georgia",
+  "Michigan",
+  "Nevada",
+  "North Carolina",
+  "Pennsylvania",
+  "South Carolina",
+  "Texas",
+  "Tennessee",
+  "Massachusetts",
+  "Maryland",
+  "Ohio",
+  "California",
+  "Minnesota",
+  "New Mexico",
+  "New Hampshire",
+  "Missouri",
+  "Alaska",
+  "Montana",
+  "Nebraska",
+  "Utah",
+  "Illinois",
+  "Virginia",
+  "New Jersey",
+  "North Dakota",
+  "New York",
+  "Indiana",
+  "Iowa",
+  "Nebraska CD-2",
+  "Delaware",
+  "Rhode Island",
+  "Connecticut",
+  "Maine",
+  "Maine CD-1",
+  "Maine CD-2",
+  "Arkansas",
+  "West Virginia",
+  "Vermont",
+  "South Dakota",
+  "Louisiana",
+  "Hawaii",
+  "Alabama",
+  "Idaho",
+  "Kansas",
+  "Kentucky",
+  "Mississippi",
+  "Wyoming"
 )
+
 
 # Political parties
 parties <- c("Labor", "Liberal", "Greens", "National", "Other")
 
 # Create a dataset by randomly assigning states and parties to divisions
 analysis_data <- tibble(
-  division = paste("Division", 1:151), # Add "Division" to make it a character
+  division = paste("Division", 1:151),  # Add "Division" to make it a character
   state = sample(
     states,
     size = 151,
