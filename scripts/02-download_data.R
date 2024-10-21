@@ -16,4 +16,3 @@ url <- "https://projects.fivethirtyeight.com/polls/data/president_polls.csv"
 
 # Save the data csv
 download.file(url, "data/01-raw_data/president_polls.csv")
-

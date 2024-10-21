@@ -1,13 +1,13 @@
 #### Preamble ####
-# Purpose: Tests the structure and validity of the simulated Australian 
-  #electoral divisions dataset.
+# Purpose: Tests the structure and validity of the simulated Australian
+# electoral divisions dataset.
 # Author: Rohan Alexander
 # Date: 26 September 2024
 # Contact: rohan.alexander@utoronto.ca
 # License: MIT
-# Pre-requisites: 
-  # - The `tidyverse` package must be installed and loaded
-  # - 00-simulate_data.R must have been run
+# Pre-requisites:
+# - The `tidyverse` package must be installed and loaded
+# - 00-simulate_data.R must have been run
 # Any other information needed? Make sure you are in the `starter_folder` rproj
 
 
@@ -48,9 +48,11 @@ if (n_distinct(analysis_data$division) == nrow(analysis_data)) {
 }
 
 # Check if the 'state' column contains only valid Australian state names
-valid_states <- c("New South Wales", "Victoria", "Queensland", "South Australia", 
-                  "Western Australia", "Tasmania", "Northern Territory", 
-                  "Australian Capital Territory")
+valid_states <- c(
+  "New South Wales", "Victoria", "Queensland", "South Australia",
+  "Western Australia", "Tasmania", "Northern Territory",
+  "Australian Capital Territory"
+)
 
 if (all(analysis_data$state %in% valid_states)) {
   message("Test Passed: The 'state' column contains only valid Australian state names.")

@@ -1,6 +1,6 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of Australian electoral divisions, including the 
-  #state and party that won each division.
+# Purpose: Simulates a dataset of Australian electoral divisions, including the
+# state and party that won each division.
 # Author: Rohan Alexander
 # Date: 26 September 2024
 # Contact: rohan.alexander@utoronto.ca
@@ -32,7 +32,7 @@ parties <- c("Labor", "Liberal", "Greens", "National", "Other")
 
 # Create a dataset by randomly assigning states and parties to divisions
 analysis_data <- tibble(
-  division = paste("Division", 1:151),  # Add "Division" to make it a character
+  division = paste("Division", 1:151), # Add "Division" to make it a character
   state = sample(
     states,
     size = 151,

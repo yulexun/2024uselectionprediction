@@ -14,6 +14,3 @@ library(tidyverse)
 
 #### Load data ####
 # [...ADD CODE HERE...]
-
-
-
