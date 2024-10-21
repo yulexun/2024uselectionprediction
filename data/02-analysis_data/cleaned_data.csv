@@ -87,6 +87,12 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88735,396,Quinnipiac,212961,1031,-0.5,Live Phone,26,2024-10-14,2024-10-10,North Carolina,Trump,47
 88722,460,SurveyUSA,212896,703,-1.3,Online Panel,27,2024-10-14,2024-10-09,Washington,Harris,57
 88722,460,SurveyUSA,212896,703,-1.3,Online Panel,27,2024-10-14,2024-10-09,Washington,Trump,35
+88776,1516,East Carolina University,213298,701,-0.5,IVR/Text-to-Web,27,2024-10-14,2024-10-09,Georgia,Harris,45.8
+88776,1516,East Carolina University,213298,701,-0.5,IVR/Text-to-Web,27,2024-10-14,2024-10-09,Georgia,Trump,48.9
+88776,1516,East Carolina University,213298,701,-0.5,IVR/Text-to-Web,27,2024-10-14,2024-10-09,Georgia,Oliver,0.4
+88776,1516,East Carolina University,213298,701,-0.5,IVR/Text-to-Web,27,2024-10-14,2024-10-09,Georgia,Stein,1.4
+88719,149,Fairleigh Dickinson,212865,806,-0.6,Live Phone/Text-to-Web,28,2024-10-14,2024-10-08,National,Harris,50
+88719,149,Fairleigh Dickinson,212865,806,-0.6,Live Phone/Text-to-Web,28,2024-10-14,2024-10-08,National,Trump,47
 88703,241,Ipsos,212604,807,-0.9,Probability Panel,25,2024-10-13,2024-10-11,National,Harris,45
 88703,241,Ipsos,212604,807,-0.9,Probability Panel,25,2024-10-13,2024-10-11,National,Trump,42
 88703,241,Ipsos,212605,769,-0.9,Probability Panel,25,2024-10-13,2024-10-11,National,Harris,47
@@ -177,6 +183,15 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88617,1424,Siena/NYT,212207,656,-1.5,Live Phone,31,2024-10-08,2024-10-05,Montana,Trump,56
 88617,1424,Siena/NYT,212207,656,-1.5,Live Phone,31,2024-10-08,2024-10-05,Montana,Stein,0
 88617,1424,Siena/NYT,212207,656,-1.5,Live Phone,31,2024-10-08,2024-10-05,Montana,Oliver,0
+88666,1292,Hart/POS,212485,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Harris,46
+88666,1292,Hart/POS,212485,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Trump,47
+88666,1292,Hart/POS,212485,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Kennedy,2
+88666,1292,Hart/POS,212485,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,West,0
+88666,1292,Hart/POS,212485,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Stein,1
+88666,1292,Hart/POS,212485,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Oliver,1
+88666,1292,Hart/POS,212485,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Terry,0
+88666,1292,Hart/POS,212486,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Harris,48
+88666,1292,Hart/POS,212486,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Trump,48
 88667,241,Ipsos,212479,2631,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Harris,49
 88667,241,Ipsos,212479,2631,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Trump,48
 88667,241,Ipsos,212479,2631,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,West,0
@@ -257,6 +272,14 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88616,486,The Washington Post,212198,1002,-1.2,Live Phone/Text-to-Web,33,2024-10-07,2024-10-03,Ohio,Trump,51
 88616,486,The Washington Post,212199,1002,-1.2,Live Phone/Text-to-Web,33,2024-10-07,2024-10-03,Ohio,Harris,44
 88616,486,The Washington Post,212199,1002,-1.2,Live Phone/Text-to-Web,33,2024-10-07,2024-10-03,Ohio,Trump,51
+88634,370,Pew,212275,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,Harris,48
+88634,370,Pew,212275,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,Trump,47
+88634,370,Pew,212275,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,Kennedy,2
+88634,370,Pew,212275,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,Oliver,1
+88634,370,Pew,212275,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,Stein,1
+88634,370,Pew,212275,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,West,0
+88634,370,Pew,212276,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,Harris,50
+88634,370,Pew,212276,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,Trump,49
 88550,1424,Siena/NYT,211846,3385,-1.5,Live Phone,37,2024-10-06,2024-09-29,National,Harris,49
 88550,1424,Siena/NYT,211846,3385,-1.5,Live Phone,37,2024-10-06,2024-09-29,National,Trump,46
 88550,1424,Siena/NYT,211847,3385,-1.5,Live Phone,37,2024-10-06,2024-09-29,National,Harris,47
@@ -295,6 +318,8 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88527,568,YouGov,211790,1151,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Trump,46
 88527,568,YouGov,211791,1033,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Harris,48
 88527,568,YouGov,211791,1033,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Trump,47
+88669,289,Mason-Dixon,212488,625,-1.1,Live Phone,35,2024-10-04,2024-10-01,Florida,Harris,43
+88669,289,Mason-Dixon,212488,625,-1.1,Live Phone,35,2024-10-04,2024-10-01,Florida,Trump,49
 88556,1424,Siena/NYT,211850,617,-1.5,Live Phone,37,2024-10-04,2024-09-29,Texas,Harris,44
 88556,1424,Siena/NYT,211850,617,-1.5,Live Phone,37,2024-10-04,2024-09-29,Texas,Trump,50
 88556,1424,Siena/NYT,211851,617,-1.5,Live Phone,37,2024-10-04,2024-09-29,Texas,Harris,42
@@ -309,6 +334,8 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88556,1424,Siena/NYT,212203,617,-1.5,Live Phone,37,2024-10-04,2024-09-29,Texas,Oliver,3
 88541,94,Christopher Newport U.,211817,800,-0.6,Live Phone,38,2024-10-04,2024-09-28,Virginia,Harris,52
 88541,94,Christopher Newport U.,211817,800,-0.6,Live Phone,38,2024-10-04,2024-09-28,Virginia,Trump,41
+88515,1515,Data for Progress,211650,1211,-1.2,Online Panel,34,2024-10-03,2024-10-02,National,Harris,49
+88515,1515,Data for Progress,211650,1211,-1.2,Online Panel,34,2024-10-03,2024-10-02,National,Trump,46
 88618,1901,YouGov/Center for Working Class Politics,212208,1000,-1.1,Online Panel,42,2024-10-02,2024-09-24,Pennsylvania,Harris,46.8
 88618,1901,YouGov/Center for Working Class Politics,212208,1000,-1.1,Online Panel,42,2024-10-02,2024-09-24,Pennsylvania,Trump,44.7
 88482,568,YouGov,211401,1463,-1.1,Online Panel,37,2024-10-01,2024-09-29,National,Harris,48
@@ -325,6 +352,12 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88506,1205,Marist,211548,1294,-0.9,Live Phone/Online Panel/Text-to-Web,39,2024-10-01,2024-09-27,National,Trump,48
 88506,1205,Marist,211549,1514,-0.9,Live Phone/Online Panel/Text-to-Web,39,2024-10-01,2024-09-27,National,Harris,50
 88506,1205,Marist,211549,1514,-0.9,Live Phone/Online Panel/Text-to-Web,39,2024-10-01,2024-09-27,National,Trump,47
+88514,1363,UC Berkeley,212244,3045,-0.2,Email,41,2024-10-01,2024-09-25,California,Harris,57
+88514,1363,UC Berkeley,212244,3045,-0.2,Email,41,2024-10-01,2024-09-25,California,Trump,35
+88514,1363,UC Berkeley,212244,3045,-0.2,Email,41,2024-10-01,2024-09-25,California,Kennedy,2
+88514,1363,UC Berkeley,212244,3045,-0.2,Email,41,2024-10-01,2024-09-25,California,West,1
+88514,1363,UC Berkeley,212244,3045,-0.2,Email,41,2024-10-01,2024-09-25,California,Stein,1
+88514,1363,UC Berkeley,212244,3045,-0.2,Email,41,2024-10-01,2024-09-25,California,Oliver,0
 88431,486,The Washington Post,211143,1001,-1.2,Live Phone/Text-to-Web,41,2024-09-29,2024-09-25,North Carolina,Harris,48
 88431,486,The Washington Post,211143,1001,-1.2,Live Phone/Text-to-Web,41,2024-09-29,2024-09-25,North Carolina,Trump,50
 88431,486,The Washington Post,211144,1001,-1.2,Live Phone/Text-to-Web,41,2024-09-29,2024-09-25,North Carolina,Harris,47
@@ -345,6 +378,12 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88458,396,Quinnipiac,211300,942,-0.5,Live Phone,41,2024-09-29,2024-09-25,Georgia,De la Cruz,1
 88458,396,Quinnipiac,211302,942,-0.5,Live Phone,41,2024-09-29,2024-09-25,Georgia,Harris,45
 88458,396,Quinnipiac,211302,942,-0.5,Live Phone,41,2024-09-29,2024-09-25,Georgia,Trump,50
+88477,553,Winthrop U.,211345,1068,-0.3,Live Phone/Online Panel,45,2024-09-29,2024-09-21,South Carolina,Harris,42
+88477,553,Winthrop U.,211345,1068,-0.3,Live Phone/Online Panel,45,2024-09-29,2024-09-21,South Carolina,Trump,51.6
+88503,217,High Point University,211536,814,-0.4,Online Panel,46,2024-09-29,2024-09-20,North Carolina,Harris,48
+88503,217,High Point University,211536,814,-0.4,Online Panel,46,2024-09-29,2024-09-20,North Carolina,Trump,46
+88503,217,High Point University,211537,589,-0.4,Online Panel,46,2024-09-29,2024-09-20,North Carolina,Harris,48
+88503,217,High Point University,211537,589,-0.4,Online Panel,46,2024-09-29,2024-09-20,North Carolina,Trump,48
 88461,1102,Emerson,211311,920,-1.1,Online Panel/Text-to-Web,39,2024-09-28,2024-09-27,Arizona,Harris,47.6
 88461,1102,Emerson,211311,920,-1.1,Online Panel/Text-to-Web,39,2024-09-28,2024-09-27,Arizona,Trump,51.7
 88462,1102,Emerson,211310,850,-1.1,Online Panel/Text-to-Web,39,2024-09-28,2024-09-27,North Carolina,Harris,49.1
@@ -367,6 +406,11 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88407,1424,Siena/NYT,211044,680,-1.5,Live Phone,42,2024-09-26,2024-09-24,Nebraska CD-2,Oliver,1
 88393,460,SurveyUSA,210966,646,-1.3,Online Panel,43,2024-09-26,2024-09-23,Minnesota,Harris,50
 88393,460,SurveyUSA,210966,646,-1.3,Online Panel,43,2024-09-26,2024-09-23,Minnesota,Trump,44
+88423,1516,East Carolina University,211109,1005,-0.5,IVR/Text-to-Web,43,2024-09-26,2024-09-23,North Carolina,Harris,47.1
+88423,1516,East Carolina University,211109,1005,-0.5,IVR/Text-to-Web,43,2024-09-26,2024-09-23,North Carolina,Trump,49.4
+88423,1516,East Carolina University,211109,1005,-0.5,IVR/Text-to-Web,43,2024-09-26,2024-09-23,North Carolina,Oliver,0.7
+88423,1516,East Carolina University,211109,1005,-0.5,IVR/Text-to-Web,43,2024-09-26,2024-09-23,North Carolina,Stein,0.2
+88423,1516,East Carolina University,211109,1005,-0.5,IVR/Text-to-Web,43,2024-09-26,2024-09-23,North Carolina,West,0.1
 88404,1424,Siena/NYT,211029,688,-1.5,Live Phone,45,2024-09-26,2024-09-21,Michigan,Harris,45
 88404,1424,Siena/NYT,211029,688,-1.5,Live Phone,45,2024-09-26,2024-09-21,Michigan,Trump,47
 88404,1424,Siena/NYT,211030,688,-1.5,Live Phone,45,2024-09-26,2024-09-21,Michigan,Harris,43
@@ -573,6 +617,18 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88390,458,Suffolk,210964,500,-1,Live Phone,47,2024-09-24,2024-09-19,Arizona,Oliver,1
 88338,460,SurveyUSA,210620,558,-1.3,IVR/Online Panel/Text-to-Web,46,2024-09-23,2024-09-20,Nebraska,Harris,40
 88338,460,SurveyUSA,210620,558,-1.3,IVR/Online Panel/Text-to-Web,46,2024-09-23,2024-09-20,Nebraska,Trump,56
+88362,1296,University of Maryland/Washington Post,210778,1012,-0.3,Live Phone/Text-to-Web,47,2024-09-23,2024-09-19,Maryland,Harris,63
+88362,1296,University of Maryland/Washington Post,210778,1012,-0.3,Live Phone/Text-to-Web,47,2024-09-23,2024-09-19,Maryland,Trump,31
+88362,1296,University of Maryland/Washington Post,210778,1012,-0.3,Live Phone/Text-to-Web,47,2024-09-23,2024-09-19,Maryland,Stein,1
+88362,1296,University of Maryland/Washington Post,210778,1012,-0.3,Live Phone/Text-to-Web,47,2024-09-23,2024-09-19,Maryland,Oliver,1
+88362,1296,University of Maryland/Washington Post,210779,1012,-0.3,Live Phone/Text-to-Web,47,2024-09-23,2024-09-19,Maryland,Harris,64
+88362,1296,University of Maryland/Washington Post,210779,1012,-0.3,Live Phone/Text-to-Web,47,2024-09-23,2024-09-19,Maryland,Trump,32
+88362,1296,University of Maryland/Washington Post,210780,1012,-0.3,Live Phone/Text-to-Web,47,2024-09-23,2024-09-19,Maryland,Harris,61
+88362,1296,University of Maryland/Washington Post,210780,1012,-0.3,Live Phone/Text-to-Web,47,2024-09-23,2024-09-19,Maryland,Trump,31
+88362,1296,University of Maryland/Washington Post,210780,1012,-0.3,Live Phone/Text-to-Web,47,2024-09-23,2024-09-19,Maryland,Stein,1
+88362,1296,University of Maryland/Washington Post,210780,1012,-0.3,Live Phone/Text-to-Web,47,2024-09-23,2024-09-19,Maryland,Oliver,1
+88362,1296,University of Maryland/Washington Post,210781,1012,-0.3,Live Phone/Text-to-Web,47,2024-09-23,2024-09-19,Maryland,Harris,62
+88362,1296,University of Maryland/Washington Post,210781,1012,-0.3,Live Phone/Text-to-Web,47,2024-09-23,2024-09-19,Maryland,Trump,32
 88358,241,Ipsos,210599,871,-0.9,Probability Panel,46,2024-09-22,2024-09-20,National,Harris,46.61
 88358,241,Ipsos,210599,871,-0.9,Probability Panel,46,2024-09-22,2024-09-20,National,Trump,40.48
 88358,241,Ipsos,210600,785,-0.9,Probability Panel,46,2024-09-22,2024-09-20,National,Harris,50
@@ -631,6 +687,22 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88278,1424,Siena/NYT,210343,682,-1.5,Live Phone,49,2024-09-21,2024-09-17,North Carolina,Oliver,1
 88274,568,YouGov,210307,3129,-1.1,Online Panel,48,2024-09-20,2024-09-18,National,Harris,52
 88274,568,YouGov,210307,3129,-1.1,Online Panel,48,2024-09-20,2024-09-18,National,Trump,48
+88441,1056,Remington,211152,800,-0.6,NA,50,2024-09-20,2024-09-16,Michigan,Harris,49
+88441,1056,Remington,211152,800,-0.6,NA,50,2024-09-20,2024-09-16,Michigan,Trump,47
+88441,1056,Remington,211152,800,-0.6,NA,50,2024-09-20,2024-09-16,Michigan,West,0
+88441,1056,Remington,211152,800,-0.6,NA,50,2024-09-20,2024-09-16,Michigan,Stein,1
+88442,1056,Remington,211153,800,-0.6,NA,50,2024-09-20,2024-09-16,Nevada,Harris,48
+88442,1056,Remington,211153,800,-0.6,NA,50,2024-09-20,2024-09-16,Nevada,Trump,49
+88443,1056,Remington,211154,800,-0.6,NA,50,2024-09-20,2024-09-16,Pennsylvania,Harris,47
+88443,1056,Remington,211154,800,-0.6,NA,50,2024-09-20,2024-09-16,Pennsylvania,Trump,48
+88443,1056,Remington,211154,800,-0.6,NA,50,2024-09-20,2024-09-16,Pennsylvania,Stein,1
+88444,1056,Remington,211155,800,-0.6,NA,50,2024-09-20,2024-09-16,Wisconsin,Harris,48
+88444,1056,Remington,211155,800,-0.6,NA,50,2024-09-20,2024-09-16,Wisconsin,Trump,48
+88444,1056,Remington,211155,800,-0.6,NA,50,2024-09-20,2024-09-16,Wisconsin,West,1
+88444,1056,Remington,211155,800,-0.6,NA,50,2024-09-20,2024-09-16,Wisconsin,Stein,0
+88445,1056,Remington,211156,800,-0.6,NA,50,2024-09-20,2024-09-16,Montana,Harris,39
+88445,1056,Remington,211156,800,-0.6,NA,50,2024-09-20,2024-09-16,Montana,Trump,56
+88445,1056,Remington,211156,800,-0.6,NA,50,2024-09-20,2024-09-16,Montana,Stein,2
 88339,329,Muhlenberg,210621,450,-1,Live Phone,50,2024-09-19,2024-09-16,Pennsylvania,Harris,48
 88339,329,Muhlenberg,210621,450,-1,Live Phone,50,2024-09-19,2024-09-16,Pennsylvania,Trump,48
 88371,1847,University of Massachusetts Lowell/YouGov,210793,650,-1,Online Panel,55,2024-09-19,2024-09-11,Michigan,Harris,48
@@ -645,6 +717,8 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88372,1847,University of Massachusetts Lowell/YouGov,210794,800,-1,Online Panel,55,2024-09-19,2024-09-11,Pennsylvania,Trump,46
 88372,1847,University of Massachusetts Lowell/YouGov,210794,800,-1,Online Panel,55,2024-09-19,2024-09-11,Pennsylvania,Stein,1
 88372,1847,University of Massachusetts Lowell/YouGov,210794,800,-1,Online Panel,55,2024-09-19,2024-09-11,Pennsylvania,Oliver,1
+88279,289,Mason-Dixon,210344,800,-1.1,Live Phone,50,2024-09-18,2024-09-16,Minnesota,Harris,48
+88279,289,Mason-Dixon,210344,800,-1.1,Live Phone,50,2024-09-18,2024-09-16,Minnesota,Trump,43
 88301,458,Suffolk,210415,500,-1,Live Phone,50,2024-09-18,2024-09-16,Michigan,Harris,47.6
 88301,458,Suffolk,210415,500,-1,Live Phone,50,2024-09-18,2024-09-16,Michigan,Trump,45.4
 88301,458,Suffolk,210415,500,-1,Live Phone,50,2024-09-18,2024-09-16,Michigan,Oliver,0.4
@@ -705,6 +779,15 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88208,568,YouGov,209883,1445,-1.1,Online Panel,51,2024-09-17,2024-09-15,National,Trump,45
 88208,568,YouGov,209883,1445,-1.1,Online Panel,51,2024-09-17,2024-09-15,National,Stein,1
 88208,568,YouGov,209883,1445,-1.1,Online Panel,51,2024-09-17,2024-09-15,National,West,0
+88271,1292,Hart/POS,210305,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Harris,49
+88271,1292,Hart/POS,210305,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Trump,44
+88271,1292,Hart/POS,210306,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Harris,47
+88271,1292,Hart/POS,210306,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Trump,41
+88271,1292,Hart/POS,210306,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Kennedy,2
+88271,1292,Hart/POS,210306,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,West,0
+88271,1292,Hart/POS,210306,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Stein,2
+88271,1292,Hart/POS,210306,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Oliver,1
+88271,1292,Hart/POS,210306,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Terry,0
 88232,1205,Marist,210070,1663,-0.9,Live Phone/Online Panel/Text-to-Web,54,2024-09-17,2024-09-12,Pennsylvania,Harris,49
 88232,1205,Marist,210070,1663,-0.9,Live Phone/Online Panel/Text-to-Web,54,2024-09-17,2024-09-12,Pennsylvania,Trump,48
 88232,1205,Marist,210071,1476,-0.9,Live Phone/Online Panel/Text-to-Web,54,2024-09-17,2024-09-12,Pennsylvania,Harris,49
@@ -717,6 +800,8 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88234,1205,Marist,210074,1282,-0.9,Live Phone/Online Panel/Text-to-Web,54,2024-09-17,2024-09-12,Michigan,Trump,47
 88234,1205,Marist,210075,1138,-0.9,Live Phone/Online Panel/Text-to-Web,54,2024-09-17,2024-09-12,Michigan,Harris,52
 88234,1205,Marist,210075,1138,-0.9,Live Phone/Online Panel/Text-to-Web,54,2024-09-17,2024-09-12,Michigan,Trump,47
+88631,1515,Data for Progress,212252,6152,-1.2,Online Panel,54,2024-09-17,2024-09-12,National,Harris,50
+88631,1515,Data for Progress,212252,6152,-1.2,Online Panel,54,2024-09-17,2024-09-12,National,Trump,45
 88223,1597,Beacon/Shaw,209979,1102,-1.1,Live Phone/Text-to-Web,53,2024-09-16,2024-09-13,National,Harris,50
 88223,1597,Beacon/Shaw,209979,1102,-1.1,Live Phone/Text-to-Web,53,2024-09-16,2024-09-13,National,Trump,48
 88223,1597,Beacon/Shaw,209980,876,-1.1,Live Phone/Text-to-Web,53,2024-09-16,2024-09-13,National,Harris,50
@@ -744,6 +829,18 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88213,396,Quinnipiac,209904,1075,-0.5,Live Phone,54,2024-09-16,2024-09-12,Wisconsin,De la Cruz,0
 88213,396,Quinnipiac,209907,1075,-0.5,Live Phone,54,2024-09-16,2024-09-12,Wisconsin,Harris,49
 88213,396,Quinnipiac,209907,1075,-0.5,Live Phone,54,2024-09-16,2024-09-12,Wisconsin,Trump,48
+88217,525,U. New Hampshire,209936,683,-0.3,Probability Panel,54,2024-09-16,2024-09-12,Rhode Island,Harris,58
+88217,525,U. New Hampshire,209936,683,-0.3,Probability Panel,54,2024-09-16,2024-09-12,Rhode Island,Trump,38
+88217,525,U. New Hampshire,209936,683,-0.3,Probability Panel,54,2024-09-16,2024-09-12,Rhode Island,Oliver,0
+88217,525,U. New Hampshire,209936,683,-0.3,Probability Panel,54,2024-09-16,2024-09-12,Rhode Island,Stein,2
+88218,525,U. New Hampshire,209937,564,-0.3,Probability Panel,54,2024-09-16,2024-09-12,Massachusetts,Harris,62
+88218,525,U. New Hampshire,209937,564,-0.3,Probability Panel,54,2024-09-16,2024-09-12,Massachusetts,Trump,31
+88218,525,U. New Hampshire,209937,564,-0.3,Probability Panel,54,2024-09-16,2024-09-12,Massachusetts,Oliver,0
+88218,525,U. New Hampshire,209937,564,-0.3,Probability Panel,54,2024-09-16,2024-09-12,Massachusetts,Stein,2
+88219,525,U. New Hampshire,209938,1695,-0.3,Probability Panel,54,2024-09-16,2024-09-12,New Hampshire,Harris,54
+88219,525,U. New Hampshire,209938,1695,-0.3,Probability Panel,54,2024-09-16,2024-09-12,New Hampshire,Trump,43
+88219,525,U. New Hampshire,209938,1695,-0.3,Probability Panel,54,2024-09-16,2024-09-12,New Hampshire,Oliver,1
+88219,525,U. New Hampshire,209938,1695,-0.3,Probability Panel,54,2024-09-16,2024-09-12,New Hampshire,Stein,0
 88231,486,The Washington Post,210066,1003,-1.2,Live Phone/Text-to-Web,54,2024-09-16,2024-09-12,Pennsylvania,Harris,48
 88231,486,The Washington Post,210066,1003,-1.2,Live Phone/Text-to-Web,54,2024-09-16,2024-09-12,Pennsylvania,Trump,47
 88231,486,The Washington Post,210066,1003,-1.2,Live Phone/Text-to-Web,54,2024-09-16,2024-09-12,Pennsylvania,Stein,1
@@ -785,6 +882,8 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88184,458,Suffolk,209630,500,-1,Live Phone,55,2024-09-14,2024-09-11,Pennsylvania,Trump,45.6
 88184,458,Suffolk,209630,500,-1,Live Phone,55,2024-09-14,2024-09-11,Pennsylvania,Oliver,0.4
 88184,458,Suffolk,209630,500,-1,Live Phone,55,2024-09-14,2024-09-11,Pennsylvania,Stein,0.2
+88168,1515,Data for Progress,209350,1283,-1.2,Online Panel,54,2024-09-13,2024-09-12,National,Harris,50
+88168,1515,Data for Progress,209350,1283,-1.2,Online Panel,54,2024-09-13,2024-09-12,National,Trump,46
 88187,1102,Emerson,209627,890,-1.1,Online Panel/Text-to-Web,54,2024-09-13,2024-09-12,Maryland,Harris,65.3
 88187,1102,Emerson,209627,890,-1.1,Online Panel/Text-to-Web,54,2024-09-13,2024-09-12,Maryland,Trump,33.3
 88188,1102,Emerson,209628,850,-1.1,Online Panel/Text-to-Web,54,2024-09-13,2024-09-12,Missouri,Harris,43.4
@@ -826,6 +925,8 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88177,241,Ipsos,209520,2196,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,West,1
 88177,241,Ipsos,209520,2196,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Stein,1
 88177,241,Ipsos,209520,2196,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Oliver,0
+88302,978,Elon U.,210420,800,-0.6,Online Panel,62,2024-09-13,2024-09-04,North Carolina,Harris,46
+88302,978,Elon U.,210420,800,-0.6,Online Panel,62,2024-09-13,2024-09-04,North Carolina,Trump,45
 88144,241,Ipsos,209239,1405,-0.9,Probability Panel,55,2024-09-12,2024-09-11,National,Harris,47
 88144,241,Ipsos,209239,1405,-0.9,Probability Panel,55,2024-09-12,2024-09-11,National,Trump,42
 88144,241,Ipsos,209263,1690,-0.9,Probability Panel,55,2024-09-12,2024-09-11,National,Harris,43
@@ -847,6 +948,12 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88130,568,YouGov,209155,1464,-1.1,Online Panel,58,2024-09-10,2024-09-08,National,West,1
 88203,1308,Data Orbital,209816,550,-0.9,Live Phone/Text-to-Web,59,2024-09-09,2024-09-07,Arizona,Harris,46
 88203,1308,Data Orbital,209816,550,-0.9,Live Phone/Text-to-Web,59,2024-09-09,2024-09-07,Arizona,Trump,46.2
+88225,382,PPIC,210069,1071,-0.4,Probability Panel,68,2024-09-09,2024-08-29,California,Harris,60
+88225,382,PPIC,210069,1071,-0.4,Probability Panel,68,2024-09-09,2024-08-29,California,Trump,29
+88225,382,PPIC,210069,1071,-0.4,Probability Panel,68,2024-09-09,2024-08-29,California,Kennedy,4
+88225,382,PPIC,210069,1071,-0.4,Probability Panel,68,2024-09-09,2024-08-29,California,Oliver,1
+88225,382,PPIC,210069,1071,-0.4,Probability Panel,68,2024-09-09,2024-08-29,California,Stein,1
+88225,382,PPIC,210069,1071,-0.4,Probability Panel,68,2024-09-09,2024-08-29,California,De la Cruz,1
 88095,396,Quinnipiac,208325,940,-0.5,Live Phone,62,2024-09-08,2024-09-04,North Carolina,Harris,49
 88095,396,Quinnipiac,208325,940,-0.5,Live Phone,62,2024-09-08,2024-09-04,North Carolina,Trump,46
 88095,396,Quinnipiac,208325,940,-0.5,Live Phone,62,2024-09-08,2024-09-04,North Carolina,Stein,1
@@ -929,10 +1036,14 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88135,1075,Marquette Law School,209226,738,-1.1,Live Phone/Email,69,2024-09-05,2024-08-28,Wisconsin,West,1
 88035,1102,Emerson,207867,1000,-1.1,IVR/Online Panel/Text-to-Web,63,2024-09-04,2024-09-03,National,Harris,51.3
 88035,1102,Emerson,207867,1000,-1.1,IVR/Online Panel/Text-to-Web,63,2024-09-04,2024-09-03,National,Trump,47.6
+88123,800,Kaiser Family Foundation,208945,1084,-0.3,Live Phone/Probability Panel,71,2024-09-04,2024-08-26,National,Harris,48
+88123,800,Kaiser Family Foundation,208945,1084,-0.3,Live Phone/Probability Panel,71,2024-09-04,2024-08-26,National,Trump,47
 88021,568,YouGov,207698,1389,-1.1,Online Panel,65,2024-09-03,2024-09-01,National,Harris,47
 88021,568,YouGov,207698,1389,-1.1,Online Panel,65,2024-09-03,2024-09-01,National,Trump,45
 88021,568,YouGov,207698,1389,-1.1,Online Panel,65,2024-09-03,2024-09-01,National,Stein,1
 88021,568,YouGov,207698,1389,-1.1,Online Panel,65,2024-09-03,2024-09-01,National,West,0
+88079,370,Pew,208240,8044,-0.4,Probability Panel,71,2024-09-02,2024-08-26,National,Harris,49
+88079,370,Pew,208240,8044,-0.4,Probability Panel,71,2024-09-02,2024-08-26,National,Trump,49
 88067,568,YouGov,207935,1200,-1.1,Online Panel,74,2024-08-31,2024-08-23,Texas,Harris,44
 88067,568,YouGov,207935,1200,-1.1,Online Panel,74,2024-08-31,2024-08-23,Texas,Trump,49
 88067,568,YouGov,207935,1200,-1.1,Online Panel,74,2024-08-31,2024-08-23,Texas,Stein,2
@@ -968,6 +1079,12 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88020,1866,CNN/SSRS,207696,976,-0.6,Probability Panel,74,2024-08-29,2024-08-23,Wisconsin,West,0
 88020,1866,CNN/SSRS,207696,976,-0.6,Probability Panel,74,2024-08-29,2024-08-23,Wisconsin,Stein,1
 88020,1866,CNN/SSRS,207696,976,-0.6,Probability Panel,74,2024-08-29,2024-08-23,Wisconsin,Oliver,2
+88011,1516,East Carolina University,207685,920,-0.5,IVR/Text-to-Web,71,2024-08-28,2024-08-26,North Carolina,Harris,46.9
+88011,1516,East Carolina University,207685,920,-0.5,IVR/Text-to-Web,71,2024-08-28,2024-08-26,North Carolina,Trump,47.6
+88011,1516,East Carolina University,207685,920,-0.5,IVR/Text-to-Web,71,2024-08-28,2024-08-26,North Carolina,Oliver,0.4
+88011,1516,East Carolina University,207685,920,-0.5,IVR/Text-to-Web,71,2024-08-28,2024-08-26,North Carolina,Stein,0.4
+88011,1516,East Carolina University,207685,920,-0.5,IVR/Text-to-Web,71,2024-08-28,2024-08-26,North Carolina,Terry,0.2
+88011,1516,East Carolina University,207685,920,-0.5,IVR/Text-to-Web,71,2024-08-28,2024-08-26,North Carolina,West,1
 87935,1102,Emerson,207317,720,-1.1,IVR/Online Panel/Text-to-Web,72,2024-08-28,2024-08-25,Arizona,Harris,47.5
 87935,1102,Emerson,207317,720,-1.1,IVR/Online Panel/Text-to-Web,72,2024-08-28,2024-08-25,Arizona,Trump,51.2
 87936,1102,Emerson,207319,800,-1.1,IVR/Online Panel/Text-to-Web,72,2024-08-28,2024-08-25,Michigan,Harris,51.2
@@ -1162,6 +1279,52 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 87853,568,YouGov,206527,1371,-1.1,Online Panel,80,2024-08-20,2024-08-17,National,Kennedy,3
 87853,568,YouGov,206527,1371,-1.1,Online Panel,80,2024-08-20,2024-08-17,National,West,0
 87853,568,YouGov,206527,1371,-1.1,Online Panel,80,2024-08-20,2024-08-17,National,Stein,0
+87886,149,Fairleigh Dickinson,206737,801,-0.6,Live Phone/Text-to-Web,80,2024-08-20,2024-08-17,National,Harris,50
+87886,149,Fairleigh Dickinson,206737,801,-0.6,Live Phone/Text-to-Web,80,2024-08-20,2024-08-17,National,Trump,43
+87856,525,U. New Hampshire,206546,2048,-0.3,Probability Panel,82,2024-08-19,2024-08-15,New Hampshire,Harris,50
+87856,525,U. New Hampshire,206546,2048,-0.3,Probability Panel,82,2024-08-19,2024-08-15,New Hampshire,Trump,43
+87856,525,U. New Hampshire,206546,2048,-0.3,Probability Panel,82,2024-08-19,2024-08-15,New Hampshire,Kennedy,4
+87856,525,U. New Hampshire,206546,2048,-0.3,Probability Panel,82,2024-08-19,2024-08-15,New Hampshire,Oliver,0
+87856,525,U. New Hampshire,206546,2048,-0.3,Probability Panel,82,2024-08-19,2024-08-15,New Hampshire,Stein,0
+87856,525,U. New Hampshire,206547,2048,-0.3,Probability Panel,82,2024-08-19,2024-08-15,New Hampshire,Harris,52
+87856,525,U. New Hampshire,206547,2048,-0.3,Probability Panel,82,2024-08-19,2024-08-15,New Hampshire,Trump,47
+87857,525,U. New Hampshire,206548,924,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Vermont,Harris,67
+87857,525,U. New Hampshire,206548,924,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Vermont,Trump,27
+87857,525,U. New Hampshire,206548,924,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Vermont,Kennedy,3
+87857,525,U. New Hampshire,206548,924,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Vermont,Oliver,0
+87857,525,U. New Hampshire,206548,924,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Vermont,West,0
+87857,525,U. New Hampshire,206549,924,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Vermont,Harris,70
+87857,525,U. New Hampshire,206549,924,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Vermont,Trump,29
+87858,525,U. New Hampshire,206550,951,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine,Harris,55
+87858,525,U. New Hampshire,206550,951,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine,Trump,38
+87858,525,U. New Hampshire,206550,951,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine,Kennedy,2
+87858,525,U. New Hampshire,206550,951,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine,Oliver,1
+87858,525,U. New Hampshire,206550,951,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine,Stein,1
+87858,525,U. New Hampshire,206550,951,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine,West,0
+87858,525,U. New Hampshire,206553,951,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine,Harris,58
+87858,525,U. New Hampshire,206553,951,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine,Trump,41
+87859,525,U. New Hampshire,206551,490,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-1,Harris,62
+87859,525,U. New Hampshire,206551,490,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-1,Trump,33
+87859,525,U. New Hampshire,206551,490,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-1,Kennedy,2
+87859,525,U. New Hampshire,206551,490,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-1,Oliver,1
+87859,525,U. New Hampshire,206551,490,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-1,Stein,0
+87859,525,U. New Hampshire,206551,490,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-1,West,0
+87859,525,U. New Hampshire,206554,476,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-1,Harris,64
+87859,525,U. New Hampshire,206554,476,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-1,Trump,36
+87860,525,U. New Hampshire,206552,443,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-2,Harris,49
+87860,525,U. New Hampshire,206552,443,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-2,Trump,44
+87860,525,U. New Hampshire,206552,443,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-2,Kennedy,2
+87860,525,U. New Hampshire,206552,443,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-2,Oliver,1
+87860,525,U. New Hampshire,206552,443,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-2,Stein,1
+87860,525,U. New Hampshire,206552,443,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-2,West,0
+87860,525,U. New Hampshire,206555,432,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-2,Harris,52
+87860,525,U. New Hampshire,206555,432,-0.3,Probability Panel,82,2024-08-19,2024-08-15,Maine CD-2,Trump,47
+87844,1056,Remington,206470,656,-0.6,IVR,83,2024-08-17,2024-08-14,Nebraska CD-2,Harris,50
+87844,1056,Remington,206470,656,-0.6,IVR,83,2024-08-17,2024-08-14,Nebraska CD-2,Trump,42
+87844,1056,Remington,206470,656,-0.6,IVR,83,2024-08-17,2024-08-14,Nebraska CD-2,Kennedy,2
+87844,1056,Remington,206470,656,-0.6,IVR,83,2024-08-17,2024-08-14,Nebraska CD-2,West,1
+87844,1056,Remington,206470,656,-0.6,IVR,83,2024-08-17,2024-08-14,Nebraska CD-2,Stein,0
+87844,1056,Remington,206470,656,-0.6,IVR,83,2024-08-17,2024-08-14,Nebraska CD-2,Oliver,1
 87810,568,YouGov,206219,3253,-1.1,Online Panel,83,2024-08-16,2024-08-14,National,Harris,51
 87810,568,YouGov,206219,3253,-1.1,Online Panel,83,2024-08-16,2024-08-14,National,Trump,48
 87810,568,YouGov,206220,3253,-1.1,Online Panel,83,2024-08-16,2024-08-14,National,Harris,49
@@ -1170,6 +1333,14 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 87810,568,YouGov,206220,3253,-1.1,Online Panel,83,2024-08-16,2024-08-14,National,West,0
 87810,568,YouGov,206220,3253,-1.1,Online Panel,83,2024-08-16,2024-08-14,National,Stein,1
 87810,568,YouGov,206220,3253,-1.1,Online Panel,83,2024-08-16,2024-08-14,National,Oliver,0
+87845,415,Roanoke College,206471,691,-0.4,Live Phone/Online Panel,85,2024-08-16,2024-08-12,Virginia,Harris,47
+87845,415,Roanoke College,206471,691,-0.4,Live Phone/Online Panel,85,2024-08-16,2024-08-12,Virginia,Trump,44
+87845,415,Roanoke College,206472,691,-0.4,Live Phone/Online Panel,85,2024-08-16,2024-08-12,Virginia,Harris,45
+87845,415,Roanoke College,206472,691,-0.4,Live Phone/Online Panel,85,2024-08-16,2024-08-12,Virginia,Trump,42
+87845,415,Roanoke College,206472,691,-0.4,Live Phone/Online Panel,85,2024-08-16,2024-08-12,Virginia,Kennedy,6
+87845,415,Roanoke College,206472,691,-0.4,Live Phone/Online Panel,85,2024-08-16,2024-08-12,Virginia,West,2
+87845,415,Roanoke College,206472,691,-0.4,Live Phone/Online Panel,85,2024-08-16,2024-08-12,Virginia,Stein,0
+87845,415,Roanoke College,206472,691,-0.4,Live Phone/Online Panel,85,2024-08-16,2024-08-12,Virginia,Oliver,2
 87934,568,YouGov,207316,900,-1.1,Online Panel,89,2024-08-16,2024-08-08,Missouri,Harris,41
 87934,568,YouGov,207316,900,-1.1,Online Panel,89,2024-08-16,2024-08-08,Missouri,Trump,54
 87807,1424,Siena/NYT,206202,677,-1.5,Live Phone,85,2024-08-15,2024-08-12,Nevada,Harris,46
@@ -1204,6 +1375,13 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 87806,1424,Siena/NYT,206211,677,-1.5,Live Phone,89,2024-08-15,2024-08-08,Arizona,Stein,0
 87806,1424,Siena/NYT,206211,677,-1.5,Live Phone,89,2024-08-15,2024-08-08,Arizona,West,0
 87806,1424,Siena/NYT,206211,677,-1.5,Live Phone,89,2024-08-15,2024-08-08,Arizona,Oliver,1
+87871,1515,Data for Progress,206684,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Harris,49
+87871,1515,Data for Progress,206684,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Trump,46
+87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Harris,47
+87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Trump,43
+87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Kennedy,5
+87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,West,1
+87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Stein,0
 87797,1102,Emerson,206163,1000,-1.1,IVR/Online Panel/Text-to-Web,84,2024-08-14,2024-08-13,Pennsylvania,Harris,49.3
 87797,1102,Emerson,206163,1000,-1.1,IVR/Online Panel/Text-to-Web,84,2024-08-14,2024-08-13,Pennsylvania,Trump,50.7
 87797,1102,Emerson,206164,1000,-1.1,IVR/Online Panel/Text-to-Web,84,2024-08-14,2024-08-13,Pennsylvania,Harris,46.8
@@ -1294,6 +1472,11 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 87744,458,Suffolk,205739,500,-1,Live Phone,90,2024-08-11,2024-08-07,Florida,Kennedy,4.8
 87744,458,Suffolk,205739,500,-1,Live Phone,90,2024-08-11,2024-08-07,Florida,West,0.4
 87744,458,Suffolk,205739,500,-1,Live Phone,90,2024-08-11,2024-08-07,Florida,Oliver,1
+87778,370,Pew,205903,7569,-0.4,Probability Panel,92,2024-08-11,2024-08-05,National,Harris,46
+87778,370,Pew,205903,7569,-0.4,Probability Panel,92,2024-08-11,2024-08-05,National,Trump,45
+87778,370,Pew,205903,7569,-0.4,Probability Panel,92,2024-08-11,2024-08-05,National,Kennedy,7
+87773,1363,UC Berkeley,205866,3765,-0.2,NA,97,2024-08-11,2024-07-31,California,Harris,59
+87773,1363,UC Berkeley,205866,3765,-0.2,NA,97,2024-08-11,2024-07-31,California,Trump,34
 87721,1424,Siena/NYT,205625,693,-1.5,Live Phone,91,2024-08-09,2024-08-06,Pennsylvania,Harris,49
 87721,1424,Siena/NYT,205625,693,-1.5,Live Phone,91,2024-08-09,2024-08-06,Pennsylvania,Trump,46
 87721,1424,Siena/NYT,205628,693,-1.5,Live Phone,91,2024-08-09,2024-08-06,Pennsylvania,Harris,50
@@ -1376,6 +1559,8 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 87679,1205,Marist,205297,1513,-0.9,Live Phone/Online Panel/Text-to-Web,96,2024-08-04,2024-08-01,National,West,0
 87679,1205,Marist,205297,1513,-0.9,Live Phone/Online Panel/Text-to-Web,96,2024-08-04,2024-08-01,National,Stein,1
 87679,1205,Marist,205297,1513,-0.9,Live Phone/Online Panel/Text-to-Web,96,2024-08-04,2024-08-01,National,Oliver,0
+87701,1292,Hart/POS,205460,1001,-0.7,Live Phone,97,2024-08-04,2024-07-31,National,Harris,46
+87701,1292,Hart/POS,205460,1001,-0.7,Live Phone,97,2024-08-04,2024-07-31,National,Trump,48
 87663,568,YouGov,205200,3092,-1.1,Online Panel,98,2024-08-02,2024-07-30,National,Harris,50
 87663,568,YouGov,205200,3092,-1.1,Online Panel,98,2024-08-02,2024-07-30,National,Trump,49
 87663,568,YouGov,205201,3092,-1.1,Online Panel,98,2024-08-02,2024-07-30,National,Harris,49
@@ -1445,6 +1630,22 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 87614,241,Ipsos,204763,1238,-0.9,Probability Panel,104,2024-07-25,2024-07-24,National,Harris,38
 87614,241,Ipsos,204763,1238,-0.9,Probability Panel,104,2024-07-25,2024-07-24,National,Trump,38
 87614,241,Ipsos,204763,1238,-0.9,Probability Panel,104,2024-07-25,2024-07-24,National,Kennedy,4
+87558,525,U. New Hampshire,204333,1445,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine,Harris,48
+87558,525,U. New Hampshire,204333,1445,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine,Trump,40
+87558,525,U. New Hampshire,204333,1445,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine,Kennedy,4
+87558,525,U. New Hampshire,204333,1445,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine,Oliver,1
+87558,525,U. New Hampshire,204333,1445,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine,Stein,1
+87558,525,U. New Hampshire,204333,1445,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine,West,1
+87558,525,U. New Hampshire,204334,1445,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine,Harris,54
+87558,525,U. New Hampshire,204334,1445,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine,Trump,45
+87559,525,U. New Hampshire,204335,2875,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,New Hampshire,Harris,49
+87559,525,U. New Hampshire,204335,2875,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,New Hampshire,Trump,43
+87559,525,U. New Hampshire,204335,2875,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,New Hampshire,Kennedy,4
+87559,525,U. New Hampshire,204335,2875,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,New Hampshire,Oliver,0
+87559,525,U. New Hampshire,204335,2875,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,New Hampshire,Stein,0
+87559,525,U. New Hampshire,204335,2875,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,New Hampshire,West,0
+87559,525,U. New Hampshire,204336,2875,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,New Hampshire,Harris,53
+87559,525,U. New Hampshire,204336,2875,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,New Hampshire,Trump,46
 87581,460,SurveyUSA,204502,656,-1.3,Online Panel,105,2024-07-25,2024-07-23,Minnesota,Harris,50
 87581,460,SurveyUSA,204502,656,-1.3,Online Panel,105,2024-07-25,2024-07-23,Minnesota,Trump,40
 87590,1528,AtlasIntel,204552,1980,-0.8,Online Ad,105,2024-07-25,2024-07-23,National,Harris,48
@@ -1453,6 +1654,22 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 87590,1528,AtlasIntel,204553,1980,-0.8,Online Ad,105,2024-07-25,2024-07-23,National,Trump,47.7
 87590,1528,AtlasIntel,204553,1980,-0.8,Online Ad,105,2024-07-25,2024-07-23,National,Kennedy,4.5
 87590,1528,AtlasIntel,204553,1980,-0.8,Online Ad,105,2024-07-25,2024-07-23,National,West,0.2
+87724,525,U. New Hampshire,205660,732,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-1,Harris,56
+87724,525,U. New Hampshire,205660,732,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-1,Trump,36
+87724,525,U. New Hampshire,205660,732,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-1,Kennedy,2
+87724,525,U. New Hampshire,205660,732,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-1,Oliver,1
+87724,525,U. New Hampshire,205660,732,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-1,Stein,1
+87724,525,U. New Hampshire,205660,732,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-1,West,0
+87724,525,U. New Hampshire,205674,732,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-1,Harris,60
+87724,525,U. New Hampshire,205674,732,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-1,Trump,39
+87725,525,U. New Hampshire,205661,701,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-2,Harris,40
+87725,525,U. New Hampshire,205661,701,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-2,Trump,44
+87725,525,U. New Hampshire,205661,701,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-2,Kennedy,5
+87725,525,U. New Hampshire,205661,701,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-2,Oliver,1
+87725,525,U. New Hampshire,205661,701,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-2,Stein,3
+87725,525,U. New Hampshire,205661,701,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-2,West,1
+87725,525,U. New Hampshire,205675,701,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-2,Harris,49
+87725,525,U. New Hampshire,205675,701,-0.3,Online Panel/Text-to-Web,105,2024-07-25,2024-07-23,Maine CD-2,Trump,51
 87557,1424,Siena/NYT,204203,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Harris,46
 87557,1424,Siena/NYT,204203,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Trump,48
 87557,1424,Siena/NYT,204204,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Harris,47

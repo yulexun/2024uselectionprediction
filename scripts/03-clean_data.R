@@ -20,7 +20,7 @@ raw_data <- read_csv("data/01-raw_data/president_polls.csv")
 
 cleaned_data <- raw_data |>
   filter(
-    numeric_grade >= 2.7
+    numeric_grade >= 2.5
   )
 
 cleaned_data <- cleaned_data |>
