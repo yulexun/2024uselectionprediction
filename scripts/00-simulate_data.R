@@ -16,82 +16,20 @@ set.seed(853)
 
 #### Simulate data ####
 # State names
-states <- c(
-  "National",
-  "Colorado",
-  "Oklahoma",
-  "Wisconsin",
-  "Washington",
-  "Oregon",
-  "Florida",
-  "Arizona",
-  "Georgia",
-  "Michigan",
-  "Nevada",
-  "North Carolina",
-  "Pennsylvania",
-  "South Carolina",
-  "Texas",
-  "Tennessee",
-  "Massachusetts",
-  "Maryland",
-  "Ohio",
-  "California",
-  "Minnesota",
-  "New Mexico",
-  "New Hampshire",
-  "Missouri",
-  "Alaska",
-  "Montana",
-  "Nebraska",
-  "Utah",
-  "Illinois",
-  "Virginia",
-  "New Jersey",
-  "North Dakota",
-  "New York",
-  "Indiana",
-  "Iowa",
-  "Nebraska CD-2",
-  "Delaware",
-  "Rhode Island",
-  "Connecticut",
-  "Maine",
-  "Maine CD-1",
-  "Maine CD-2",
-  "Arkansas",
-  "West Virginia",
-  "Vermont",
-  "South Dakota",
-  "Louisiana",
-  "Hawaii",
-  "Alabama",
-  "Idaho",
-  "Kansas",
-  "Kentucky",
-  "Mississippi",
-  "Wyoming"
-)
+states <- state.name
+answer <- c("Trump", "Harris")
+pollster <- c("Marist", "YouGov", "Ipsos", "Emerson", "SurveyUSA")
 
 
-# Political parties
-parties <- c("Labor", "Liberal", "Greens", "National", "Other")
 
 # Create a dataset by randomly assigning states and parties to divisions
 analysis_data <- tibble(
-  division = paste("Division", 1:151),  # Add "Division" to make it a character
   state = sample(
     states,
-    size = 151,
+    size = 1500,
     replace = TRUE,
-    prob = c(0.25, 0.25, 0.15, 0.1, 0.1, 0.1, 0.025, 0.025) # Rough state population distribution
   ),
-  party = sample(
-    parties,
-    size = 151,
-    replace = TRUE,
-    prob = c(0.40, 0.40, 0.05, 0.1, 0.05) # Rough party distribution
-  )
+
 )
 
 
