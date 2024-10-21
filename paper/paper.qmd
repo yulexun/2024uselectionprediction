@@ -26,7 +26,7 @@ library(palmerpenguins)
 # Introduction {#sec-intro}
 Election result forecasting has become an essential tool for analysts in political science and the public to predict the outcome of democratic process, such as the presidential election in the United States. Traditionally, individual polls have been used as a snapshot of voter sentiment, but they only reflect temporary changes in the performance of contestants, instead of a precise estimation of the election result. As discussed by @pasek and @blumenthal, the aggregation of multiple polls, or "poll-of-polls," has become a popular technique to reduce individual survey errors and provide more accurate election forecasts. However, the traditional poll aggregation does not reflect dynamics of an election, especially with real-time changes and the introduction of new data. This creates a gap for a more adaptable model to predict the election result based on both polling data and additional variables, such as historical data and economic indicators.
 
-This paper fills the gap by building a hybrid election forecasting model following the strategies mentioned by @pasek. As @pasek described in their article, aggregation involves determining which surveys are worth including, as well as selecting, combining and averaging results from multiple polls to reduce individual biases and errors. Prediction modeling adds other data to the model that predicts election outcomes based on current dynamics. Hybrid models like the Bayesian approach incorporates prior beliefs based on historical data or expert knowledge and new evidence like economic updates to dynamically adjust the forecast as the campaign progresses. We incorporate aggregation by filtering the polls by numeric grade that indicates pollster’s reliability, prediction that incorporates historical data and economic indicators, and hybrid approaches that leverages Bayesian techniques, allowing for a dynamic prediction of the U.S. presidential election. 
+This paper fills the gap by building a hybrid election forecasting model following the strategies mentioned by @pasek. As @pasek described in their article, aggregation involves determining which surveys are worth including, as well as selecting, combining and averaging results from multiple polls to reduce individual biases and errors. Prediction modeling adds other data to the model that predicts election outcomes based on current dynamics. Hybrid models like the Bayesian approach incorporates prior beliefs based on historical data or expert knowledge and new evidence like economic updates to dynamically adjust the forecast as the campaign progresses. We incorporate aggregation by filtering the polls on @fivethirtyeight by numeric grade that indicates pollster’s reliability, prediction that incorporates social and economic indicators including unemployment rates and abortion rates, and hybrid approaches that leverages Bayesian techniques which combines historical data such as the 2016 election data, allowing for a dynamic prediction of the U.S. presidential election. 
 
 The estimand for this research paper is the predicted support percentages for Kamala Harris and Donald Trump. The prediction is based on quantifying various polling factors, including sample size, poll scores, and transparency scores, which are used as predictors.
 
@@ -69,6 +69,7 @@ ggplot(penguins, aes(x = island, fill = species)) +
   theme_minimal() +
   facet_wrap(~species, ncol = 1) +
   coord_flip()
+
 ```
 
 Talk more about it.
@@ -160,6 +161,9 @@ In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. Th
 @fig-stanareyouokay-1 is a trace plot. It shows... This suggests...
 
 @fig-stanareyouokay-2 is a Rhat plot. It shows... This suggests...
+
+# FiveThirtyEight Licenses
+[FiveThirtyEight's data sets](https://github.com/fivethirtyeight/data/tree/master/polls) are used and modified by us under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
 \newpage
 
