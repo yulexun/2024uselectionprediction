@@ -1,43 +1,60 @@
 #### Preamble ####
 # Purpose: Cleans the raw  data from FiveThirtyEight
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 6 April 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+# Author: Colin Sihan Yang, Siddharth Gowda, Lexun Yu
+# Date: 21 October 2024
+# Contact: lx.yu@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Pre-requisites: None
 
 #### Workspace setup ####
 library(tidyverse)
 
 #### Clean data ####
 raw_data <- read_csv("data/01-raw_data/president_polls.csv")
+# head(raw_data %>% mutate(
+#   state = if_else(is.na(state), "National", state), # Hacky fix for national polls - come back and check
+#   end_date = mdy(end_date),
+#   start_date = mdy(start_date)
+# ) %>% select(state))
 
 
 cleaned_data <- raw_data |>
   filter(
-    numeric_grade >= 2.7
+    numeric_grade >= 2.5
   )
 
-cleaned_data_national <- cleaned_data |>
-  filter(is.na(state))
+cleaned_data <- cleaned_data |>
+  mutate(
+    state = if_else(is.na(state), "National", state), # Hacky fix for national polls - come back and check
+    end_date = mdy(end_date),
+    start_date = mdy(start_date),
+    election_date = mdy(election_date)
+  ) |>
+  filter(start_date >= as.Date("2024-07-21")) # When Harris declared
 
-cleaned_data_state <- cleaned_data |>
-  filter(!is.na(state))
+# Election date is 5 Nov 2024
+cleaned_data <- cleaned_data %>%
+  filter(cycle == 2024, office_type == "U.S. President", stage == "general") %>%
+  mutate(days_taken_from_election = as.numeric(mdy("11/5/2024") - start_date)) %>%
+  select(
+    poll_id, pollster_id, pollster, question_id,
+    sample_size, pollscore, methodology, days_taken_from_election,
+    end_date, start_date, state, answer, pct
+  )
 
 # Delete NA columns
 # cleaned_data <- raw_data |>
-#   select(-sponsor_ids, 
-#     -sponsors, 
-#     -sponsor_candidate_id, 
-#     -sponsor_candidate, 
-#     -sponsor_candidate_party, 
-#     -endorsed_candidate_id, 
-#     -endorsed_candidate_name, 
-#     -endorsed_candidate_party, 
-#     -subpopulation, -tracking, 
+#   select(-sponsor_ids,
+#     -sponsors,
+#     -sponsor_candidate_id,
+#     -sponsor_candidate,
+#     -sponsor_candidate_party,
+#     -endorsed_candidate_id,
+#     -endorsed_candidate_name,
+#     -endorsed_candidate_party,
+#     -subpopulation, -tracking,
 #     -notes, -url_article, -url_topline, -url_crosstab,
-#     -source, -internal, -partisan, -seat_name, 
+#     -source, -internal, -partisan, -seat_name,
 #     -ranked_choice_round) |> na.omit()
 
 
@@ -47,6 +64,6 @@ cleaned_data_state <- cleaned_data |>
 
 #### Save data ####
 write_csv(cleaned_data, "data/02-analysis_data/cleaned_data.csv")
-write_csv(cleaned_data_national, "data/02-analysis_data/cleaned_data_national.csv")
-write_csv(cleaned_data_national, "data/02-analysis_data/cleaned_data_state.csv")
+# write_csv(cleaned_data_national, "data/02-analysis_data/cleaned_data_national.csv")
+# write_csv(cleaned_data_national, "data/02-analysis_data/cleaned_data_state.csv")
 # write_csv(morningconsult_data, "data/02-analysis_data/mc_data.csv")

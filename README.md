@@ -7,7 +7,7 @@ This paper forecast the winner of the upcoming US presidential election using â€
 
 The repo is structured as:
 
--   `data/raw_data` contains the raw data as obtained from X.
+-   `data/raw_data` contains the raw data as obtained from FiveThirtyEight.
 -   `data/analysis_data` contains the cleaned dataset that was constructed.
 -   `model` contains fitted models. 
 -   `other` contains relevant literature, details about LLM chat interactions, and sketches.
@@ -17,4 +17,4 @@ The repo is structured as:
 
 ## Statement on LLM usage
 
-Aspects of the code were written with the help of the auto-complete tool, Codriver. The abstract and introduction were written with the help of ChatHorse and the entire chat history is available in other/llm_usage/usage.txt.
+The drafted outline and introduction were written with the help of ChatGPT 4. The entire chat history is available in other/llm_usage/usage.txt.

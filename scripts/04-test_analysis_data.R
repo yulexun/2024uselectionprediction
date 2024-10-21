@@ -52,8 +52,10 @@ test_that("'division' column contains unique values", {
 })
 
 # Test that 'state' contains only valid Australian state or territory names
-valid_states <- c("New South Wales", "Victoria", "Queensland", "South Australia", "Western Australia", 
-                  "Tasmania", "Northern Territory", "Australian Capital Territory")
+valid_states <- c(
+  "New South Wales", "Victoria", "Queensland", "South Australia", "Western Australia",
+  "Tasmania", "Northern Territory", "Australian Capital Territory"
+)
 test_that("'state' contains valid Australian state names", {
   expect_true(all(analysis_data$state %in% valid_states))
 })

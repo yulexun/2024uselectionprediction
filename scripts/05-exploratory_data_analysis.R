@@ -33,5 +33,3 @@ saveRDS(
   first_model,
   file = "models/first_model.rds"
 )
-
-
