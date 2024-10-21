@@ -85,12 +85,6 @@ Add graphs, tables and text.
 Use sub-sub-headings for each outcome variable and feel free to combine a few into one if they go together naturally.
 
 
-
-
-
-
-
-
 # Model
 
 The goal of our modelling strategy is twofold. Firstly,...
