@@ -1,6 +1,6 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of Australian electoral divisions, including the 
-  #state and party that won each division.
+# Purpose: Simulates a dataset of Australian electoral divisions, including the
+# state and party that won each division.
 # Author: Rohan Alexander
 # Date: 26 September 2024
 # Contact: rohan.alexander@utoronto.ca
