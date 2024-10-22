@@ -1,7 +1,7 @@
-# Prediction of US election
+# Prediction of 2024 US election with ...
 
 ## Overview
-This paper forecast the winner of the upcoming US presidential election using “poll-of-polls” by building a linear model.
+This paper forecast the winner of the 2024 US presidential election using “poll-of-polls” by building a linear model.
 
 ## File Structure
 

@@ -1,5 +1,5 @@
 ---
-title: "Prediction of US election with linear model"
+title: "Prediction of 2024 US election ..."
 author: 
   - Colin Sihan Yang
   - Lexun Yu
@@ -7,7 +7,7 @@ author:
 thanks: "Code and data are available at: [https://github.com/yulexun/uselection](https://github.com/yulexun/uselection)."
 date: today
 date-format: long
-abstract: "This paper forecast the winner of the upcoming US presidential election using “poll-of-polls” by building a linear model."
+abstract: "We forecast the winner of the 2024 US presidential election using “poll-of-polls” by building a linear model."
 format: pdf
 number-sections: true
 bibliography: references.bib
