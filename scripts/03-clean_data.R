@@ -43,15 +43,21 @@ cleaned_data <- cleaned_data %>%
   select(
     poll_id, pollster_id, pollster, question_id,
     sample_size, pollscore, methodology, days_taken_from_election,
-    end_date, start_date, state, answer, pct
+    end_date, start_date, state, candidate_name, pct
   )
 
+# add weight to pct
+cleaned_data$adjusted_weight <- 1 / abs(cleaned_data$pollscore)
+
+cleaned_data |>
+  mutate(weight = sum(pct * adjusted_weight) / sum(adjusted_weight))
+
+# store national and state data seperately
   cleaned_data_national <- cleaned_data |>
     filter(state == "National")
   cleaned_data_state <- cleaned_data |>
     filter(state != "National")
-
-
+  
 
 # Delete NA columns
 # cleaned_data <- raw_data |>
