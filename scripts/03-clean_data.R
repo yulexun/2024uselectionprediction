@@ -8,6 +8,7 @@
 
 #### Workspace setup ####
 library(tidyverse)
+library(arrow)
 
 #### Clean data ####
 raw_data <- read_csv("data/01-raw_data/president_polls.csv")
@@ -73,7 +74,7 @@ cleaned_data$adjusted_weight <- 1 / abs(cleaned_data$pollscore)
 #     -ranked_choice_round) |> na.omit()
 
 #### Save data ####
-write_csv(cleaned_data, "data/02-analysis_data/cleaned_data.csv")
-write_csv(cleaned_data_national, "data/02-analysis_data/cleaned_data_national.csv")
-write_csv(cleaned_data_state, "data/02-analysis_data/cleaned_data_state.csv")
-write_csv(morningconsult_data, "data/02-analysis_data/mc_data.csv")
+write_parquet(cleaned_data, "data/02-analysis_data/cleaned_data.parquet")
+write_parquet(cleaned_data_national, "data/02-analysis_data/cleaned_data_national.parquet")
+write_parquet(cleaned_data_state, "data/02-analysis_data/cleaned_data_state.parquet")
+write_parquet(morningconsult_data, "data/02-analysis_data/mc_data.parquet")
