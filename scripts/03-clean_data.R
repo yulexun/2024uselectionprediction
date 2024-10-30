@@ -51,6 +51,8 @@ cleaned_data <- cleaned_data %>%
   cleaned_data_state <- cleaned_data |>
     filter(state != "National")
 
+
+
 # Delete NA columns
 # cleaned_data <- raw_data |>
 #   select(-sponsor_ids,
