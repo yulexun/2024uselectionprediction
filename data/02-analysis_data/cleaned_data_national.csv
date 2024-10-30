@@ -1,0 +1,544 @@
+poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_taken_from_election,end_date,start_date,state,answer,pct
+88794,1528,AtlasIntel,213380,4180,-0.8,Online Ad,24,2024-10-17,2024-10-12,National,Harris,47.6
+88794,1528,AtlasIntel,213380,4180,-0.8,Online Ad,24,2024-10-17,2024-10-12,National,Trump,50.7
+88794,1528,AtlasIntel,213380,4180,-0.8,Online Ad,24,2024-10-17,2024-10-12,National,Stein,0.8
+88794,1528,AtlasIntel,213380,4180,-0.8,Online Ad,24,2024-10-17,2024-10-12,National,Oliver,0.1
+88794,1528,AtlasIntel,213380,4180,-0.8,Online Ad,24,2024-10-17,2024-10-12,National,West,0.1
+88794,1528,AtlasIntel,213381,4180,-0.8,Online Ad,24,2024-10-17,2024-10-12,National,Harris,48.1
+88794,1528,AtlasIntel,213381,4180,-0.8,Online Ad,24,2024-10-17,2024-10-12,National,Trump,50.8
+88765,1102,Emerson,213123,1000,-1.1,IVR/Online Panel/Text-to-Web,22,2024-10-16,2024-10-14,National,Harris,49.5
+88765,1102,Emerson,213123,1000,-1.1,IVR/Online Panel/Text-to-Web,22,2024-10-16,2024-10-14,National,Trump,49.2
+88710,568,YouGov,212851,1457,-1.1,Online Panel,24,2024-10-15,2024-10-12,National,Harris,48
+88710,568,YouGov,212851,1457,-1.1,Online Panel,24,2024-10-15,2024-10-12,National,Trump,45
+88710,568,YouGov,212851,1457,-1.1,Online Panel,24,2024-10-15,2024-10-12,National,Stein,1
+88710,568,YouGov,212851,1457,-1.1,Online Panel,24,2024-10-15,2024-10-12,National,West,1
+88710,568,YouGov,212852,1314,-1.1,Online Panel,24,2024-10-15,2024-10-12,National,Harris,49
+88710,568,YouGov,212852,1314,-1.1,Online Panel,24,2024-10-15,2024-10-12,National,Trump,45
+88710,568,YouGov,212852,1314,-1.1,Online Panel,24,2024-10-15,2024-10-12,National,Stein,1
+88710,568,YouGov,212852,1314,-1.1,Online Panel,24,2024-10-15,2024-10-12,National,West,0
+88736,1597,Beacon/Shaw,212989,1110,-1.1,Live Phone/Text-to-Web,25,2024-10-14,2024-10-11,National,Harris,48
+88736,1597,Beacon/Shaw,212989,1110,-1.1,Live Phone/Text-to-Web,25,2024-10-14,2024-10-11,National,Trump,50
+88736,1597,Beacon/Shaw,212990,870,-1.1,Live Phone/Text-to-Web,25,2024-10-14,2024-10-11,National,Harris,48
+88736,1597,Beacon/Shaw,212990,870,-1.1,Live Phone/Text-to-Web,25,2024-10-14,2024-10-11,National,Trump,50
+88719,149,Fairleigh Dickinson,212865,806,-0.6,Live Phone/Text-to-Web,28,2024-10-14,2024-10-08,National,Harris,50
+88719,149,Fairleigh Dickinson,212865,806,-0.6,Live Phone/Text-to-Web,28,2024-10-14,2024-10-08,National,Trump,47
+88703,241,Ipsos,212604,807,-0.9,Probability Panel,25,2024-10-13,2024-10-11,National,Harris,45
+88703,241,Ipsos,212604,807,-0.9,Probability Panel,25,2024-10-13,2024-10-11,National,Trump,42
+88703,241,Ipsos,212605,769,-0.9,Probability Panel,25,2024-10-13,2024-10-11,National,Harris,47
+88703,241,Ipsos,212605,769,-0.9,Probability Panel,25,2024-10-13,2024-10-11,National,Trump,44
+88703,241,Ipsos,213034,938,-0.9,Probability Panel,25,2024-10-13,2024-10-11,National,Harris,41
+88703,241,Ipsos,213034,938,-0.9,Probability Panel,25,2024-10-13,2024-10-11,National,Trump,37
+88670,568,YouGov,212487,2712,-1.1,Online Panel,28,2024-10-11,2024-10-08,National,Harris,51
+88670,568,YouGov,212487,2712,-1.1,Online Panel,28,2024-10-11,2024-10-08,National,Trump,48
+88711,1205,Marist,212859,1401,-0.9,Online Panel/Text-to-Web,28,2024-10-10,2024-10-08,National,Harris,52
+88711,1205,Marist,212859,1401,-0.9,Online Panel/Text-to-Web,28,2024-10-10,2024-10-08,National,Trump,47
+88711,1205,Marist,212860,1708,-0.9,Online Panel/Text-to-Web,28,2024-10-10,2024-10-08,National,Harris,51
+88711,1205,Marist,212860,1708,-0.9,Online Panel/Text-to-Web,28,2024-10-10,2024-10-08,National,Trump,48
+88712,1075,Marquette Law School,212866,780,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,Harris,50
+88712,1075,Marquette Law School,212866,780,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,Trump,50
+88712,1075,Marquette Law School,212867,780,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,Harris,43
+88712,1075,Marquette Law School,212867,780,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,Trump,39
+88712,1075,Marquette Law School,212867,780,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,Kennedy,10
+88712,1075,Marquette Law School,212867,780,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,Oliver,3
+88712,1075,Marquette Law School,212867,780,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,Stein,1
+88712,1075,Marquette Law School,212867,780,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,West,3
+88712,1075,Marquette Law School,212868,652,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,Harris,50
+88712,1075,Marquette Law School,212868,652,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,Trump,50
+88712,1075,Marquette Law School,212869,652,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,Harris,44
+88712,1075,Marquette Law School,212869,652,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,Trump,41
+88712,1075,Marquette Law School,212869,652,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,Kennedy,9
+88712,1075,Marquette Law School,212869,652,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,Oliver,2
+88712,1075,Marquette Law School,212869,652,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,Stein,1
+88712,1075,Marquette Law School,212869,652,-1.1,Probability Panel,35,2024-10-10,2024-10-01,National,West,2
+88666,1292,Hart/POS,212485,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Harris,46
+88666,1292,Hart/POS,212485,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Trump,47
+88666,1292,Hart/POS,212485,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Kennedy,2
+88666,1292,Hart/POS,212485,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,West,0
+88666,1292,Hart/POS,212485,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Stein,1
+88666,1292,Hart/POS,212485,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Oliver,1
+88666,1292,Hart/POS,212485,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Terry,0
+88666,1292,Hart/POS,212486,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Harris,48
+88666,1292,Hart/POS,212486,1000,-0.7,Live Phone,32,2024-10-08,2024-10-04,National,Trump,48
+88667,241,Ipsos,212479,2631,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Harris,49
+88667,241,Ipsos,212479,2631,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Trump,48
+88667,241,Ipsos,212479,2631,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,West,0
+88667,241,Ipsos,212479,2631,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Stein,1
+88667,241,Ipsos,212479,2631,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Oliver,1
+88667,241,Ipsos,212480,2226,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Harris,49
+88667,241,Ipsos,212480,2226,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Trump,47
+88667,241,Ipsos,212480,2226,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,West,0
+88667,241,Ipsos,212480,2226,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Stein,1
+88667,241,Ipsos,212480,2226,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Oliver,1
+88667,241,Ipsos,212481,1714,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Harris,50
+88667,241,Ipsos,212481,1714,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Trump,48
+88667,241,Ipsos,212481,1714,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,West,0
+88667,241,Ipsos,212481,1714,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Stein,0
+88667,241,Ipsos,212481,1714,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Oliver,1
+88667,241,Ipsos,212482,2631,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Harris,50
+88667,241,Ipsos,212482,2631,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Trump,49
+88667,241,Ipsos,212483,2226,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Harris,50
+88667,241,Ipsos,212483,2226,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Trump,49
+88667,241,Ipsos,212484,1714,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Harris,51
+88667,241,Ipsos,212484,1714,-0.9,Probability Panel,32,2024-10-08,2024-10-04,National,Trump,48
+88590,568,YouGov,212126,1414,-1.1,Online Panel,30,2024-10-07,2024-10-06,National,Harris,47
+88590,568,YouGov,212126,1414,-1.1,Online Panel,30,2024-10-07,2024-10-06,National,Trump,44
+88590,568,YouGov,212126,1414,-1.1,Online Panel,30,2024-10-07,2024-10-06,National,Stein,1
+88590,568,YouGov,212126,1414,-1.1,Online Panel,30,2024-10-07,2024-10-06,National,West,0
+88590,568,YouGov,212127,1230,-1.1,Online Panel,30,2024-10-07,2024-10-06,National,Harris,49
+88590,568,YouGov,212127,1230,-1.1,Online Panel,30,2024-10-07,2024-10-06,National,Trump,45
+88590,568,YouGov,212127,1230,-1.1,Online Panel,30,2024-10-07,2024-10-06,National,Stein,1
+88590,568,YouGov,212127,1230,-1.1,Online Panel,30,2024-10-07,2024-10-06,National,West,0
+88558,241,Ipsos,211853,1272,-0.9,Probability Panel,32,2024-10-07,2024-10-04,National,Harris,42
+88558,241,Ipsos,211853,1272,-0.9,Probability Panel,32,2024-10-07,2024-10-04,National,Trump,38
+88558,241,Ipsos,211854,1076,-0.9,Probability Panel,32,2024-10-07,2024-10-04,National,Harris,46
+88558,241,Ipsos,211854,1076,-0.9,Probability Panel,32,2024-10-07,2024-10-04,National,Trump,43
+88558,241,Ipsos,211855,1076,-0.9,Probability Panel,32,2024-10-07,2024-10-04,National,Harris,47
+88558,241,Ipsos,211855,1076,-0.9,Probability Panel,32,2024-10-07,2024-10-04,National,Trump,45
+88558,241,Ipsos,211856,1272,-0.9,Probability Panel,32,2024-10-07,2024-10-04,National,Harris,48
+88558,241,Ipsos,211856,1272,-0.9,Probability Panel,32,2024-10-07,2024-10-04,National,Trump,47
+88558,241,Ipsos,211857,1076,-0.9,Probability Panel,32,2024-10-07,2024-10-04,National,Harris,50
+88558,241,Ipsos,211857,1076,-0.9,Probability Panel,32,2024-10-07,2024-10-04,National,Trump,48
+88558,241,Ipsos,211858,1076,-0.9,Probability Panel,32,2024-10-07,2024-10-04,National,Harris,51
+88558,241,Ipsos,211858,1076,-0.9,Probability Panel,32,2024-10-07,2024-10-04,National,Trump,49
+88634,370,Pew,212275,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,Harris,48
+88634,370,Pew,212275,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,Trump,47
+88634,370,Pew,212275,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,Kennedy,2
+88634,370,Pew,212275,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,Oliver,1
+88634,370,Pew,212275,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,Stein,1
+88634,370,Pew,212275,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,West,0
+88634,370,Pew,212276,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,Harris,50
+88634,370,Pew,212276,4025,-0.4,Probability Panel,36,2024-10-06,2024-09-30,National,Trump,49
+88550,1424,Siena/NYT,211846,3385,-1.5,Live Phone,37,2024-10-06,2024-09-29,National,Harris,49
+88550,1424,Siena/NYT,211846,3385,-1.5,Live Phone,37,2024-10-06,2024-09-29,National,Trump,46
+88550,1424,Siena/NYT,211847,3385,-1.5,Live Phone,37,2024-10-06,2024-09-29,National,Harris,47
+88550,1424,Siena/NYT,211847,3385,-1.5,Live Phone,37,2024-10-06,2024-09-29,National,Trump,44
+88550,1424,Siena/NYT,211847,3385,-1.5,Live Phone,37,2024-10-06,2024-09-29,National,Stein,1
+88550,1424,Siena/NYT,211847,3385,-1.5,Live Phone,37,2024-10-06,2024-09-29,National,Oliver,1
+88527,568,YouGov,211691,1150,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Harris,46
+88527,568,YouGov,211691,1150,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Trump,45
+88527,568,YouGov,211691,1150,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,West,1
+88527,568,YouGov,211691,1150,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Stein,1
+88527,568,YouGov,211691,1150,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Oliver,1
+88527,568,YouGov,211692,1032,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Harris,47
+88527,568,YouGov,211692,1032,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Trump,47
+88527,568,YouGov,211692,1032,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,West,1
+88527,568,YouGov,211692,1032,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Stein,1
+88527,568,YouGov,211692,1032,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Oliver,1
+88527,568,YouGov,211790,1151,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Harris,48
+88527,568,YouGov,211790,1151,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Trump,46
+88527,568,YouGov,211791,1033,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Harris,48
+88527,568,YouGov,211791,1033,-1.1,Online Panel,34,2024-10-04,2024-10-02,National,Trump,47
+88515,1515,Data for Progress,211650,1211,-1.2,Online Panel,34,2024-10-03,2024-10-02,National,Harris,49
+88515,1515,Data for Progress,211650,1211,-1.2,Online Panel,34,2024-10-03,2024-10-02,National,Trump,46
+88482,568,YouGov,211401,1463,-1.1,Online Panel,37,2024-10-01,2024-09-29,National,Harris,48
+88482,568,YouGov,211401,1463,-1.1,Online Panel,37,2024-10-01,2024-09-29,National,Trump,45
+88482,568,YouGov,211401,1463,-1.1,Online Panel,37,2024-10-01,2024-09-29,National,Stein,1
+88482,568,YouGov,211401,1463,-1.1,Online Panel,37,2024-10-01,2024-09-29,National,West,0
+88482,568,YouGov,211402,1261,-1.1,Online Panel,37,2024-10-01,2024-09-29,National,Harris,49
+88482,568,YouGov,211402,1261,-1.1,Online Panel,37,2024-10-01,2024-09-29,National,Trump,46
+88482,568,YouGov,211402,1261,-1.1,Online Panel,37,2024-10-01,2024-09-29,National,Stein,1
+88482,568,YouGov,211402,1261,-1.1,Online Panel,37,2024-10-01,2024-09-29,National,West,0
+88496,1102,Emerson,211489,1000,-1.1,IVR/Online Panel/Text-to-Web,37,2024-10-01,2024-09-29,National,Harris,50.2
+88496,1102,Emerson,211489,1000,-1.1,IVR/Online Panel/Text-to-Web,37,2024-10-01,2024-09-29,National,Trump,48.6
+88506,1205,Marist,211548,1294,-0.9,Live Phone/Online Panel/Text-to-Web,39,2024-10-01,2024-09-27,National,Harris,50
+88506,1205,Marist,211548,1294,-0.9,Live Phone/Online Panel/Text-to-Web,39,2024-10-01,2024-09-27,National,Trump,48
+88506,1205,Marist,211549,1514,-0.9,Live Phone/Online Panel/Text-to-Web,39,2024-10-01,2024-09-27,National,Harris,50
+88506,1205,Marist,211549,1514,-0.9,Live Phone/Online Panel/Text-to-Web,39,2024-10-01,2024-09-27,National,Trump,47
+88554,1700,McCourtney Institute/YouGov,211844,848,-1.1,Online Panel,43,2024-09-27,2024-09-23,National,Harris,48
+88554,1700,McCourtney Institute/YouGov,211844,848,-1.1,Online Panel,43,2024-09-27,2024-09-23,National,Trump,45
+88374,1302,Echelon Insights,210847,1005,-0.8,Online Panel,43,2024-09-25,2024-09-23,National,Harris,52
+88374,1302,Echelon Insights,210847,1005,-0.8,Online Panel,43,2024-09-25,2024-09-23,National,Trump,45
+88374,1302,Echelon Insights,210848,1005,-0.8,Online Panel,43,2024-09-25,2024-09-23,National,Harris,49
+88374,1302,Echelon Insights,210848,1005,-0.8,Online Panel,43,2024-09-25,2024-09-23,National,Trump,44
+88374,1302,Echelon Insights,210848,1005,-0.8,Online Panel,43,2024-09-25,2024-09-23,National,Kennedy,2
+88374,1302,Echelon Insights,210848,1005,-0.8,Online Panel,43,2024-09-25,2024-09-23,National,Oliver,1
+88374,1302,Echelon Insights,210848,1005,-0.8,Online Panel,43,2024-09-25,2024-09-23,National,Stein,0
+88374,1302,Echelon Insights,210848,1005,-0.8,Online Panel,43,2024-09-25,2024-09-23,National,West,0
+88351,568,YouGov,210698,1424,-1.1,Online Panel,45,2024-09-24,2024-09-21,National,Harris,47
+88351,568,YouGov,210698,1424,-1.1,Online Panel,45,2024-09-24,2024-09-21,National,Trump,44
+88351,568,YouGov,210698,1424,-1.1,Online Panel,45,2024-09-24,2024-09-21,National,Stein,1
+88351,568,YouGov,210698,1424,-1.1,Online Panel,45,2024-09-24,2024-09-21,National,West,0
+88351,568,YouGov,210699,1220,-1.1,Online Panel,45,2024-09-24,2024-09-21,National,Harris,49
+88351,568,YouGov,210699,1220,-1.1,Online Panel,45,2024-09-24,2024-09-21,National,Trump,46
+88351,568,YouGov,210699,1220,-1.1,Online Panel,45,2024-09-24,2024-09-21,National,Stein,1
+88351,568,YouGov,210699,1220,-1.1,Online Panel,45,2024-09-24,2024-09-21,National,West,0
+88358,241,Ipsos,210599,871,-0.9,Probability Panel,46,2024-09-22,2024-09-20,National,Harris,46.61
+88358,241,Ipsos,210599,871,-0.9,Probability Panel,46,2024-09-22,2024-09-20,National,Trump,40.48
+88358,241,Ipsos,210600,785,-0.9,Probability Panel,46,2024-09-22,2024-09-20,National,Harris,50
+88358,241,Ipsos,210600,785,-0.9,Probability Panel,46,2024-09-22,2024-09-20,National,Trump,44
+88358,241,Ipsos,210761,1029,-0.9,Probability Panel,46,2024-09-22,2024-09-20,National,Harris,42
+88358,241,Ipsos,210761,1029,-0.9,Probability Panel,46,2024-09-22,2024-09-20,National,Trump,38
+88325,1866,CNN/SSRS,210545,2074,-0.6,Probability Panel,47,2024-09-22,2024-09-19,National,Harris,48
+88325,1866,CNN/SSRS,210545,2074,-0.6,Probability Panel,47,2024-09-22,2024-09-19,National,Trump,47
+88325,1866,CNN/SSRS,210545,2074,-0.6,Probability Panel,47,2024-09-22,2024-09-19,National,Stein,1
+88325,1866,CNN/SSRS,210545,2074,-0.6,Probability Panel,47,2024-09-22,2024-09-19,National,Oliver,2
+88325,1866,CNN/SSRS,210546,2074,-0.6,Probability Panel,47,2024-09-22,2024-09-19,National,Harris,47
+88325,1866,CNN/SSRS,210546,2074,-0.6,Probability Panel,47,2024-09-22,2024-09-19,National,Trump,47
+88325,1866,CNN/SSRS,210546,2074,-0.6,Probability Panel,47,2024-09-22,2024-09-19,National,Stein,1
+88325,1866,CNN/SSRS,210546,2074,-0.6,Probability Panel,47,2024-09-22,2024-09-19,National,Oliver,2
+88328,396,Quinnipiac,210568,1728,-0.5,Live Phone,47,2024-09-22,2024-09-19,National,Harris,47
+88328,396,Quinnipiac,210568,1728,-0.5,Live Phone,47,2024-09-22,2024-09-19,National,Trump,48
+88328,396,Quinnipiac,210568,1728,-0.5,Live Phone,47,2024-09-22,2024-09-19,National,Stein,1
+88328,396,Quinnipiac,210568,1728,-0.5,Live Phone,47,2024-09-22,2024-09-19,National,Oliver,1
+88328,396,Quinnipiac,210569,1728,-0.5,Live Phone,47,2024-09-22,2024-09-19,National,Harris,48
+88328,396,Quinnipiac,210569,1728,-0.5,Live Phone,47,2024-09-22,2024-09-19,National,Trump,48
+88274,568,YouGov,210307,3129,-1.1,Online Panel,48,2024-09-20,2024-09-18,National,Harris,52
+88274,568,YouGov,210307,3129,-1.1,Online Panel,48,2024-09-20,2024-09-18,National,Trump,48
+88208,568,YouGov,209883,1445,-1.1,Online Panel,51,2024-09-17,2024-09-15,National,Harris,49
+88208,568,YouGov,209883,1445,-1.1,Online Panel,51,2024-09-17,2024-09-15,National,Trump,45
+88208,568,YouGov,209883,1445,-1.1,Online Panel,51,2024-09-17,2024-09-15,National,Stein,1
+88208,568,YouGov,209883,1445,-1.1,Online Panel,51,2024-09-17,2024-09-15,National,West,0
+88271,1292,Hart/POS,210305,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Harris,49
+88271,1292,Hart/POS,210305,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Trump,44
+88271,1292,Hart/POS,210306,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Harris,47
+88271,1292,Hart/POS,210306,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Trump,41
+88271,1292,Hart/POS,210306,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Kennedy,2
+88271,1292,Hart/POS,210306,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,West,0
+88271,1292,Hart/POS,210306,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Stein,2
+88271,1292,Hart/POS,210306,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Oliver,1
+88271,1292,Hart/POS,210306,1000,-0.7,Live Phone,53,2024-09-17,2024-09-13,National,Terry,0
+88631,1515,Data for Progress,212252,6152,-1.2,Online Panel,54,2024-09-17,2024-09-12,National,Harris,50
+88631,1515,Data for Progress,212252,6152,-1.2,Online Panel,54,2024-09-17,2024-09-12,National,Trump,45
+88223,1597,Beacon/Shaw,209979,1102,-1.1,Live Phone/Text-to-Web,53,2024-09-16,2024-09-13,National,Harris,50
+88223,1597,Beacon/Shaw,209979,1102,-1.1,Live Phone/Text-to-Web,53,2024-09-16,2024-09-13,National,Trump,48
+88223,1597,Beacon/Shaw,209980,876,-1.1,Live Phone/Text-to-Web,53,2024-09-16,2024-09-13,National,Harris,50
+88223,1597,Beacon/Shaw,209980,876,-1.1,Live Phone/Text-to-Web,53,2024-09-16,2024-09-13,National,Trump,48
+88228,1424,Siena/NYT,210083,2437,-1.5,Live Phone,55,2024-09-16,2024-09-11,National,Harris,47
+88228,1424,Siena/NYT,210083,2437,-1.5,Live Phone,55,2024-09-16,2024-09-11,National,Trump,47
+88228,1424,Siena/NYT,210084,2437,-1.5,Live Phone,55,2024-09-16,2024-09-11,National,Harris,46
+88228,1424,Siena/NYT,210084,2437,-1.5,Live Phone,55,2024-09-16,2024-09-11,National,Trump,47
+88228,1424,Siena/NYT,210085,2437,-1.5,Live Phone,55,2024-09-16,2024-09-11,National,Harris,45
+88228,1424,Siena/NYT,210085,2437,-1.5,Live Phone,55,2024-09-16,2024-09-11,National,Trump,46
+88228,1424,Siena/NYT,210085,2437,-1.5,Live Phone,55,2024-09-16,2024-09-11,National,Stein,2
+88228,1424,Siena/NYT,210085,2437,-1.5,Live Phone,55,2024-09-16,2024-09-11,National,Oliver,2
+88228,1424,Siena/NYT,210086,2437,-1.5,Live Phone,55,2024-09-16,2024-09-11,National,Harris,46
+88228,1424,Siena/NYT,210086,2437,-1.5,Live Phone,55,2024-09-16,2024-09-11,National,Trump,46
+88228,1424,Siena/NYT,210086,2437,-1.5,Live Phone,55,2024-09-16,2024-09-11,National,Stein,2
+88228,1424,Siena/NYT,210086,2437,-1.5,Live Phone,55,2024-09-16,2024-09-11,National,Oliver,2
+88168,1515,Data for Progress,209350,1283,-1.2,Online Panel,54,2024-09-13,2024-09-12,National,Harris,50
+88168,1515,Data for Progress,209350,1283,-1.2,Online Panel,54,2024-09-13,2024-09-12,National,Trump,46
+88170,568,YouGov,209373,1177,-1.1,Online Panel,55,2024-09-13,2024-09-11,National,Harris,50
+88170,568,YouGov,209373,1177,-1.1,Online Panel,55,2024-09-13,2024-09-11,National,Trump,45
+88170,568,YouGov,209374,1090,-1.1,Online Panel,55,2024-09-13,2024-09-11,National,Harris,50
+88170,568,YouGov,209374,1090,-1.1,Online Panel,55,2024-09-13,2024-09-11,National,Trump,46
+88170,568,YouGov,209429,1175,-1.1,Online Panel,55,2024-09-13,2024-09-11,National,Harris,48
+88170,568,YouGov,209429,1175,-1.1,Online Panel,55,2024-09-13,2024-09-11,National,Trump,44
+88170,568,YouGov,209429,1175,-1.1,Online Panel,55,2024-09-13,2024-09-11,National,West,1
+88170,568,YouGov,209429,1175,-1.1,Online Panel,55,2024-09-13,2024-09-11,National,Stein,1
+88170,568,YouGov,209429,1175,-1.1,Online Panel,55,2024-09-13,2024-09-11,National,Oliver,1
+88170,568,YouGov,209430,1090,-1.1,Online Panel,55,2024-09-13,2024-09-11,National,Harris,49
+88170,568,YouGov,209430,1090,-1.1,Online Panel,55,2024-09-13,2024-09-11,National,Trump,45
+88170,568,YouGov,209430,1090,-1.1,Online Panel,55,2024-09-13,2024-09-11,National,West,1
+88170,568,YouGov,209430,1090,-1.1,Online Panel,55,2024-09-13,2024-09-11,National,Stein,1
+88170,568,YouGov,209430,1090,-1.1,Online Panel,55,2024-09-13,2024-09-11,National,Oliver,1
+88177,241,Ipsos,209515,3276,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Harris,51
+88177,241,Ipsos,209515,3276,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Trump,46
+88177,241,Ipsos,209516,2772,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Harris,51
+88177,241,Ipsos,209516,2772,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Trump,47
+88177,241,Ipsos,209517,2196,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Harris,52
+88177,241,Ipsos,209517,2196,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Trump,46
+88177,241,Ipsos,209518,3276,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Harris,51
+88177,241,Ipsos,209518,3276,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Trump,45
+88177,241,Ipsos,209518,3276,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,West,1
+88177,241,Ipsos,209518,3276,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Stein,1
+88177,241,Ipsos,209518,3276,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Oliver,1
+88177,241,Ipsos,209519,2772,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Harris,50
+88177,241,Ipsos,209519,2772,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Trump,46
+88177,241,Ipsos,209519,2772,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,West,1
+88177,241,Ipsos,209519,2772,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Stein,1
+88177,241,Ipsos,209519,2772,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Oliver,1
+88177,241,Ipsos,209520,2196,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Harris,51
+88177,241,Ipsos,209520,2196,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Trump,46
+88177,241,Ipsos,209520,2196,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,West,1
+88177,241,Ipsos,209520,2196,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Stein,1
+88177,241,Ipsos,209520,2196,-0.9,Probability Panel,55,2024-09-13,2024-09-11,National,Oliver,0
+88144,241,Ipsos,209239,1405,-0.9,Probability Panel,55,2024-09-12,2024-09-11,National,Harris,47
+88144,241,Ipsos,209239,1405,-0.9,Probability Panel,55,2024-09-12,2024-09-11,National,Trump,42
+88144,241,Ipsos,209263,1690,-0.9,Probability Panel,55,2024-09-12,2024-09-11,National,Harris,43
+88144,241,Ipsos,209263,1690,-0.9,Probability Panel,55,2024-09-12,2024-09-11,National,Trump,39
+88174,1528,AtlasIntel,209426,1775,-0.8,NA,55,2024-09-12,2024-09-11,National,Harris,48
+88174,1528,AtlasIntel,209426,1775,-0.8,NA,55,2024-09-12,2024-09-11,National,Trump,50.9
+88174,1528,AtlasIntel,209427,1775,-0.8,NA,55,2024-09-12,2024-09-11,National,Harris,47.3
+88174,1528,AtlasIntel,209427,1775,-0.8,NA,55,2024-09-12,2024-09-11,National,Trump,50.9
+88174,1528,AtlasIntel,209427,1775,-0.8,NA,55,2024-09-12,2024-09-11,National,Stein,0.4
+88174,1528,AtlasIntel,209427,1775,-0.8,NA,55,2024-09-12,2024-09-11,National,West,0.2
+88174,1528,AtlasIntel,209427,1775,-0.8,NA,55,2024-09-12,2024-09-11,National,Oliver,0.1
+88130,568,YouGov,209155,1464,-1.1,Online Panel,58,2024-09-10,2024-09-08,National,Harris,45
+88130,568,YouGov,209155,1464,-1.1,Online Panel,58,2024-09-10,2024-09-08,National,Trump,45
+88130,568,YouGov,209155,1464,-1.1,Online Panel,58,2024-09-10,2024-09-08,National,Stein,1
+88130,568,YouGov,209155,1464,-1.1,Online Panel,58,2024-09-10,2024-09-08,National,West,1
+88073,1424,Siena/NYT,207968,1695,-1.5,Live Phone,63,2024-09-06,2024-09-03,National,Harris,47
+88073,1424,Siena/NYT,207968,1695,-1.5,Live Phone,63,2024-09-06,2024-09-03,National,Trump,48
+88073,1424,Siena/NYT,207969,1695,-1.5,Live Phone,63,2024-09-06,2024-09-03,National,Harris,45
+88073,1424,Siena/NYT,207969,1695,-1.5,Live Phone,63,2024-09-06,2024-09-03,National,Trump,47
+88073,1424,Siena/NYT,207969,1695,-1.5,Live Phone,63,2024-09-06,2024-09-03,National,Stein,1
+88073,1424,Siena/NYT,207969,1695,-1.5,Live Phone,63,2024-09-06,2024-09-03,National,Oliver,2
+88073,1424,Siena/NYT,207970,1695,-1.5,Live Phone,63,2024-09-06,2024-09-03,National,Harris,46
+88073,1424,Siena/NYT,207970,1695,-1.5,Live Phone,63,2024-09-06,2024-09-03,National,Trump,48
+88073,1424,Siena/NYT,207971,1695,-1.5,Live Phone,63,2024-09-06,2024-09-03,National,Harris,44
+88073,1424,Siena/NYT,207971,1695,-1.5,Live Phone,63,2024-09-06,2024-09-03,National,Trump,46
+88073,1424,Siena/NYT,207971,1695,-1.5,Live Phone,63,2024-09-06,2024-09-03,National,Stein,2
+88073,1424,Siena/NYT,207971,1695,-1.5,Live Phone,63,2024-09-06,2024-09-03,National,Oliver,2
+88103,1205,Marist,208346,1413,-0.9,Live Phone/Online Panel/Text,63,2024-09-05,2024-09-03,National,Harris,49
+88103,1205,Marist,208346,1413,-0.9,Live Phone/Online Panel/Text,63,2024-09-05,2024-09-03,National,Trump,48
+88035,1102,Emerson,207867,1000,-1.1,IVR/Online Panel/Text-to-Web,63,2024-09-04,2024-09-03,National,Harris,51.3
+88035,1102,Emerson,207867,1000,-1.1,IVR/Online Panel/Text-to-Web,63,2024-09-04,2024-09-03,National,Trump,47.6
+88123,800,Kaiser Family Foundation,208945,1084,-0.3,Live Phone/Probability Panel,71,2024-09-04,2024-08-26,National,Harris,48
+88123,800,Kaiser Family Foundation,208945,1084,-0.3,Live Phone/Probability Panel,71,2024-09-04,2024-08-26,National,Trump,47
+88021,568,YouGov,207698,1389,-1.1,Online Panel,65,2024-09-03,2024-09-01,National,Harris,47
+88021,568,YouGov,207698,1389,-1.1,Online Panel,65,2024-09-03,2024-09-01,National,Trump,45
+88021,568,YouGov,207698,1389,-1.1,Online Panel,65,2024-09-03,2024-09-01,National,Stein,1
+88021,568,YouGov,207698,1389,-1.1,Online Panel,65,2024-09-03,2024-09-01,National,West,0
+88079,370,Pew,208240,8044,-0.4,Probability Panel,71,2024-09-02,2024-08-26,National,Harris,49
+88079,370,Pew,208240,8044,-0.4,Probability Panel,71,2024-09-02,2024-08-26,National,Trump,49
+87945,458,Suffolk,207330,1000,-1,Live Phone,72,2024-08-28,2024-08-25,National,Harris,47.6
+87945,458,Suffolk,207330,1000,-1,Live Phone,72,2024-08-28,2024-08-25,National,Trump,43.3
+87945,458,Suffolk,207330,1000,-1,Live Phone,72,2024-08-28,2024-08-25,National,West,1.5
+87945,458,Suffolk,207330,1000,-1,Live Phone,72,2024-08-28,2024-08-25,National,Stein,1.2
+87945,458,Suffolk,207330,1000,-1,Live Phone,72,2024-08-28,2024-08-25,National,Oliver,0.7
+87946,241,Ipsos,207331,3562,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,Harris,44
+87946,241,Ipsos,207331,3562,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,Trump,40
+87946,241,Ipsos,207331,3562,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,Kennedy,6
+87946,241,Ipsos,207331,3562,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,Oliver,1
+87946,241,Ipsos,207331,3562,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,Stein,1
+87946,241,Ipsos,207331,3562,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,West,0
+87946,241,Ipsos,207532,4253,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,Harris,41
+87946,241,Ipsos,207532,4253,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,Trump,38
+87946,241,Ipsos,207533,3562,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,Harris,45
+87946,241,Ipsos,207533,3562,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,Trump,41
+87946,241,Ipsos,207534,4253,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,Harris,40
+87946,241,Ipsos,207534,4253,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,Trump,36
+87946,241,Ipsos,207534,4253,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,Oliver,1
+87946,241,Ipsos,207534,4253,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,Stein,1
+87946,241,Ipsos,207534,4253,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,Kennedy,6
+87946,241,Ipsos,207534,4253,-0.9,Probability Panel,76,2024-08-28,2024-08-21,National,West,1
+87920,568,YouGov,207186,1368,-1.1,Online Panel,72,2024-08-27,2024-08-25,National,Harris,47
+87920,568,YouGov,207186,1368,-1.1,Online Panel,72,2024-08-27,2024-08-25,National,Trump,45
+87920,568,YouGov,207186,1368,-1.1,Online Panel,72,2024-08-27,2024-08-25,National,Stein,1
+87920,568,YouGov,207186,1368,-1.1,Online Panel,72,2024-08-27,2024-08-25,National,West,0
+87949,396,Quinnipiac,207360,1611,-0.5,Live Phone,74,2024-08-27,2024-08-23,National,Harris,49
+87949,396,Quinnipiac,207360,1611,-0.5,Live Phone,74,2024-08-27,2024-08-23,National,Trump,47
+87949,396,Quinnipiac,207360,1611,-0.5,Live Phone,74,2024-08-27,2024-08-23,National,Stein,1
+87949,396,Quinnipiac,207360,1611,-0.5,Live Phone,74,2024-08-27,2024-08-23,National,Oliver,1
+87949,396,Quinnipiac,207361,1611,-0.5,Live Phone,74,2024-08-27,2024-08-23,National,Harris,49
+87949,396,Quinnipiac,207361,1611,-0.5,Live Phone,74,2024-08-27,2024-08-23,National,Trump,48
+87999,241,Ipsos,207598,2496,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Harris,50
+87999,241,Ipsos,207598,2496,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Trump,46
+87999,241,Ipsos,207599,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Harris,50
+87999,241,Ipsos,207599,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Trump,46
+87999,241,Ipsos,207600,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Harris,52
+87999,241,Ipsos,207600,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Trump,46
+87999,241,Ipsos,207601,2496,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Harris,49
+87999,241,Ipsos,207601,2496,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Trump,45
+87999,241,Ipsos,207601,2496,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,West,2
+87999,241,Ipsos,207601,2496,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Stein,1
+87999,241,Ipsos,207601,2496,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Oliver,1
+87999,241,Ipsos,207602,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Harris,50
+87999,241,Ipsos,207602,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Trump,45
+87999,241,Ipsos,207602,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,West,1
+87999,241,Ipsos,207602,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Stein,1
+87999,241,Ipsos,207602,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Oliver,1
+87918,568,YouGov,207080,1194,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Harris,46
+87918,568,YouGov,207080,1194,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Trump,45
+87918,568,YouGov,207080,1194,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,West,1
+87918,568,YouGov,207080,1194,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Stein,1
+87918,568,YouGov,207080,1194,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Oliver,1
+87918,568,YouGov,207081,1197,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Harris,47
+87918,568,YouGov,207081,1197,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Trump,46
+87918,568,YouGov,207082,1788,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Harris,39
+87918,568,YouGov,207082,1788,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Trump,36
+87918,568,YouGov,207082,1788,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Kennedy,7
+87918,568,YouGov,207082,1788,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,West,1
+87918,568,YouGov,207082,1788,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Stein,1
+87918,568,YouGov,207082,1788,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Oliver,1
+87918,568,YouGov,207083,1200,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Harris,44
+87918,568,YouGov,207083,1200,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Trump,42
+87918,568,YouGov,207083,1200,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Kennedy,6
+87918,568,YouGov,207083,1200,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,West,0
+87918,568,YouGov,207083,1200,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Stein,1
+87918,568,YouGov,207083,1200,-1.1,Online Panel,75,2024-08-26,2024-08-22,National,Oliver,1
+87899,1302,Echelon Insights,206912,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,Harris,48
+87899,1302,Echelon Insights,206912,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,Trump,49
+87899,1302,Echelon Insights,206913,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,Harris,47
+87899,1302,Echelon Insights,206913,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,Trump,45
+87899,1302,Echelon Insights,206913,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,Kennedy,4
+87899,1302,Echelon Insights,206913,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,Stein,1
+87899,1302,Echelon Insights,206913,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,Oliver,1
+87899,1302,Echelon Insights,206913,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,West,0
+87899,1302,Echelon Insights,206914,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,Harris,48
+87899,1302,Echelon Insights,206914,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,Trump,48
+87899,1302,Echelon Insights,206914,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,Stein,1
+87899,1302,Echelon Insights,206914,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,West,1
+87899,1302,Echelon Insights,206914,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,Oliver,1
+87899,1302,Echelon Insights,206915,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,Biden,46
+87899,1302,Echelon Insights,206915,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,Trump,50
+88324,568,YouGov,210533,1835,-1.1,Online Panel,82,2024-08-22,2024-08-15,National,Harris,44
+88324,568,YouGov,210533,1835,-1.1,Online Panel,82,2024-08-22,2024-08-15,National,Trump,40
+87853,568,YouGov,206527,1371,-1.1,Online Panel,80,2024-08-20,2024-08-17,National,Harris,46
+87853,568,YouGov,206527,1371,-1.1,Online Panel,80,2024-08-20,2024-08-17,National,Trump,43
+87853,568,YouGov,206527,1371,-1.1,Online Panel,80,2024-08-20,2024-08-17,National,Kennedy,3
+87853,568,YouGov,206527,1371,-1.1,Online Panel,80,2024-08-20,2024-08-17,National,West,0
+87853,568,YouGov,206527,1371,-1.1,Online Panel,80,2024-08-20,2024-08-17,National,Stein,0
+87886,149,Fairleigh Dickinson,206737,801,-0.6,Live Phone/Text-to-Web,80,2024-08-20,2024-08-17,National,Harris,50
+87886,149,Fairleigh Dickinson,206737,801,-0.6,Live Phone/Text-to-Web,80,2024-08-20,2024-08-17,National,Trump,43
+87810,568,YouGov,206219,3253,-1.1,Online Panel,83,2024-08-16,2024-08-14,National,Harris,51
+87810,568,YouGov,206219,3253,-1.1,Online Panel,83,2024-08-16,2024-08-14,National,Trump,48
+87810,568,YouGov,206220,3253,-1.1,Online Panel,83,2024-08-16,2024-08-14,National,Harris,49
+87810,568,YouGov,206220,3253,-1.1,Online Panel,83,2024-08-16,2024-08-14,National,Trump,47
+87810,568,YouGov,206220,3253,-1.1,Online Panel,83,2024-08-16,2024-08-14,National,Kennedy,2
+87810,568,YouGov,206220,3253,-1.1,Online Panel,83,2024-08-16,2024-08-14,National,West,0
+87810,568,YouGov,206220,3253,-1.1,Online Panel,83,2024-08-16,2024-08-14,National,Stein,1
+87810,568,YouGov,206220,3253,-1.1,Online Panel,83,2024-08-16,2024-08-14,National,Oliver,0
+87871,1515,Data for Progress,206684,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Harris,49
+87871,1515,Data for Progress,206684,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Trump,46
+87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Harris,47
+87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Trump,43
+87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Kennedy,5
+87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,West,1
+87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Stein,0
+87781,1102,Emerson,206012,1000,-1.1,IVR/Online Panel/Text-to-Web,85,2024-08-14,2024-08-12,National,Harris,52.3
+87781,1102,Emerson,206012,1000,-1.1,IVR/Online Panel/Text-to-Web,85,2024-08-14,2024-08-12,National,Trump,47.7
+87781,1102,Emerson,206013,1000,-1.1,IVR/Online Panel/Text-to-Web,85,2024-08-14,2024-08-12,National,Harris,48.3
+87781,1102,Emerson,206013,1000,-1.1,IVR/Online Panel/Text-to-Web,85,2024-08-14,2024-08-12,National,Trump,43.5
+87781,1102,Emerson,206013,1000,-1.1,IVR/Online Panel/Text-to-Web,85,2024-08-14,2024-08-12,National,Kennedy,4
+87781,1102,Emerson,206013,1000,-1.1,IVR/Online Panel/Text-to-Web,85,2024-08-14,2024-08-12,National,West,0.3
+87781,1102,Emerson,206013,1000,-1.1,IVR/Online Panel/Text-to-Web,85,2024-08-14,2024-08-12,National,Stein,0.5
+87781,1102,Emerson,206013,1000,-1.1,IVR/Online Panel/Text-to-Web,85,2024-08-14,2024-08-12,National,Oliver,0.2
+87760,568,YouGov,205810,1407,-1.1,Online Panel,86,2024-08-13,2024-08-11,National,Harris,46
+87760,568,YouGov,205810,1407,-1.1,Online Panel,86,2024-08-13,2024-08-11,National,Trump,44
+87760,568,YouGov,205810,1407,-1.1,Online Panel,86,2024-08-13,2024-08-11,National,Kennedy,3
+87760,568,YouGov,205810,1407,-1.1,Online Panel,86,2024-08-13,2024-08-11,National,West,0
+87760,568,YouGov,205810,1407,-1.1,Online Panel,86,2024-08-13,2024-08-11,National,Stein,1
+87794,241,Ipsos,206221,2336,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,Harris,50
+87794,241,Ipsos,206221,2336,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,Trump,45
+87794,241,Ipsos,206222,1975,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,Harris,49
+87794,241,Ipsos,206222,1975,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,Trump,45
+87794,241,Ipsos,206223,1505,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,Harris,51
+87794,241,Ipsos,206223,1505,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,Trump,45
+87794,241,Ipsos,206224,2336,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,Harris,47
+87794,241,Ipsos,206224,2336,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,Trump,44
+87794,241,Ipsos,206224,2336,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,Kennedy,5
+87794,241,Ipsos,206224,2336,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,West,1
+87794,241,Ipsos,206224,2336,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,Stein,1
+87794,241,Ipsos,206254,1975,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,Harris,47
+87794,241,Ipsos,206254,1975,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,Trump,44
+87794,241,Ipsos,206254,1975,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,Kennedy,5
+87794,241,Ipsos,206254,1975,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,West,1
+87794,241,Ipsos,206254,1975,-0.9,Probability Panel,88,2024-08-13,2024-08-09,National,Stein,1
+87780,1597,Beacon/Shaw,205944,1105,-1.1,Live Phone,88,2024-08-12,2024-08-09,National,Harris,45
+87780,1597,Beacon/Shaw,205944,1105,-1.1,Live Phone,88,2024-08-12,2024-08-09,National,Trump,45
+87780,1597,Beacon/Shaw,205944,1105,-1.1,Live Phone,88,2024-08-12,2024-08-09,National,Kennedy,6
+87780,1597,Beacon/Shaw,205944,1105,-1.1,Live Phone,88,2024-08-12,2024-08-09,National,West,1
+87780,1597,Beacon/Shaw,205944,1105,-1.1,Live Phone,88,2024-08-12,2024-08-09,National,Stein,1
+87780,1597,Beacon/Shaw,205944,1105,-1.1,Live Phone,88,2024-08-12,2024-08-09,National,Oliver,1
+87780,1597,Beacon/Shaw,205945,1105,-1.1,Live Phone,88,2024-08-12,2024-08-09,National,Harris,49
+87780,1597,Beacon/Shaw,205945,1105,-1.1,Live Phone,88,2024-08-12,2024-08-09,National,Trump,50
+87778,370,Pew,205903,7569,-0.4,Probability Panel,92,2024-08-11,2024-08-05,National,Harris,46
+87778,370,Pew,205903,7569,-0.4,Probability Panel,92,2024-08-11,2024-08-05,National,Trump,45
+87778,370,Pew,205903,7569,-0.4,Probability Panel,92,2024-08-11,2024-08-05,National,Kennedy,7
+87709,241,Ipsos,205592,1342,-0.9,Probability Panel,95,2024-08-07,2024-08-02,National,Harris,42
+87709,241,Ipsos,205592,1342,-0.9,Probability Panel,95,2024-08-07,2024-08-02,National,Trump,37
+87709,241,Ipsos,205592,1342,-0.9,Probability Panel,95,2024-08-07,2024-08-02,National,Kennedy,4
+87709,241,Ipsos,205593,1342,-0.9,Probability Panel,95,2024-08-07,2024-08-02,National,Harris,49
+87709,241,Ipsos,205593,1342,-0.9,Probability Panel,95,2024-08-07,2024-08-02,National,Trump,47
+87696,568,YouGov,205407,1413,-1.1,Online Panel,93,2024-08-06,2024-08-04,National,Harris,45
+87696,568,YouGov,205407,1413,-1.1,Online Panel,93,2024-08-06,2024-08-04,National,Trump,43
+87696,568,YouGov,205407,1413,-1.1,Online Panel,93,2024-08-06,2024-08-04,National,Kennedy,2
+87696,568,YouGov,205407,1413,-1.1,Online Panel,93,2024-08-06,2024-08-04,National,West,0
+87696,568,YouGov,205407,1413,-1.1,Online Panel,93,2024-08-06,2024-08-04,National,Stein,1
+87677,460,SurveyUSA,205228,1510,-1.3,Online Panel,95,2024-08-05,2024-08-02,National,Harris,48
+87677,460,SurveyUSA,205228,1510,-1.3,Online Panel,95,2024-08-05,2024-08-02,National,Trump,45
+87679,1205,Marist,205296,1513,-0.9,Live Phone/Online Panel/Text-to-Web,96,2024-08-04,2024-08-01,National,Harris,51
+87679,1205,Marist,205296,1513,-0.9,Live Phone/Online Panel/Text-to-Web,96,2024-08-04,2024-08-01,National,Trump,48
+87679,1205,Marist,205297,1513,-0.9,Live Phone/Online Panel/Text-to-Web,96,2024-08-04,2024-08-01,National,Harris,48
+87679,1205,Marist,205297,1513,-0.9,Live Phone/Online Panel/Text-to-Web,96,2024-08-04,2024-08-01,National,Trump,45
+87679,1205,Marist,205297,1513,-0.9,Live Phone/Online Panel/Text-to-Web,96,2024-08-04,2024-08-01,National,Kennedy,5
+87679,1205,Marist,205297,1513,-0.9,Live Phone/Online Panel/Text-to-Web,96,2024-08-04,2024-08-01,National,West,0
+87679,1205,Marist,205297,1513,-0.9,Live Phone/Online Panel/Text-to-Web,96,2024-08-04,2024-08-01,National,Stein,1
+87679,1205,Marist,205297,1513,-0.9,Live Phone/Online Panel/Text-to-Web,96,2024-08-04,2024-08-01,National,Oliver,0
+87701,1292,Hart/POS,205460,1001,-0.7,Live Phone,97,2024-08-04,2024-07-31,National,Harris,46
+87701,1292,Hart/POS,205460,1001,-0.7,Live Phone,97,2024-08-04,2024-07-31,National,Trump,48
+87663,568,YouGov,205200,3092,-1.1,Online Panel,98,2024-08-02,2024-07-30,National,Harris,50
+87663,568,YouGov,205200,3092,-1.1,Online Panel,98,2024-08-02,2024-07-30,National,Trump,49
+87663,568,YouGov,205201,3092,-1.1,Online Panel,98,2024-08-02,2024-07-30,National,Harris,49
+87663,568,YouGov,205201,3092,-1.1,Online Panel,98,2024-08-02,2024-07-30,National,Trump,47
+87663,568,YouGov,205201,3092,-1.1,Online Panel,98,2024-08-02,2024-07-30,National,Kennedy,2
+87663,568,YouGov,205201,3092,-1.1,Online Panel,98,2024-08-02,2024-07-30,National,West,0
+87663,568,YouGov,205201,3092,-1.1,Online Panel,98,2024-08-02,2024-07-30,National,Stein,0
+87663,568,YouGov,205201,3092,-1.1,Online Panel,98,2024-08-02,2024-07-30,National,Oliver,0
+87699,1075,Marquette Law School,205433,879,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,Harris,52
+87699,1075,Marquette Law School,205433,879,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,Trump,48
+87699,1075,Marquette Law School,205434,683,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,Harris,53
+87699,1075,Marquette Law School,205434,683,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,Trump,47
+87699,1075,Marquette Law School,205435,879,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,Harris,47
+87699,1075,Marquette Law School,205435,879,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,Trump,41
+87699,1075,Marquette Law School,205435,879,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,Kennedy,9
+87699,1075,Marquette Law School,205435,879,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,Oliver,1
+87699,1075,Marquette Law School,205435,879,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,Stein,2
+87699,1075,Marquette Law School,205435,879,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,West,1
+87699,1075,Marquette Law School,205436,683,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,Harris,50
+87699,1075,Marquette Law School,205436,683,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,Trump,42
+87699,1075,Marquette Law School,205436,683,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,Kennedy,6
+87699,1075,Marquette Law School,205436,683,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,Oliver,1
+87699,1075,Marquette Law School,205436,683,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,Stein,1
+87699,1075,Marquette Law School,205436,683,-1.1,Probability Panel,104,2024-08-01,2024-07-24,National,West,0
+87628,568,YouGov,204845,1434,-1.1,Online Panel,101,2024-07-30,2024-07-27,National,Harris,46
+87628,568,YouGov,204845,1434,-1.1,Online Panel,101,2024-07-30,2024-07-27,National,Trump,44
+87628,568,YouGov,204845,1434,-1.1,Online Panel,101,2024-07-30,2024-07-27,National,Kennedy,3
+87628,568,YouGov,204845,1434,-1.1,Online Panel,101,2024-07-30,2024-07-27,National,West,0
+87628,568,YouGov,204845,1434,-1.1,Online Panel,101,2024-07-30,2024-07-27,National,Stein,0
+87630,241,Ipsos,204846,876,-0.9,Probability Panel,102,2024-07-28,2024-07-26,National,Harris,43
+87630,241,Ipsos,204846,876,-0.9,Probability Panel,102,2024-07-28,2024-07-26,National,Trump,42
+87614,241,Ipsos,204763,1238,-0.9,Probability Panel,104,2024-07-25,2024-07-24,National,Harris,38
+87614,241,Ipsos,204763,1238,-0.9,Probability Panel,104,2024-07-25,2024-07-24,National,Trump,38
+87614,241,Ipsos,204763,1238,-0.9,Probability Panel,104,2024-07-25,2024-07-24,National,Kennedy,4
+87590,1528,AtlasIntel,204552,1980,-0.8,Online Ad,105,2024-07-25,2024-07-23,National,Harris,48
+87590,1528,AtlasIntel,204552,1980,-0.8,Online Ad,105,2024-07-25,2024-07-23,National,Trump,50.1
+87590,1528,AtlasIntel,204553,1980,-0.8,Online Ad,105,2024-07-25,2024-07-23,National,Harris,46.1
+87590,1528,AtlasIntel,204553,1980,-0.8,Online Ad,105,2024-07-25,2024-07-23,National,Trump,47.7
+87590,1528,AtlasIntel,204553,1980,-0.8,Online Ad,105,2024-07-25,2024-07-23,National,Kennedy,4.5
+87590,1528,AtlasIntel,204553,1980,-0.8,Online Ad,105,2024-07-25,2024-07-23,National,West,0.2
+87557,1424,Siena/NYT,204203,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Harris,46
+87557,1424,Siena/NYT,204203,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Trump,48
+87557,1424,Siena/NYT,204204,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Harris,47
+87557,1424,Siena/NYT,204204,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Trump,48
+87557,1424,Siena/NYT,204205,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Harris,42
+87557,1424,Siena/NYT,204205,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Trump,42
+87557,1424,Siena/NYT,204205,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Kennedy,6
+87557,1424,Siena/NYT,204205,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Stein,0
+87557,1424,Siena/NYT,204205,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,West,0
+87557,1424,Siena/NYT,204205,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Oliver,0
+87557,1424,Siena/NYT,204206,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Harris,44
+87557,1424,Siena/NYT,204206,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Trump,43
+87557,1424,Siena/NYT,204206,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Kennedy,5
+87557,1424,Siena/NYT,204206,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Stein,0
+87557,1424,Siena/NYT,204206,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,West,0
+87557,1424,Siena/NYT,204206,1142,-1.5,Live Phone,106,2024-07-24,2024-07-22,National,Oliver,0
+87530,241,Ipsos,203948,1241,-0.9,Probability Panel,106,2024-07-23,2024-07-22,National,Harris,39
+87530,241,Ipsos,203948,1241,-0.9,Probability Panel,106,2024-07-23,2024-07-22,National,Trump,39
+87530,241,Ipsos,203949,1018,-0.9,Probability Panel,106,2024-07-23,2024-07-22,National,Harris,44
+87530,241,Ipsos,203949,1018,-0.9,Probability Panel,106,2024-07-23,2024-07-22,National,Trump,42
+87530,241,Ipsos,203950,1241,-0.9,Probability Panel,106,2024-07-23,2024-07-22,National,Harris,37
+87530,241,Ipsos,203950,1241,-0.9,Probability Panel,106,2024-07-23,2024-07-22,National,Trump,34
+87530,241,Ipsos,203950,1241,-0.9,Probability Panel,106,2024-07-23,2024-07-22,National,Kennedy,10
+87530,241,Ipsos,203951,1018,-0.9,Probability Panel,106,2024-07-23,2024-07-22,National,Harris,42
+87530,241,Ipsos,203951,1018,-0.9,Probability Panel,106,2024-07-23,2024-07-22,National,Trump,38
+87530,241,Ipsos,203951,1018,-0.9,Probability Panel,106,2024-07-23,2024-07-22,National,Kennedy,8
+87555,568,YouGov,204188,1155,-1.1,Online Panel,106,2024-07-23,2024-07-22,National,Harris,44
+87555,568,YouGov,204188,1155,-1.1,Online Panel,106,2024-07-23,2024-07-22,National,Trump,46
+87555,568,YouGov,204188,1155,-1.1,Online Panel,106,2024-07-23,2024-07-22,National,Kennedy,4
+87555,568,YouGov,204188,1155,-1.1,Online Panel,106,2024-07-23,2024-07-22,National,Stein,1
+87555,568,YouGov,204188,1155,-1.1,Online Panel,106,2024-07-23,2024-07-22,National,West,0
+87536,568,YouGov,204062,1435,-1.1,Online Panel,107,2024-07-23,2024-07-21,National,Harris,41
+87536,568,YouGov,204062,1435,-1.1,Online Panel,107,2024-07-23,2024-07-21,National,Trump,44
+87536,568,YouGov,204062,1435,-1.1,Online Panel,107,2024-07-23,2024-07-21,National,Kennedy,5
+87536,568,YouGov,204062,1435,-1.1,Online Panel,107,2024-07-23,2024-07-21,National,West,1
+87536,568,YouGov,204062,1435,-1.1,Online Panel,107,2024-07-23,2024-07-21,National,Stein,1
+87531,1205,Marist,203979,1117,-0.9,Online Panel,106,2024-07-22,2024-07-22,National,Harris,45
+87531,1205,Marist,203979,1117,-0.9,Online Panel,106,2024-07-22,2024-07-22,National,Trump,46
+87531,1205,Marist,203980,1117,-0.9,Online Panel,106,2024-07-22,2024-07-22,National,Harris,42
+87531,1205,Marist,203980,1117,-0.9,Online Panel,106,2024-07-22,2024-07-22,National,Trump,42
+87531,1205,Marist,203980,1117,-0.9,Online Panel,106,2024-07-22,2024-07-22,National,Kennedy,7
+87531,1205,Marist,203980,1117,-0.9,Online Panel,106,2024-07-22,2024-07-22,National,West,1
+87531,1205,Marist,203980,1117,-0.9,Online Panel,106,2024-07-22,2024-07-22,National,Stein,1
+87531,1205,Marist,203980,1117,-0.9,Online Panel,106,2024-07-22,2024-07-22,National,Oliver,0

@@ -23,6 +23,10 @@ cleaned_data <- raw_data |>
     numeric_grade >= 2.5
   )
 
+# Keep data from one pollster for Appendix
+morningconsult_data <- cleaned_data %>%
+  filter(pollster == "Morning Consult")
+
 cleaned_data <- cleaned_data |>
   mutate(
     state = if_else(is.na(state), "National", state), # Hacky fix for national polls - come back and check
@@ -42,6 +46,11 @@ cleaned_data <- cleaned_data %>%
     end_date, start_date, state, answer, pct
   )
 
+  cleaned_data_national <- cleaned_data |>
+    filter(state == "National")
+  cleaned_data_state <- cleaned_data |>
+    filter(state != "National")
+
 # Delete NA columns
 # cleaned_data <- raw_data |>
 #   select(-sponsor_ids,
@@ -57,13 +66,8 @@ cleaned_data <- cleaned_data %>%
 #     -source, -internal, -partisan, -seat_name,
 #     -ranked_choice_round) |> na.omit()
 
-
-# Keep data from one pollster for Appendix
-# morningconsult_data <- cleaned_data %>%
-#   filter(pollster == "Morning Consult")
-
 #### Save data ####
 write_csv(cleaned_data, "data/02-analysis_data/cleaned_data.csv")
-# write_csv(cleaned_data_national, "data/02-analysis_data/cleaned_data_national.csv")
-# write_csv(cleaned_data_national, "data/02-analysis_data/cleaned_data_state.csv")
-# write_csv(morningconsult_data, "data/02-analysis_data/mc_data.csv")
+write_csv(cleaned_data_national, "data/02-analysis_data/cleaned_data_national.csv")
+write_csv(cleaned_data_state, "data/02-analysis_data/cleaned_data_state.csv")
+write_csv(morningconsult_data, "data/02-analysis_data/mc_data.csv")
