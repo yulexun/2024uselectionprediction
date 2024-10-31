@@ -74,10 +74,10 @@ We then create a new attribute, days_taken_from_election, which represents the t
 cleaned_data = read_csv(here("data/02-analysis_data/cleaned_data.csv"))
 
 cleaned_data |>
-  select(pct, sample_size, pollscore, days_taken_from_election, state, methodology, answer) |>
+  select(pct, sample_size, pollscore, days_taken_from_election, state, methodology, candidate_name) |>
   head(6) |>
   kable(
-    col.names = c("pct", "sample_size", "pollscore", "days_taken_from_election","state", "methodology", "answer"),
+    col.names = c("pct", "sample_size", "pollscore", "days_taken_from_election","state", "methodology", "candidate_name"),
     booktabs = TRUE
     ) 
 ```
@@ -94,7 +94,7 @@ cleaned_data |>
 #| layout-nrow: 2
 #| fig-width: 40
 #| fig-height: 20
-Harris_data = cleaned_data[cleaned_data$answer == "Harris", ]
+Harris_data = cleaned_data[cleaned_data$candidate_name == "Kamala Harris", ]
 Harris_data |>
   group_by(state) |>
   summarise(avg_pct = mean(pct, na.rm = TRUE)) |>
@@ -106,7 +106,7 @@ Harris_data |>
   )
 
 
-Trump_data = cleaned_data[cleaned_data$answer == "Trump", ]
+Trump_data = cleaned_data[cleaned_data$candidate_name == "Donald Trump", ]
 Trump_data |>
   group_by(state) |>
   summarise(avg_pct = mean(pct, na.rm = TRUE)) |>
@@ -206,6 +206,30 @@ In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. Th
 @fig-stanareyouokay-1 is a trace plot. It shows... This suggests...
 
 @fig-stanareyouokay-2 is a Rhat plot. It shows... This suggests...
+
+# Methodology of YouGov
+YouGov's methodology documentations are seperated in two articles. The article by @bailey_how_2024 documents the methodology of the 2024 election projection, while the webpage on @yougov_methodology_nodate documents the general methodology of YouGov's prediction.
+
+## Population, Frame, and Sample
+As @bailey_how_2024 stated, the population covered by YouGov's MRP model is everyone in the national voter file, whether or not they belong to YouGov's panel. The national voter files are digital database built by commercial organizations with public government records of voters, as explained by @desilver_q_2018. Voter files indicates whether asomeone voted in a given election, thus YouGov's population covers all voters in previous US elections. 
+
+YouGov’s sampling frame consists of its online panel members. These members are part of the SAY24 project, a collaboration between Stanford, Arizona State, and Yale Universities, as stated by @bailey_how_2024. YouGov collect information on respondents when they join their panel before they are invited to participate in the survey.
+
+YouGov select the sample from the sampling frame based on their ability to match characteristics of the population of interest. YouGov interviews nearly 100,000 people in the first set of estimates. For the second set of estimates, YouGov didn't just start over with a new sample. They took the initial data from August and September and updated it with responses from more than 20,000 additional registered voters who were re-interviewed in late September and early October.
+
+## Sample Recruitment
+Panelists are recruited through various online channels, including advertisements and partnerships with websites [@yougov_methodology_nodate]. They must provide demographic details upon joining, which helps in selecting representative samples for each survey. When respondents complete a survey, they are awarded points that can be exchanged for money.
+
+## Sampling Approach and Trade-offs
+YouGov uses non-probability sampling due to the compensation, an approach where not every individual has an equal chance of selection [@yougov_methodology_nodate]. This method allows quick and cost-effective data collection. However, as @yougov_methodology_nodate writes the panelists must have an internet connection to participate. YouGov state that there is 95% of us population with internet access, thus the sample may be less representative of certain hard-to-reach populations, such as individuals with very slow internet access or without internet access. 
+
+## Non-response Handling
+YouGov apply statistical weighting to adjust for the differences between the sample and target population. The weight is based on demographic characteristics such as age, gender, race and presidential vote [@yougov_methodology_nodate]. Additionally, quality control measures exclude unreliable responses to improve data accuracy. The respondents are offered a small incentive to decrease the non-response and increase participation.
+
+## Strengths and Weaknesses of the Questionnaire
+YouGov's surveys are conducted online, which is very efficient for the respondents, and responses are weighted to enhance representativeness. The pollster can recruit a large amount of panelists because of the online format. Combining with online tracking technologies, the metadata provided by ther panelists can be verified easily.
+
+As a non-probability sample, it might miss certain demographic groups not covered by the online population. While weighting improves accuracy, it cannot fully substitute the randomization found in probability sampling​. Additionaly, the categories in the surbey is oversimplified with bias. For instance, in the poll result published by YouGov, gender is divided into Male and Female. Race is divided into White, Black, Hispanic and Other. This indicates a lack of representation. 
 
 # FiveThirtyEight Licenses
 [FiveThirtyEight's data sets](https://github.com/fivethirtyeight/data/tree/master/polls) are used and modified by us under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
