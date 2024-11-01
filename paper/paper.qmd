@@ -23,15 +23,18 @@ library(palmerpenguins)
 library(here)
 library(tibble)
 library(knitr)
+library(arrow)
+library(rstanarm)
+library(brms)
 ```
 
 
 # Introduction {#sec-intro}
-Election result forecasting has become an essential tool for analysts in political science and the public to predict the outcome of democratic process, such as the presidential election in the United States. Traditionally, individual polls have been used as a snapshot of voter sentiment, but they only reflect temporary changes in the performance of contestants, instead of a precise estimation of the election result. As discussed by @pasek and @blumenthal, the aggregation of multiple polls, or "poll-of-polls," has become a popular technique to reduce individual survey errors and provide more accurate election forecasts. However, the traditional poll aggregation does not reflect dynamics of an election, especially with real-time changes and the introduction of new data. This creates a gap for a more adaptable model to predict the election result based on both polling data and additional variables, such as historical data and economic indicators.
+Election result forecasting has become an essential tool for analysts in political science and the public to predict the outcome of democratic process, such as the presidential election in the United States. Traditionally, individual polls have been used as a snapshot of voter sentiment, but they only reflect temporary changes in the performance of contestants, instead of a precise estimation of the election result. As discussed by @pasek and @blumenthal, the aggregation of multiple polls, or "poll-of-polls," has become a popular technique to reduce individual survey errors and provide more accurate election forecasts. However, the traditional poll aggregation does not reflect dynamics of an election, especially with real-time changes and the introduction of new data. A more adaptable model is required to predict the election result based on both polling data and additional variables, such as historical data and economic indicators.
 
-This paper fills the gap by building a hybrid election forecasting model following the strategies mentioned by @pasek. As @pasek described in their article, aggregation involves determining which surveys are worth including, as well as selecting, combining and averaging results from multiple polls to reduce individual biases and errors. Prediction modeling adds other data to the model that predicts election outcomes based on current dynamics. Hybrid models like the Bayesian approach incorporates prior beliefs based on historical data or expert knowledge and new evidence like economic updates to dynamically adjust the forecast as the campaign progresses. 
+We build a hybrid election forecasting model following the strategies mentioned by @pasek. As @pasek described in their article, aggregation involves determining which surveys are worth including, as well as selecting, combining and averaging results from multiple polls to reduce individual biases and errors. Prediction modeling adds other data to the model that predicts election outcomes based on current dynamics. Hybrid models like the Bayesian approach incorporates prior beliefs based on historical data or expert knowledge and new evidence like economic updates to dynamically adjust the forecast as the campaign progresses. 
 
-In this paper, we aim to predict the 2024 us election result with the hybrid election forcasting model. We incorporate aggregation by filtering the polls on @fivethirtyeight by numeric grade that indicates pollster’s reliability, prediction that incorporates social and economic indicators including unemployment rates and abortion rates, and hybrid approaches that leverages Bayesian techniques which combines historical data such as the 2016 election data, allowing for a dynamic prediction of the U.S. presidential election. 
+In this paper, we predict the 2024 us election result with the hybrid election forcasting model. We incorporate aggregation by filtering the polls on @fivethirtyeight by numeric grade that indicates pollster’s reliability, prediction that incorporates social and economic indicators including unemployment rates and abortion rates, and hybrid approaches that uses Bayesian techniques which combines historical data such as the 2016 election data, allowing for a dynamic prediction of the U.S. presidential election. 
 
 The estimand for this research paper is the predicted support percentages for Kamala Harris and Donald Trump. The prediction is based on quantifying various polling factors, including sample size, poll scores, and transparency scores, which are used as predictors.
 
@@ -54,6 +57,8 @@ For the data we used in this analysis about the polling result for Kamala Harris
 state(The U.S. state where the poll was conducted or focused) \
 methodology(The method used to conduct the poll)\
 
+## Explore the data
+
 
 
 ## Measurement
@@ -71,7 +76,7 @@ We then create a new attribute, days_taken_from_election, which represents the t
 #| tbl-cap: Sample of cleaned US election data 
 #| echo: false
 #| warning: false
-cleaned_data = read_csv(here("data/02-analysis_data/cleaned_data.csv"))
+cleaned_data = read_parquet(here("data/02-analysis_data/cleaned_data.parquet"))
 
 cleaned_data |>
   select(pct, sample_size, pollscore, days_taken_from_election, state, methodology, candidate_name) |>
@@ -130,6 +135,119 @@ Trump_data |>
 #   )
 ```
 
+
+# Model
+
+The goal of our modelling strategy is twofold. Firstly,...
+
+Here we briefly describe the Bayesian analysis model used to investigate... Background details and diagnostics are included in [Appendix -@sec-model-details].
+
+## Model set-up
+
+Define $y_i$ as the number of seconds that the plane remained aloft. Then $\beta_i$ is the wing width and $\gamma_i$ is the wing length, both measured in millimeters.  
+
+\begin{align} 
+y_i|\mu_i, \sigma &\sim \mbox{Normal}(\mu_i, \sigma) \\
+\mu_i &= \alpha + \beta_i + \gamma_i\\
+\alpha &\sim \mbox{Normal}(0, 2.5) \\
+\beta &\sim \mbox{Normal}(0, 2.5) \\
+\gamma &\sim \mbox{Normal}(0, 2.5) \\
+\sigma &\sim \mbox{Exponential}(1)
+\end{align}
+
+We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
+us
+
+## Basic Model
+```{r}
+just_harris_data = Harris_data |> na.omit()
+model_MLR = lm(pct ~ pollscore + days_taken_from_election + methodology, data = just_harris_data)
+summary(model_MLR)
+just_harris_data <- just_harris_data |> mutate(fitted_value = predict(model_MLR),  num_harris = round((pct / 100) * sample_size, 0))
+
+predictions = predict(model_MLR, just_harris_data)
+
+ggplot(just_harris_data, aes(x = end_date)) +
+  geom_point(aes(y = pct), color = "black") +
+  geom_line(aes(y = fitted_value), color = "blue", linetype = "dotted") +
+  facet_wrap(vars(methodology)) +
+  theme_classic() +
+  labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")
+```
+
+```{r}
+baye_model_data = just_harris_data
+baye_model_data$pct = as.factor(baye_model_data$pct)
+baye_model_data$pollscore = as.factor(baye_model_data$pollscore)
+baye_model_data$days_taken_from_election = as.factor(baye_model_data$days_taken_from_election)
+baye_model_data$methodology = as.factor(baye_model_data$methodology)
+baye_model_data$pct <- as.numeric(baye_model_data$pct)
+# Define the Bayesian model with brms
+
+formula <- pct ~ pollscore + days_taken_from_election + (1 | methodology) + (1 | state)
+
+priors = normal(0, 2.5, autoscale = TRUE)
+
+bayesian_model_1 <- stan_glmer(
+  formula = formula,
+  data = just_harris_data,
+  family = gaussian(),
+  prior = priors,
+  prior_intercept = priors,
+  seed = 123,
+  cores = 4,
+  adapt_delta = 0.95
+)
+pp_check(bayesian_model_1)
+summary(bayesian_model_1)
+
+# Plot random effects
+plot(bayesian_model_1, pars = "(Intercept)", prob = 0.95)
+
+```
+
+
+```{r}
+
+
+# Transform Biden and Trump’s vote shares to fit a beta distribution
+# Biden received 51.3%, Trump received 46.8%, totaling to approximately 98.1% (adjusted here for simplicity)
+total_votes <- 100
+biden_shape1 <- 51.3 / total_votes * 10
+biden_shape2 <- (1 - 51.3 / total_votes) * 10
+trump_shape1 <- 46.8 / total_votes * 10
+trump_shape2 <- (1 - 46.8 / total_votes) * 10
+
+# Set up priors using beta distributions based on 2020 vote shares
+# prior <- c(
+#   set_prior(paste0("beta(", biden_shape1, ", ", biden_shape2, ")"), class = "b", coef = "biden"),
+#   set_prior(paste0("beta(", trump_shape1, ", ", trump_shape2, ")"), class = "b", coef = "trump")
+# )
+
+prior <- c(
+  set_prior(beta(biden_shape1, biden_shape2), class = "b", coef = "biden"),
+  set_prior(beta(trump_shape1, trump_shape2), class = "b", coef = "trump"))
+
+# Define the model formula
+
+formula1 <- pct ~ pollscore + days_taken_from_election + methodology
+
+# Run the Bayesian model
+model <- brm(
+  formula = formula1,
+  data = baye_model_data,
+  family = categorical(),
+  prior = prior,
+  chains = 4,
+  iter = 2000,
+  warmup = 1000,
+  cores =4
+)
+
+# Summarize the model
+summary(model)
+
+```
 
 # Model
 
