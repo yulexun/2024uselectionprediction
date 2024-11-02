@@ -23,95 +23,98 @@ library(modelsummary)
 ```
 
 
-# Introduction {#sec-intro}
-
-
-
-# Data {#sec-data}
-
-## Overview
-
-
-## Model
-
-```{r}
-#| include: false
-#| warning: false
-#| message: false
-
-# ELECTION DATE: 11 Nov 24
-# Day Kamala announced she was running: 21 July 2024
-# will start looking at polling data from August
-
-# data manipulation
-clean_data <- read_csv("../data/02-analysis_data/cleaned_data.csv") %>% 
-  filter(answer %in% c("Harris", "Trump", "Kennedy", "Stein"))
-```
-
-```{r}
-#| label: tbl-multilinearmodel
-#| tbl-cap: "Coefficents for Multilinear Regression Model"
-#| echo: false
-#| warning: false
-#| message: false
-
-multi_lm <- lm(pct ~ transparency_score + pollscore + sample_size + answer + days_taken_from_election, clean_data)
-
-modelsummary(multi_lm)
-```
-
-\begin{table}[htbp]
-\centering
-\caption{Coefficients for Multilinear Regression Model}
-\label{tbl-multilinearmodel}
-\begin{tabular}{lc}
-\hline
-Variable & Coefficient \\
-\hline
-Intercept & 51.371 \\
-Transparency Score & -0.218 \\
-Poll Score & 0.321 \\
-Sample Size & 0.000 \\
-Candidate Name & Varies \\
-Days from Election & Not shown \\
-\hline
-\end{tabular}
-\end{table}
-
-\begin{equation}
-\begin{split}
-\text{candidate\_percentage} = & -0.218 \times \text{transparency\_score} + 0.321 \times \text{pollscore} \\
-& + 0 \times \text{sample\_size} + \text{candidate\_intercept} \times \text{candidate\_name\_vector} \\
-& + 51.371
-\end{split}
-\end{equation}
-
-From @tbl-multilinearmodel, candiate name is the biggest factor in terms of support. The name was added to the model to give a baseline not to show any correlation. After that, poll score and transparency score are the biggest factors. These scores are two baselines of how reliable and trustable the pollsters are. The sample size had a coefficent of zero, meaning it had no affect on the model's output.
-
-The model also has a very high R^2 value in 0.962 Most of this can be attributed to using the canidate name (anwser) as a variable.
-
-## Residuals
-
-```{r}
-#| label: fig-multilinearmodel
-#| fig-cap: "Multilinear Regression Model Residuals"
-#| echo: false
-#| warning: false
-#| message: false
-
-ggplot(multi_lm, aes(x = .fitted, y = .resid, color = answer)) +
-  geom_point() +
-  geom_hline(yintercept = 0) +
-  labs(y = "Residual", x = "Predicted Candiate Vote Percentage")
-
-
-```
-Based on @fig-multilinearmodel, there appears to be no patterns in the residuals. This means that a linear model like this could be appropriate. However, there does seem to be a big difference in terms of residual variability based on candidate name.
-
-
 \newpage
 
 
-# References
+# Graphs and Tables
+
+```{r}
+
+clean_data <- read_csv("../data/02-analysis_data/cleaned_data.csv")
+head(clean_data)
+
+head(clean_data)
+```
+
+## Relationship Pollscore and Sample Size
+
+```{r}
+
+# removing outliers and na's
+
+graph_data <- clean_data %>% 
+  filter(!is.na(pollscore) & !is.na(sample_size)) 
+
+outlier_top <- (quantile(graph_data$sample_size, 0.75) + 
+                  IQR(graph_data$sample_size)*1.5)
+
+outlier_bottom <- (quantile(graph_data$sample_size, 0.25) - 
+                  IQR(graph_data$sample_size)*1.5)
+
+graph_data <- clean_data %>%
+  filter(sample_size < outlier_top & sample_size > outlier_bottom)
+
+graph_data %>% filter(!is.na(pollscore) & !is.na(sample_size)) %>% 
+  ggplot(aes(x = pollscore, y = log(sample_size))) +
+  geom_point() + geom_smooth(method = "lm", se = FALSE, color = "red")
+
+# this model is really here just for explain, this realtionship should not
+# be treated as lienar
+lm_score_sample <- lm(log(sample_size) ~ pollscore, data = graph_data)
+summary(lm_score_sample)
 
 
+```
+
+## Relationship Between Pollscore and Transparency Score
+
+```{r}
+
+clean_data %>% filter(!is.na(pollscore) & !is.na(transparency_score)) %>% 
+  ggplot(aes(x = pollscore, y = transparency_score)) +
+  geom_point() + geom_smooth(method = "lm", se = FALSE, color = "red")
+
+# this model is really here just for explain, this realtionship should not
+# be treated as lienar
+lm_score_sample <- lm(pollscore ~ transparency_score, data = clean_data)
+summary(lm_score_sample)
+
+```
+
+## Relationship Between Days Taken From Electon and Support Percentage
+
+```{r}
+head(clean_data)
+
+clean_data %>% 
+  filter(!is.na(days_taken_from_election) & !is.na(pct)) %>% 
+  filter(candidate_name %in% c("Kamala Harris", "Donald Trump")) %>% 
+  ggplot(aes(x = days_taken_from_election, y = pct)) +
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(x = "Days Before Election",
+       y = "Poll Percentage") + facet_wrap(~candidate_name)
+
+```
+
+## Metholody And Support Percentage
+
+```{r}
+
+head(clean_data)
+
+clean_data %>% 
+  filter(!is.na(methodology) & !is.na(pct)) %>% 
+  filter(candidate_name %in% c("Kamala Harris", "Donald Trump")) %>% 
+  ggplot(aes(x = methodology, y = pct, fill = candidate_name)) +
+  geom_boxplot(position = position_dodge(width = 0.9)) +
+  labs(x = "Methodology", y = "Percentage", 
+       title = "Poll Percentages by Methodology and Candidate",
+       fill = "Candidate") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "top") +
+  scale_fill_brewer(palette = "Set1")
+
+
+```

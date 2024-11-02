@@ -34,9 +34,11 @@ cleaned_data <- cleaned_data %>%
   select(poll_id, pollster_id, pollster, question_id,
          sample_size, pollscore, methodology,
          days_taken_from_election, transparency_score, party,
-         end_date, start_date, state, answer, pct)
+         end_date, start_date, state, candidate_name, pct)
 
 cleaned_data %>% select(state) %>% unique() %>% data.frame()
+
+cleaned_data %>% select(state) %>% unique()
 
 # Delete NA columns
 # cleaned_data <- raw_data |>
