@@ -70,7 +70,7 @@ FiveThirtyEight’s polling measurement approach transforms raw polling data fro
 
 Next, FiveThirtyEight applies a series of adjustments to the data to account for sample size, timing, and pollster quality. As stated by @silver_polls_2008, the polls are weighted more heavily if they associate with larger sample. The sample size is documented in the data set as 'sample_size'. Poll recency is another critical factor, with newer polls weighted more to reflect current opinion trends. The 'pollscore' in the dataset is an indicator of pollster transparency and reliability in their methodology, according to @morris_trump_2024. 
 
-Further adjustments address polling biases, such as “house effects” (systematic leanings toward a particular candidate) and the mode of polling. Polls from partisan sources are included, but FiveThirtyEight applies a correction to counteract inherent biases [@morris_trump_2024].
+Further adjustments address polling biases, such as “house effects” (systematic leanings toward a particular candidate) and the mode of polling. Likely-voter adjustment are applied to all polls of registered voters and adults. Third party adjustment are applied to polls that only consider Biden and Trump as the candidates. Polls from partisan sources are included, but FiveThirtyEight applies a correction to counteract inherent biases [@morris_trump_2024].
 
 
 ## Clean Data
