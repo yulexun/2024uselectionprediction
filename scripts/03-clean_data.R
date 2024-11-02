@@ -42,6 +42,8 @@ cleaned_data <- cleaned_data %>%
     end_date, start_date, state, candidate_name, pct
   )
 
+cleaned_data = cleaned_data |> na.omit()
+
 # Delete NA columns
 # cleaned_data <- raw_data |>
 #   select(-sponsor_ids,

@@ -687,22 +687,6 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88278,1424,Siena/NYT,210343,682,-1.5,Live Phone,49,2024-09-21,2024-09-17,North Carolina,Chase Oliver,1
 88274,568,YouGov,210307,3129,-1.1,Online Panel,48,2024-09-20,2024-09-18,National,Kamala Harris,52
 88274,568,YouGov,210307,3129,-1.1,Online Panel,48,2024-09-20,2024-09-18,National,Donald Trump,48
-88441,1056,Remington,211152,800,-0.6,NA,50,2024-09-20,2024-09-16,Michigan,Kamala Harris,49
-88441,1056,Remington,211152,800,-0.6,NA,50,2024-09-20,2024-09-16,Michigan,Donald Trump,47
-88441,1056,Remington,211152,800,-0.6,NA,50,2024-09-20,2024-09-16,Michigan,Cornel West,0
-88441,1056,Remington,211152,800,-0.6,NA,50,2024-09-20,2024-09-16,Michigan,Jill Stein,1
-88442,1056,Remington,211153,800,-0.6,NA,50,2024-09-20,2024-09-16,Nevada,Kamala Harris,48
-88442,1056,Remington,211153,800,-0.6,NA,50,2024-09-20,2024-09-16,Nevada,Donald Trump,49
-88443,1056,Remington,211154,800,-0.6,NA,50,2024-09-20,2024-09-16,Pennsylvania,Kamala Harris,47
-88443,1056,Remington,211154,800,-0.6,NA,50,2024-09-20,2024-09-16,Pennsylvania,Donald Trump,48
-88443,1056,Remington,211154,800,-0.6,NA,50,2024-09-20,2024-09-16,Pennsylvania,Jill Stein,1
-88444,1056,Remington,211155,800,-0.6,NA,50,2024-09-20,2024-09-16,Wisconsin,Kamala Harris,48
-88444,1056,Remington,211155,800,-0.6,NA,50,2024-09-20,2024-09-16,Wisconsin,Donald Trump,48
-88444,1056,Remington,211155,800,-0.6,NA,50,2024-09-20,2024-09-16,Wisconsin,Cornel West,1
-88444,1056,Remington,211155,800,-0.6,NA,50,2024-09-20,2024-09-16,Wisconsin,Jill Stein,0
-88445,1056,Remington,211156,800,-0.6,NA,50,2024-09-20,2024-09-16,Montana,Kamala Harris,39
-88445,1056,Remington,211156,800,-0.6,NA,50,2024-09-20,2024-09-16,Montana,Donald Trump,56
-88445,1056,Remington,211156,800,-0.6,NA,50,2024-09-20,2024-09-16,Montana,Jill Stein,2
 88339,329,Muhlenberg,210621,450,-1,Live Phone,50,2024-09-19,2024-09-16,Pennsylvania,Kamala Harris,48
 88339,329,Muhlenberg,210621,450,-1,Live Phone,50,2024-09-19,2024-09-16,Pennsylvania,Donald Trump,48
 88371,1847,University of Massachusetts Lowell/YouGov,210793,650,-1,Online Panel,55,2024-09-19,2024-09-11,Michigan,Kamala Harris,48
@@ -931,13 +915,6 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 88144,241,Ipsos,209239,1405,-0.9,Probability Panel,55,2024-09-12,2024-09-11,National,Donald Trump,42
 88144,241,Ipsos,209263,1690,-0.9,Probability Panel,55,2024-09-12,2024-09-11,National,Kamala Harris,43
 88144,241,Ipsos,209263,1690,-0.9,Probability Panel,55,2024-09-12,2024-09-11,National,Donald Trump,39
-88174,1528,AtlasIntel,209426,1775,-0.8,NA,55,2024-09-12,2024-09-11,National,Kamala Harris,48
-88174,1528,AtlasIntel,209426,1775,-0.8,NA,55,2024-09-12,2024-09-11,National,Donald Trump,50.9
-88174,1528,AtlasIntel,209427,1775,-0.8,NA,55,2024-09-12,2024-09-11,National,Kamala Harris,47.3
-88174,1528,AtlasIntel,209427,1775,-0.8,NA,55,2024-09-12,2024-09-11,National,Donald Trump,50.9
-88174,1528,AtlasIntel,209427,1775,-0.8,NA,55,2024-09-12,2024-09-11,National,Jill Stein,0.4
-88174,1528,AtlasIntel,209427,1775,-0.8,NA,55,2024-09-12,2024-09-11,National,Cornel West,0.2
-88174,1528,AtlasIntel,209427,1775,-0.8,NA,55,2024-09-12,2024-09-11,National,Chase Oliver,0.1
 88179,437,Selzer,209514,656,-1.2,Live Phone,58,2024-09-11,2024-09-08,Iowa,Kamala Harris,43
 88179,437,Selzer,209514,656,-1.2,Live Phone,58,2024-09-11,2024-09-08,Iowa,Donald Trump,47
 88179,437,Selzer,209514,656,-1.2,Live Phone,58,2024-09-11,2024-09-08,Iowa,Robert F. Kennedy,6
@@ -1132,20 +1109,11 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 87949,396,Quinnipiac,207361,1611,-0.5,Live Phone,74,2024-08-27,2024-08-23,National,Donald Trump,48
 87999,241,Ipsos,207598,2496,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Kamala Harris,50
 87999,241,Ipsos,207598,2496,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Donald Trump,46
-87999,241,Ipsos,207599,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Kamala Harris,50
-87999,241,Ipsos,207599,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Donald Trump,46
-87999,241,Ipsos,207600,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Kamala Harris,52
-87999,241,Ipsos,207600,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Donald Trump,46
 87999,241,Ipsos,207601,2496,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Kamala Harris,49
 87999,241,Ipsos,207601,2496,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Donald Trump,45
 87999,241,Ipsos,207601,2496,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Cornel West,2
 87999,241,Ipsos,207601,2496,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Jill Stein,1
 87999,241,Ipsos,207601,2496,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Chase Oliver,1
-87999,241,Ipsos,207602,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Kamala Harris,50
-87999,241,Ipsos,207602,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Donald Trump,45
-87999,241,Ipsos,207602,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Cornel West,1
-87999,241,Ipsos,207602,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Jill Stein,1
-87999,241,Ipsos,207602,NA,-0.9,Probability Panel,74,2024-08-27,2024-08-23,National,Chase Oliver,1
 88000,460,SurveyUSA,207603,1293,-1.3,IVR/Online Panel/Text-to-Web,74,2024-08-27,2024-08-23,Nebraska,Kamala Harris,37
 88000,460,SurveyUSA,207603,1293,-1.3,IVR/Online Panel/Text-to-Web,74,2024-08-27,2024-08-23,Nebraska,Donald Trump,54
 88001,460,SurveyUSA,207604,507,-1.3,IVR/Online Panel/Text-to-Web,74,2024-08-27,2024-08-23,Nebraska CD-2,Kamala Harris,47
@@ -1214,52 +1182,28 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 87899,1302,Echelon Insights,206915,1031,-0.8,Online Panel,74,2024-08-25,2024-08-23,National,Donald Trump,50
 88080,568,YouGov,208263,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Kamala Harris,43
 88080,568,YouGov,208263,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Donald Trump,42.5
-88080,568,YouGov,208266,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Kamala Harris,47
-88080,568,YouGov,208266,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Donald Trump,47
 88080,568,YouGov,208269,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Kamala Harris,43
 88080,568,YouGov,208269,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Donald Trump,41
 88080,568,YouGov,208269,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Robert F. Kennedy,3
 88080,568,YouGov,208269,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Jill Stein,1
 88080,568,YouGov,208269,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Cornel West,0
 88080,568,YouGov,208269,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Chase Oliver,0.5
-88080,568,YouGov,208272,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Kamala Harris,48
-88080,568,YouGov,208272,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Donald Trump,46
-88080,568,YouGov,208272,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Robert F. Kennedy,2
-88080,568,YouGov,208272,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Jill Stein,1
-88080,568,YouGov,208272,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Cornel West,0
-88080,568,YouGov,208272,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Pennsylvania,Chase Oliver,1
 88081,568,YouGov,208264,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Kamala Harris,48
 88081,568,YouGov,208264,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Donald Trump,42
-88081,568,YouGov,208267,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Kamala Harris,51
-88081,568,YouGov,208267,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Donald Trump,46
 88081,568,YouGov,208270,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Kamala Harris,45
 88081,568,YouGov,208270,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Donald Trump,40
 88081,568,YouGov,208270,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Robert F. Kennedy,4
 88081,568,YouGov,208270,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Jill Stein,0.5
 88081,568,YouGov,208270,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Cornel West,1
 88081,568,YouGov,208270,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Chase Oliver,0
-88081,568,YouGov,208273,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Kamala Harris,49
-88081,568,YouGov,208273,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Donald Trump,45
-88081,568,YouGov,208273,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Robert F. Kennedy,1
-88081,568,YouGov,208273,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Jill Stein,0
-88081,568,YouGov,208273,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Cornel West,1
-88081,568,YouGov,208273,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Wisconsin,Chase Oliver,0
 88082,568,YouGov,208265,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Kamala Harris,44
 88082,568,YouGov,208265,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Donald Trump,43.5
-88082,568,YouGov,208268,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Kamala Harris,47
-88082,568,YouGov,208268,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Donald Trump,48
 88082,568,YouGov,208271,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Kamala Harris,44
 88082,568,YouGov,208271,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Donald Trump,41.5
 88082,568,YouGov,208271,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Robert F. Kennedy,5
 88082,568,YouGov,208271,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Jill Stein,0
 88082,568,YouGov,208271,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Cornel West,1
 88082,568,YouGov,208271,500,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Chase Oliver,0.5
-88082,568,YouGov,208274,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Kamala Harris,47
-88082,568,YouGov,208274,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Donald Trump,46
-88082,568,YouGov,208274,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Robert F. Kennedy,4
-88082,568,YouGov,208274,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Jill Stein,0
-88082,568,YouGov,208274,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Cornel West,0
-88082,568,YouGov,208274,NA,-1.1,Online Panel,82,2024-08-23,2024-08-15,Michigan,Chase Oliver,0
 87882,1102,Emerson,206738,965,-1.1,IVR/Online Panel/Text-to-Web,77,2024-08-22,2024-08-20,New Mexico,Kamala Harris,53.6
 87882,1102,Emerson,206738,965,-1.1,IVR/Online Panel/Text-to-Web,77,2024-08-22,2024-08-20,New Mexico,Donald Trump,46.4
 87882,1102,Emerson,206739,965,-1.1,IVR/Online Panel/Text-to-Web,77,2024-08-22,2024-08-20,New Mexico,Kamala Harris,51
@@ -1375,13 +1319,6 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 87806,1424,Siena/NYT,206211,677,-1.5,Live Phone,89,2024-08-15,2024-08-08,Arizona,Jill Stein,0
 87806,1424,Siena/NYT,206211,677,-1.5,Live Phone,89,2024-08-15,2024-08-08,Arizona,Cornel West,0
 87806,1424,Siena/NYT,206211,677,-1.5,Live Phone,89,2024-08-15,2024-08-08,Arizona,Chase Oliver,1
-87871,1515,Data for Progress,206684,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Kamala Harris,49
-87871,1515,Data for Progress,206684,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Donald Trump,46
-87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Kamala Harris,47
-87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Donald Trump,43
-87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Robert F. Kennedy,5
-87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Cornel West,1
-87871,1515,Data for Progress,206685,6067,-1.2,NA,96,2024-08-15,2024-08-01,National,Jill Stein,0
 87797,1102,Emerson,206163,1000,-1.1,IVR/Online Panel/Text-to-Web,84,2024-08-14,2024-08-13,Pennsylvania,Kamala Harris,49.3
 87797,1102,Emerson,206163,1000,-1.1,IVR/Online Panel/Text-to-Web,84,2024-08-14,2024-08-13,Pennsylvania,Donald Trump,50.7
 87797,1102,Emerson,206164,1000,-1.1,IVR/Online Panel/Text-to-Web,84,2024-08-14,2024-08-13,Pennsylvania,Kamala Harris,46.8
@@ -1475,8 +1412,6 @@ poll_id,pollster_id,pollster,question_id,sample_size,pollscore,methodology,days_
 87778,370,Pew,205903,7569,-0.4,Probability Panel,92,2024-08-11,2024-08-05,National,Kamala Harris,46
 87778,370,Pew,205903,7569,-0.4,Probability Panel,92,2024-08-11,2024-08-05,National,Donald Trump,45
 87778,370,Pew,205903,7569,-0.4,Probability Panel,92,2024-08-11,2024-08-05,National,Robert F. Kennedy,7
-87773,1363,UC Berkeley,205866,3765,-0.2,NA,97,2024-08-11,2024-07-31,California,Kamala Harris,59
-87773,1363,UC Berkeley,205866,3765,-0.2,NA,97,2024-08-11,2024-07-31,California,Donald Trump,34
 87721,1424,Siena/NYT,205625,693,-1.5,Live Phone,91,2024-08-09,2024-08-06,Pennsylvania,Kamala Harris,49
 87721,1424,Siena/NYT,205625,693,-1.5,Live Phone,91,2024-08-09,2024-08-06,Pennsylvania,Donald Trump,46
 87721,1424,Siena/NYT,205628,693,-1.5,Live Phone,91,2024-08-09,2024-08-06,Pennsylvania,Kamala Harris,50

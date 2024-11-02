@@ -25,8 +25,12 @@ library(tibble)
 library(knitr)
 library(brms)
 library(rstanarm)
+library(gridExtra)
 ```
 
+```{r}
+cleaned_data = read_csv(here("data/02-analysis_data/cleaned_data.csv"))
+```
 
 # Introduction {#sec-intro}
 Election result forecasting has become an essential tool for analysts in political science and the public to predict the outcome of democratic process, such as the presidential election in the United States. Traditionally, individual polls have been used as a snapshot of voter sentiment, but they only reflect temporary changes in the performance of contestants, instead of a precise estimation of the election result. As discussed by @pasek and @blumenthal, the aggregation of multiple polls, or "poll-of-polls," has become a popular technique to reduce individual survey errors and provide more accurate election forecasts. However, the traditional poll aggregation does not reflect dynamics of an election, especially with real-time changes and the introduction of new data. This creates a gap for a more adaptable model to predict the election result based on both polling data and additional variables, such as historical data and economic indicators.
@@ -47,18 +51,72 @@ The remainder of this paper is structured as follows: [update this …]
 ## Overview
 
 For the data we used in this analysis about the polling result for Kamala Harris and Donalad Trump in 2024 USA president election. \
-- **response variable:** pct(pct: The percentage of the vote or support that the candidate received in the poll) \
+- **response variable:** `pct`(pct: The percentage of the vote or support that the candidate received in the poll) \
 - **numeric predictor:**\
- sample size(sample_size: The total number of respondents participating in the poll) \
- timegap(the time gap between the poll start date and the real election date i.e timegap = real US election date - poll start date) \
- pollscore(A numeric value representing the score or reliability of the pollster in question) \
+ `sample size`(sample_size: The total number of respondents participating in the poll) \
+ `timegap`(the time gap between the poll start date and the real election date i.e timegap = real US election date - poll start date) \
+ `pollscore`(A numeric value representing the score or reliability of the pollster in question) \
 - **categorical predictor**
-state(The U.S. state where the poll was conducted or focused) \
-methodology(The method used to conduct the poll)\
+`state`(The U.S. state where the poll was conducted or focused) \
+`methodology`(The method used to conduct the poll)\
 
 ## Explore the data
+```{r}
+#| label: tbl-explore-data
+#| echo: false
+#| warning: false
+a <- ggplot(data=cleaned_data, aes(x=sample_size, y=pct)) + 
+  geom_point() + 
+  geom_smooth(method = lm, se = FALSE) + 
+  labs(x = 'sample size', y='pct', 
+       title = 'pct vs sample size')
+
+b <- ggplot(data=cleaned_data, aes(x=pollscore, y=pct)) + 
+  geom_point() + 
+  geom_smooth(method = lm, se = FALSE) + 
+  labs(x = 'pollscore', y='pct', 
+       title = 'pct vs pollscore')
+
+c <- ggplot(data=cleaned_data, aes(x=methodology, y=pct)) + 
+  geom_boxplot() + 
+  labs(x = 'wind speed', y='pct', 
+       title = 'pct vs methodology')
+
+d <- ggplot(data=cleaned_data, aes(x=days_taken_from_election, y=pct)) + 
+  geom_point() + 
+  geom_smooth(method = lm, se = FALSE) + 
+  labs(x = 'max gust speed', y='pct', 
+       title = 'pct vs days taken from election')
+
+e <- ggplot(data=cleaned_data, aes(x=state, y=pct)) + 
+  geom_boxplot() + 
+  labs(x = 'total snow', y='pct', 
+       title = 'pct vs state')
+
+grid.arrange(a, b, c, d, e, nrow=2)
+```
+
+- pct vs sample size: This scatter plot shows the pct against the sample size, with a fitted trend line indicating a slight positive relationship. The data points are denser for lower sample sizes, suggesting that smaller sample sizes are more common in the dataset.
+
+- pct vs pollscore: This scatter plot illustrates the pct against pollscore. The fitted trend line suggests a weak negative relationship between pollscore and pct. The points are scattered without a strong linear pattern.
+
+- pct vs methodology: A boxplot comparing pct for different polling methodologies. The pct distribution varies across methodologies, with some showing greater spread or median differences. This suggests that the polling methodology may influence pct outcomes.
+
+- pct vs days taken from election: A scatter plot displaying pct versus the number of days before the election. The trend line indicates a slight negative relationship, suggesting that as the election date approaches, pct may decrease slightly.
+
+- pct vs state: A boxplot depicting pct across different states. The pct distribution varies by state, with some states showing wider variability or different median values, implying state-specific effects on pct.
 
 
+
+```{r}
+# numeric_data <- cleaned_data[sapply(cleaned_data, is.numeric)]
+numeric_data = cleaned_data |> select(pct, sample_size, pollscore, days_taken_from_election)
+
+# Create the pairs plot
+pairs(numeric_data)
+```
+
+The pairs plot displays scatter plots of four numeric variables (`pct`, `sample_size`, `pollscore`, and `days_taken_from_election`) to visualize their relationships. The data shows clustering, particularly in `pct` versus `sample_size`, suggesting potential heteroscedasticity. The `sample_size` variable is skewed towards lower values, while `pollscore` and `days_taken_from_election` have a more even spread, though `pollscore` shows central clustering. No strong linear relationships are immediately apparent between the variables, indicating that correlations are likely weak. 
 
 ## Measurement
 
@@ -75,7 +133,6 @@ We then create a new attribute, days_taken_from_election, which represents the t
 #| tbl-cap: Sample of cleaned US election data 
 #| echo: false
 #| warning: false
-cleaned_data = read_csv(here("data/02-analysis_data/cleaned_data.csv"))
 
 cleaned_data |>
   select(pct, sample_size, pollscore, days_taken_from_election, state, methodology, candidate_name) |>
@@ -135,6 +192,7 @@ Trump_data |>
 ```
 
 
+
 # Model
 
 The goal of our modelling strategy is twofold. Firstly,...
@@ -159,8 +217,29 @@ us
 
 ## Basic Model
 ```{r}
+#| echo: false
+#| warning: false
 just_harris_data = Harris_data |> na.omit()
-model_MLR = lm(pct ~ pollscore + days_taken_from_election + methodology, data = just_harris_data)
+lm_model1 = lm(pct ~ pollscore, data = just_harris_data)
+predictions = predict(lm_model1, just_harris_data)
+summary(lm_model1)
+
+ggplot(just_harris_data, aes(x = pct, y = predictions)) +
+  geom_point(color = 'blue') +
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "red") +
+  labs(title = "Actual vs Predicted Values",
+       x = "Actual pct",
+       y = "Predicted pct") +
+  theme_minimal()
+
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+just_harris_data = Harris_data |> na.omit()
+model_MLR = lm(pct ~ pollscore + days_taken_from_election + methodology + sample_size + state, data = just_harris_data)
 summary(model_MLR)
 just_harris_data <- just_harris_data |> mutate(fitted_value = predict(model_MLR),  num_harris = round((pct / 100) * sample_size, 0))
 
@@ -173,6 +252,20 @@ ggplot(just_harris_data, aes(x = end_date)) +
   theme_classic() +
   labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")
 ```
+
+```{r}
+#| echo: false
+#| warning: false
+ggplot(just_harris_data, aes(x = pct, y = fitted_value)) +
+  geom_point(color = 'blue') +
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "red") +
+  labs(title = "Actual vs Predicted Values",
+       x = "Actual pct",
+       y = "Predicted pct") +
+  theme_minimal()
+```
+
+
 
 ```{r}
 baye_model_data = just_harris_data
@@ -199,50 +292,61 @@ bayesian_model_1 <- stan_glmer(
 )
 pp_check(bayesian_model_1)
 summary(bayesian_model_1)
+```
 
+This plot displays the results of a posterior predictive check (PPC) for a Bayesian model using the pp_check() function. 
+
+The observed data (y) follows a distinct, symmetrical distribution centered around a specific value, suggesting a well-defined peak with tapering on both sides. The replicated distributions (y_rep), shown as multiple thin lines, generally align with the shape of the observed distribution, indicating that the Bayesian model has captured the main characteristics of the data. However, the variability in the y_rep lines highlights the degree of uncertainty inherent in the model’s predictive capability.
+
+The fact that the y_rep curves closely match the overall pattern of the actual y suggests that the model performs reasonably well in replicating the observed data. Minor discrepancies or deviations between the y and y_rep might imply areas where the model could be fine-tuned or adjusted to improve accuracy. Overall, this PPC indicates that the model provides a decent fit to the data, with some variability accounted for in the predictive samples.
+
+
+```{r}
 # Plot random effects
 plot(bayesian_model_1, pars = "(Intercept)", prob = 0.95)
-
 ```
+
+This plot displays the estimated posterior distribution for the intercept parameter in the Bayesian model. The intercept represents the baseline level of support, expressed as a percentage, for Kamala Harris in the U.S. election data used in the analysis. The plot features a point estimate (depicted by the central dot) that indicates the mean or median of the posterior distribution for the intercept, and a horizontal line showing the 95% credible interval, which signifies the range within which the true value of the intercept is likely to fall with 95% probability.
+
+The range of this credible interval spans from approximately 50 to 54 percent, suggesting that the model estimates the baseline level of support for Kamala Harris to be around this range. The relatively narrow width of the interval implies a certain degree of confidence in the estimate, indicating that the data used in the model provided a clear signal for the intercept's value.
+
+In conclusion, the estimated intercept, which represents the baseline percentage of support for Kamala Harris in the U.S. election data analyzed, is centered around 52%, with a credible interval spanning approximately from 50% to 54%. This suggests that, according to the Bayesian model, the underlying support for Kamala Harris.
+
 
 ```{r}
 
-```
 
-```{r}
+# # Transform Biden and Trump’s vote shares to fit a beta distribution
+# # Biden received 51.3%, Trump received 46.8%, totaling to approximately 98.1% (adjusted here for simplicity)
+# total_votes <- 100
+# biden_shape1 <- 51.3 / total_votes * 10
+# biden_shape2 <- (1 - 51.3 / total_votes) * 10
+# trump_shape1 <- 46.8 / total_votes * 10
+# trump_shape2 <- (1 - 46.8 / total_votes) * 10
 
+# # Set up priors using beta distributions based on 2020 vote shares
+# prior <- c(
+#   set_prior(paste0("beta(", biden_shape1, ", ", biden_shape2, ")"), class = "b", coef = "biden"),
+#   set_prior(paste0("beta(", trump_shape1, ", ", trump_shape2, ")"), class = "b", coef = "trump")
+# )
 
-# Transform Biden and Trump’s vote shares to fit a beta distribution
-# Biden received 51.3%, Trump received 46.8%, totaling to approximately 98.1% (adjusted here for simplicity)
-total_votes <- 100
-biden_shape1 <- 51.3 / total_votes * 10
-biden_shape2 <- (1 - 51.3 / total_votes) * 10
-trump_shape1 <- 46.8 / total_votes * 10
-trump_shape2 <- (1 - 46.8 / total_votes) * 10
+# # Define the model formula
+# formula <- pct ~ pollscore + days_taken_from_election + methodology
 
-# Set up priors using beta distributions based on 2020 vote shares
-prior <- c(
-  set_prior(paste0("beta(", biden_shape1, ", ", biden_shape2, ")"), class = "b", coef = "biden"),
-  set_prior(paste0("beta(", trump_shape1, ", ", trump_shape2, ")"), class = "b", coef = "trump")
-)
+# # Run the Bayesian model
+# model <- brm(
+#   formula = formula,
+#   data = baye_model_data,
+#   family = categ0orical(),
+#   prior = prior,
+#   chains = 4,
+#   iter = 2000,
+#   warmup = 1000,
+#   cores =4
+# )
 
-# Define the model formula
-formula <- pct ~ pollscore + days_taken_from_election + methodology
-
-# Run the Bayesian model
-model <- brm(
-  formula = formula,
-  data = baye_model_data,
-  family = categ0orical(),
-  prior = prior,
-  chains = 4,
-  iter = 2000,
-  warmup = 1000,
-  cores =4
-)
-
-# Summarize the model
-summary(model)
+# # Summarize the model
+# summary(model)
 
 ```
 
