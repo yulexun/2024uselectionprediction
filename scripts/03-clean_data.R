@@ -52,10 +52,10 @@ cleaned_data$adjusted_weight <- 1 / abs(cleaned_data$pollscore)
 
 
 # store national and state data seperately
-  cleaned_data_national <- cleaned_data |>
-    filter(state == "National")
-  cleaned_data_state <- cleaned_data |>
-    filter(state != "National")
+cleaned_data_national <- cleaned_data |>
+  filter(state == "National")
+cleaned_data_state <- cleaned_data |>
+  filter(state != "National")
 
 cleaned_data <- cleaned_data |> na.omit()
 
