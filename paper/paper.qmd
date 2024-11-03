@@ -323,13 +323,13 @@ In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. Th
 # FiveThirtyEight Licenses
 [FiveThirtyEight's data sets](https://github.com/fivethirtyeight/data/tree/master/polls) are used and modified by us under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
-## Overview of American Electon System
+# Overview of American Electon System
 
 ## Brief Description of American Federal Goverment
 
 The American federal or national government is split into three branches, executive., legislative, and judical The executive branch includes the president and the military. The legislative branch include two subgroups, the House of Representatives and the Senate. These two subgroups create laws. Every state has two Senators and one Representative per approximately 750,000 people. The judicial branch is court system.
 
-### What is the Electoral College {#sec-electoral-college}
+## What is the Electoral College {#sec-electoral-college}
 
 The Electoral College is the system used in the United States to elect the president and vice president. Instead of a direct popular vote, each state is allocated a certain number of electors based on its representation in Congress (the total of its Senators and Representatives). When voters cast their ballots, they are actually voting for a slate of electors pledged to a candidate. The candidate who receives a majority of electoral votes (270 out of 538) wins the presidency. This system means that winning the popular vote in a state generally results in winning all of that state's electoral votes. The only exception are the states of Maine and Nebraska, who award electoral votes by congressional district, with two additional votes given to the statewide winner.
 
@@ -448,7 +448,7 @@ Notably, Nebraska and Maine are indicated in gray due to their delegates being s
 
 The seven generally agreed upon swing states are Pennsylvania, North Carolina, Georgia, Arizona, Nevada, Wisconsin, and Michigan with Texas, Florida, Nebraska District Two, Maine District 2, and Minnesota as the next closest races.
 
-## States Poll Count
+# States Poll Count
 
 ```{r}
 #| label: tbl-state-polls-count
@@ -476,27 +476,27 @@ num_states_missing <- count(polls_per_state_tbl %>%
 
 ```
 
-## The Ideal Survey
+# The Ideal Survey
 
-### Objective
+## Objective
 
 The research team has developed a survey and distribution methodology with a hypothetical budget of $100,000. This objective is to create a polling system that accurately predicts the 2024 United States Election.
 
-### Sampling Frame
+## Sampling Frame
 
 Given the monetary constraint, the team's first decision is to mostly include swing states and districts. These are Nevada, Arizona, Wisconsin, Michigan, Pennsylvania, North Carolina, and Georgia. Swing states are the primary focus of the poll because they disproportionately affect the outcome of the election based on the explanation in @sec-PLACEHOLDER. However, the poll will also include Texas, Florida, and Minnesota, Nebraska District 2, and Maine District 2, as they have the potential to one by either party but are not as likely to change as the previously mentioned swing states. Nevertheless, it is important to note that to save costs, the team will focus on polling true swing states compared to Texas, Florida and Minnesota.
 
-### Survey Sending Process
+## Survey Sending Process
 
 The team will then find and use multiple databases, such as @uspostalserviceresidentialaddressfile, to find addresses, telephones, and emails of potential voters in those states. According to @pewresearch, gathering this information reduces non-response and selection bias, as the team can contact the same individual through multiple mediums. Moreover, certain demographics may prefer specific communication forms; for instance, the elderly may prefer phone or paper mail polls over text or email. Additionally, to encourage individuals to complete the survey, one in every 50 participants will have a chance at winning $20.
 
-### Sampling Methodology
+## Sampling Methodology
 
 Each state will have its own poll, but the polling methodology and the survey given will remain the same. Specifically, the polls will use stratified random sampling to make sure that participants reflect each state's counties in proportion to their population sizes. Ideally, the stratification would also ensure race, gender, age, and other socioeconomic factors are also accounted for. However, these factors are almost impossible to determine while sending the survey. Therefore, the research team decided to ask demographic questions directly inside the survey. After data collection, the team will weigh data based on demographics. For example, if a certain county has a 30% black population (this statistic will be determined from the US census), but only 15% of the survey participants are black, then the pollsters may decide to count each black participant's responses twice.
 
 Furthermore, the team will aim to sample approximately 1,000 people from each true swing state. This sample size is large enough to provide reliable conclusions but not so large that it resembles sampling with replacement. For true swing states, the team aims to survey 1,000 individuals. However, if the final sample size falls short of this target, it is not considered a significant issue.
 
-### Survey Implementation & Question Creation
+## Survey Implementation & Question Creation
 
 The team's ideal survey will be made using @qualtrics. It will attempt to ensure four things: no leading questions, no question order bias, no answer order bias, and the survey should identify non-engaged participants. To identify participants who are not engaged, the research team has decided to add a worthless question. This question is extremely simple and clearly has one correct answer. Therefore, if a participant selects the wrong answer, they most likely are not engaged with the survey and their responses should be removed from the final data. An example of this is question number 7.
 
@@ -506,9 +506,9 @@ Answer bias, like order bias, occurs when the order of answer choices influences
 
 A leading question occurs when a question is written in a way that suggests the user to give a certain answer. For example, "given that children are the future of our country, should we invest more money in their education". To prevent this, the researchers have ensured questions are written in a style where no unnecessary details or opinions are added.
 
-### Survey Questions
+## Survey Questions
 
-Click this (link)[https://qualtricsxm7d2hxss4j.qualtrics.com/jfe/form/SV_1Tu3PT2eUEa1Op8] for the @qualtrics survey.
+Click this [link](https://qualtricsxm7d2hxss4j.qualtrics.com/jfe/form/SV_1Tu3PT2eUEa1Op8) for the @qualtrics survey.
 
 List of all of the questions:
 
@@ -573,7 +573,7 @@ List of all of the questions:
    - Other
    - Will not vote
 
-### Potential Problems with the Methodology And Polls
+## Potential Problems with the Methodology And Polls
 
 While the team's methodology and survey creates a robust system, there are potential issues. The reliance of weighting results based on a candidate's demographics can lead to error propagation. For instance, if a certain racial demographic population is only captured limitedly and that limited sample is far from representative, a few individuals in the population can have a large impact on the polls prediction of what candidate will win the state. There is also a selection bias in terms of the monetary reward. Potentially, people who like monetary rewards could be more likely to engage in the survey and could therefore exhibit certain voting or demographic characteristics that create an unrepresentative sample.
 
