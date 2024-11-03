@@ -57,6 +57,8 @@ cleaned_data$adjusted_weight <- 1 / abs(cleaned_data$pollscore)
   cleaned_data_state <- cleaned_data |>
     filter(state != "National")
 
+cleaned_data <- cleaned_data |> na.omit()
+
 
 # Delete NA columns
 # cleaned_data <- raw_data |>

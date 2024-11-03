@@ -17,7 +17,7 @@ set.seed(853)
 #### Simulate data ####
 # State names
 # Add National
-states <- c(state.name, "National")
+states <- c(state.name, "National", "Maine CD-2", "Maine CD-1", "Nebraska CD-2")
 candidate_names <- c("Donald Trump", "Kamala Harris", "Jill Stein",
                     "Robert F. Kennedy")
 pollster <- c("Marist", "YouGov", "Ipsos", "Emerson", "SurveyUSA")
@@ -41,7 +41,9 @@ swing_states <- c("Arizona", "Georgia", "Michigan", "Nevada",
 
 # Generate Poll IDs and States
 unique_poll_ids <- sample(10000:99999, length(states))
+unique_question_ids <- sample(10000:999999, length(states))
 poll_ids <- rep(unique_poll_ids, each = 4)
+question_ids <- rep(unique_question_ids, each = 4)
 state_column <- rep(states, each = 4)
 state_column <- rep(state_column, length.out = 4*length(states))
 sample_size <- sample(100:20000, length(states))
@@ -82,9 +84,10 @@ generate_percentages <- function(state) {
 analysis_data <- tibble(
   pollster = pollster_column,
   poll_id = poll_ids,
+  question_ids = question_ids,
   state = state_column,
   sample_size = sample_size,
-  candidate_name = rep(candidate_names, length.out = 204),
+  candidate_name = rep(candidate_names, length.out = 216),
 )
 
 analysis_data <- analysis_data %>% mutate(pct = 0.0)
@@ -102,6 +105,8 @@ for (id_ in unique(analysis_data$poll_id)) {
       TRUE ~ pct  # keep original value if no match
     ))
 }
+
+analysis_data$pct <- analysis_data$pct * 100
 
 #### Save data ####
 write_parquet(analysis_data, "data/00-simulated_data/simulated_data.parquet")
