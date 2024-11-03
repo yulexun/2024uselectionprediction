@@ -26,9 +26,15 @@ library(knitr)
 library(brms)
 library(rstanarm)
 library(gridExtra)
+library(Matrix)
+library(rstan)
+library(brms)
+
 ```
 
 ```{r}
+#| echo: false
+#| warning: false
 cleaned_data = read_csv(here("data/02-analysis_data/cleaned_data.csv"))
 ```
 
@@ -60,7 +66,7 @@ For the data we used in this analysis about the polling result for Kamala Harris
 `state`(The U.S. state where the poll was conducted or focused) \
 `methodology`(The method used to conduct the poll)\
 
-## Explore the data
+## Data Exploration
 ```{r}
 #| label: tbl-explore-data
 #| echo: false
@@ -79,7 +85,7 @@ b <- ggplot(data=cleaned_data, aes(x=pollscore, y=pct)) +
 
 c <- ggplot(data=cleaned_data, aes(x=methodology, y=pct)) + 
   geom_boxplot() + 
-  labs(x = 'wind speed', y='pct', 
+  labs(x = 'methodology', y='pct', 
        title = 'pct vs methodology')
 
 d <- ggplot(data=cleaned_data, aes(x=days_taken_from_election, y=pct)) + 
@@ -90,7 +96,7 @@ d <- ggplot(data=cleaned_data, aes(x=days_taken_from_election, y=pct)) +
 
 e <- ggplot(data=cleaned_data, aes(x=state, y=pct)) + 
   geom_boxplot() + 
-  labs(x = 'total snow', y='pct', 
+  labs(x = 'state', y='pct', 
        title = 'pct vs state')
 
 grid.arrange(a, b, c, d, e, nrow=2)
@@ -109,6 +115,9 @@ grid.arrange(a, b, c, d, e, nrow=2)
 
 
 ```{r}
+#| label: fig-pairs
+#| echo: false
+#| warning: false
 # numeric_data <- cleaned_data[sapply(cleaned_data, is.numeric)]
 numeric_data = cleaned_data |> select(pct, sample_size, pollscore, days_taken_from_election)
 
@@ -116,7 +125,7 @@ numeric_data = cleaned_data |> select(pct, sample_size, pollscore, days_taken_fr
 pairs(numeric_data)
 ```
 
-The pairs plot displays scatter plots of four numeric variables (`pct`, `sample_size`, `pollscore`, and `days_taken_from_election`) to visualize their relationships. The data shows clustering, particularly in `pct` versus `sample_size`, suggesting potential heteroscedasticity. The `sample_size` variable is skewed towards lower values, while `pollscore` and `days_taken_from_election` have a more even spread, though `pollscore` shows central clustering. No strong linear relationships are immediately apparent between the variables, indicating that correlations are likely weak. 
+@fig-pairs The pairs plot displays scatter plots of four numeric variables (`pct`, `sample_size`, `pollscore`, and `days_taken_from_election`) to visualize their relationships. The data shows clustering, particularly in `pct` versus `sample_size`, suggesting potential heteroscedasticity. The `sample_size` variable is skewed towards lower values, while `pollscore` and `days_taken_from_election` have a more even spread, though `pollscore` shows central clustering. No strong linear relationships are immediately apparent between the variables, indicating that correlations are likely weak. 
 
 ## Measurement
 
@@ -124,7 +133,7 @@ In this dataset, each row represents a polling question that records the variabl
 
 
 ## Clean Data
-The data cleaning process involves several steps to ensure the quality and relevance of the polling data. First, we filter the dataset to retain only poll results with a numeric grade of 2.7 or higher, indicating that the polls are considered reliable. Next, we address missing values in the state attribute: polls with NA in the state column are considered national polls.
+@tbl-cleaned-data The data cleaning process involves several steps to ensure the quality and relevance of the polling data. First, we filter the dataset to retain only poll results with a numeric grade of 2.7 or higher, indicating that the polls are considered reliable. Next, we address missing values in the state attribute: polls with NA in the state column are considered national polls.
 
 We then create a new attribute, days_taken_from_election, which represents the time gap between the poll's start date and the actual U.S. election date. Additionally, we filter the dataset to include only polls conducted after July 21, 2024, the date when Kamala Harris declared her candidacy. Finally, we remove any remaining rows that contain missing values to ensure a clean dataset.
 
@@ -191,38 +200,39 @@ Trump_data |>
 #   )
 ```
 
+\newpage
+
+@fig-clean-data-histogram-Harris-Trump-1 The histogram displays the average support percentage for Kamala Harris across different U.S. states. The data indicates that support for Harris varies significantly across states. Notable observations include relatively high average support in states such as California and New York, which are known for being more Democratic-leaning. On the other hand, there are states with lower average support percentages, particularly in more traditionally Republican or swing states. The distribution suggests regional variations in support, with some states showing consistent backing for Harris while others indicate a weaker performance.
+
+@fig-clean-data-histogram-Harris-Trump-2 The second histogram shows the average support percentage for Donald Trump across various states. It highlights substantial support in states such as Florida and Texas, which align with historical trends of strong Republican support. Trump's average support appears robust in many midwestern and southern states, which are known for their conservative voter base. However, in more liberal-leaning states such as California and New York, the average support is lower, reflecting these states' tendency to lean Democratic.
 
 
 # Model
 
-The goal of our modelling strategy is twofold. Firstly,...
-
-Here we briefly describe the Bayesian analysis model used to investigate... Background details and diagnostics are included in [Appendix -@sec-model-details].
+The goal of our modeling strategy is twofold. Firstly, we aim to accurately predict the support percentage (PCT) for Harris and Trump based on relevant poll data and key influencing factors. Secondly, we seek to evaluate the efficacy of different modeling approaches—from simple linear regression (SLR) to multiple linear regression (MLR) and Bayesian hierarchical models—to understand their predictive capabilities and assess the underlying relationships between variables. By comparing these models, we can determine which approach provides the most robust and reliable predictions, while considering the variability and potential uncertainty in the data.
 
 ## Model set-up
 
-Define $y_i$ as the number of seconds that the plane remained aloft. Then $\beta_i$ is the wing width and $\gamma_i$ is the wing length, both measured in millimeters.  
+The Bayesian model is implemented in R [@citeR] using the rstanarm package as described by @rstanarm. The model is run with the following specifications:
 
-\begin{align} 
-y_i|\mu_i, \sigma &\sim \mbox{Normal}(\mu_i, \sigma) \\
-\mu_i &= \alpha + \beta_i + \gamma_i\\
-\alpha &\sim \mbox{Normal}(0, 2.5) \\
-\beta &\sim \mbox{Normal}(0, 2.5) \\
-\gamma &\sim \mbox{Normal}(0, 2.5) \\
-\sigma &\sim \mbox{Exponential}(1)
-\end{align}
+- Formula: $\text{pct} \sim \text{pollscore} + \text{days taken from election} + \text{sample size} + (1 | \text{methodology}) + (1 | \text{state})$
+
+- Priors: Normal(0, 2.5) for all coefficients and intercept, Exponential(1) for $\sigma$
+
+- Settings: Seed = 123, Cores = 4, Adapt delta = 0.95
 
 We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
 us
 
 ## Basic Model
 ```{r}
+#| label: fig-model-pct-pollscore
 #| echo: false
 #| warning: false
 just_harris_data = Harris_data |> na.omit()
 lm_model1 = lm(pct ~ pollscore, data = just_harris_data)
 predictions = predict(lm_model1, just_harris_data)
-summary(lm_model1)
+# summary(lm_model1)
 
 ggplot(just_harris_data, aes(x = pct, y = predictions)) +
   geom_point(color = 'blue') +
@@ -231,16 +241,16 @@ ggplot(just_harris_data, aes(x = pct, y = predictions)) +
        x = "Actual pct",
        y = "Predicted pct") +
   theme_minimal()
-
 ```
 
+@fig-model-pct-pollscore in this SLR model, the response variable is pct and the only one predictor is the pollscore. The primary concern lies in the evident dispersion of data points, which are widely spread and do not cluster closely around the line of perfect prediction (the dashed red line). This suggests that while pollscore may have some predictive capability, it does not adequately explain the variability in pct. The observed inconsistencies between actual and predicted values indicate that the relationship between pct and pollscore is likely not sufficiently captured by a linear model with just one predictor.
 
 ```{r}
 #| echo: false
 #| warning: false
 just_harris_data = Harris_data |> na.omit()
 model_MLR = lm(pct ~ pollscore + days_taken_from_election + methodology + sample_size + state, data = just_harris_data)
-summary(model_MLR)
+# summary(model_MLR)
 just_harris_data <- just_harris_data |> mutate(fitted_value = predict(model_MLR),  num_harris = round((pct / 100) * sample_size, 0))
 
 predictions = predict(model_MLR, just_harris_data)
@@ -254,6 +264,7 @@ ggplot(just_harris_data, aes(x = end_date)) +
 ```
 
 ```{r}
+#| label: fig-model-MLR
 #| echo: false
 #| warning: false
 ggplot(just_harris_data, aes(x = pct, y = fitted_value)) +
@@ -265,9 +276,13 @@ ggplot(just_harris_data, aes(x = pct, y = fitted_value)) +
   theme_minimal()
 ```
 
+@fig-model-MLR, in this MLR model, we predicts pct using pollscore, days_taken_from_election, methodology, sample_size, and state as predictors. The overall distribution of points suggests that the MLR model has captured a substantial portion of the variance in pct. The majority of the data points align relatively well with the red dashed line, particularly within the middle range of pct values (approximately between 40 and 60). This alignment indicates that the model performs reasonably well in this range, with predicted values correlating strongly with the actual observed outcomes.
 
-
+## Bayesian Model
 ```{r}
+#| label: fig-bayesian-model
+#| echo: false
+#| warning: false
 baye_model_data = just_harris_data
 baye_model_data$pct = as.factor(baye_model_data$pct)
 baye_model_data$pollscore = as.factor(baye_model_data$pollscore)
@@ -275,8 +290,9 @@ baye_model_data$days_taken_from_election = as.factor(baye_model_data$days_taken_
 baye_model_data$methodology = as.factor(baye_model_data$methodology)
 baye_model_data$pct <- as.numeric(baye_model_data$pct)
 # Define the Bayesian model with brms
+# test and train dataset
 
-formula <- pct ~ pollscore + days_taken_from_election + (1 | methodology) + (1 | state)
+formula <- pct ~ pollscore + days_taken_from_election + sample_size + (1 | methodology) + (1 | state)
 
 priors = normal(0, 2.5, autoscale = TRUE)
 
@@ -291,22 +307,120 @@ bayesian_model_1 <- stan_glmer(
   adapt_delta = 0.95
 )
 pp_check(bayesian_model_1)
-summary(bayesian_model_1)
+# summary(bayesian_model_1)
 ```
 
-This plot displays the results of a posterior predictive check (PPC) for a Bayesian model using the pp_check() function. 
+
+### Posterior Predictive Checks 
+@fig-bayesian-model This plot displays the results of a posterior predictive check (PPC) for a Bayesian model using the pp_check() function. 
 
 The observed data (y) follows a distinct, symmetrical distribution centered around a specific value, suggesting a well-defined peak with tapering on both sides. The replicated distributions (y_rep), shown as multiple thin lines, generally align with the shape of the observed distribution, indicating that the Bayesian model has captured the main characteristics of the data. However, the variability in the y_rep lines highlights the degree of uncertainty inherent in the model’s predictive capability.
 
 The fact that the y_rep curves closely match the overall pattern of the actual y suggests that the model performs reasonably well in replicating the observed data. Minor discrepancies or deviations between the y and y_rep might imply areas where the model could be fine-tuned or adjusted to improve accuracy. Overall, this PPC indicates that the model provides a decent fit to the data, with some variability accounted for in the predictive samples.
 
+### Train Test Validation
 
 ```{r}
+#| warning: false
+# Split data into training and test sets
+set.seed(123)
+train_indices <- sample(seq_len(nrow(just_harris_data)), size = 0.7 * nrow(just_harris_data))
+train_data <- just_harris_data[train_indices, ]
+test_data <- just_harris_data[-train_indices, ]
+
+# Fit the model on the training data
+bayesian_model_train <- stan_glmer(
+  formula = formula,
+  data = train_data,
+  family = gaussian(),
+  prior = priors,
+  prior_intercept = priors,
+  seed = 123,
+  cores = 4,
+  adapt_delta = 0.95
+)
+
+# Predict on the test data and check performance
+predictions <- posterior_predict(bayesian_model_train, newdata = test_data)
+```
+
+
+```{r}
+#| warning: false
+ss_total <- sum((test_data$pct - mean(test_data$pct))^2)
+ss_residual <- sum((test_data$pct - colMeans(predictions))^2)
+r_squared <- 1 - (ss_residual / ss_total)
+print(paste("R-squared:", r_squared))
+# "R-squared: 0.700563202695799"
+```
+
+\begin{align}
+SS_{\text{total}} = \sum_{i=1}^{n} \left( y_i - \bar{y} \right)^2\\
+SS_{\text{residual}} = \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2\\
+R^2 = 1 - \frac{SS_{\text{residual}}}{SS_{\text{total}}}\\
+\text{R-squared} = 0.700563202695799
+\end{align}
+
+Where:\
+\begin{itemize}
+    \item \( y_i \) represents the actual values,
+    \item \( \bar{y} \) is the mean of the actual values,
+    \item \( \hat{y}_i \) are the predicted values,
+    \item \( SS_{\text{total}} \) is the total sum of squares,
+    \item \( SS_{\text{residual}} \) is the sum of squared residuals.
+\end{itemize}
+
+
+
+we could see that the R squared value equal to the 0.700563202695799 suggesting that the model captures a substantial portion of the variability in the data and demonstrates that the model performs well in explaining the variability of the pct in the test data, reflecting strong predictive capabilities.
+
+\newpage
+```{r}
+#| label: fig-bayesian-model-actual-predict
+#| echo: false
+#| warning: false
+plot(test_data$pct, colMeans(predictions), 
+     xlab = "Actual PCT Values", 
+     ylab = "Predicted  PCT Values", 
+     main = "Predicted PCT vs Actual PCT")
+abline(0, 1, col = "red")  # Add a 45-degree reference line
+```
+
+ by visual checking actual pct and predicted pct plot @fig-bayesian-model-actual-predict the points are plotted against a 45-degree line, which represents the ideal scenario where predicted values match the actual values perfectly.
+
+\newpage
+```{r}
+#| label: fig-bayesian-model-residual
+#| echo: false
+#| warning: false
+residuals <- test_data$pct - colMeans(predictions)
+plot(colMeans(predictions), residuals, 
+     xlab = "Predicted Values", 
+     ylab = "Residuals", 
+     main = "Residual Plot")
+abline(h = 0, col = "red")
+```
+
+and the residual plot @fig-bayesian-model-residual are fairly centered around zero with no major trend, suggesting that the model is not heavily biased in its predictions.
+
+In conculsion, the visual checks from the predicted vs. actual plot and the residual plot, there is no strong evidence that the Bayesian model is overfitting. It appears to generalize well to the data it was trained on without showing signs of capturing noise or irrelevant patterns. 
+
+### Model justification
+
+To predict the support percentage (PCT) for Harris and Trump, we employed a comprehensive modeling strategy involving Simple Linear Regression (SLR), Multiple Linear Regression (MLR), and a Bayesian hierarchical model. The SLR model provided a foundational analysis of the relationship between PCT and pollscore, highlighting its limited predictive power due to a lack of complexity. The MLR model improved on this by incorporating additional predictors such as days taken from the election, sample size, methodology, and state, enhancing its predictive accuracy and capturing interactions among variables. The Bayesian hierarchical model further refined our approach, incorporating prior knowledge and accounting for variability at group levels (e.g., methodology and state) through random intercepts. This model provided robust uncertainty quantification through credible intervals and demonstrated strong predictive performance with an R-squared value around 0.70, indicating it effectively explained data variability. By leveraging the strengths of these models, particularly the Bayesian approach’s interpretability and robustness, we achieved reliable predictions and a deeper understanding of the factors influencing support percentages.
+
+
+# Result
+```{r}
+#| label: fig-bayesian-model-CI
+#| echo: false
+#| warning: false
 # Plot random effects
 plot(bayesian_model_1, pars = "(Intercept)", prob = 0.95)
 ```
 
-This plot displays the estimated posterior distribution for the intercept parameter in the Bayesian model. The intercept represents the baseline level of support, expressed as a percentage, for Kamala Harris in the U.S. election data used in the analysis. The plot features a point estimate (depicted by the central dot) that indicates the mean or median of the posterior distribution for the intercept, and a horizontal line showing the 95% credible interval, which signifies the range within which the true value of the intercept is likely to fall with 95% probability.
+
+@fig-bayesian-model-CI This plot displays the estimated posterior distribution for the intercept parameter in the Bayesian model. The intercept represents the baseline level of support, expressed as a percentage, for Kamala Harris in the U.S. election data used in the analysis. The plot features a point estimate (depicted by the central dot) that indicates the mean or median of the posterior distribution for the intercept, and a horizontal line showing the 95% credible interval, which signifies the range within which the true value of the intercept is likely to fall with 95% probability.
 
 The range of this credible interval spans from approximately 50 to 54 percent, suggesting that the model estimates the baseline level of support for Kamala Harris to be around this range. The relatively narrow width of the interval implies a certain degree of confidence in the estimate, indicating that the data used in the model provided a clear signal for the intercept's value.
 
@@ -314,54 +428,35 @@ In conclusion, the estimated intercept, which represents the baseline percentage
 
 
 ```{r}
+#| echo: false
+#| warning: false
 
+predictions2 <- posterior_predict(bayesian_model_1, newdata = just_harris_data)
 
-# # Transform Biden and Trump’s vote shares to fit a beta distribution
-# # Biden received 51.3%, Trump received 46.8%, totaling to approximately 98.1% (adjusted here for simplicity)
-# total_votes <- 100
-# biden_shape1 <- 51.3 / total_votes * 10
-# biden_shape2 <- (1 - 51.3 / total_votes) * 10
-# trump_shape1 <- 46.8 / total_votes * 10
-# trump_shape2 <- (1 - 46.8 / total_votes) * 10
+predicted_means <- colMeans(predictions2)
+predicted_intervals <- apply(predictions2, 2, quantile, probs = c(0.025, 0.975))
 
-# # Set up priors using beta distributions based on 2020 vote shares
-# prior <- c(
-#   set_prior(paste0("beta(", biden_shape1, ", ", biden_shape2, ")"), class = "b", coef = "biden"),
-#   set_prior(paste0("beta(", trump_shape1, ", ", trump_shape2, ")"), class = "b", coef = "trump")
-# )
+# Combine the results with the actual data
+result_summary <- data.frame(
+  Actual_PCT = just_harris_data$pct,
+  Predicted_PCT = predicted_means,
+  Lower_CI = predicted_intervals[1, ],
+  Upper_CI = predicted_intervals[2, ]
+)
 
-# # Define the model formula
-# formula <- pct ~ pollscore + days_taken_from_election + methodology
+ggplot(result_summary, aes(x = Actual_PCT, y = Predicted_PCT)) +
+  geom_point() +
+  geom_errorbar(aes(ymin = Lower_CI, ymax = Upper_CI), width = 0.2, color = "blue") +
+  geom_abline(intercept = 0, slope = 1, color = "red", linetype = "dashed") +
+  labs(
+    title = "U.S. Election Prediction Results",
+    x = "Actual PCT",
+    y = "Predicted PCT"
+  )
 
-# # Run the Bayesian model
-# model <- brm(
-#   formula = formula,
-#   data = baye_model_data,
-#   family = categ0orical(),
-#   prior = prior,
-#   chains = 4,
-#   iter = 2000,
-#   warmup = 1000,
-#   cores =4
-# )
-
-# # Summarize the model
-# summary(model)
+print(head(result_summary))
 
 ```
-
-
-### Model justification
-
-We expect a positive relationship between the size of the wings and time spent aloft. In particular...
-
-We can use maths by including latex between dollar signs, for instance $\theta$.
-
-
-# Results
-
-Our results are summarized in @tbl-modelresults.
-
 
 
 
