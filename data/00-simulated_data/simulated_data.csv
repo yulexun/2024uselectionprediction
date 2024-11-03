@@ -1,205 +1,205 @@
-pollster,poll_id,state,sample_size,candidate_name,pct
-Emerson,17871,Alabama,2956,Donald Trump,0.5232727195850273
-Emerson,17871,Alabama,2956,Kamala Harris,0.43997422412502796
-Emerson,17871,Alabama,2956,Jill Stein,0.028961269162903612
-Emerson,17871,Alabama,2956,Robert F. Kennedy,0.0077917871270410805
-Ipsos,96236,Alaska,16942,Donald Trump,0.5535058467288048
-Ipsos,96236,Alaska,16942,Kamala Harris,0.4026228084465969
-Ipsos,96236,Alaska,16942,Jill Stein,0.020210729867501505
-Ipsos,96236,Alaska,16942,Robert F. Kennedy,0.023660614957096867
-Marist,36468,Arizona,4091,Donald Trump,0.43400561783233327
-Marist,36468,Arizona,4091,Kamala Harris,0.5452669185977647
-Marist,36468,Arizona,4091,Jill Stein,0.012537232241543777
-Marist,36468,Arizona,4091,Robert F. Kennedy,0.008190231328358302
-Marist,25900,Arkansas,17083,Donald Trump,0.5453107506793053
-Marist,25900,Arkansas,17083,Kamala Harris,0.39266175223765987
-Marist,25900,Arkansas,17083,Jill Stein,0.027541568110119777
-Marist,25900,Arkansas,17083,Robert F. Kennedy,0.034485928972915025
-Ipsos,87907,California,17887,Donald Trump,0.40455048325848
-Ipsos,87907,California,17887,Kamala Harris,0.5585768115983875
-Ipsos,87907,California,17887,Jill Stein,0.015011396979386209
-Ipsos,87907,California,17887,Robert F. Kennedy,0.02186130816374632
-Ipsos,57362,Colorado,14690,Donald Trump,0.4237432739264341
-Ipsos,57362,Colorado,14690,Kamala Harris,0.5363598932563378
-Ipsos,57362,Colorado,14690,Jill Stein,0.035141576267102355
-Ipsos,57362,Colorado,14690,Robert F. Kennedy,0.004755256550125604
-Emerson,16802,Connecticut,19394,Donald Trump,0.39478913729769793
-Emerson,16802,Connecticut,19394,Kamala Harris,0.5857723327083407
-Emerson,16802,Connecticut,19394,Jill Stein,0.019438529993961347
-Emerson,16802,Connecticut,19394,Robert F. Kennedy,0
-Ipsos,12338,Delaware,14209,Donald Trump,0.42698380416148274
-Ipsos,12338,Delaware,14209,Kamala Harris,0.528991325647428
-Ipsos,12338,Delaware,14209,Jill Stein,0.013279224274283696
-Ipsos,12338,Delaware,14209,Robert F. Kennedy,0.030745645916805474
-Ipsos,37458,Florida,5581,Donald Trump,0.48736523352058697
-Ipsos,37458,Florida,5581,Kamala Harris,0.4564361676821486
-Ipsos,37458,Florida,5581,Jill Stein,0.029709397105661818
-Ipsos,37458,Florida,5581,Robert F. Kennedy,0.026489201691602623
-SurveyUSA,85108,Georgia,17835,Donald Trump,0.4949410377401828
-SurveyUSA,85108,Georgia,17835,Kamala Harris,0.46158630763702874
-SurveyUSA,85108,Georgia,17835,Jill Stein,0.020712374310909124
-SurveyUSA,85108,Georgia,17835,Robert F. Kennedy,0.022760280311879367
-Ipsos,79379,Hawaii,16852,Donald Trump,0.4110031400497717
-Ipsos,79379,Hawaii,16852,Kamala Harris,0.5488728940750707
-Ipsos,79379,Hawaii,16852,Jill Stein,0.027204391021554742
-Ipsos,79379,Hawaii,16852,Robert F. Kennedy,0.012919574853602902
-YouGov,48027,Idaho,4626,Donald Trump,0.5369614965256007
-YouGov,48027,Idaho,4626,Kamala Harris,0.4283647056768862
-YouGov,48027,Idaho,4626,Jill Stein,0.007678741383294052
-YouGov,48027,Idaho,4626,Robert F. Kennedy,0.026995056414219107
-Marist,92052,Illinois,18772,Donald Trump,0.4253289479320533
-Marist,92052,Illinois,18772,Kamala Harris,0.520562259917388
-Marist,92052,Illinois,18772,Jill Stein,0.018990742966108982
-Marist,92052,Illinois,18772,Robert F. Kennedy,0.035118049184449676
-YouGov,54499,Indiana,8045,Donald Trump,0.5294904704482292
-YouGov,54499,Indiana,8045,Kamala Harris,0.42655834507678037
-YouGov,54499,Indiana,8045,Jill Stein,0.025138921239927347
-YouGov,54499,Indiana,8045,Robert F. Kennedy,0.01881226323506317
-SurveyUSA,29565,Iowa,15402,Donald Trump,0.5357001220427975
-SurveyUSA,29565,Iowa,15402,Kamala Harris,0.4331826036772377
-SurveyUSA,29565,Iowa,15402,Jill Stein,0.025561798603565486
-SurveyUSA,29565,Iowa,15402,Robert F. Kennedy,0.005555475676399333
-YouGov,48026,Kansas,111,Donald Trump,0.5851293689187433
-YouGov,48026,Kansas,111,Kamala Harris,0.374039308450697
-YouGov,48026,Kansas,111,Jill Stein,0.03163904453928285
-YouGov,48026,Kansas,111,Robert F. Kennedy,0.009192278091276788
-SurveyUSA,28609,Kentucky,17105,Donald Trump,0.5250915816283009
-SurveyUSA,28609,Kentucky,17105,Kamala Harris,0.42887938414573124
-SurveyUSA,28609,Kentucky,17105,Jill Stein,0.03706422928015482
-SurveyUSA,28609,Kentucky,17105,Robert F. Kennedy,0.00896480494581299
-Marist,49128,Louisiana,8072,Donald Trump,0.5317237039275532
-Marist,49128,Louisiana,8072,Kamala Harris,0.43367796545953285
-Marist,49128,Louisiana,8072,Jill Stein,0.01708596914259116
-Marist,49128,Louisiana,8072,Robert F. Kennedy,0.017512361470322743
-Emerson,23695,Maine,12820,Donald Trump,0.4120408356414039
-Emerson,23695,Maine,12820,Kamala Harris,0.5457018862134528
-Emerson,23695,Maine,12820,Jill Stein,0.02311021486200994
-Emerson,23695,Maine,12820,Robert F. Kennedy,0.019147063283133276
-SurveyUSA,93821,Maryland,13655,Donald Trump,0.3784486505476373
-SurveyUSA,93821,Maryland,13655,Kamala Harris,0.5968724509367253
-SurveyUSA,93821,Maryland,13655,Jill Stein,0.01937073805717074
-SurveyUSA,93821,Maryland,13655,Robert F. Kennedy,0.005308160458466677
-Emerson,16447,Massachusetts,19086,Donald Trump,0.41090003792249996
-Emerson,16447,Massachusetts,19086,Kamala Harris,0.5525266275748227
-Emerson,16447,Massachusetts,19086,Jill Stein,0.01890539700041918
-Emerson,16447,Massachusetts,19086,Robert F. Kennedy,0.017667937502258146
-Ipsos,23333,Michigan,5188,Donald Trump,0.47705937115071945
-Ipsos,23333,Michigan,5188,Kamala Harris,0.49645035809045207
-Ipsos,23333,Michigan,5188,Jill Stein,0.01346504827767289
-Ipsos,23333,Michigan,5188,Robert F. Kennedy,0.013025222481155608
-Ipsos,72164,Minnesota,5153,Donald Trump,0.3992608944900699
-Ipsos,72164,Minnesota,5153,Kamala Harris,0.5897775041130471
-Ipsos,72164,Minnesota,5153,Jill Stein,0.010296119841423432
-Ipsos,72164,Minnesota,5153,Robert F. Kennedy,6.654815554596981e-4
-YouGov,58232,Mississippi,3300,Donald Trump,0.5392398668251854
-YouGov,58232,Mississippi,3300,Kamala Harris,0.42383037444968075
-YouGov,58232,Mississippi,3300,Jill Stein,0.00808734510306454
-YouGov,58232,Mississippi,3300,Robert F. Kennedy,0.02884241362206924
-YouGov,23636,Missouri,14419,Donald Trump,0.607612022701511
-YouGov,23636,Missouri,14419,Kamala Harris,0.3302834146925061
-YouGov,23636,Missouri,14419,Jill Stein,0.018697392290559743
-YouGov,23636,Missouri,14419,Robert F. Kennedy,0.0434071703154231
-Emerson,24555,Montana,18875,Donald Trump,0.6095777663310641
-Emerson,24555,Montana,18875,Kamala Harris,0.36500338218044226
-Emerson,24555,Montana,18875,Jill Stein,0.006196120393680851
-Emerson,24555,Montana,18875,Robert F. Kennedy,0.01922273109481277
-Ipsos,79979,Nebraska,17651,Donald Trump,0.6019795938253097
-Ipsos,79979,Nebraska,17651,Kamala Harris,0.35325895288422904
-Ipsos,79979,Nebraska,17651,Jill Stein,0.029931301293562897
-Ipsos,79979,Nebraska,17651,Robert F. Kennedy,0.014830151996898317
-YouGov,39216,Nevada,1043,Donald Trump,0.48030071887136244
-YouGov,39216,Nevada,1043,Kamala Harris,0.4670333147391192
-YouGov,39216,Nevada,1043,Jill Stein,0.02959757221773484
-YouGov,39216,Nevada,1043,Robert F. Kennedy,0.02306839417178357
-Ipsos,16635,New Hampshire,10323,Donald Trump,0.45573120991034777
-Ipsos,16635,New Hampshire,10323,Kamala Harris,0.4897518694652063
-Ipsos,16635,New Hampshire,10323,Jill Stein,0.0376107404456559
-Ipsos,16635,New Hampshire,10323,Robert F. Kennedy,0.01690618017878998
-Marist,92170,New Jersey,10880,Donald Trump,0.4184692600324168
-Marist,92170,New Jersey,10880,Kamala Harris,0.5258565536435805
-Marist,92170,New Jersey,10880,Jill Stein,0.032936397535738154
-Marist,92170,New Jersey,10880,Robert F. Kennedy,0.022737788788264532
-Emerson,68174,New Mexico,10804,Donald Trump,0.4107465834145547
-Emerson,68174,New Mexico,10804,Kamala Harris,0.5537139497427275
-Emerson,68174,New Mexico,10804,Jill Stein,0.007484880975403141
-Emerson,68174,New Mexico,10804,Robert F. Kennedy,0.02805458586731474
-Ipsos,18674,New York,11325,Donald Trump,0.44877674794281014
-Ipsos,18674,New York,11325,Kamala Harris,0.49271091462124444
-Ipsos,18674,New York,11325,Jill Stein,0.02432689319245095
-Ipsos,18674,New York,11325,Robert F. Kennedy,0.034185444243494484
-Emerson,46669,North Carolina,2510,Donald Trump,0.5127047807188979
-Emerson,46669,North Carolina,2510,Kamala Harris,0.4801099542785746
-Emerson,46669,North Carolina,2510,Jill Stein,0.003096198299602594
-Emerson,46669,North Carolina,2510,Robert F. Kennedy,0.004089066702924821
-YouGov,67714,North Dakota,19857,Donald Trump,0.5849460278521159
-YouGov,67714,North Dakota,19857,Kamala Harris,0.3827951844956693
-YouGov,67714,North Dakota,19857,Jill Stein,0.01870719969706436
-YouGov,67714,North Dakota,19857,Robert F. Kennedy,0.013551587955150454
-SurveyUSA,84276,Ohio,1278,Donald Trump,0.46361226923819704
-SurveyUSA,84276,Ohio,1278,Kamala Harris,0.4977130483386875
-SurveyUSA,84276,Ohio,1278,Jill Stein,0.02357946886701589
-SurveyUSA,84276,Ohio,1278,Robert F. Kennedy,0.015095213556099569
-YouGov,51290,Oklahoma,19050,Donald Trump,0.5354535219627992
-YouGov,51290,Oklahoma,19050,Kamala Harris,0.4316380184811299
-YouGov,51290,Oklahoma,19050,Jill Stein,0.017819731331277837
-YouGov,51290,Oklahoma,19050,Robert F. Kennedy,0.015088728224793176
-YouGov,63344,Oregon,7892,Donald Trump,0.3979146650453011
-YouGov,63344,Oregon,7892,Kamala Harris,0.5339391748905855
-YouGov,63344,Oregon,7892,Jill Stein,0.041017468053787344
-YouGov,63344,Oregon,7892,Robert F. Kennedy,0.027128692010326066
-Ipsos,35179,Pennsylvania,14033,Donald Trump,0.4714230478769842
-Ipsos,35179,Pennsylvania,14033,Kamala Harris,0.48906942219561567
-Ipsos,35179,Pennsylvania,14033,Jill Stein,0.022521136897203767
-Ipsos,35179,Pennsylvania,14033,Robert F. Kennedy,0.016986393030196355
-Marist,34049,Rhode Island,17571,Donald Trump,0.42155961724109126
-Marist,34049,Rhode Island,17571,Kamala Harris,0.5518168097112044
-Marist,34049,Rhode Island,17571,Jill Stein,0.01754710909889033
-Marist,34049,Rhode Island,17571,Robert F. Kennedy,0.009076463948813996
-Marist,93175,South Carolina,18080,Donald Trump,0.5914315896719277
-Marist,93175,South Carolina,18080,Kamala Harris,0.3636117413182264
-Marist,93175,South Carolina,18080,Jill Stein,0.03169959957711291
-Marist,93175,South Carolina,18080,Robert F. Kennedy,0.013257069432733132
-Ipsos,88744,South Dakota,3775,Donald Trump,0.5062524947069557
-Ipsos,88744,South Dakota,3775,Kamala Harris,0.44035778009260795
-Ipsos,88744,South Dakota,3775,Jill Stein,0.02895345798573123
-Ipsos,88744,South Dakota,3775,Robert F. Kennedy,0.024436267214705175
-Marist,91875,Tennessee,15295,Donald Trump,0.542908749813573
-Marist,91875,Tennessee,15295,Kamala Harris,0.39846480501800086
-Marist,91875,Tennessee,15295,Jill Stein,0.021992888464883485
-Marist,91875,Tennessee,15295,Robert F. Kennedy,0.03663355670354279
-Emerson,49756,Texas,19769,Donald Trump,0.6001042754885305
-Emerson,49756,Texas,19769,Kamala Harris,0.3523808319395445
-Emerson,49756,Texas,19769,Jill Stein,0.04751489257192503
-Emerson,49756,Texas,19769,Robert F. Kennedy,0
-Marist,13267,Utah,19061,Donald Trump,0.4848846932524483
-Marist,13267,Utah,19061,Kamala Harris,0.46916551613610924
-Marist,13267,Utah,19061,Jill Stein,0.021195961931150777
-Marist,13267,Utah,19061,Robert F. Kennedy,0.024753828680291582
-Ipsos,16938,Vermont,11046,Donald Trump,0.4112732445644735
-Ipsos,16938,Vermont,11046,Kamala Harris,0.5595450246711975
-Ipsos,16938,Vermont,11046,Jill Stein,0.0012822057867108647
-Ipsos,16938,Vermont,11046,Robert F. Kennedy,0.02789952497761808
-SurveyUSA,65376,Virginia,16357,Donald Trump,0.4921957647202404
-SurveyUSA,65376,Virginia,16357,Kamala Harris,0.4787098121802833
-SurveyUSA,65376,Virginia,16357,Jill Stein,0.01987543521244516
-SurveyUSA,65376,Virginia,16357,Robert F. Kennedy,0.009218987887031143
-Marist,48716,Washington,1864,Donald Trump,0.4070156376858434
-Marist,48716,Washington,1864,Kamala Harris,0.5232994036471152
-Marist,48716,Washington,1864,Jill Stein,0.03272429907103828
-Marist,48716,Washington,1864,Robert F. Kennedy,0.03696065959600307
-YouGov,54211,West Virginia,1792,Donald Trump,0.6189363580512172
-YouGov,54211,West Virginia,1792,Kamala Harris,0.38106364194878284
-YouGov,54211,West Virginia,1792,Jill Stein,0
-YouGov,54211,West Virginia,1792,Robert F. Kennedy,0
-Marist,57941,Wisconsin,14341,Donald Trump,0.43988594037935613
-Marist,57941,Wisconsin,14341,Kamala Harris,0.5074643789052348
-Marist,57941,Wisconsin,14341,Jill Stein,0.028618500464409617
-Marist,57941,Wisconsin,14341,Robert F. Kennedy,0.024031180250999453
-Ipsos,39820,Wyoming,17801,Donald Trump,0.5986409618465147
-Ipsos,39820,Wyoming,17801,Kamala Harris,0.36298396535400657
-Ipsos,39820,Wyoming,17801,Jill Stein,0.016502388284521097
-Ipsos,39820,Wyoming,17801,Robert F. Kennedy,0.0218726845149576
-Ipsos,11200,National,15126,Donald Trump,0.4555198289291895
-Ipsos,11200,National,15126,Kamala Harris,0.4911252551999896
-Ipsos,11200,National,15126,Jill Stein,0.03249888173585584
-Ipsos,11200,National,15126,Robert F. Kennedy,0.020856034134965038
+pollster,poll_id,state,methodology,sample_size,candidate_name,pct
+Ipsos,17871,Alabama,IVR,18800,Donald Trump,0.5165623832146319
+Ipsos,17871,Alabama,Online Panel,18800,Kamala Harris,0.4279463291153608
+Ipsos,17871,Alabama,Text,18800,Jill Stein,0.028153087280626918
+Ipsos,17871,Alabama,Phone,18800,Robert F. Kennedy,0.027338200389380354
+Emerson,96236,Alaska,Text,7169,Donald Trump,0.5298856944130632
+Emerson,96236,Alaska,Online Panel,7169,Kamala Harris,0.45106546582595275
+Emerson,96236,Alaska,Email,7169,Jill Stein,0.0033968909854150096
+Emerson,96236,Alaska,IVR,7169,Robert F. Kennedy,0.015651948775569094
+Ipsos,36468,Arizona,Phone,10856,Donald Trump,0.4482410272736907
+Ipsos,36468,Arizona,IVR,10856,Kamala Harris,0.5072663186446729
+Ipsos,36468,Arizona,Email,10856,Jill Stein,0.022409666113389633
+Ipsos,36468,Arizona,Email,10856,Robert F. Kennedy,0.022082987968246676
+SurveyUSA,25900,Arkansas,Text,10613,Donald Trump,0.5828776201587813
+SurveyUSA,25900,Arkansas,Phone,10613,Kamala Harris,0.36797717839687183
+SurveyUSA,25900,Arkansas,IVR,10613,Jill Stein,0.026086583826079895
+SurveyUSA,25900,Arkansas,Text,10613,Robert F. Kennedy,0.02305861761826695
+Marist,87907,California,IVR,11098,Donald Trump,0.3842581356634924
+Marist,87907,California,Online Panel,11098,Kamala Harris,0.5621555311685857
+Marist,87907,California,IVR,11098,Jill Stein,0.04080519725268432
+Marist,87907,California,IVR,11098,Robert F. Kennedy,0.012781135915237657
+YouGov,57362,Colorado,Phone,7005,Donald Trump,0.46264211669965405
+YouGov,57362,Colorado,IVR,7005,Kamala Harris,0.489897726485509
+YouGov,57362,Colorado,IVR,7005,Jill Stein,0.03716482933674146
+YouGov,57362,Colorado,Online Panel,7005,Robert F. Kennedy,0.01029532747809543
+SurveyUSA,16802,Connecticut,Text,12997,Donald Trump,0.4079315846311403
+SurveyUSA,16802,Connecticut,Phone,12997,Kamala Harris,0.5468574498605162
+SurveyUSA,16802,Connecticut,IVR,12997,Jill Stein,0.01923572213143662
+SurveyUSA,16802,Connecticut,Email,12997,Robert F. Kennedy,0.02597524337690682
+YouGov,12338,Delaware,Text,19087,Donald Trump,0.4497659585477195
+YouGov,12338,Delaware,Online Panel,19087,Kamala Harris,0.49708598179044017
+YouGov,12338,Delaware,Online Panel,19087,Jill Stein,0.03348057246395016
+YouGov,12338,Delaware,IVR,19087,Robert F. Kennedy,0.01966748719789011
+Marist,37458,Florida,IVR,11069,Donald Trump,0.5634395106476798
+Marist,37458,Florida,Email,11069,Kamala Harris,0.3789041514882515
+Marist,37458,Florida,Phone,11069,Jill Stein,0.03769033453725436
+Marist,37458,Florida,Phone,11069,Robert F. Kennedy,0.019966003326814315
+Emerson,85108,Georgia,Text,3080,Donald Trump,0.4834309808814016
+Emerson,85108,Georgia,Text,3080,Kamala Harris,0.48357605143591653
+Emerson,85108,Georgia,Email,3080,Jill Stein,0.02587463159396331
+Emerson,85108,Georgia,Online Panel,3080,Robert F. Kennedy,0.007118336088718537
+YouGov,79379,Hawaii,Phone,16785,Donald Trump,0.4574911080762223
+YouGov,79379,Hawaii,IVR,16785,Kamala Harris,0.5239103368028009
+YouGov,79379,Hawaii,Email,16785,Jill Stein,0.018598555120976877
+YouGov,79379,Hawaii,IVR,16785,Robert F. Kennedy,0
+Emerson,48027,Idaho,Phone,3756,Donald Trump,0.5176597146140643
+Emerson,48027,Idaho,Phone,3756,Kamala Harris,0.42182483169577056
+Emerson,48027,Idaho,Email,3756,Jill Stein,0.028872939251014564
+Emerson,48027,Idaho,Online Panel,3756,Robert F. Kennedy,0.03164251443915053
+SurveyUSA,92052,Illinois,Online Panel,19264,Donald Trump,0.4459166494185039
+SurveyUSA,92052,Illinois,Text,19264,Kamala Harris,0.5248867036354365
+SurveyUSA,92052,Illinois,Online Panel,19264,Jill Stein,0.02041557640320625
+SurveyUSA,92052,Illinois,IVR,19264,Robert F. Kennedy,0.008781070542853278
+SurveyUSA,54499,Indiana,IVR,9979,Donald Trump,0.5658542661416537
+SurveyUSA,54499,Indiana,Online Panel,9979,Kamala Harris,0.3924214496137436
+SurveyUSA,54499,Indiana,Online Panel,9979,Jill Stein,0.01690644536522131
+SurveyUSA,54499,Indiana,Text,9979,Robert F. Kennedy,0.024817838879381354
+Ipsos,29565,Iowa,Online Panel,11112,Donald Trump,0.5787940865850041
+Ipsos,29565,Iowa,Online Panel,11112,Kamala Harris,0.3910739281694363
+Ipsos,29565,Iowa,Phone,11112,Jill Stein,0.014291018537392952
+Ipsos,29565,Iowa,Online Panel,11112,Robert F. Kennedy,0.015840966708166582
+YouGov,48026,Kansas,Email,17107,Donald Trump,0.528757823074696
+YouGov,48026,Kansas,IVR,17107,Kamala Harris,0.4452331126966146
+YouGov,48026,Kansas,Email,17107,Jill Stein,0.01874184614510537
+YouGov,48026,Kansas,Phone,17107,Robert F. Kennedy,0.00726721808358409
+Marist,28609,Kentucky,Email,11427,Donald Trump,0.5565005246727659
+Marist,28609,Kentucky,Phone,11427,Kamala Harris,0.38802615356891157
+Marist,28609,Kentucky,IVR,11427,Jill Stein,0.02435372664777672
+Marist,28609,Kentucky,Text,11427,Robert F. Kennedy,0.03111959511054588
+Emerson,49128,Louisiana,Phone,12005,Donald Trump,0.5349325121333778
+Emerson,49128,Louisiana,Text,12005,Kamala Harris,0.4184182582758199
+Emerson,49128,Louisiana,Online Panel,12005,Jill Stein,0.01839715129502864
+Emerson,49128,Louisiana,Online Panel,12005,Robert F. Kennedy,0.02825207829577365
+Ipsos,23695,Maine,Email,9262,Donald Trump,0.4663589388555821
+Ipsos,23695,Maine,Email,9262,Kamala Harris,0.48120380400312956
+Ipsos,23695,Maine,Text,9262,Jill Stein,0.02823971966604746
+Ipsos,23695,Maine,Online Panel,9262,Robert F. Kennedy,0.024197537475240925
+Ipsos,93821,Maryland,Email,5609,Donald Trump,0.40099826301743485
+Ipsos,93821,Maryland,Online Panel,5609,Kamala Harris,0.5626690993091561
+Ipsos,93821,Maryland,IVR,5609,Jill Stein,0.015775775161746892
+Ipsos,93821,Maryland,Text,5609,Robert F. Kennedy,0.02055686251166206
+YouGov,16447,Massachusetts,Online Panel,18940,Donald Trump,0.39748717533433664
+YouGov,16447,Massachusetts,Text,18940,Kamala Harris,0.5634016220036185
+YouGov,16447,Massachusetts,Email,18940,Jill Stein,0.017811410744138518
+YouGov,16447,Massachusetts,Phone,18940,Robert F. Kennedy,0.021299791917906333
+Emerson,23333,Michigan,Email,261,Donald Trump,0.46391326144576434
+Emerson,23333,Michigan,Email,261,Kamala Harris,0.5038145950596302
+Emerson,23333,Michigan,Online Panel,261,Jill Stein,0
+Emerson,23333,Michigan,IVR,261,Robert F. Kennedy,0.03227214349460541
+Marist,72164,Minnesota,IVR,10839,Donald Trump,0.36124753994472614
+Marist,72164,Minnesota,Online Panel,10839,Kamala Harris,0.6054937058850561
+Marist,72164,Minnesota,IVR,10839,Jill Stein,0.011494678522289881
+Marist,72164,Minnesota,Text,10839,Robert F. Kennedy,0.021764075647927855
+SurveyUSA,58232,Mississippi,IVR,19717,Donald Trump,0.5200569694800349
+SurveyUSA,58232,Mississippi,Online Panel,19717,Kamala Harris,0.4219879519766626
+SurveyUSA,58232,Mississippi,Phone,19717,Jill Stein,0.024190049945647003
+SurveyUSA,58232,Mississippi,IVR,19717,Robert F. Kennedy,0.03376502859765552
+Emerson,23636,Missouri,Email,5065,Donald Trump,0.5882040380992596
+Emerson,23636,Missouri,IVR,5065,Kamala Harris,0.38103846074918035
+Emerson,23636,Missouri,Online Panel,5065,Jill Stein,0.00832624648192506
+Emerson,23636,Missouri,Online Panel,5065,Robert F. Kennedy,0.022431254669635036
+Marist,24555,Montana,Online Panel,14327,Donald Trump,0.5407728105210132
+Marist,24555,Montana,Email,14327,Kamala Harris,0.4340704168673212
+Marist,24555,Montana,Email,14327,Jill Stein,0.004517450669110041
+Marist,24555,Montana,Text,14327,Robert F. Kennedy,0.02063932194255557
+YouGov,79979,Nebraska,IVR,17272,Donald Trump,0.5340171578645141
+YouGov,79979,Nebraska,Email,17272,Kamala Harris,0.4206255797128572
+YouGov,79979,Nebraska,IVR,17272,Jill Stein,0.024457160704928878
+YouGov,79979,Nebraska,Email,17272,Robert F. Kennedy,0.020900101717699886
+Ipsos,39216,Nevada,Online Panel,6622,Donald Trump,0.5065302356376796
+Ipsos,39216,Nevada,Phone,6622,Kamala Harris,0.45072487914818427
+Ipsos,39216,Nevada,Email,6622,Jill Stein,0.019053847712327127
+Ipsos,39216,Nevada,IVR,6622,Robert F. Kennedy,0.023691037501808992
+YouGov,16635,New Hampshire,IVR,9100,Donald Trump,0.47806597887148383
+YouGov,16635,New Hampshire,Phone,9100,Kamala Harris,0.4724732913584352
+YouGov,16635,New Hampshire,Phone,9100,Jill Stein,0.018475442216048996
+YouGov,16635,New Hampshire,Online Panel,9100,Robert F. Kennedy,0.03098528755403191
+YouGov,92170,New Jersey,IVR,2716,Donald Trump,0.42275912148294303
+YouGov,92170,New Jersey,Phone,2716,Kamala Harris,0.5384324052048707
+YouGov,92170,New Jersey,Phone,2716,Jill Stein,0.02746633365462459
+YouGov,92170,New Jersey,Email,2716,Robert F. Kennedy,0.011342139657561721
+Emerson,68174,New Mexico,Phone,9180,Donald Trump,0.4865402403944398
+Emerson,68174,New Mexico,Online Panel,9180,Kamala Harris,0.48786625416701795
+Emerson,68174,New Mexico,Text,9180,Jill Stein,0.020809670903302276
+Emerson,68174,New Mexico,Phone,9180,Robert F. Kennedy,0.004783834535239877
+YouGov,18674,New York,Online Panel,16488,Donald Trump,0.45005650770218025
+YouGov,18674,New York,Text,16488,Kamala Harris,0.4990488286473053
+YouGov,18674,New York,Phone,16488,Jill Stein,0.03498488211197839
+YouGov,18674,New York,IVR,16488,Robert F. Kennedy,0.015909781538536064
+SurveyUSA,46669,North Carolina,Email,18366,Donald Trump,0.4894883301441899
+SurveyUSA,46669,North Carolina,Online Panel,18366,Kamala Harris,0.459348833706285
+SurveyUSA,46669,North Carolina,Text,18366,Jill Stein,0.034176167440763905
+SurveyUSA,46669,North Carolina,Phone,18366,Robert F. Kennedy,0.016986668708761237
+SurveyUSA,67714,North Dakota,Text,7196,Donald Trump,0.5666475567975687
+SurveyUSA,67714,North Dakota,Text,7196,Kamala Harris,0.3887375061856452
+SurveyUSA,67714,North Dakota,Email,7196,Jill Stein,0.023654098772836314
+SurveyUSA,67714,North Dakota,Phone,7196,Robert F. Kennedy,0.02096083824394975
+Emerson,84276,Ohio,Phone,11329,Donald Trump,0.576088161839289
+Emerson,84276,Ohio,Online Panel,11329,Kamala Harris,0.3950083131167108
+Emerson,84276,Ohio,Online Panel,11329,Jill Stein,0.01031105559134097
+Emerson,84276,Ohio,Online Panel,11329,Robert F. Kennedy,0.018592469452659206
+YouGov,51290,Oklahoma,Email,8841,Donald Trump,0.5590142032135103
+YouGov,51290,Oklahoma,Online Panel,8841,Kamala Harris,0.39888746730223734
+YouGov,51290,Oklahoma,Email,8841,Jill Stein,0.01610637742238576
+YouGov,51290,Oklahoma,Online Panel,8841,Robert F. Kennedy,0.025991952061866618
+SurveyUSA,63344,Oregon,Text,2288,Donald Trump,0.4076533054264597
+SurveyUSA,63344,Oregon,IVR,2288,Kamala Harris,0.5420907019973912
+SurveyUSA,63344,Oregon,IVR,2288,Jill Stein,0.022098900877360533
+SurveyUSA,63344,Oregon,Email,2288,Robert F. Kennedy,0.028157091698788543
+Ipsos,35179,Pennsylvania,Email,5276,Donald Trump,0.48545639300457444
+Ipsos,35179,Pennsylvania,Online Panel,5276,Kamala Harris,0.4819780961041752
+Ipsos,35179,Pennsylvania,Online Panel,5276,Jill Stein,0.01733636358254298
+Ipsos,35179,Pennsylvania,Online Panel,5276,Robert F. Kennedy,0.015229147308707388
+Marist,34049,Rhode Island,IVR,11741,Donald Trump,0.37733609136152546
+Marist,34049,Rhode Island,IVR,11741,Kamala Harris,0.5849530385630918
+Marist,34049,Rhode Island,Email,11741,Jill Stein,0.02411433719191454
+Marist,34049,Rhode Island,IVR,11741,Robert F. Kennedy,0.013596532883468168
+Marist,93175,South Carolina,Online Panel,19487,Donald Trump,0.5608442756807728
+Marist,93175,South Carolina,IVR,19487,Kamala Harris,0.3894610737701788
+Marist,93175,South Carolina,Online Panel,19487,Jill Stein,0.023903245249095206
+Marist,93175,South Carolina,Online Panel,19487,Robert F. Kennedy,0.02579140529995315
+Ipsos,88744,South Dakota,Email,5572,Donald Trump,0.6090017792351112
+Ipsos,88744,South Dakota,Text,5572,Kamala Harris,0.38071870633991556
+Ipsos,88744,South Dakota,Online Panel,5572,Jill Stein,0.008776713189033471
+Ipsos,88744,South Dakota,Text,5572,Robert F. Kennedy,0.001502801235939752
+SurveyUSA,91875,Tennessee,Phone,7112,Donald Trump,0.5892286229294873
+SurveyUSA,91875,Tennessee,IVR,7112,Kamala Harris,0.37854127295578455
+SurveyUSA,91875,Tennessee,IVR,7112,Jill Stein,0.016617776506543114
+SurveyUSA,91875,Tennessee,Text,7112,Robert F. Kennedy,0.015612327608184977
+Marist,49756,Texas,Online Panel,1224,Donald Trump,0.5696017513602509
+Marist,49756,Texas,IVR,1224,Kamala Harris,0.4023200393984754
+Marist,49756,Texas,IVR,1224,Jill Stein,0.008820299891268679
+Marist,49756,Texas,Phone,1224,Robert F. Kennedy,0.019257909350005018
+Emerson,13267,Utah,Phone,4597,Donald Trump,0.5159225132866062
+Emerson,13267,Utah,Online Panel,4597,Kamala Harris,0.4517059059427654
+Emerson,13267,Utah,IVR,4597,Jill Stein,0.028208828325965708
+Emerson,13267,Utah,Text,4597,Robert F. Kennedy,0.004162752444662722
+Marist,16938,Vermont,Phone,3219,Donald Trump,0.39695411736120173
+Marist,16938,Vermont,Phone,3219,Kamala Harris,0.5874572649461123
+Marist,16938,Vermont,Phone,3219,Jill Stein,0.01470698796136416
+Marist,16938,Vermont,Email,3219,Robert F. Kennedy,8.816297313218729e-4
+SurveyUSA,65376,Virginia,Online Panel,9379,Donald Trump,0.370022705625445
+SurveyUSA,65376,Virginia,Phone,9379,Kamala Harris,0.6014865712654436
+SurveyUSA,65376,Virginia,Phone,9379,Jill Stein,0.007198256189064634
+SurveyUSA,65376,Virginia,Phone,9379,Robert F. Kennedy,0.021292466920046795
+Marist,48716,Washington,Text,12076,Donald Trump,0.42854750682946824
+Marist,48716,Washington,Phone,12076,Kamala Harris,0.5452296015477553
+Marist,48716,Washington,Text,12076,Jill Stein,0.009249189470748298
+Marist,48716,Washington,Email,12076,Robert F. Kennedy,0.016973702152028064
+Marist,54211,West Virginia,Email,1722,Donald Trump,0.5712508850684571
+Marist,54211,West Virginia,Text,1722,Kamala Harris,0.40886965807318054
+Marist,54211,West Virginia,Email,1722,Jill Stein,0.008228078200877485
+Marist,54211,West Virginia,Phone,1722,Robert F. Kennedy,0.01165137865748487
+SurveyUSA,57941,Wisconsin,IVR,2106,Donald Trump,0.4457784256955386
+SurveyUSA,57941,Wisconsin,IVR,2106,Kamala Harris,0.5179754059659538
+SurveyUSA,57941,Wisconsin,Text,2106,Jill Stein,0.014368960761205467
+SurveyUSA,57941,Wisconsin,IVR,2106,Robert F. Kennedy,0.021877207577302205
+Marist,39820,Wyoming,Online Panel,18792,Donald Trump,0.5734582240999334
+Marist,39820,Wyoming,Email,18792,Kamala Harris,0.39572982598470563
+Marist,39820,Wyoming,Text,18792,Jill Stein,0.026461144095473062
+Marist,39820,Wyoming,Text,18792,Robert F. Kennedy,0.0043508058198878895
+SurveyUSA,11200,National,Phone,10878,Donald Trump,0.45177619822535736
+SurveyUSA,11200,National,Phone,10878,Kamala Harris,0.4991572880233482
+SurveyUSA,11200,National,Text,10878,Jill Stein,0.02705427870534214
+SurveyUSA,11200,National,Email,10878,Robert F. Kennedy,0.022012235045952254

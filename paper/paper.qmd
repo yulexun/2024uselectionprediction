@@ -19,10 +19,16 @@ bibliography: references.bib
 #| message: false
 
 library(tidyverse)
-library(palmerpenguins)
 library(here)
 library(tibble)
 library(knitr)
+library(maps)
+library(mapproj)
+light_blue <- "#ADD8E6"
+dark_blue <- "#6688CC"
+light_red <- "#FF7777"
+dark_red <- "#B22222"
+purple <- "#9370DB"
 ```
 
 
@@ -74,63 +80,206 @@ We then create a new attribute, days_taken_from_election, which represents the t
 cleaned_data = read_csv(here("data/02-analysis_data/cleaned_data.csv"))
 
 cleaned_data |>
-  select(pct, sample_size, pollscore, days_taken_from_election, state, methodology, answer) |>
+  select(pct, sample_size, pollscore, days_taken_from_election, state, methodology, candidate_name) |>
   head(6) |>
   kable(
-    col.names = c("pct", "sample_size", "pollscore", "days_taken_from_election","state", "methodology", "answer"),
+    col.names = c("pct", "sample_size", "pollscore", "days_taken_from_election","state", "methodology", "Candidate Name"),
     booktabs = TRUE
     ) 
 ```
 
+### States included in anaylsis
+
+After the data cleaning process, 21 states had no polling data. A table showing the number of polls for each state, including those without any polls, is provided in @tbl-state-polls-count.
+
+This absence of polling data is not a significant concern due to the structure of the United States Electoral College (explained in detail in the Appendix). The states lacking polling data have consistently followed historical voting patterns, so predicting the winning candidate in those states is unnecessary
 
 ## Basic Statistics Summary for Data
 
 ```{r}
-#| label: fig-clean-data-histogram-Harris-Trump
-#| fig-cap: the average PCT vs State for Harris and Trump
+#| label: fig-avg-pct-state
+#| fig-cap: Historical State Voting Trends Are Maintined in 2024
 #| echo: false
 #| warning: false
-#| fig-subcap: ["average PCT vs State for Harris","PCT vs State for Trump"]
-#| layout-nrow: 2
-#| fig-width: 40
-#| fig-height: 20
-Harris_data = cleaned_data[cleaned_data$answer == "Harris", ]
-Harris_data |>
-  group_by(state) |>
-  summarise(avg_pct = mean(pct, na.rm = TRUE)) |>
-  ggplot(mapping = aes(x = state, y = avg_pct)) + 
-  geom_col()  +
+#| 
+cleaned_data <- cleaned_data %>% mutate(candidate_name =
+  if_else(!(candidate_name %in% c("Kamala Harris", "Donald Trump")), "Other", candidate_name))
+
+cleaned_data %>%
+  filter(candidate_name %in% c("Kamala Harris", "Donald Trump")) %>%
+  group_by(state, candidate_name) %>%
+  summarise(avg_pct = mean(pct, na.rm = TRUE), .groups = "drop") %>%
+  ggplot(mapping = aes(x = avg_pct, y = state, fill = candidate_name)) + 
+  geom_col(position = "stack") +
   theme_minimal() +
   labs(
-    x = "State", y = "support percentage(pct)", title = "average support percentage(pct) for Harris per state"
-  )
+    x = "Average Polled Support (%)", 
+    y = "State",
+    fill = "Candidate"
+  ) +
+  scale_fill_manual(values = c("Kamala Harris" = light_blue, "Donald Trump" = light_red)) +
+  geom_vline(aes(xintercept = 50), color = purple, size = 1) +
+  theme_minimal() +
+  theme(legend.position = "bottom") + 
+  theme(axis.text.y = element_text(size = 8))
 
+```
+In figure @fig-avg-pct-state, historically Democratic are polling for Kamala and historically Republican states are polling for Trump. Similarly, historically swing states also appear to be close, for instance Michigan (46.9% Trump, 47.5% Harris), Nevada (47.7% Trump, 47.9% Harris), and Pennsylvania (46.9% Trump, 48.2% Harris) all are close to an even split.
 
-Trump_data = cleaned_data[cleaned_data$answer == "Trump", ]
-Trump_data |>
-  group_by(state) |>
-  summarise(avg_pct = mean(pct, na.rm = TRUE)) |>
-  ggplot(mapping = aes(x = state, y = avg_pct)) + 
-  geom_col()  +
+```{r}
+#| label: fig-avg-pct-methodology
+#| fig-cap: Most Metholodgies Do Not Bias Towards a Candidate
+#| echo: false
+#| warning: false
+#| 
+cleaned_data <- cleaned_data %>% mutate(candidate_name =
+  if_else(!(candidate_name %in% c("Kamala Harris", "Donald Trump")), "Other", candidate_name))
+
+cleaned_data %>%
+  filter(candidate_name %in% c("Kamala Harris", "Donald Trump")) %>%
+  filter(!is.na(methodology)) %>% 
+  group_by(methodology, candidate_name) %>%
+  summarise(avg_pct = mean(pct, na.rm = TRUE), .groups = "drop") %>%
+  ggplot(mapping = aes(x = avg_pct, y = methodology, fill = candidate_name)) + 
+  geom_col(position = "stack") +
   theme_minimal() +
   labs(
-    x = "State", y = "support percentage(pct)", title = "average support percentage(pct) for Harris per state"
-  )
+    x = "Average Polled Support (%)", 
+    y = "Methodology",
+    fill = "Candidate"
+  ) +
+  scale_fill_manual(values = c("Kamala Harris" = light_blue, "Donald Trump" = light_red)) +
+  geom_vline(aes(xintercept = 50), color = purple, size = 1) +
+  theme_minimal() +
+  theme(legend.position = "bottom") + 
+  theme(axis.text.y = element_text(size = 8))
+
+```
+Figure @fig-avg-pct-methodology indicates minimal bias in polling percentages when comparing different polling methodologies, as most polls show an even distribution of support between candidates. However, polls that incorporate IVR (Interactive Voice Response) and online panels tend to exhibit greater variability, often resulting in more pronounced gaps in support between Donald Trump and Kamala Harris, depending on the specific poll.
+
+## Relationship Between Variables
+
+```{r}
+#| label: fig-pollscore-samplesize
+#| fig-cap: More Reliable Pollsters Have Larger Sample Sizes in their Polls
+#| echo: false
+#| warning: false
+
+# removing outliers and na's
+graph_data <- cleaned_data %>% 
+  filter(!is.na(pollscore) & !is.na(sample_size)) 
+
+outlier_top <- (quantile(graph_data$sample_size, 0.75) + 
+                  IQR(graph_data$sample_size)*1.5)
+
+outlier_bottom <- (quantile(graph_data$sample_size, 0.25) - 
+                  IQR(graph_data$sample_size)*1.5)
+
+graph_data <- cleaned_data %>%
+  filter(sample_size < outlier_top & sample_size > outlier_bottom)
+
+graph_data %>% filter(!is.na(pollscore) & !is.na(sample_size)) %>% 
+  ggplot(aes(x = pollscore, y = sample_size)) +
+  geom_point(alpha = 0.33) + geom_smooth(method = "lm", se = FALSE, color = light_red)
+
+# this model is really here just for explain, this realtionship should not
+# be treated as lienar
+cor(graph_data$sample_size, graph_data$pollscore)
+lm_score_sample <- lm(sample_size ~ pollscore, data = graph_data)
+summary(lm_score_sample)
 
 
-# cleaned_data %>%
-#   mutate(month = factor(month, levels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun",
-#                                           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))) %>%
-#   ggplot(mapping = aes(x = month, y = total_decedents)) + 
-#   geom_bar(stat = "identity") +
-#   theme_minimal() +
-#   labs(
-#     x = "Month", 
-#     y = "Total Decedents"
-#   )
+```
+Figure @fig-pollscore-samplesize illustrates a weak positive correlation between a pollster's pollscore and the sample size of their poll. The figure also shows that most polls have a sample size around 800 to 1200 participants. It is also important to note that a few polls with exceptionally large sample sizes were excluded from the graph due to their status as clear outliers.
+
+```{r}
+#| label: fig-pollsamplesize-canidate-pct
+#| fig-cap: The Sample Size of a Poll does not impact a Candidate's Voting Percentage
+#| echo: false
+#| warning: false
+
+cleaned_data %>% 
+  filter(!is.na(sample_size) & !is.na(pct)) %>% 
+  ggplot(aes(x = sample_size, y = pct)) +
+  geom_point(alpha = 0.4) + 
+  geom_smooth(method = "lm", se = FALSE, color = light_red) +
+  labs(x = "Sample Size of the Poll",
+       y = "Candidate Percentage") + facet_wrap(~candidate_name)
+
+```
+Based on @fig-pollsamplesize-canidate-pct, there does not seem to be a relationship between the sample size of a poll the percentage of a candidate.
+
+```{r}
+#| label: fig-pollscore-canidate-pct
+#| fig-cap: More Reliable Pollsters Score Higher For Trump
+#| echo: false
+#| warning: false
+
+cleaned_data %>% 
+  filter(!is.na(pollscore) & !is.na(pct)) %>% 
+  ggplot(aes(x = pollscore, y = pct)) +
+  geom_point(alpha = 0.4) + 
+  geom_smooth(method = "lm", se = FALSE, color = light_red) +
+  labs(x = "Pollscore",
+       y = "Candidate Percentage") + facet_wrap(~candidate_name)
+
+
+```
+Figure @fig-pollscore-candidate-pct depicts the relationship between a pollster's poll score and a candidate's percentage. For Donald Trump, a negative correlation is observed, indicating that pollsters with lower poll scores tend to assign him a higher percentage of support. Conversely, Kamala Harris shows the opposite trend: as the poll score decreases, her percentage tends to rise. This suggests that more reliable polls, characterized by lower poll scores, report higher support for Trump compared to less reliable pollsters.
+
+```{r}
+#| label: tbl-methodology-candidate-support
+#| fig-cap: pct vs methodology
+#| echo: false
+#| warning: false
+
+cleaned_data %>% 
+  filter(!is.na(methodology) & !is.na(pct)) %>% 
+  group_by(methodology, candidate_name) %>% 
+  summarise(methodology, candidate_name, n = n(), avg_pct = mean(pct), sd = sd(pct)) %>% 
+  arrange(methodology, candidate_name) %>% unique()
+
+
+```
+Based on @tbl-methodology-candidate-support, we might need to remove methodology from the model.
+
+```{r}
+#| label: tbl-state-candidate-support
+#| fig-cap: pct vs methodology
+#| echo: false
+#| warning: false
+
+cleaned_data %>% 
+  filter(!is.na(state) & !is.na(pct)) %>% 
+  group_by(state, candidate_name) %>% 
+  summarise(state, candidate_name, n = n(), avg_pct = mean(pct), sd = sd(pct)) %>% 
+  arrange(state, candidate_name) %>% unique()
+
+
 ```
 
+Based on @tbl-state-candidate-support, state might have to be a removed variable.
 
+```{r}
+#| label: fig-polldate-canidate-pct
+#| fig-cap: Both Canidate Percentages Are Gaining Support Closer to the Election
+#| echo: false
+#| warning: false
+
+cleaned_data %>% 
+  filter(!is.na(days_taken_from_election) & !is.na(pct)) %>% 
+  ggplot(aes(x = days_taken_from_election, y = pct)) +
+  geom_point(alpha = 0.4) + 
+  geom_smooth(method = "lm", se = FALSE, color = light_red) +
+  labs(x = "Timing of Polls Relative to Election Day (Days Prior to the Election)",
+       y = "Candidate Percentage") + facet_wrap(~candidate_name)
+
+```
+Based on @fig-polldate-canidate-pct, Trump and Harris are getting more votes in polls that are done closer to the election. This is a result of non-major candidate support rapidly decreasing. Specifically, Trump support is increasing at a faster rate than Harris. However, the polls in general show a slight lead for Harris throughout the last 100 days. 
+
+The rapid decline in third party support could be due to Robert F. Kennedy dropping out of the race (this sentences should probably be in results or discussion section).
+
+\newpage
 # Model
 
 The goal of our modelling strategy is twofold. Firstly,...
@@ -209,6 +358,158 @@ In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. Th
 
 # FiveThirtyEight Licenses
 [FiveThirtyEight's data sets](https://github.com/fivethirtyeight/data/tree/master/polls) are used and modified by us under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+
+# Overview of American Electon System
+
+# Brief Description of American Federal Goverment
+
+The American federal or national government is split into three branches, executive., legislative, and judical The executive branch includes the president and the military. The legislative branch include two subgroups, the House of Representatives and the Senate. These two subgroups create laws. Every state has two Senators and one Representative per approximately 750,000 people. The judicial branch is court system.
+
+## What is the Electoral College {#sec-electoral-college}
+
+The Electoral College is the system used in the United States to elect the president and vice president. Instead of a direct popular vote, each state is allocated a certain number of electors based on its representation in Congress (the total of its Senators and Representatives). When voters cast their ballots, they are actually voting for a slate of electors pledged to a candidate. The candidate who receives a majority of electoral votes (270 out of 538) wins the presidency. This system means that winning the popular vote in a state generally results in winning all of that state's electoral votes. The only exception are the states of Maine and Nebraska, who award electoral votes by congressional district, with two additional votes given to the statewide winner.
+
+The Electoral College results in some states being unnecessary to campaign in, as their strong historical voting pasterns towards either Democrats or Republicans make them unlikely to change, regardless of campaign efforts. Therefore, for statisticians, polling information from these states may not be that useful when trying to predict the outcome of an election. On the other hand, states that can vote either Democratic or Republican (swing states) are immensely important when predicting an election. As a result, campaigns spend hundreds of millions of dollars campaigning and understanding voters there.
+
+```{r}
+#| label: fig-currentstateofelection
+#| fig-cap: 2024 U.S. Presidential Election State Forecast Map
+#| echo: false
+#| warning: false
+
+# Define your colors for each state (replace these colors with your desired ones)
+state_colors <- c(
+  alabama = dark_red,
+  arizona = purple,
+  arkansas = dark_red,
+  california = dark_blue,
+  colorado = dark_blue,
+  connecticut = dark_blue,
+  delaware = dark_blue,
+  `district of columbia` = dark_blue,
+  florida = light_blue,
+  georgia = purple,
+  idaho = dark_red,
+  illinois = dark_blue,
+  indiana = dark_red,
+  iowa = light_red,
+  kansas = dark_red,
+  kentucky = dark_red,
+  louisiana = dark_red,
+  maine = "gray",
+  maryland = dark_blue,
+  massachusetts = dark_blue,
+  michigan = purple,
+  minnesota = light_blue,
+  mississippi = dark_red,
+  missouri = dark_red,
+  montana = dark_red,
+  nebraska = "gray",
+  nevada = purple,
+  `new hampshire` = light_blue,
+  `new jersey` = dark_blue,
+  `new mexico` = dark_blue,
+  `new york` = dark_blue,
+  `north carolina` = purple,
+  `north dakota` = dark_red,
+  ohio = light_red,
+  oklahoma = dark_red,
+  oregon = dark_blue,
+  pennsylvania = purple,
+  `rhode island` = dark_blue,
+  `south carolina` = dark_red,
+  `south dakota` = dark_red,
+  tennessee = dark_red,
+  texas = light_red,
+  utah = dark_red,
+  vermont = dark_blue,
+  virginia = light_blue,
+  washington = dark_blue,
+  `west virginia` = dark_red,
+  wisconsin = purple,
+  wyoming = dark_red
+)
+
+# Load the states map data
+states_map <- map_data(map = "state")
+
+plotclr <- c(dark_red, light_blue, purple, gray, light_blue, dark_blue)
+legend_description <- c(
+  "Likely Republican",
+  "Lean Republican",
+  "Swing States",
+  "Lean Democrat",
+  "Likely Democrat",
+  "Split by District"
+)
+
+
+ggplot(states_map, aes(x = long, y = lat, group = group, fill = region)) +
+  geom_polygon(color = "white", size = 0.2) +
+  coord_map("albers", lat0 = 39, lat1 = 45) +
+  scale_fill_manual(values = state_colors, 
+                    breaks = plotclr,
+                    labels = legend_description,
+                    name = "Election Status") +  
+  guides(fill = guide_legend(override.aes = list(size = 5))) +
+  theme_minimal() +
+  theme(legend.position = "bottom",
+        legend.title = element_text(size = 12, face = "bold"),
+        legend.text = element_text(size = 10),
+        axis.text = element_blank(),
+        axis.title = element_blank(),
+        panel.grid = element_blank())
+
+```
+### Legend
+
+```{r}
+#| label: tbl-electionmaplegend
+#| tbl-cap: Interpretation of Electoral College Map
+#| echo: false
+#| warning: false
+
+legend_tibble <- tibble(
+  Color = c("Dark Red", "Light Red", "Purple", "Light Blue", "Dark Blue", "Gray"),
+  Status = c("Republican", "Lean Republican", "Toss-Up", "Lean Democrat", "Democrat", "Split By District")
+)
+
+legend_tibble %>% kable(col.names = c("color", "status"))
+
+```
+The state statuses presented in this map are based on evaluations from @cnn, @foxnews, and @msnbc, which are generally agreed upon within the American political community. These organizations assessed historical voting patterns and recent polling data to derive their conclusions.
+
+Notably, Nebraska and Maine are indicated in gray due to their delegates being split by district. In Nebraska, the state overall is projected to lean Republican, with the first and third districts also strongly favoring Republican candidates, while the second district leans Democratic. In Maine, the overall expectation is a Democratic leaning, consistent with its first district, though the second district leans Republican. Furthermore, Alaska and Hawaii are not in the map. Alaska is strongly favoring Republicans while Hawaii strongly favors democrats.
+
+The seven generally agreed upon swing states are Pennsylvania, North Carolina, Georgia, Arizona, Nevada, Wisconsin, and Michigan with Texas, Florida, Nebraska District Two, Maine District 2, and Minnesota as the next closest races.
+
+# States Poll Count
+
+```{r}
+#| label: tbl-state-polls-count
+#| tbl-cap: Polls included in Analysis Per State
+#| echo: false
+#| warning: false
+
+states <- c(state.name, "National")
+polls_per_state_tbl <- tibble(state = states)
+
+polls_per_state <- cleaned_data %>% group_by(state) %>% 
+  summarise(polls_count = n_distinct(poll_id))
+
+polls_per_state_tbl <- polls_per_state_tbl %>% 
+  left_join(polls_per_state, by = "state") %>% 
+  mutate(polls_count = if_else(!is.na(polls_count), polls_count, 0)) %>% 
+  select(state, polls_count)
+
+polls_per_state_tbl %>% kable(col.names = c("State", "Number of Polls In Analysis"))
+
+
+num_states_missing <- count(polls_per_state_tbl %>% 
+                              filter(polls_count == 0) %>% 
+                              select(state))
+
+```
 
 \newpage
 

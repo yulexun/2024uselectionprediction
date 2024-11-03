@@ -21,6 +21,8 @@ candidate_names <- c("Donald Trump", "Kamala Harris", "Jill Stein",
                     "Robert F. Kennedy")
 pollster <- c("Marist", "YouGov", "Ipsos", "Emerson", "SurveyUSA")
 
+methodologies <- c("IVR", "Email", "Online Panel", "Text", "Phone")
+
 # Reliably blue states
 blue_states <- c("California", "Colorado", "Connecticut", "Delaware", "Hawaii",
                  "Illinois", "Maine", "Maryland", "Massachusetts", "Minnesota",
@@ -41,6 +43,7 @@ swing_states <- c("Arizona", "Georgia", "Michigan", "Nevada",
 # Generate Poll IDs and States
 unique_poll_ids <- sample(10000:99999, length(states))
 poll_ids <- rep(unique_poll_ids, each = 4)
+methodology_column <- sample(methodologies, 4*length(states), replace = TRUE)
 state_column <- rep(states, each = 4)
 state_column <- rep(state_column, length.out = 4*length(states))
 sample_size <- sample(100:20000, length(states))
@@ -82,6 +85,7 @@ analysis_data <- tibble(
   pollster = pollster_column,
   poll_id = poll_ids,
   state = state_column,
+  methodology = methodology_column,
   sample_size = sample_size,
   candidate_name = rep(candidate_names, length.out = 204),
 )

@@ -39,7 +39,7 @@ cleaned_data <- cleaned_data %>%
   select(
     poll_id, pollster_id, pollster, question_id,
     sample_size, pollscore, methodology, days_taken_from_election,
-    end_date, start_date, state, answer, pct
+    end_date, start_date, state, candidate_name, pct
   )
 
 # Delete NA columns
