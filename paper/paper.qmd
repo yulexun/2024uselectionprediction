@@ -178,7 +178,8 @@ graph_data <- cleaned_data %>%
 
 graph_data %>% filter(!is.na(pollscore) & !is.na(sample_size)) %>% 
   ggplot(aes(x = pollscore, y = sample_size)) +
-  geom_point(alpha = 0.33) + geom_smooth(method = "lm", se = FALSE, color = light_red)
+  geom_point(alpha = 0.33) + geom_smooth(method = "lm", se = FALSE, color = light_red) +
+  labs(x = "Poll Score", y = "Poll Sample Size")
 
 # this model is really here just for explain, this realtionship should not
 # be treated as lienar
