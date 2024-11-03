@@ -118,7 +118,6 @@ cleaned_data %>%
     fill = "Candidate"
   ) +
   scale_fill_manual(values = c("Kamala Harris" = light_blue, "Donald Trump" = light_red)) +
-  geom_vline(aes(xintercept = 50), color = purple, size = 1) +
   theme_minimal() +
   theme(legend.position = "bottom") + 
   theme(axis.text.y = element_text(size = 8))
@@ -149,13 +148,12 @@ cleaned_data %>%
     fill = "Candidate"
   ) +
   scale_fill_manual(values = c("Kamala Harris" = light_blue, "Donald Trump" = light_red)) +
-  geom_vline(aes(xintercept = 50), color = purple, size = 1) +
   theme_minimal() +
   theme(legend.position = "bottom") + 
   theme(axis.text.y = element_text(size = 8))
 
 ```
-Figure @fig-avg-pct-methodology indicates minimal bias in polling percentages when comparing different polling methodologies, as most polls show an even distribution of support between candidates. However, polls that incorporate IVR (Interactive Voice Response) and online panels tend to exhibit greater variability, often resulting in more pronounced gaps in support between Donald Trump and Kamala Harris, depending on the specific poll.
+Figure @fig-avg-pct-methodology indicates minimal bias in polling percentages when comparing different polling methodologies, as most polls show an even distribution of support between candidates. However, polls only incorporate IVR (Interactive Voice Response) tend to skew towards Harris
 
 ## Relationship Between Variables
 
@@ -378,6 +376,15 @@ The Electoral College results in some states being unnecessary to campaign in, a
 #| warning: false
 
 # Define your colors for each state (replace these colors with your desired ones)
+state_colors_legend <- c(
+  "Republican" = dark_red,      # Dark Red
+  "Lean Republican" = light_red, # Light Red
+  "Toss-Up" = purple,         # Purple
+  "Lean Democrat" = light_blue,   # Light Blue
+  "Democrat" = dark_blue,        # Dark Blue
+  "Split By District" = "gray"
+)
+
 state_colors <- c(
   alabama = dark_red,
   arizona = purple,
@@ -406,7 +413,7 @@ state_colors <- c(
   montana = dark_red,
   nebraska = "gray",
   nevada = purple,
-  `new hampshire` = light_blue,
+  `new hampshire` = dark_blue,
   `new jersey` = dark_blue,
   `new mexico` = dark_blue,
   `new york` = dark_blue,
@@ -433,6 +440,13 @@ state_colors <- c(
 # Load the states map data
 states_map <- map_data(map = "state")
 
+state_colors <- setNames(state_colors, tolower(names(state_colors)))
+
+color_to_status <- setNames(names(state_colors_legend), state_colors_legend)
+
+states_map <- states_map %>%
+  mutate(status = color_to_status[state_colors[region]])
+
 plotclr <- c(dark_red, light_blue, purple, gray, light_blue, dark_blue)
 legend_description <- c(
   "Likely Republican",
@@ -444,37 +458,22 @@ legend_description <- c(
 )
 
 
-ggplot(states_map, aes(x = long, y = lat, group = group, fill = region)) +
+ggplot(states_map, aes(x = long, y = lat, group = group, fill = status)) +
   geom_polygon(color = "white", size = 0.2) +
   coord_map("albers", lat0 = 39, lat1 = 45) +
-  scale_fill_manual(values = state_colors, 
-                    breaks = plotclr,
-                    labels = legend_description,
-                    name = "Election Status") +  
-  guides(fill = guide_legend(override.aes = list(size = 5))) +
+  scale_fill_manual(
+    values = state_colors_legend,
+    name = "Election Status"
+  ) +
   theme_minimal() +
-  theme(legend.position = "bottom",
-        legend.title = element_text(size = 12, face = "bold"),
-        legend.text = element_text(size = 10),
-        axis.text = element_blank(),
-        axis.title = element_blank(),
-        panel.grid = element_blank())
-
-```
-### Legend
-
-```{r}
-#| label: tbl-electionmaplegend
-#| tbl-cap: Interpretation of Electoral College Map
-#| echo: false
-#| warning: false
-
-legend_tibble <- tibble(
-  Color = c("Dark Red", "Light Red", "Purple", "Light Blue", "Dark Blue", "Gray"),
-  Status = c("Republican", "Lean Republican", "Toss-Up", "Lean Democrat", "Democrat", "Split By District")
-)
-
-legend_tibble %>% kable(col.names = c("color", "status"))
+  theme(
+    legend.position = "bottom",
+    legend.title = element_text(size = 12, face = "bold"),
+    legend.text = element_text(size = 10),
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank()
+  )
 
 ```
 The state statuses presented in this map are based on evaluations from @cnn, @foxnews, and @msnbc, which are generally agreed upon within the American political community. These organizations assessed historical voting patterns and recent polling data to derive their conclusions.
