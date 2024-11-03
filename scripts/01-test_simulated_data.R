@@ -35,9 +35,9 @@ test_that("Dataset row count is 216", {
 })
 
 # Check if the dataset has 7 columns
-test_that("Dataset column count is 7", {
-  expect_equal(ncol(analysis_data), 7,
-    info = "The dataset does not have 7 columns."
+test_that("Dataset column count is 8", {
+  expect_equal(ncol(analysis_data), 8,
+    info = "The dataset does not have 8 columns."
   )
 })
 
@@ -78,4 +78,5 @@ test_that("Character columns are of type character", {
   expect_type(analysis_data$pollster, "character")
   expect_type(analysis_data$state, "character")
   expect_type(analysis_data$candidate_name, "character")
+  expect_type(analysis_data$methodology, "character")
 })

@@ -71,4 +71,5 @@ test_that("Character columns are of type character", {
   expect_type(analysis_data$pollster, "character")
   expect_type(analysis_data$state, "character")
   expect_type(analysis_data$candidate_name, "character")
+  expect_type(analysis_data$methodology, "character")
 })

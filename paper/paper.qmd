@@ -19,7 +19,6 @@ bibliography: references.bib
 #| message: false
 
 library(tidyverse)
-library(palmerpenguins)
 library(here)
 library(tibble)
 library(knitr)
@@ -31,6 +30,12 @@ library(lubridate)
 library(gridExtra)
 library(Matrix)
 library(rstan)
+
+light_blue <- "#ADD8E6"
+dark_blue <- "#6688CC"
+light_red <- "#FF7777"
+dark_red <- "#B22222"
+purple <- "#9370DB"
 
 cleaned_data <- read_parquet(here("data/02-analysis_data/cleaned_data.parquet"))
 ```
