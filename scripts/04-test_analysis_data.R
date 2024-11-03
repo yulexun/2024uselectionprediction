@@ -72,12 +72,3 @@ test_that("Character columns are of type character", {
   expect_type(analysis_data$state, "character")
   expect_type(analysis_data$candidate_name, "character")
 })
-
-
-result <- analysis_data %>%
-  group_by(question_id) %>%
-  summarize(sum_pct = sum(pct)) %>%
-  filter(abs(sum_pct - 1) > 10) # Adjust tolerance as needed
-
-# Display the irregular results
-result
