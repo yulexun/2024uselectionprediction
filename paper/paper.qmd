@@ -222,8 +222,6 @@ cleaned_data %>%
 ```
 Figure @fig-pollscore-candidate-pct depicts the relationship between a pollster's poll score and a candidate's percentage. For Donald Trump, a negative correlation is observed, indicating that pollsters with lower poll scores tend to assign him a higher percentage of support. Conversely, Kamala Harris shows the opposite trend: as the poll score decreases, her percentage tends to rise. This suggests that more reliable polls, characterized by lower poll scores, report higher support for Trump compared to less reliable pollsters.
 
-Based on @tbl-state-candidate-support, state might have to be a removed variable.
-
 ```{r}
 #| label: fig-polldate-canidate-pct
 #| fig-cap: Both Canidate Percentages Are Gaining Support Closer to the Election
