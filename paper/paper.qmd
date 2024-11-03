@@ -137,23 +137,21 @@ cleaned_data <- cleaned_data %>% mutate(candidate_name =
 cleaned_data %>%
   filter(candidate_name %in% c("Kamala Harris", "Donald Trump")) %>%
   filter(!is.na(methodology)) %>% 
-  group_by(methodology, candidate_name) %>%
-  summarise(avg_pct = mean(pct, na.rm = TRUE), .groups = "drop") %>%
-  ggplot(mapping = aes(x = avg_pct, y = methodology, fill = candidate_name)) + 
-  geom_col(position = "stack") +
+  ggplot(mapping = aes(x = methodology, y = pct)) + 
+  geom_boxplot(width = 0.6, position = position_dodge(width = 0.8), outlier.shape = NA) +
+  coord_flip() +
   theme_minimal() +
   labs(
-    x = "Average Polled Support (%)", 
-    y = "Methodology",
+    x = "Methodology",
+    y = "Polled Support (%)",
     fill = "Candidate"
   ) +
   scale_fill_manual(values = c("Kamala Harris" = light_blue, "Donald Trump" = light_red)) +
-  theme_minimal() +
   theme(legend.position = "bottom") + 
   theme(axis.text.y = element_text(size = 8))
 
 ```
-Figure @fig-avg-pct-methodology indicates minimal bias in polling percentages when comparing different polling methodologies, as most polls show an even distribution of support between candidates. However, polls only incorporate IVR (Interactive Voice Response) tend to skew towards Harris
+Figure @fig-avg-pct-methodology shows that polls utilizing multiple communication methods to reach voters tend to have lower interquartile ranges (IQRs) in their boxplots compared to those that rely on only one or two communication methods.
 
 ## Relationship Between Variables
 
@@ -183,11 +181,9 @@ graph_data %>% filter(!is.na(pollscore) & !is.na(sample_size)) %>%
 
 # this model is really here just for explain, this realtionship should not
 # be treated as lienar
-cor(graph_data$sample_size, graph_data$pollscore)
-lm_score_sample <- lm(sample_size ~ pollscore, data = graph_data)
-summary(lm_score_sample)
-
-
+# cor(graph_data$sample_size, graph_data$pollscore)
+# lm_score_sample <- lm(sample_size ~ pollscore, data = graph_data)
+# summary(lm_score_sample)
 ```
 Figure @fig-pollscore-samplesize illustrates a weak positive correlation between a pollster's pollscore and the sample size of their poll. The figure also shows that most polls have a sample size around 800 to 1200 participants. It is also important to note that a few polls with exceptionally large sample sizes were excluded from the graph due to their status as clear outliers.
 
@@ -225,37 +221,6 @@ cleaned_data %>%
 
 ```
 Figure @fig-pollscore-candidate-pct depicts the relationship between a pollster's poll score and a candidate's percentage. For Donald Trump, a negative correlation is observed, indicating that pollsters with lower poll scores tend to assign him a higher percentage of support. Conversely, Kamala Harris shows the opposite trend: as the poll score decreases, her percentage tends to rise. This suggests that more reliable polls, characterized by lower poll scores, report higher support for Trump compared to less reliable pollsters.
-
-```{r}
-#| label: tbl-methodology-candidate-support
-#| fig-cap: pct vs methodology
-#| echo: false
-#| warning: false
-
-cleaned_data %>% 
-  filter(!is.na(methodology) & !is.na(pct)) %>% 
-  group_by(methodology, candidate_name) %>% 
-  summarise(methodology, candidate_name, n = n(), avg_pct = mean(pct), sd = sd(pct)) %>% 
-  arrange(methodology, candidate_name) %>% unique()
-
-
-```
-Based on @tbl-methodology-candidate-support, we might need to remove methodology from the model.
-
-```{r}
-#| label: tbl-state-candidate-support
-#| fig-cap: pct vs methodology
-#| echo: false
-#| warning: false
-
-cleaned_data %>% 
-  filter(!is.na(state) & !is.na(pct)) %>% 
-  group_by(state, candidate_name) %>% 
-  summarise(state, candidate_name, n = n(), avg_pct = mean(pct), sd = sd(pct)) %>% 
-  arrange(state, candidate_name) %>% unique()
-
-
-```
 
 Based on @tbl-state-candidate-support, state might have to be a removed variable.
 
@@ -414,9 +379,9 @@ state_colors <- c(
   montana = dark_red,
   nebraska = "gray",
   nevada = purple,
-  `new hampshire` = dark_blue,
+  `new hampshire` = light_blue,
   `new jersey` = dark_blue,
-  `new mexico` = dark_blue,
+  `new mexico` = light_blue,
   `new york` = dark_blue,
   `north carolina` = purple,
   `north dakota` = dark_red,
