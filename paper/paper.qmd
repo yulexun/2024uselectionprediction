@@ -76,6 +76,9 @@ In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. Th
 
 # Our Prediction
 
+Our prediction process consists of two primary components. First, we develop models for both Trump and Harris based on the variables outlined in Section @sec-PLACEHOLDER. This involves partitioning the dataset into training and testing subsets. Next, we further divide the testing dataset into swing states and other competitive races. We then input this test data into the respective models to generate predictions. By averaging these predictions, we can calculate the expected voter percentage for each candidate in each state. The candidate with the higher percentage is deemed the winner for that state.
+
+We generated predictions for the following states: Arizona, Nevada, Georgia, Pennsylvania, Michigan, Minnesota, Wisconsin, Florida, Texas, Maine CD-2, Nebraska CD-2, New Hampshire, Ohio, Virginia, North Carolina, and Iowa. Winners for other states were determined based on historical trends and predictions from sources like @cnn. Most states without predictions are strongly Republican or Democratic, so their absence is not expected to significantly impact prediction validity.
 ```{r}
 #| echo: false
 #| warning: false
@@ -131,14 +134,17 @@ for(state in relevant_states) {
 swing_state_predictions <- swing_state_predictions %>% arrange(state) %>% unique()
 
 # View the results
-swing_state_predictions
+swing_state_predictions %>% 
+  kable(col.names = 
+          c("State", "Harris Predicted Percentage", 
+            "Trump Predicted Percentage", "State Winner"))
   
 ```
 
 
 ```{r}
 #| label: fig-currentstateofelection
-#| fig-cap: 2024 U.S. Presidential Election State Forecast Map
+#| fig-cap: Kamala Harris is Predicited to be the 47th President of the United States
 #| echo: false
 #| warning: false
 
@@ -268,8 +274,11 @@ ggplot(states_map, aes(x = long, y = lat, group = group, fill = status)) +
   )
 
 ```
-Maine CD-2	47.40416	49.31394	Trump
-Nebraska CD-2	49.90928	42.17853	Harris
+According to Figure @fig-currentstateofelection, Kamala Harris is predicted to be the 47th President of the United States. There are also a few states with predictions not visible in the map, we will describe those predicts them below 
+
+In Maine, Harris is projected to win the state’s overall delegates and District 1, while District 2 is expected to go to Trump. In Nebraska, Trump is expected to win the state’s delegates along with Districts 1 and 3, while Harris is predicted to win District 2. Additionally, Trump is projected to win Alaska, and Harris is expected to win Hawaii.
+
+Overall, the predictions indicate that Harris will receive 298 delegates, while Trump will receive 240 delegates.
 
 ```{r}
 
