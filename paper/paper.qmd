@@ -220,6 +220,7 @@ graph_data %>% filter(!is.na(pollscore) & !is.na(sample_size)) %>%
 # lm_score_sample <- lm(sample_size ~ pollscore, data = graph_data)
 # summary(lm_score_sample)
 ```
+
 @fig-pollscore-samplesize illustrates a weak positive correlation between a pollster's pollscore and the sample size of their poll. The figure also shows that most polls have a sample size around 800 to 1200 participants. It is also important to note that a few polls with exceptionally large sample sizes were excluded from the graph due to their status as clear outliers.
 
 ```{r}
@@ -237,6 +238,7 @@ cleaned_data %>%
        y = "Candidate Percentage") + facet_wrap(~candidate_name)
 
 ```
+
 Based on @fig-pollsamplesize-canidate-pct, there does not seem to be a relationship between the sample size of a poll the percentage of a candidate.
 
 ```{r}
