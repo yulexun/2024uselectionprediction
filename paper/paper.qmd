@@ -109,8 +109,8 @@ result_summary = data.frame(
 # kable(head(result_summary, 10), caption = "Head of Bayesian Model Result Summary")
 
 ggplot(result_summary, aes(x = result_summary$Actual_PCT, y = result_summary$Predicted_PCT)) +
-  geom_point(color = "blue", alpha = 0.7) +
-  # geom_errorbar(aes(ymin = Lower_CI, ymax = Upper_CI), width = 0.2, color = "blue") +
+  geom_point(alpha = 0.7) +
+  geom_errorbar(aes(ymin = Lower_CI, ymax = Upper_CI), width = 0.2, color = "blue") +
   geom_abline(intercept = 0, slope = 1, color = "red", linetype = "dashed") +
   labs(
     title = "Actual vs Predicted Percentage For Trump MLR Model (All Trump Data)",
@@ -352,6 +352,37 @@ In Maine, Harris is projected to win the state’s overall delegates and Distric
 Overall, the predictions indicate that Harris will receive 298 delegates, while Trump will receive 240 delegates.
 
 \newpage
+
+
+# Sources of Bias In the Polls
+
+Based on the figures in section @sec-data, the team identified three sources of bias beyond sample size and state: methodology, the timing of polls relative to the election date, and poll scores. From the analysis in Figure @fig-methodologyboxplot, we found that polls employing a limited number of methods to reach and communicate with voters exhibited greater variability. This finding is plausible, as different demographic groups often prefer distinct communication methods; for example, older voters may favor phone surveys, while younger voters might prefer online surveys. Additionally, utilizing multiple communication channels provides pollsters with more opportunities to contact potential voters, thereby reducing non-response bias. Consequently, it is essential to incorporate methodology as a variable in the model, and we recommend that pollsters adopt diverse communication methods whenever possible.
+
+From Figure @fig-daysfromelection-pct, the team observed a decline in third-party candidate support as the election approached. Early in the election cycle, voters may entertain the idea of a viable third-party candidate, but as the election nears, interest in third-party options diminishes. This trend may be worsened by decreased participation in polls as the election date approaches. As a result, the people who do participate in those earlier polls are likely to be more informed and passionate, which are qualities that may be associated with support for third-party candidates. Additionally, the withdrawal of a prominent third-party candidate, Robert F. Kennedy Jr., on August 23, 2024 (74 days from the election), could influence this dynamic. However, we find the earlier reasons more compelling, as the data in Figure @fig-daysfromelection-pct do not indicate a significant drop in third-party support at that time, but rather a gradual decline.
+
+As illustrated in Figure @fig-pollscore-pct, more reliable polls tend to show a bias favoring Trump over Harris—not necessarily indicating a guaranteed victory for Trump, but rather suggesting he may outperform expectations in many polls. It is important to note that the 538 poll score system is partly based on historical accuracy. Given Trump's overperformance in the polls during the 2016 and 2020 elections, this scoring may be overcorrecting for past inaccuracies. This potential undervaluation of Trump’s support could be strategically beneficial for the Harris campaign, providing a warning to avoid repeating previous electoral mistakes.
+
+## Limitations of the Model
+
+While this model presents a more comprehensive approach, there are limitations. First, Any systematic biases inherent in those polls can carry over into the model’s predictions because we are using existing poll data. For instance, if certain demographic groups are consistently underrepresented, our model may not fully capture their impact on election outcomes. 
+
+Second, the model only reflect current voting dynamics as it is based on historical data. This model does not account for short-term variability such as Biden's exit. This limitation is important in the final weeks before an election when small shifts in polling data can produce exaggerated effects.
+
+On top of that, the results can be sensitive to the choice of priors. We choose normal(0, 2.5) as we believe it could stabilize the estimates by being informative enough to guide the posterior distribution without overpowering the data. However, if the chosen prior does not align well with the true underlying distribution, it may lead to biased results or overly wide credible intervals.
+
+Also, as it is a model based on a dataset, it is challenging to capture all the real-life features and dynamics. The model might not include all relevant predictors or interactions due to limitations in data availability or complexity, which can lead to incomplete representations of the factors influencing voting behavior. Additionally, without strong regularization techniques, the model may become prone to overfitting, particularly when using complex hierarchical structures or including numerous predictors. This overfitting can reduce the model’s generalizability to new or unseen data.
+
+Moreover, errors and offsets inherent in polling data, such as response bias, nonresponse adjustments, and sampling variability, can propagate into the model’s results. These aspects introduce an additional layer of uncertainty that can affect the model's reliability and predictive performance. While Bayesian methods provide a robust framework to incorporate uncertainty, the final outputs must be interpreted cautiously, acknowledging these underlying limitations.
+
+
+
+# Limitations of the Prediction
+
+In section @sec-prediction, the team predicted that Kamala Harris would secure 298 delegates while Donald Trump would obtain 240 delegates. However, this prediction has several limitations. Firstly, the model used to generate these predictions inherits the constraints outlined in section @sec-model-limitations. Additionally, the predictions are based on averaging results from polling data for each state, which can lead to propagated prediction errors.
+
+Each state has a limited number of polls available; while the overall analysis considered a substantial number of polls, individual states often had fewer than 20 polls, with even the largest states contributing only up to 27. Moreover, as noted in Section @sec-prediction, the analysis focused solely on closely contested races, specifically swing states. Consequently, many states were assigned to a candidate based on strong historical trends rather than direct predictions. Although this approach is reasonable, it may overlook emerging trends that could potentially shift a state's allegiance from Republican to Democrat or vice versa.
+
+
 
 
 # References
