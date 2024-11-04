@@ -157,7 +157,7 @@ state_colors <- c(
   alabama = "red",
   arizona = ifelse((swing_state_predictions %>% 
                         filter(state == "Arizona") %>% 
-                        select(winner)) == "TRUMP", "red", "blue"),
+                        select(winner)) == "Trump", "red", "blue"),
   arkansas = "red",
   california = "blue",
   colorado = "blue",
@@ -166,16 +166,16 @@ state_colors <- c(
   `district of columbia` = "blue",
   florida = ifelse((swing_state_predictions %>% 
                         filter(state == "Florida") %>% 
-                        select(winner)) == "TRUMP", "red", "blue"),
+                        select(winner)) == "Trump", "red", "blue"),
   georgia = ifelse((swing_state_predictions %>% 
                         filter(state == "Georgia") %>% 
-                        select(winner)) == "TRUMP", "red", "blue"),
+                        select(winner)) == "Trump", "red", "blue"),
   idaho = "red",
   illinois = "blue",
   indiana = "red",
   iowa = ifelse((swing_state_predictions %>% 
                         filter(state == "Iowa") %>% 
-                        select(winner)) == "TRUMP", "red", "blue"),
+                        select(winner)) == "Trump", "red", "blue"),
   kansas = "red",
   kentucky = "red",
   louisiana = "red",
@@ -184,52 +184,52 @@ state_colors <- c(
   massachusetts = "blue",
   michigan = ifelse((swing_state_predictions %>% 
                         filter(state == "Michigan") %>% 
-                        select(winner)) == "TRUMP", "red", "blue"),
+                        select(winner)) == "Trump", "red", "blue"),
   minnesota = ifelse((swing_state_predictions %>% 
                         filter(state == "Minnesota") %>% 
-                        select(winner)) == "TRUMP", "red", "blue"),
+                        select(winner)) == "Trump", "red", "blue"),
   mississippi = "red",
   missouri = "red",
   montana = "red",
   nebraska = "gray",
   nevada = ifelse((swing_state_predictions %>% 
                         filter(state == "Nevada") %>% 
-                        select(winner)) == "TRUMP", "red", "blue"),
+                        select(winner)) == "Trump", "red", "blue"),
   `new hampshire` = ifelse((swing_state_predictions %>% 
                         filter(state == "New Hampshire") %>% 
-                        select(winner)) == "TRUMP", "red", "blue"),
+                        select(winner)) == "Trump", "red", "blue"),
   `new jersey` = "blue",
   `new mexico` = "blue",
   `new york` = "blue",
   `north carolina` = ifelse((swing_state_predictions %>% 
                         filter(state == "North Carolina") %>% 
-                        select(winner)) == "TRUMP", "red", "blue"),
+                        select(winner)) == "Trump", "red", "blue"),
   `north dakota` = "red",
   ohio = ifelse((swing_state_predictions %>% 
                         filter(state == "Ohio") %>% 
-                        select(winner)) == "TRUMP", "red", "blue"),
+                        select(winner)) == "Trump", "red", "blue"),
   oklahoma = "red",
   oregon = "blue",
   pennsylvania = ifelse((swing_state_predictions %>% 
                         filter(state == "Pennsylvania") %>% 
-                        select(winner)) == "TRUMP", "red", "blue"),
+                        select(winner)) == "Trump", "red", "blue"),
   `rhode island` = "blue",
   `south carolina` = "red",
   `south dakota` = "red",
   tennessee = "red",
   texas = ifelse((swing_state_predictions %>% 
                         filter(state == "Texas") %>% 
-                        select(winner)) == "TRUMP", "red", "blue"),
+                        select(winner)) == "Trump", "red", "blue"),
   utah = "red",
   vermont = "blue",
   virginia = ifelse((swing_state_predictions %>% 
                         filter(state == "Virginia") %>% 
-                        select(winner)) == "TRUMP", "red", "blue"),
+                        select(winner)) == "Trump", "red", "blue"),
   washington = "blue",
   `west virginia` = "red",
   wisconsin = ifelse((swing_state_predictions %>% 
                         filter(state == "Wisconsin") %>% 
-                        select(winner)) == "TRUMP", "red", "blue"), 
+                        select(winner)) == "Trump", "red", "blue"), 
   wyoming = "red")
 
 # Load the states map data
@@ -268,6 +268,8 @@ ggplot(states_map, aes(x = long, y = lat, group = group, fill = status)) +
   )
 
 ```
+Maine CD-2	47.40416	49.31394	Trump
+Nebraska CD-2	49.90928	42.17853	Harris
 
 \newpage
 
