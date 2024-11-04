@@ -28,7 +28,7 @@ The repo is structured as:
 
 ## Statement on LLM usage
 
-The drafted outline and introduction were written with the help of ChatGPT 4. The entire chat history is available in other/llm_usage/usage.txt.
+The drafted outline, the color coded maps and the figure captions were written with the help of ChatGPT 4. The entire chat history is available in other/llm_usage/usage.txt.
 
 ## Note
 
