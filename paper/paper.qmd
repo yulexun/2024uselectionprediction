@@ -59,7 +59,27 @@ The estimand for this research paper is the predicted support percentages for Ka
 
 # Data {#sec-data}
 
-## Overview
+## Measurement
+
+The dataset we obtained from @fivethirtyeight is accumulated from multiple polls and surveys. According to FiveThirtyEight, they aggregate polling data conducted by other firms and organizations that meets their methodological and ethical standards [@morris_trump_2024]. The dataset contains a list of questions in polls and surveys and their results. When a new poll is conducted, the poll is appended to the dataset. FiveThirtyEight assign the poll a poll_id, and each question is assigned a question_id. 
+
+In each of the polls recorded by FiveThirtyEight, all options of each question are recorded in candidate_names, while the proportion of respondents choosing that option is recorded in pct as a percentage. The pct is our primary response variable. 
+
+There are limitations in these measurements. The differences in sampling methods, wording in survey questions and systematic biases are all reflected in the outcome [@radcliffe_538s_2023]. Thus, in the dataset, FiveThirtyEight includes other variables, such as pollscore and sample_size for their prediction model in addition to the polling results for transparency and accuracy. As an example, pollscore indicates the pollster’s reliability rating, a low pollscore indicates a higher reliability rating [@silver_polls_2008].
+
+In this dataset, each row represents a polling question that records the variables of interest. Each entry allows us to explore the real-world relationships between polling factors and the support percentage (`pct`) for the candidates Kamala Harris and Donald Trump. This dataset enables an analysis of how various polling characteristics influence the reported support levels for the candidates we are focused.
+
+These variables combined allow researchers to reliably analyze and predict the 2024 US election result over time.
+
+## Data Exploration
+
+A list of column headings in the raw dataframe are shown as follows: 
+```{r}
+#| echo: false
+#| warning: false
+raw_data <- read_csv(here("data/01-raw_data/president_polls.csv"))
+print(colnames(raw_data))
+```
 
 For the data we used in this analysis about the polling result for Kamala Harris and Donalad Trump in 2024 USA president election. \
 - **response variable:** `pct`(pct: The percentage of the vote or support that the candidate received in the poll) \
@@ -71,7 +91,9 @@ For the data we used in this analysis about the polling result for Kamala Harris
 `state` (The U.S. state where the poll was conducted or focused) \
 `methodology` (The method used to conduct the poll)\
 
-## Data Exploration
+
+
+<!-- ## Data Exploration
 
 ```{r}
 #| label: fig-pairs
@@ -85,24 +107,21 @@ numeric_data = cleaned_data |> select(pct, sample_size, pollscore, days_taken_fr
 pairs(numeric_data)
 ```
 
-In @fig-pairs, the pairs plot displays scatter plots of four numeric variables (`pct`, `sample_size`, `pollscore`, and `days_taken_from_election`) to visualize their relationships. The data shows clustering, particularly in `pct` versus `sample_size`, suggesting potential heteroscedasticity. The `sample_size` variable is skewed towards lower values, while `pollscore` and `days_taken_from_election` have a more even spread, though `pollscore` shows central clustering. No strong linear relationships are immediately apparent between the variables, indicating that correlations are likely weak. 
+In @fig-pairs, the pairs plot displays scatter plots of four numeric variables (`pct`, `sample_size`, `pollscore`, and `days_taken_from_election`) to visualize their relationships. The data shows clustering, particularly in `pct` versus `sample_size`, suggesting potential heteroscedasticity. The `sample_size` variable is skewed towards lower values, while `pollscore` and `days_taken_from_election` have a more even spread, though `pollscore` shows central clustering. No strong linear relationships are immediately apparent between the variables, indicating that correlations are likely weak.  -->
 
-## Measurement
-
-The dataset we obtained from @fivethirtyeight is accumulated from multiple polls and surveys. According to FiveThirtyEight, they aggregate polling data conducted by other firms and organizations that meets their methodological and ethical standards [@morris_trump_2024]. The dataset contains a list of questions in polls and surveys and their results. When a new poll is conducted, the poll is appended to the dataset. FiveThirtyEight assign the poll a poll_id, and each question is assigned a question_id. 
-
-In each of the polls recorded by FiveThirtyEight, all options of each question are recorded in candidate_names, while the proportion of respondents choosing that option is recorded in pct as a percentage. The pct is our primary response variable. 
-
-There are limitations in these measurements. The differences in sampling methods, wording in survey questions and systematic biases are all reflected in the outcome [@radcliffe_538s_2023]. Thus, in the dataset, FiveThirtyEight includes other variables, such as pollscore and sample_size for their prediction model in addition to the polling results for transparency and accuracy. As an example, pollscore indicates the pollster’s reliability rating, a low pollscore indicates a higher reliability rating [@silver_polls_2008].
-
-In this dataset, each row represents a polling question that records the variables of interest. Each entry allows us to explore the real-world relationships between polling factors and the support percentage (`pct`) for the candidates Kamala Harris and Donald Trump. This dataset enables an analysis of how various polling characteristics influence the reported support levels for the candidates we are focused.
-
-These variables combined allow researchers to reliably analyze and predict the 2024 US election result over time.
 
 ## Clean Data
 The data cleaning process involves several steps to ensure the quality and relevance of the polling data. First, we filter the dataset to retain only poll results with a numeric grade of 2.7 or higher, indicating that the polls are considered reliable. Next, we address missing values in the state attribute: polls with NA in the state column are considered national polls.
 
 We then create a new attribute, days_taken_from_election, which represents the time gap between the poll's start date and the actual U.S. election date. Additionally, we filter the dataset to include only polls conducted after July 21, 2024, the date when Kamala Harris declared her candidacy. Finally, we remove any remaining rows that contain missing values to ensure a clean dataset.
+
+### States included in anaylsis
+
+After the data cleaning process, 21 states had no polling data. A table showing the number of polls for each state, including those without any polls, is provided in @tbl-state-polls-count.
+
+This absence of polling data is not a significant concern due to the structure of the United States Electoral College (explained in detail in the Appendix). The states lacking polling data have consistently followed historical voting patterns, so predicting the winning candidate in those states is unnecessary.
+
+### Cleaned data
 
 The first 6 rows of the dataset is displayed in @tbl-cleaned-data.
 
@@ -120,12 +139,6 @@ cleaned_data |>
     booktabs = TRUE
     ) 
 ```
-
-### States included in anaylsis
-
-After the data cleaning process, 21 states had no polling data. A table showing the number of polls for each state, including those without any polls, is provided in @tbl-state-polls-count.
-
-This absence of polling data is not a significant concern due to the structure of the United States Electoral College (explained in detail in the Appendix). The states lacking polling data have consistently followed historical voting patterns, so predicting the winning candidate in those states is unnecessary.
 
 ## Basic Statistics Summary for Data
 
