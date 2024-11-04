@@ -386,31 +386,9 @@ This hierarchical Bayesian model is designed to capture both the fixed effects o
 #| fig-cap: "Posterior Predictive Check for the Bayesian Model Predicting pct"
 #| echo: false
 #| warning: false
-baye_model_data = just_harris_data
-baye_model_data$pct = as.factor(baye_model_data$pct)
-baye_model_data$pollscore = as.factor(baye_model_data$pollscore)
-baye_model_data$days_taken_from_election = as.factor(baye_model_data$days_taken_from_election)
-baye_model_data$methodology = as.factor(baye_model_data$methodology)
-baye_model_data$pct <- as.numeric(baye_model_data$pct)
-# Define the Bayesian model with brms
-# test and train dataset
+bayesian_model_1 = readRDS(here("models/bayesian_model_1.rds"))
 
-formula <- pct ~ pollscore + days_taken_from_election + sample_size + (1 | methodology) + (1 | state)
-
-priors = normal(0, 2.5, autoscale = TRUE)
-
-bayesian_model_1 <- stan_glmer(
-  formula = formula,
-  data = just_harris_data,
-  family = gaussian(),
-  prior = priors,
-  prior_intercept = priors,
-  seed = 123,
-  cores = 4,
-  adapt_delta = 0.95
-)
 pp_check(bayesian_model_1)
-# summary(bayesian_model_1)
 ```
 
 
@@ -424,25 +402,28 @@ The fact that the y_rep curves closely match the overall pattern of the actual y
 ### Train Test Validation
 we implemented a train-test split validation approach to evaluate the performance of a Bayesian hierarchical model predicting percentage support (pct) for Kamala Harris. The dataset was divided into training (70%) and test (30%) sets to fit and validate the model, respectively. We used the stan_glmer function to fit the model on the training data, with predictors including pollscore, days_taken_from_election, sample_size, and random intercepts for methodology and state. After training, we generated predictions on the test set and calculated an R squared value to quantify the model's predictive accuracy. 
 ```{r}
-#| warning: false
 #| echo: false
+#| warning: false
 # Split data into training and test sets
 set.seed(123)
-train_indices <- sample(seq_len(nrow(just_harris_data)), size = 0.7 * nrow(just_harris_data))
-train_data <- just_harris_data[train_indices, ]
-test_data <- just_harris_data[-train_indices, ]
+# train_indices <- sample(seq_len(nrow(just_harris_data)), size = 0.7 * nrow(just_harris_data))
+# train_data <- just_harris_data[train_indices, ]
+# test_data <- just_harris_data[-train_indices, ]
+train_data = read_parquet(here("data/02-analysis_data/train_data.parquet"))
+test_data = read_parquet(here("data/02-analysis_data/test_data.parquet"))
 
 # Fit the model on the training data
-bayesian_model_train <- stan_glmer(
-  formula = formula,
-  data = train_data,
-  family = gaussian(),
-  prior = priors,
-  prior_intercept = priors,
-  seed = 123,
-  cores = 4,
-  adapt_delta = 0.95
-)
+bayesian_model_train = readRDS(here("models/bayesian_model_train.rds"))
+# bayesian_model_train <- stan_glmer(
+#   formula = formula,
+#   data = train_data,
+#   family = gaussian(),
+#   prior = priors,
+#   prior_intercept = priors,
+#   seed = 123,
+#   cores = 4,
+#   adapt_delta = 0.95
+# )
 
 # Predict on the test data and check performance
 predictions <- posterior_predict(bayesian_model_train, newdata = test_data)
@@ -514,6 +495,7 @@ To predict the support percentage (PCT) for Harris and Trump, we employed a comp
 # Result {#sec-result}
 ```{r}
 #| label: fig-bayesian-model-CI
+#| fig-cap: "Estimated Posterior Distribution for the Intercept Parameter in the Bayesian Model"
 #| echo: false
 #| warning: false
 # Plot random effects
@@ -529,22 +511,32 @@ In conclusion, the estimated intercept, which represents the baseline percentage
 
 
 ```{r}
+#| label: tbl-bayesian-model-result-summary
+#| tbl-cap: "Bayesian Model Result Summary"
 #| echo: false
 #| warning: false
 
-predictions2 <- posterior_predict(bayesian_model_1, newdata = just_harris_data)
+predictions2 = posterior_predict(bayesian_model_1, newdata = just_harris_data)
 
-predicted_means <- colMeans(predictions2)
-predicted_intervals <- apply(predictions2, 2, quantile, probs = c(0.025, 0.975))
+predicted_means = colMeans(predictions2)
+predicted_intervals = apply(predictions2, 2, quantile, probs = c(0.025, 0.975))
 
 # Combine the results with the actual data
-result_summary <- data.frame(
+result_summary = data.frame(
   Actual_PCT = just_harris_data$pct,
   Predicted_PCT = predicted_means,
   Lower_CI = predicted_intervals[1, ],
   Upper_CI = predicted_intervals[2, ]
 )
 
+kable(head(result_summary, 10))
+```
+
+```{r}
+#| label: fig-bayesian-model-result-CI
+#| fig-cap: "U.S. Election Prediction Results"
+#| echo: false
+#| warning: false
 ggplot(result_summary, aes(x = Actual_PCT, y = Predicted_PCT)) +
   geom_point() +
   geom_errorbar(aes(ymin = Lower_CI, ymax = Upper_CI), width = 0.2, color = "blue") +
@@ -554,10 +546,9 @@ ggplot(result_summary, aes(x = Actual_PCT, y = Predicted_PCT)) +
     x = "Actual PCT",
     y = "Predicted PCT"
   )
-
-print(head(result_summary))
-
 ```
+
+@fig-bayesian-model-result-CI shows that he model's predictive performance for Harris's election data appears generally robust, demonstrating a strong alignment between actual and predicted vote percentages. The majority of the data points cluster around the line, indicating reliable predictions, some variance is evident, particularly in the lower and higher actual percentage ranges. This suggests that while the model performs well on average, it may have larger uncertainty in its predictions at the extremes. @tbl-bayesian-model-result-summary also highlights that most predicted values align closely with actual values, supporting the model’s robustness in capturing the overall trend of election outcomes.
 
 
 # Discussion {#sec-discussion}
