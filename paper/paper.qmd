@@ -305,6 +305,8 @@ cleaned_data %>%
 
 Based on @fig-polldate-canidate-pct, Trump and Harris are getting more votes in polls that are done closer to the election. This is a result of non-major candidate support decreasing. Specifically, Trump support is increasing at a faster rate than Harris. However, the polls in general show a slight lead for Harris throughout the last 100 days. 
 
+\newpage
+
 
 # Model {#sec-model}
 
