@@ -59,24 +59,7 @@ cleaned_data_state <- cleaned_data |>
 
 cleaned_data <- cleaned_data |> na.omit()
 
-
-# Delete NA columns
-# cleaned_data <- raw_data |>
-#   select(-sponsor_ids,
-#     -sponsors,
-#     -sponsor_candidate_id,
-#     -sponsor_candidate,
-#     -sponsor_candidate_party,
-#     -endorsed_candidate_id,
-#     -endorsed_candidate_name,
-#     -endorsed_candidate_party,
-#     -subpopulation, -tracking,
-#     -notes, -url_article, -url_topline, -url_crosstab,
-#     -source, -internal, -partisan, -seat_name,
-#     -ranked_choice_round) |> na.omit()
-
 #### Save data ####
 write_parquet(cleaned_data, "data/02-analysis_data/cleaned_data.parquet")
 write_parquet(cleaned_data_national, "data/02-analysis_data/cleaned_data_national.parquet")
 write_parquet(cleaned_data_state, "data/02-analysis_data/cleaned_data_state.parquet")
-write_parquet(morningconsult_data, "data/02-analysis_data/mc_data.parquet")
