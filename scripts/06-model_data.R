@@ -12,14 +12,14 @@ library(rstanarm)
 library(arrow)
 #### Read data ####
 
-cleaned_data = read_parquet(here("data/02-analysis_data/cleaned_data.parquet"))
-baye_model_data = cleaned_data[cleaned_data$candidate_name == "Kamala Harris", ]
+cleaned_data <- read_parquet(here("data/02-analysis_data/cleaned_data.parquet"))
+baye_model_data <- cleaned_data[cleaned_data$candidate_name == "Kamala Harris", ]
 # Define the Bayesian model with brms
 # test and train dataset
 
 formula <- pct ~ pollscore + days_taken_from_election + sample_size + (1 | methodology) + (1 | state)
 
-priors = normal(0, 2.5, autoscale = TRUE)
+priors <- normal(0, 2.5, autoscale = TRUE)
 
 bayesian_model_1 <- stan_glmer(
   formula = formula,
@@ -38,7 +38,7 @@ saveRDS(
 )
 
 
-just_harris_data = cleaned_data[cleaned_data$candidate_name == "Kamala Harris", ]
+just_harris_data <- cleaned_data[cleaned_data$candidate_name == "Kamala Harris", ]
 train_indices <- sample(seq_len(nrow(just_harris_data)), size = 0.7 * nrow(just_harris_data))
 train_data <- just_harris_data[train_indices, ]
 test_data <- just_harris_data[-train_indices, ]
