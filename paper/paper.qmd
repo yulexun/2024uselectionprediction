@@ -73,8 +73,83 @@ In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. Th
 # FiveThirtyEight Licenses
 [FiveThirtyEight's data sets](https://github.com/fivethirtyeight/data/tree/master/polls) are used and modified by us under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
+# Trump Voter Prediction Model
 
-# Our Prediction
+The multiple linear regression model (MLR) for Donald Trump will use the same variables, formula, and Bayesian approach as the one for Harris. Likewise, the Trump dataset is also split into training and testing data. The model outputs are below.
+
+```{r}
+#| echo: false
+#| warning: false
+set.seed(123)
+train_data_trump <- read_csv(here("data/02-analysis_data/train_data_trump.csv"))
+test_data_trump <- read_csv(here("data/02-analysis_data/test_data_trump.csv"))
+bayesian_model_train_trump <- readRDS(here("models/bayesian_model_train_trump.rds"))
+```
+
+```{r}
+#| label: fig-model-trumpmlr
+#| fig-cap: "MLR Trump Model Accounts For A Large Amount of Variability in Voter Percentage"
+#| echo: false
+#| warning: false
+
+just_trump <- cleaned_data %>% filter(candidate_name == "Donald Trump")
+
+predictions2 = posterior_predict(bayesian_model_train_trump, newdata = just_trump)
+
+predicted_means = colMeans(predictions2)
+predicted_intervals = apply(predictions2, 2, quantile, probs = c(0.025, 0.975))
+
+result_summary = data.frame(
+  Actual_PCT = just_trump$pct,
+  Predicted_PCT = predicted_means,
+  Lower_CI = predicted_intervals[1, ],
+  Upper_CI = predicted_intervals[2, ]
+)
+
+# kable(head(result_summary, 10), caption = "Head of Bayesian Model Result Summary")
+
+ggplot(result_summary, aes(x = result_summary$Actual_PCT, y = result_summary$Predicted_PCT)) +
+  geom_point(color = "blue", alpha = 0.7) +
+  # geom_errorbar(aes(ymin = Lower_CI, ymax = Upper_CI), width = 0.2, color = "blue") +
+  geom_abline(intercept = 0, slope = 1, color = "red", linetype = "dashed") +
+  labs(
+    title = "Actual vs Predicted Percentage For Trump MLR Model (All Trump Data)",
+    x = "Actual PCT",
+    y = "Predicted PCT"
+  )
+```
+From @fig-model-trumpmlr it is clear that the model accounts for large amount of the variance in Trump's voter percentage as the data points appear close to the prediction (red line). Furthermore, the distance between the prediction and the actual values do not appear to follow a pattern, suggesting that the error is due to randomness and not model bias.
+
+```{r}
+#| label: fig-model-trumpmlr-res
+#| fig-cap: "MLR Trump Model does not Appear to Overfit"
+#| echo: false
+#| warning: false
+
+predictions2 = posterior_predict(bayesian_model_train_trump, newdata = test_data_trump)
+
+plot(test_data_trump$pct, colMeans(predictions2), 
+     xlab = "Actual PCT Values", 
+     ylab = "Predicted  PCT Values", 
+     main = "Predicted PCT vs Actual PCT (Test Data)")
+abline(0, 1, col = "red")  # Add a 45-degree reference line
+
+```
+Based on @fig-model-trumpmlr-res, the test data predictions are also close to the actual values. This suggests that model can generalization to outside data. Similarly, the distance between the prediction and the actual values do not appear to follow a pattern, suggesting that the error is due to randomness and not model bias. 
+
+
+
+```{r}
+#| label: fig-trumpmodelci
+#| fig-cap: Donald Trump Expected to Recieve Approximatley 45% of the Vote
+#| echo: false
+#| warning: false
+
+plot(bayesian_model_train_trump, pars = "(Intercept)", prob = 0.95)
+```
+Based on @fig-trumpmodelci, the model expects Trump to win slight less than 45% of the popular vote and the 95% confidence interval ranges from around 42.5% to 47.2%. This confidence interval is slightly larger than the model for Harris, implying that the Trump polling data might be less reliable.
+
+# Election Prediction
 
 Our prediction process consists of two primary components. First, we develop models for both Trump and Harris based on the variables outlined in Section @sec-PLACEHOLDER. This involves partitioning the dataset into training and testing subsets. Next, we further divide the testing dataset into swing states and other competitive races. We then input this test data into the respective models to generate predictions. By averaging these predictions, we can calculate the expected voter percentage for each candidate in each state. The candidate with the higher percentage is deemed the winner for that state.
 
@@ -82,17 +157,13 @@ We generated predictions for the following states: Arizona, Nevada, Georgia, Pen
 ```{r}
 #| echo: false
 #| warning: false
+#| label: tbl-electionprediction
+#| tbl-cap: Kamala Harris Wins Most of the Swing States
 # Split data into training and test sets
-
-set.seed(123)
 
 train_data_harris <- read_csv(here("data/02-analysis_data/train_data_harris.csv"))
 test_data_harris <- read_csv(here("data/02-analysis_data/test_data_harris.csv"))
 bayesian_model_train_harris <- readRDS(here("models/bayesian_model_train_harris.rds"))
-
-train_data_trump <- read_csv(here("data/02-analysis_data/train_data_trump.csv"))
-test_data_trump <- read_csv(here("data/02-analysis_data/test_data_trump.csv"))
-bayesian_model_train_trump <- readRDS(here("models/bayesian_model_train_trump.rds"))
 
 relevant_states <- c("Arizona", "Nevada", "Georgia", "Pennsylvania", "Michigan", "Minnesota",
                      "Wisconsin", "Florida", "Texas", "Maine CD-2", "Nebraska CD-2", 
@@ -143,7 +214,7 @@ swing_state_predictions %>%
 
 
 ```{r}
-#| label: fig-currentstateofelection
+#| label: fig-electionpredictionmap
 #| fig-cap: Kamala Harris is Predicited to be the 47th President of the United States
 #| echo: false
 #| warning: false
@@ -279,13 +350,6 @@ According to Figure @fig-currentstateofelection, Kamala Harris is predicted to b
 In Maine, Harris is projected to win the state’s overall delegates and District 1, while District 2 is expected to go to Trump. In Nebraska, Trump is expected to win the state’s delegates along with Districts 1 and 3, while Harris is predicted to win District 2. Additionally, Trump is projected to win Alaska, and Harris is expected to win Hawaii.
 
 Overall, the predictions indicate that Harris will receive 298 delegates, while Trump will receive 240 delegates.
-
-```{r}
-
-plot(bayesian_model_train_trump, pars = "(Intercept)", prob = 0.95)
-
-
-```
 
 \newpage
 
