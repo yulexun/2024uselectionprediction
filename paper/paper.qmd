@@ -1,5 +1,6 @@
 ---
-title: "Prediction of 2024 US election ..."
+title: "Forecasting the 2024 U.S. Presidential Election through Poll Aggregation and Adjustments for Poll Quality"
+subtitle: "A Hybrid Model Predicts a Narrow Lead for Kamala Harris in Swing States as Election Day Approaches"
 author: 
   - Colin Sihan Yang
   - Lexun Yu
@@ -7,7 +8,7 @@ author:
 thanks: "Code and data are available at: [https://github.com/yulexun/uselection](https://github.com/yulexun/uselection)."
 date: today
 date-format: long
-abstract: "We forecast the winner of the 2024 US presidential election using “poll-of-polls” by building a linear model."
+abstract: "This paper develops a hybrid model to forecast the 2024 U.S. presidential election by combining poll aggregation techniques with additional variables, including pollster reliability, sample size, timing relative to the election, geographic region, and polling methodology. By integrating these factors, our model accounts for variations in poll quality and regional differences in voter sentiment, providing a more stable and accurate prediction compared to traditional poll aggregation alone. Our results show that Kamala Harris holds a slight lead over Donald Trump in most swing states, with support levels stabilizing closer to election day. This approach underscores the importance of nuanced forecasting models in election analysis, revealing how poll quality and timing can significantly influence support predictions. Ultimately, this model offers a comprehensive tool for understanding the dynamics of voter sentiment and improving the accuracy of election predictions."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -750,7 +751,7 @@ The research team has developed a survey and distribution methodology with a hyp
 
 ## Sampling Frame
 
-Given the monetary constraint, the team's first decision is to mostly include swing states and districts. These are Nevada, Arizona, Wisconsin, Michigan, Pennsylvania, North Carolina, and Georgia. Swing states are the primary focus of the poll because they disproportionately affect the outcome of the election based on the explanation in @sec-PLACEHOLDER. However, the poll will also include Texas, Florida, and Minnesota, Nebraska District 2, and Maine District 2, as they have the potential to one by either party but are not as likely to change as the previously mentioned swing states. Nevertheless, it is important to note that to save costs, the team will focus on polling true swing states compared to Texas, Florida and Minnesota.
+Given the monetary constraint, the team's first decision is to mostly include swing states and districts. These are Nevada, Arizona, Wisconsin, Michigan, Pennsylvania, North Carolina, and Georgia. Swing states are the primary focus of the poll because they disproportionately affect the outcome of the election based on the explanation in @sec-electoral-college. However, the poll will also include Texas, Florida, and Minnesota, Nebraska District 2, and Maine District 2, as they have the potential to one by either party but are not as likely to change as the previously mentioned swing states. Nevertheless, it is important to note that to save costs, the team will focus on polling true swing states compared to Texas, Florida and Minnesota.
 
 ## Survey Sending Process
 
