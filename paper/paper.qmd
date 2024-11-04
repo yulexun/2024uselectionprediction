@@ -616,12 +616,12 @@ In this paper, we developed a hybrid election forecasting model to predict the 2
 
 Our approach in models applies simple linear regression, multiple linear regression and Bayesian hierarchical modeling that includes both fixed and random effects, capturing variations in poll reliability. The results shows that a model accounting for poll quality, timing, and methodology can produce forecasts that are more resilient to biases found in individual polls.
 
-## Insights on Polling and Election Dynamics
+## Polling and Election Dynamics
 
 One of the main takeaways from this study is the impact of poll quality on election forecasts. We weight and filtered the polls by their reliability. This approach highlights the importance of screening and adjusting for poll reliability in election forecasts, particularly in a high-stakes environment where even minor polling biases can influence public perception and campaign strategies.
 
 
-## Limitations of the Model
+## Limitations of the Model {#sec-model-limitations}
 
 While this model presents a more comprehensive approach, there are limitations. First, Any systematic biases inherent in those polls can carry over into the model’s predictions because we are using existing poll data. For instance, if certain demographic groups are consistently underrepresented, our model may not fully capture their impact on election outcomes. 
 
@@ -632,6 +632,12 @@ On top of that, the results can be sensitive to the choice of priors. We choose 
 Also, as it is a model based on a dataset, it is challenging to capture all the real-life features and dynamics. The model might not include all relevant predictors or interactions due to limitations in data availability or complexity, which can lead to incomplete representations of the factors influencing voting behavior. Additionally, without strong regularization techniques, the model may become prone to overfitting, particularly when using complex hierarchical structures or including numerous predictors. This overfitting can reduce the model’s generalizability to new or unseen data.
 
 Moreover, errors and offsets inherent in polling data, such as response bias, nonresponse adjustments, and sampling variability, can propagate into the model’s results. These aspects introduce an additional layer of uncertainty that can affect the model's reliability and predictive performance. While Bayesian methods provide a robust framework to incorporate uncertainty, the final outputs must be interpreted cautiously, acknowledging these underlying limitations.
+
+## Limitation of the Prediction
+
+In @sec-prediction, the team predicted that Kamala Harris would secure 298 delegates while Donald Trump would obtain 240 delegates. However, this prediction has several limitations. Firstly, the model used to generate these predictions inherits the constraints outlined in  @sec-model-limitations. Additionally, the predictions are based on averaging results from polling data for each state, which can lead to propagated prediction errors.
+
+Each state has a limited number of polls available; while the overall analysis considered a substantial number of polls, individual states often had fewer than 20 polls, with even the largest states contributing only up to 27. Moreover, as noted in Section @sec-prediction, the analysis focused solely on closely contested races, specifitatiocally swing states. Consequently, many states were assigned to a candidate based on strong historical trends rather than direct predictions. Although this approach is reasonable, it may overlook emerging trends that could potentially shift a state's allegiance from Republican to Democrat or vice versa.
 
 ## Future Directions
 To enhance the reliability and robustness of this forecasting model, future work should focus on validating its performance across multiple election cycles. We includes previous year's polling dataset in this R project. By applying the model to past elections, researchers can assess its accuracy in different political contexts and electoral dynamics. This approach would show any limitations specific to certain election conditions, such as shifts in voter demographics or the influence of emerging media platforms on public opinion. Expanding the model’s validation across multiple election cycles could help verify its robustness and adaptability, ultimately refining its accuracy and reliability for future applications in election forecasting. 
@@ -647,7 +653,7 @@ To enhance the reliability and robustness of this forecasting model, future work
 [FiveThirtyEight's data sets](https://github.com/fivethirtyeight/data/tree/master/polls) are used and modified by us under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
 
-# Trump Voter Prediction Model
+# Trump Voter Prediction Model 
 
 The multiple linear regression model (MLR) for Donald Trump will use the same variables, formula, and Bayesian approach as the one for Harris. Likewise, the Trump dataset is also split into training and testing data. The model outputs are below.
 
@@ -712,7 +718,7 @@ plot(bayesian_model_train_trump, pars = "(Intercept)", prob = 0.95)
 
 Based on @fig-trumpmodelci, the model expects Trump to win slight less than 45% of the popular vote and the 95% confidence interval ranges from around 42.5% to 47.2%. This confidence interval is slightly larger than the model for Harris, implying that the Trump polling data might be less reliable.
 
-# Election Prediction
+# Election Prediction {#sec-prediction}
 
 Our prediction process consists of two primary components. First, we develop models for both Trump and Harris based on the variables outlined in @sec-model. This involves partitioning the dataset into training and testing subsets. Next, we further divide the testing dataset into swing states and other competitive races. We then input this test data into the respective models to generate predictions. By averaging these predictions, we can calculate the expected voter percentage for each candidate in each state. The candidate with the higher percentage is deemed the winner for that state.
 
