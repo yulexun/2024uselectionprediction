@@ -224,7 +224,7 @@ The Bayesian model is implemented in R [@citeR] using the rstanarm package as de
 We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
 us
 
-## Basic Model
+## Basic  SLR Model
 ```{r}
 #| label: fig-model-pct-pollscore
 #| echo: false
@@ -244,6 +244,43 @@ ggplot(just_harris_data, aes(x = pct, y = predictions)) +
 ```
 
 @fig-model-pct-pollscore in this SLR model, the response variable is pct and the only one predictor is the pollscore. The primary concern lies in the evident dispersion of data points, which are widely spread and do not cluster closely around the line of perfect prediction (the dashed red line). This suggests that while pollscore may have some predictive capability, it does not adequately explain the variability in pct. The observed inconsistencies between actual and predicted values indicate that the relationship between pct and pollscore is likely not sufficiently captured by a linear model with just one predictor.
+
+
+```{r}
+#| label: fig-model-pct-sample_size
+#| echo: false
+#| warning: false
+lm_model1 = lm(pct ~ sample_size, data = just_harris_data)
+predictions = predict(lm_model1, just_harris_data)
+# summary(lm_model1)
+
+ggplot(just_harris_data, aes(x = pct, y = predictions)) +
+  geom_point(color = 'blue') +
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "red") +
+  labs(title = "Actual vs Predicted Values",
+       x = "Actual pct",
+       y = "Predicted pct") +
+  theme_minimal()
+
+```
+
+@fig-model-pct-sample_size The distribution of the points suggests that the model might not capture much variability in pct when sample_size is the only predictor. This indicate that sample_size has limited impact on pct.
+
+```{r}
+# lm_model1 = lm(pct ~ sample_size + pollscore, data = just_harris_data)
+# predictions = predict(lm_model1, just_harris_data)
+# # summary(lm_model1)
+
+# ggplot(just_harris_data, aes(x = pct, y = predictions)) +
+#   geom_point(color = 'blue') +
+#   geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "red") +
+#   labs(title = "Actual vs Predicted Values",
+#        x = "Actual pct",
+#        y = "Predicted pct") +
+#   theme_minimal()
+```
+
+## MLR Model
 
 ```{r}
 #| echo: false
