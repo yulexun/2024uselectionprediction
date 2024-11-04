@@ -12,7 +12,7 @@ library(rstanarm)
 library(arrow)
 #### Read data ####
 set.seed(123)
-cleaned_data <- read_parquet(here("data/02-analysis_data/cleaned_data.parquet"))
+cleaned_data <- read_parquet("data/02-analysis_data/cleaned_data.parquet")
 baye_model_data <- cleaned_data[cleaned_data$candidate_name == "Kamala Harris", ]
 # Define the Bayesian model with brms
 # test and train dataset
@@ -43,8 +43,8 @@ train_indices <- sample(seq_len(nrow(just_harris_data)), size = 0.7 * nrow(just_
 train_data <- just_harris_data[train_indices, ]
 test_data <- just_harris_data[-train_indices, ]
 
-write_parquet(train_data, "./data/02-analysis_data/train_data.parquet")
-write_parquet(test_data, "./data/02-analysis_data/test_data.parquet")
+write_parquet(train_data, "./data/02-analysis_data/train_data_harris.parquet")
+write_parquet(test_data, "./data/02-analysis_data/test_data_harris.parquet")
 
 # Fit the model on the training data
 bayesian_model_train <- stan_glmer(
@@ -60,5 +60,56 @@ bayesian_model_train <- stan_glmer(
 
 saveRDS(
   bayesian_model_train,
-  file = "models/bayesian_model_train.rds"
+  file = "models/bayesian_model_train_harris.rds"
+)
+
+##### Trump Model Save
+
+cleaned_data = read_parquet("data/02-analysis_data/cleaned_data.parquet")
+baye_model_data = cleaned_data[cleaned_data$candidate_name == "Donald Trump", ]
+# Define the Bayesian model with brms
+# test and train dataset
+
+formula <- pct ~ pollscore + days_taken_from_election + sample_size + (1 | methodology) + (1 | state)
+
+priors = normal(0, 2.5, autoscale = TRUE)
+
+bayesian_model_1 <- stan_glmer(
+  formula = formula,
+  data = baye_model_data,
+  family = gaussian(),
+  prior = priors,
+  prior_intercept = priors,
+  seed = 123,
+  cores = 4,
+  adapt_delta = 0.95
+)
+
+saveRDS(
+  bayesian_model_1,
+  file = "models/bayesian_model_1_trump.rds"
+)
+just_harris_data = cleaned_data[cleaned_data$candidate_name == "Donald Trump", ]
+train_indices <- sample(seq_len(nrow(just_harris_data)), size = 0.7 * nrow(just_harris_data))
+train_data <- just_harris_data[train_indices, ]
+test_data <- just_harris_data[-train_indices, ]
+
+write_parquet(train_data, "./data/02-analysis_data/train_data_trump.parquet")
+write_parquet(test_data, "./data/02-analysis_data/test_data_trump.parquet")
+
+# Fit the model on the training data
+bayesian_model_train <- stan_glmer(
+  formula = formula,
+  data = train_data,
+  family = gaussian(),
+  prior = priors,
+  prior_intercept = priors,
+  seed = 123,
+  cores = 4,
+  adapt_delta = 0.95
+)
+
+saveRDS(
+  bayesian_model_train,
+  file = "models/bayesian_model_train_trump.rds"
 )
