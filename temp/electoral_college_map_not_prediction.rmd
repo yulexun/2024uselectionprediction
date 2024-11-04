@@ -1,0 +1,133 @@
+```{r}
+#| label: fig-currentstateofelection
+#| echo: false
+#| warning: false
+
+library(tidyverse)
+library(tibble)
+library(knitr)
+library(maps)
+library(mapproj)
+light_blue <- "#ADD8E6"
+dark_blue <- "#6688CC"
+light_red <- "#FF7777"
+dark_red <- "#B22222"
+purple <- "#9370DB"
+
+state_colors_legend <- c(
+  "Republican" = dark_red,      # Dark Red
+  "Lean Republican" = light_red, # Light Red
+  "Toss-Up" = purple,         # Purple
+  "Lean Democrat" = light_blue,   # Light Blue
+  "Democrat" = dark_blue,        # Dark Blue
+  "Split By District" = "gray"
+)
+
+# Define your colors for each state (replace these colors with your desired ones)
+state_colors <- c(
+  alabama = dark_red,
+  arizona = purple,
+  arkansas = dark_red,
+  california = dark_blue,
+  colorado = dark_blue,
+  connecticut = dark_blue,
+  delaware = dark_blue,
+  `district of columbia` = dark_blue,
+  florida = light_blue,
+  georgia = purple,
+  idaho = dark_red,
+  illinois = dark_blue,
+  indiana = dark_red,
+  iowa = light_red,
+  kansas = dark_red,
+  kentucky = dark_red,
+  louisiana = dark_red,
+  maine = "gray",
+  maryland = dark_blue,
+  massachusetts = dark_blue,
+  michigan = purple,
+  minnesota = light_blue,
+  mississippi = dark_red,
+  missouri = dark_red,
+  montana = dark_red,
+  nebraska = "gray",
+  nevada = purple,
+  `new hampshire` = dark_blue,
+  `new jersey` = dark_blue,
+  `new mexico` = dark_blue,
+  `new york` = dark_blue,
+  `north carolina` = purple,
+  `north dakota` = dark_red,
+  ohio = light_red,
+  oklahoma = dark_red,
+  oregon = dark_blue,
+  pennsylvania = purple,
+  `rhode island` = dark_blue,
+  `south carolina` = dark_red,
+  `south dakota` = dark_red,
+  tennessee = dark_red,
+  texas = light_red,
+  utah = dark_red,
+  vermont = dark_blue,
+  virginia = light_blue,
+  washington = dark_blue,
+  `west virginia` = dark_red,
+  wisconsin = purple,
+  wyoming = dark_red
+)
+
+# Load the states map data
+states_map <- map_data(map = "state")
+
+state_colors <- setNames(state_colors, tolower(names(state_colors)))
+
+color_to_status <- setNames(names(state_colors_legend), state_colors_legend)
+
+states_map <- states_map %>%
+  mutate(status = color_to_status[state_colors[region]])
+
+plotclr <- c(dark_red, light_blue, purple, gray, light_blue, dark_blue)
+legend_description <- c(
+  "Likely Republican",
+  "Lean Republican",
+  "Swing States",
+  "Lean Democrat",
+  "Likely Democrat",
+  "Split by District"
+)
+
+
+ggplot(states_map, aes(x = long, y = lat, group = group, fill = status)) +
+  geom_polygon(color = "white", size = 0.2) +
+  coord_map("albers", lat0 = 39, lat1 = 45) +
+  scale_fill_manual(
+    values = state_colors_legend,
+    name = "Election Status"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_text(size = 12, face = "bold"),
+    legend.text = element_text(size = 10),
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank()
+  )
+
+```
+### Legend
+
+```{r}
+#| label: tbl-state-polls-count
+#| tbl-cap: Interpretation of Electoral College Map
+#| echo: false
+#| warning: false
+
+legend_tibble <- tibble(
+  Color = c("Dark Red", "Light Red", "Purple", "Light Blue", "Dark Blue", "Gray"),
+  Status = c("Republican", "Lean Republican", "Toss-Up", "Lean Democrat", "Democrat", "Split By District")
+)
+
+legend_tibble %>% kable(col.names = c("color", "status"))
+
+```

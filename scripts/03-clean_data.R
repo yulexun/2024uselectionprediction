@@ -8,6 +8,7 @@
 
 #### Workspace setup ####
 library(tidyverse)
+library(arrow)
 
 #### Clean data ####
 raw_data <- read_csv("data/01-raw_data/president_polls.csv")
@@ -22,6 +23,10 @@ cleaned_data <- raw_data |>
   filter(
     numeric_grade >= 2.5
   )
+
+# Keep data from one pollster for Appendix
+morningconsult_data <- cleaned_data %>%
+  filter(pollster == "Morning Consult")
 
 cleaned_data <- cleaned_data |>
   mutate(
@@ -39,8 +44,21 @@ cleaned_data <- cleaned_data %>%
   select(
     poll_id, pollster_id, pollster, question_id,
     sample_size, pollscore, methodology, days_taken_from_election,
-    end_date, start_date, state, answer, pct
+    end_date, start_date, state, candidate_name, pct
   )
+
+# add weight to pct
+cleaned_data$adjusted_weight <- 1 / abs(cleaned_data$pollscore)
+
+
+# store national and state data seperately
+cleaned_data_national <- cleaned_data |>
+  filter(state == "National")
+cleaned_data_state <- cleaned_data |>
+  filter(state != "National")
+
+cleaned_data <- cleaned_data |> na.omit()
+
 
 # Delete NA columns
 # cleaned_data <- raw_data |>
@@ -57,13 +75,8 @@ cleaned_data <- cleaned_data %>%
 #     -source, -internal, -partisan, -seat_name,
 #     -ranked_choice_round) |> na.omit()
 
-
-# Keep data from one pollster for Appendix
-# morningconsult_data <- cleaned_data %>%
-#   filter(pollster == "Morning Consult")
-
 #### Save data ####
-write_csv(cleaned_data, "data/02-analysis_data/cleaned_data.csv")
-# write_csv(cleaned_data_national, "data/02-analysis_data/cleaned_data_national.csv")
-# write_csv(cleaned_data_national, "data/02-analysis_data/cleaned_data_state.csv")
-# write_csv(morningconsult_data, "data/02-analysis_data/mc_data.csv")
+write_parquet(cleaned_data, "data/02-analysis_data/cleaned_data.parquet")
+write_parquet(cleaned_data_national, "data/02-analysis_data/cleaned_data_national.parquet")
+write_parquet(cleaned_data_state, "data/02-analysis_data/cleaned_data_state.parquet")
+write_parquet(morningconsult_data, "data/02-analysis_data/mc_data.parquet")
