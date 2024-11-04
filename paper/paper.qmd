@@ -1,6 +1,6 @@
 ---
 title: "Forecasting the 2024 U.S. Presidential Election through Poll Aggregation and Adjustments for Poll Quality"
-subtitle: "A Hybrid Model Predicts a Narrow Lead for Kamala Harris in Swing States as Election Day Approaches"
+subtitle: "A Hybrid Model Predicts a Lead for Kamala Harris in Swing States as Election Day Approaches"
 author: 
   - Colin Sihan Yang
   - Lexun Yu
