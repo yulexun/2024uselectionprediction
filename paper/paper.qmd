@@ -323,10 +323,22 @@ bayesian_model_train = readRDS(here("models/bayesian_model_train.rds"))
 #   adapt_delta = 0.95
 # )
 
+test_data_arizona = test_data[test_data$state == "Arizona", ]
 # Predict on the test data and check performance
 predictions <- posterior_predict(bayesian_model_train, newdata = test_data)
+predictions_arizona = posterior_predict(bayesian_model_train, newdata = test_data_arizona)
 ```
 
+
+
+```{r}
+# Calculate the average predicted PCT for Harris
+avg_predicted_pct_harris <- mean(predictions_arizona)  
+
+# Print the result
+avg_predicted_pct_harris
+
+```
 
 ```{r}
 #| echo: false
