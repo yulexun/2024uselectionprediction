@@ -47,15 +47,15 @@ Election result forecasting has become an essential tool for analysts in politic
 
 We build a hybrid election forecasting model following the strategies mentioned by @pasek. As @pasek described in their article, aggregation involves determining which surveys are worth including, as well as selecting, combining and averaging results from multiple polls to reduce individual biases and errors. Our model incorporates this approach, filtering polls from @fivethirtyeight based on a numeric grade that indicates each pollster's reliability.
 
-The objective of this study is to predict the support percentages for the primary candidates, Kamala Harris and Donald Trump, using this hybrid model. We incorporate aggregation by filtering the polls on @fivethirtyeight by numeric grade that indicates pollster’s reliability. We also quantify other polling attributes, such as sample size, poll reliability scores, and polling methodology, which serve as predictors. Our results show that this model provides a more stable and accurate forecast than traditional poll aggregation alone.
+The objective of this study is to predict the support percentages for the primary candidates, Kamala Harris and Donald Trump, using this hybrid model. We incorporate aggregation by filtering the polls on @fivethirtyeight by numeric grade that indicates pollster’s reliability. We also quantify other polling attributes, such as sample size, poll reliability scores, and polling methodology, which serve as predictors. Our results show that this model provides a more stable and accurate forecast than traditional poll aggregation alone. With this model, we generate a prediction that Kamala Harris will win the popular vote in 2024 and win the electoral college.
 
-The remainder of this paper is structured as follows: @sec-data provides an overview of the data. @sec-model provides the modeling approach, including simple and multiple linear regression models and a Bayesian hierarchical model. We then present our results in @sec-result and discuss the implications, limitations, and future research directions in @sec-discussion.
+The remainder of this paper is structured as follows: @sec-data provides an overview of the data. @sec-model provides the modeling approach, including simple and multiple linear regression models and a Bayesian hierarchical model. We then present our results in @sec-result and discuss the implications, limitations, then we predict the election in @sec-prediction, and future research directions in @sec-discussion.
 
 The data gathering and analysis is done in R [@citeR] with the following packages: knitr [@knitr], tidyverse [@tidyverse], ggplot2 [@ggplot2], dplyr [@dplyr], arrow [@arrow], here [@here], gridExtra [@gridextra], Matrix [@Matrix], Rstan [@Rstan] and lubridate [@lubridate].
 
 ## Estimand
 
-The estimand for this research paper is the predicted support percentages for Kamala Harris and Donald Trump. The prediction is based on quantifying various polling factors, including sample size, poll scores, and transparency scores, which are used as predictors.
+The estimand for this research paper is the predicted support percentages for Kamala Harris and Donald Trump. The prediction is based on quantifying various polling factors, including sample size, poll scores, and poll methodology, which are used as predictors.
 
 # Data {#sec-data}
 
@@ -97,7 +97,7 @@ These columns can be categorized into three types, response variable, numeric pr
 
 The response variable is:
 
-- pct: The percentage of support or vote share that each candidate (Kamala Harris or Donald Trump) received in the poll.
+- pct: The percentage of support or vote share that each candidate (Kamala Harris, Donald Trump, or third party alternatives) received in the poll.
 
 Example of numeric predictors are:
 
@@ -110,20 +110,20 @@ Example of categorical predictors are:
 - state: The U.S. state in which the poll was conducted or targeted.
 - methodology: The method used to conduct the poll (e.g., online, phone, in-person).
 - party: The political party of the candidate (e.g., DEM for Democrat, REP for Republican).
-- candidate_name: The name of the candidate, either Kamala Harris or Donald Trump.
+- candidate_name: The name of the candidate (i.e. Kamala Harris, Donald Trump, or third party candidates).
 - pollster: The name of the polling organization that conducted the poll.
 - stage: The stage of the election (e.g., "general").
 
 ## Clean Data
 The data cleaning process involves several steps to ensure the quality and relevance of the polling data. First, we filter the dataset to retain only poll results with a numeric grade of 2.7 or higher, indicating that the polls are considered reliable. Next, we address missing values in the state attribute: polls with NA in the state column are considered national polls.
 
-We then create a new attribute, days_taken_from_election, which represents the time gap between the poll's start date and the actual U.S. election date. Additionally, we filter the dataset to include only polls conducted after July 21, 2024, the date when Kamala Harris declared her candidacy. Finally, we remove any remaining rows that contain missing values to ensure a clean dataset.
+We then create a new attribute, days taken from election, which represents the time gap between the poll's start date and the actual U.S. election date. Additionally, we filter the dataset to include only polls conducted after July 21, 2024, the date when Kamala Harris declared her candidacy. Finally, we remove any remaining rows that contain missing values to ensure a clean dataset.
 
 ### States included in anaylsis
 
 After the data cleaning process, 21 states had no polling data. A table showing the number of polls for each state, including those without any polls, is provided in @tbl-state-polls-count.
 
-This absence of polling data is not a significant concern due to the structure of the United States Electoral College (explained in detail in the Appendix). The states lacking polling data have consistently followed historical voting patterns, so predicting the winning candidate in those states is unnecessary.
+This absence of polling data is not a significant concern due to the structure of the United States Electoral College (explained in detail in @sec-electoral-college). The states lacking polling data have consistently followed historical voting patterns, so predicting the winning candidate in those states is unnecessary.
 
 ## Cleaned data
 
@@ -144,7 +144,9 @@ cleaned_data |>
     ) 
 ```
 
-### Basic Statistics Summary for Cleaned Data
+### Relationship Between Variables
+
+#### State and Candidate Percentage
 
 ```{r}
 #| label: fig-avg-pct-state
@@ -170,11 +172,13 @@ cleaned_data %>%
   scale_fill_manual(values = c("Kamala Harris" = light_blue, "Donald Trump" = light_red)) +
   theme_minimal() +
   theme(legend.position = "bottom") + 
-  theme(axis.text.y = element_text(size = 8))
+  theme(axis.text.y = element_text(size = 5))
 
 ```
 
-In @fig-avg-pct-state, historically Democratic are polling for Kamala and historically Republican states are polling for Trump. Similarly, historically swing states also appear to be close, for instance Michigan (46.9% Trump, 47.5% Harris), Nevada (47.7% Trump, 47.9% Harris), and Pennsylvania (46.9% Trump, 48.2% Harris) all are close to an even split.
+In @fig-avg-pct-state, historically Democratic states are polling for Kamala and historically Republican states are polling for Trump. Similarly, historically swing states also appear to be close, for instance Michigan (46.9% Trump, 47.5% Harris), Nevada (47.7% Trump, 47.9% Harris), and Pennsylvania (46.9% Trump, 48.2% Harris) all are close to an even split.
+
+#### Poll Methodology and Candidate Percentage
 
 ```{r}
 #| label: fig-avg-pct-methodology
@@ -203,13 +207,13 @@ cleaned_data %>%
 
 ```
 
-@fig-avg-pct-methodology shows that polls utilizing multiple communication methods to reach voters tend to have lower interquartile ranges (IQRs) in their boxplots compared to those that rely on only one or two communication methods.
+@fig-avg-pct-methodology shows that polls utilizing multiple communication methods to reach voters tend to have lower interquartile ranges (IQRs) in their boxplots compared to those that rely on only one or two communication methods. It is important to note that statistical outliers are not visible in the graph to ensure better visibility.
 
-### Relationship Between Variables
+#### Poll Score and Sample Size
 
 ```{r}
 #| label: fig-pollscore-samplesize
-#| fig-cap: More Reliable Pollsters Have Larger Sample Sizes in their Polls
+#| fig-cap: Pollsters with Higher Pollscores Have Larger Sample Sizes in their Polls
 #| echo: false
 #| warning: false
 
@@ -240,6 +244,8 @@ graph_data %>% filter(!is.na(pollscore) & !is.na(sample_size)) %>%
 
 @fig-pollscore-samplesize illustrates a weak positive correlation between a pollster's pollscore and the sample size of their poll. The figure also shows that most polls have a sample size of around 800 to 1200 participants. It is also important to note that a few polls with exceptionally large sample sizes were excluded from the graph due to their status as clear outliers.
 
+#### Sample Size and Voter Percentage
+
 ```{r}
 #| label: fig-pollsamplesize-canidate-pct
 #| fig-cap: The Sample Size of a Poll does not impact a Candidate's Voting Percentage
@@ -256,7 +262,9 @@ cleaned_data %>%
 
 ```
 
-Based on @fig-pollsamplesize-canidate-pct, there does not seem to be a relationship between the sample size of a poll the percentage of a candidate.
+Based on @fig-pollsamplesize-canidate-pct, there does not seem to be a relationship between the sample size of a poll the voter percentage of a candidate.
+
+#### Poll Score and Voter Percentage
 
 ```{r}
 #| label: fig-pollscore-candidate-pct
@@ -276,6 +284,8 @@ cleaned_data %>%
 ```
 
 @fig-pollscore-candidate-pct depicts the relationship between a pollster's poll score and a candidate's percentage. For Donald Trump, a negative correlation is observed, indicating that pollsters with lower poll scores tend to assign him a higher percentage of support. Conversely, Kamala Harris shows the opposite trend: as the poll score decreases, her percentage tends to rise. This suggests that more reliable polls, characterized by lower poll scores, report higher support for Trump compared to less reliable pollsters.
+
+#### Days from Election and Voter Percentage
 
 ```{r}
 #| label: fig-polldate-canidate-pct
@@ -315,7 +325,7 @@ We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use
 ## Basic SLR Model
 ```{r}
 #| label: fig-model-pct-pollscore
-#| fig-cap: "Comparison of Actual vs Predicted Percentage Support for Kamala Harris (Single Predictor: Pollscore)"
+#| fig-cap: "Pollscore has limited predictive accuracy for Kamala's voter percentage."
 #| echo: false
 #| warning: false
 
@@ -328,9 +338,9 @@ predictions = predict(lm_model1, just_harris_data)
 ggplot(just_harris_data, aes(x = pct, y = predictions)) +
   geom_point(color = 'blue') +
   geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "red") +
-  labs(title = "Actual vs Predicted Values",
-       x = "Actual pct",
-       y = "Predicted pct") +
+  labs(title = "Single Linear Model (Only Pollscore Predictor) For Harris",
+       x = "Actual Vote Percentage",
+       y = "Predicted Vote Percentage") +
   theme_minimal()
 ```
 
@@ -347,7 +357,7 @@ The primary concern lies in the evident dispersion of data points, which are wid
 
 ```{r}
 #| label: fig-model-pct-sample_size
-#| fig-cap: "Actual vs. Predicted Values for pct Using sample_size as Predictor"
+#| fig-cap: "Sample size has Limited Impact on Kamala's Voter Percentage"
 #| echo: false
 #| warning: false
 lm_model1 = lm(pct ~ sample_size, data = just_harris_data)
@@ -357,14 +367,14 @@ predictions = predict(lm_model1, just_harris_data)
 ggplot(just_harris_data, aes(x = pct, y = predictions)) +
   geom_point(color = 'blue') +
   geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "red") +
-  labs(title = "Actual vs Predicted Values",
-       x = "Actual pct",
-       y = "Predicted pct") +
+  labs(title = "Sample Size as Predictor Model for Harris",
+       x = "Actual Vote Percentage",
+       y = "Predicted Vote Percentage") +
   theme_minimal()
 
 ```
 
-In @fig-model-pct-sample_size, the distribution of the points suggests that the model might not capture much variability in pct when sample_size is the only predictor. This indicates that sample_size has limited impact on pct.
+In @fig-model-pct-sample_size, the distribution of the points suggests that the model might not capture much variability in pct when sample size is the only predictor. This indicates that sample size has limited impact on pct.
 
 ## MLR model
 ```{r}
@@ -383,15 +393,15 @@ predictions = predict(model_MLR, just_harris_data)
 
 ```{r}
 #| label: fig-model-MLR
-#| fig-cap: "Actual vs Predicted Percentage Support for Kamala Harris (Multiple Predictors)"
+#| fig-cap: "The MLR Model captured significant variance in Kamala Harris' voter percentage"
 #| echo: false
 #| warning: false
 ggplot(just_harris_data, aes(x = pct, y = fitted_value)) +
   geom_point(color = 'blue') +
   geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "red") +
-  labs(title = "Actual vs Predicted Values",
-       x = "Actual pct",
-       y = "Predicted pct") +
+  labs(title = "Multiple Predictors Model For Kamala Harris",
+       x = "Actual Voter Percentage",
+       y = "Predicted Voter Percentage") +
   theme_minimal()
 ```
 
@@ -399,9 +409,9 @@ Next, we predict pct using pollscore, days teken from election, methodology, sam
 
 $\hat{\text{pct}} = \beta_0 + \beta_1 \cdot \text{pollscore} + \beta_2 \cdot \text{days\_taken\_from\_election} + \beta_3 \cdot \text{methodology} + \beta_4 \cdot \text{sample\_size} + \beta_5 \cdot \text{state}$
 
-@fig-model-MLR compares actual pct values with the predicted pct values from the MLR model. Blue points represent individual comparisons between actual and predicted values. The red dashed line represents the line of perfect prediction, where actual values would equal predicted values.
+@fig-model-MLR compares actual percentage values with the predicted pct values from the MLR model. Blue points represent individual comparisons between actual and predicted values. The red dashed line represents the line of perfect prediction, where actual values would equal predicted values.
 
-The overall distribution of points suggests that the MLR model has captured a substantial portion of the variance in pct. Most of the data points align well with the red dashed line, particularly within the middle range of pct values (between 40 and 60). This alignment indicates that the model performs well in this range, with predicted values correlating strongly with the actual observed outcomes. 
+The overall distribution of points suggests that the MLR model has captured a substantial portion of the variance in Kamala Harris' voter percentage. Most of the data points align well with the red dashed line, particularly within the middle range of pct values (between 40 and 60). This alignment indicates that the model performs well in this range, with predicted values correlating strongly with the actual observed outcomes. 
 
 ## Bayesian Model
 
@@ -497,28 +507,28 @@ We could see that the R squared value equal to the 0.700563202695799 suggesting 
 
 ```{r}
 #| label: fig-bayesian-model-actual-predict
-#| fig-cap: "Predicted vs Actual Percentage Support (pct) for Kamala Harris in the Bayesian Model"
+#| fig-cap: "The MLR Model Accruatley Predicts the Testing Dataset"
 #| echo: false
 #| warning: false
 plot(test_data$pct, colMeans(predictions), 
-     xlab = "Actual PCT Values", 
-     ylab = "Predicted  PCT Values", 
-     main = "Predicted PCT vs Actual PCT")
-abline(0, 1, col = "red")  # Add a 45-degree reference line
+     xlab = "Actual Voter Percentage Values", 
+     ylab = "Predicted Voter Percentage Values", 
+     main = "Multiple Predictors Kamala Harris Bayesian Model")
+abline(0, 1, col = "red")
 ```
 
  By visual checking actual pct and predicted pct plot in @fig-bayesian-model-actual-predict, the points are plotted against a 45-degree line, which represents the ideal scenario where predicted values match the actual values perfectly.
 
 ```{r}
 #| label: fig-bayesian-model-residual
-#| fig-cap: "Residual Plot for the Bayesian Hierarchical Model Predictions"
+#| fig-cap: "MLR Residuals Appear to Show No Trends"
 #| echo: false
 #| warning: false
 residuals <- test_data$pct - colMeans(predictions)
 plot(colMeans(predictions), residuals, 
      xlab = "Predicted Values", 
      ylab = "Residuals", 
-     main = "Residual Plot")
+     main = "Residual for the Bayesian Hierarchical Model Predictions")
 abline(h = 0, col = "red")
 ```
 
@@ -528,9 +538,11 @@ In conclusion, from the visual checks from the predicted vs. actual plot and the
 
 ### Model justification
 
-We chose sample size, poll score, and days taken from the election as predictors for building the model based on the visual trends observed in the plots. As shown in @fig-pollsamplesize-canidate-pct, @fig-pollscore-candidate-pct and @fig-polldate-canidate-pct in @sec-data, the relationship between pct and sample size shows that larger sample sizes correspond to more stable percentages, indicating that sample size could significantly impact prediction accuracy. The plot of pct versus poll score shows a negative trend, suggesting that poll scores are consistently influential in explaining variations in pct. Additionally, the pct versus days taken plot indicates that the proximity to the election affects the percentage, with a slight negative trend showing that time remaining has predictive value. These observed patterns imply that these variables can effectively capture key factors influencing pct and are suitable for model inclusion. 
+We chose sample size, poll score, and days taken from the election as predictors for building the model based on the visual trends observed in the plots. As shown in @fig-pollsamplesize-canidate-pct, @fig-pollscore-candidate-pct and @fig-polldate-canidate-pct in @sec-data, the relationship between percentage and sample size shows that larger sample sizes correspond to more stable percentages, indicating that sample size could significantly impact prediction accuracy. The plot of percentage versus poll score shows a negative trend for Donald Trump and a positive trend for Kamala Harris, suggesting that poll scores are consistently influential in explaining variations in percentage. Additionally, the percentage versus days taken plot indicates that the proximity to the election affects the percentage, with a slight boost towards major candidates. These observed patterns imply that these variables can effectively capture key factors influencing pct and are suitable for model inclusion.
 
 To predict the support percentage (PCT) for Harris and Trump, we employed a modeling strategy involving Simple Linear Regression (SLR), Multiple Linear Regression (MLR), and a Bayesian hierarchical model. The SLR model provided a foundational analysis of the relationship between PCT and pollscore, highlighting its limited predictive power due to a lack of complexity. The MLR model improved on this by incorporating additional predictors such as days taken from the election, sample size, methodology, and state, enhancing its predictive accuracy and capturing interactions among variables. The Bayesian hierarchical model further refined our approach, incorporating prior knowledge and accounting for variability at group levels (e.g., methodology and state) through random intercepts. This model provided robust uncertainty quantification through credible intervals and demonstrated strong predictive performance with an R-squared value around 0.70, indicating it effectively explained data variability. By leveraging the strengths of these models, particularly the Bayesian approach’s interpretability and robustness, we achieved reliable predictions and a deeper understanding of the factors influencing support percentages.
+
+The team also built a Bayesian MLR using the same approach and formula for Trump. It is in section @sec-trumpmodel.
 
 
 # Result {#sec-result}
@@ -538,11 +550,13 @@ To predict the support percentage (PCT) for Harris and Trump, we employed a mode
 ## Harris Voter Prediction Model 
 ```{r}
 #| label: fig-bayesian-model-CI
-#| fig-cap: "Estimated Posterior Distribution for the Intercept Parameter in the Bayesian Model"
+#| fig-cap: "Kamala Harris is Predicted to get Approximatley 52% of Popular Vote"
 #| echo: false
 #| warning: false
 # Plot random effects
-plot(bayesian_model_1, pars = "(Intercept)", prob = 0.95)
+plot(bayesian_model_1, pars = "(Intercept)", prob = 0.95, 
+     xlab = "Kamala Harris Popular Vote Percentage",
+     title = "Estimated Posterior Distribution for the Intercept Parameter in the Bayesian Model")
 ```
 
 
@@ -569,12 +583,16 @@ result_summary = data.frame(
   Upper_CI = predicted_intervals[2, ]
 )
 
-kable(head(result_summary, 10))
+kable(head(result_summary, 10), 
+      col.names = c("Acutal Kamala Percentage", 
+                    "Predicted Percentage", 
+                    "Lower Bound Credible Interval",
+                    "Upper bound Credible Interval"))
 ```
 
 ```{r}
 #| label: fig-bayesian-model-result-CI
-#| fig-cap: "U.S. Election Prediction Results"
+#| fig-cap: "The Model Shows a Strong Alignment Between Actual and Predicted Vote Percentages"
 #| echo: false
 #| warning: false
 ggplot(result_summary, aes(x = Actual_PCT, y = Predicted_PCT)) +
@@ -583,17 +601,22 @@ ggplot(result_summary, aes(x = Actual_PCT, y = Predicted_PCT)) +
   geom_abline(intercept = 0, slope = 1, color = "red", linetype = "dashed") +
   labs(
     title = "U.S. Election Prediction Results",
-    x = "Actual PCT",
-    y = "Predicted PCT"
+    x = "Actual Percentage",
+    y = "Predicted Percentage"
   )
 ```
 
-@fig-bayesian-model-result-CI shows that the model's predictive performance for Harris's election data appears robust, demonstrating a strong alignment between actual and predicted vote percentages. Most of the data points cluster around the line, indicating reliable predictions, some variance is evident, particularly in the lower and higher actual percentage ranges. This suggests that while the model performs well on average, it may have larger uncertainty in its predictions at the extremes. @tbl-bayesian-model-result-summary also highlights that most predicted values align closely with actual values, supporting the model’s robustness in capturing the overall trend of election outcomes. 
+@fig-bayesian-model-result-CI shows that the model's predictive performance for Harris's election data appears robust, demonstrating a strong alignment between actual and predicted vote percentages. Most of the data points cluster around the line, indicating reliable predictions, some variance is evident, particularly in the lower and higher actual percentage ranges. This suggests that while the model performs well on average, it may have larger uncertainty in its predictions at the extremes. @tbl-bayesian-model-result-summary also highlights that most predicted values align closely with actual values, supporting the model’s robustness in capturing the overall trend of election outcomes.
 
-## Trump Voter Prediction Model 
+The team has provided results for a Trump Bayesian MLR model. It is in section @sec-trumpmodelresults.
 
-The multiple linear regression model (MLR) for Donald Trump will use the same variables, formula, and Bayesian approach as the one for Harris. Likewise, the Trump dataset is also split into training and testing data. The model outputs are below. 
+\newpage
 
+# Election Prediction {#sec-prediction}
+
+Our prediction process consists of two primary components. First, we develop models for both Trump and Harris based on the variables outlined in @sec-model and @sec-trumpmodel. This involves partitioning the dataset into training and testing subsets. Next, we further divide the testing dataset by state. We then input this test data into the respective models to generate predictions. By averaging these predictions, we can calculate the expected voter percentage for each candidate in each state. The candidate with a higher percentage is deemed the winner for that state.
+
+We generated predictions for the following states: Arizona, Nevada, Georgia, Pennsylvania, Michigan, Minnesota, Wisconsin, Florida, Texas, Maine CD-2, Nebraska CD-2, New Hampshire, Ohio, Virginia, North Carolina, and Iowa. Winners for other states were determined based on historical trends and predictions from sources like @cnn_electoral_nodate. Most states without predictions are strongly Republican or Democratic, so their absence is not expected to significantly impact prediction validity.
 ```{r}
 #| echo: false
 #| warning: false
@@ -602,74 +625,6 @@ train_data_trump <- read_parquet(here("data/02-analysis_data/train_data_trump.pa
 test_data_trump <- read_parquet(here("data/02-analysis_data/test_data_trump.parquet"))
 bayesian_model_train_trump <- readRDS(here("models/bayesian_model_train_trump.rds"))
 ```
-
-```{r}
-#| label: fig-model-trumpmlr
-#| fig-cap: "MLR Trump Model Accounts For A Large Amount of Variability in Voter Percentage"
-#| echo: false
-#| warning: false
-just_trump <- cleaned_data %>% filter(candidate_name == "Donald Trump")
-predictions2 = posterior_predict(bayesian_model_train_trump, newdata = just_trump)
-predicted_means = colMeans(predictions2)
-predicted_intervals = apply(predictions2, 2, quantile, probs = c(0.025, 0.975))
-result_summary = data.frame(
-  Actual_PCT = just_trump$pct,
-  Predicted_PCT = predicted_means,
-  Lower_CI = predicted_intervals[1, ],
-  Upper_CI = predicted_intervals[2, ]
-)
-ggplot(result_summary, aes(x = result_summary$Actual_PCT, y = result_summary$Predicted_PCT)) +
-  geom_point(alpha = 0.7) +
-  geom_errorbar(aes(ymin = Lower_CI, ymax = Upper_CI), width = 0.2, color = "blue") +
-  geom_abline(intercept = 0, slope = 1, color = "red", linetype = "dashed") +
-  labs(
-    title = "Actual vs Predicted Percentage For Trump MLR Model (All Trump Data)",
-    x = "Actual PCT",
-    y = "Predicted PCT"
-  )
-```
-
-```{r}
-#| label: tbl-model-trumpmlr
-#| tbl-cap: "Head of Bayesian Model Result Summary"
-#| echo: false
-#| warning: false
-
-kable(head(result_summary, 10))
-
-```
-
-From @fig-model-trumpmlr and @tbl-model-trumpmlr the model accounts for large amount of the variance in Trump's voter percentage as the data points appear close to the prediction (red line). Furthermore, the distance between the prediction and the actual values do not appear to follow a pattern, suggesting that the error is due to randomness and not model bias. 
-
-```{r}
-#| label: fig-model-trumpmlr-res
-#| fig-cap: "MLR Trump Model does not Appear to Overfit"
-#| echo: false
-#| warning: false
-predictions2 = posterior_predict(bayesian_model_train_trump, newdata = test_data_trump)
-plot(test_data_trump$pct, colMeans(predictions2), 
-     xlab = "Actual PCT Values", 
-     ylab = "Predicted  PCT Values", 
-     main = "Predicted PCT vs Actual PCT (Test Data)")
-abline(0, 1, col = "red")  # Add a 45-degree reference line
-```
-
-Based on @fig-model-trumpmlr-res, the test data predictions are also close to the actual values. This suggests that model can generalize outside data. Similarly, the distance between the prediction and the actual values do not appear to follow a pattern, suggesting that the error is due to randomness and not model bias. 
-```{r}
-#| label: fig-trumpmodelci
-#| fig-cap: Donald Trump Expected to Recieve Approximatley 45% of the Vote
-#| echo: false
-#| warning: false
-plot(bayesian_model_train_trump, pars = "(Intercept)", prob = 0.95)
-```
-
-Based on @fig-trumpmodelci, the model expects Trump to win slight less than 45% of the popular vote and the 95% confidence interval ranges from around 42.5% to 47.2%. This confidence interval is slightly larger than the model for Harris, implying that the Trump polling data might be less reliable.
-
-## Election Prediction {#sec-prediction}
-
-Our prediction process consists of two primary components. First, we develop models for both Trump and Harris based on the variables outlined in @sec-model. This involves partitioning the dataset into training and testing subsets. Next, we further divide the testing dataset into swing states and other competitive races. We then input this test data into the respective models to generate predictions. By averaging these predictions, we can calculate the expected voter percentage for each candidate in each state. The candidate with a higher percentage is deemed the winner for that state.
-
-We generated predictions for the following states: Arizona, Nevada, Georgia, Pennsylvania, Michigan, Minnesota, Wisconsin, Florida, Texas, Maine CD-2, Nebraska CD-2, New Hampshire, Ohio, Virginia, North Carolina, and Iowa. Winners for other states were determined based on historical trends and predictions from sources like @cnn_electoral_nodate. Most states without predictions are strongly Republican or Democratic, so their absence is not expected to significantly impact prediction validity.
 
 ```{r}
 #| echo: false
@@ -897,17 +852,17 @@ One of the main takeaways from this study is the impact of poll quality on elect
 
  
 
-Based on the figures in @sec-data, the team identified three sources of bias beyond sample size: methodology, the timing of polls relative to the election date, and poll scores. From the analysis in Figure @fig-avg-pct-methodology, we found that polls employing a limited number of methods to reach and communicate with voters exhibited greater variability. This finding is plausible, as different demographic groups often prefer distinct communication methods; for example, older voters may favor phone surveys, while younger voters might prefer online surveys. Additionally, utilizing multiple communication channels provides pollsters with more opportunities to contact potential voters, thereby reducing non-response bias. Consequently, it is essential to incorporate methodology as a variable in the model, and we recommend that pollsters adopt diverse communication methods whenever possible. 
+Based on the figures in @sec-data, the team identified three sources of bias beyond sample size and state: methodology, the timing of polls relative to the election date, and poll scores. From the analysis in Figure @fig-avg-pct-methodology, we found that polls employing a limited number of methods to reach and communicate with voters exhibited greater variability. This finding is plausible, as different demographic groups often prefer distinct communication methods; for example, older voters may favor phone surveys, while younger voters might prefer online surveys. Additionally, using multiple communication methods provides pollsters with more opportunities to contact potential voters, thereby reducing non-response bias. Consequently, it is essential to incorporate methodology as a variable in the model, and we recommend that pollsters adopt diverse communication methods whenever possible. 
 
  
 
-From @fig-polldate-canidate-pct, the team observed a decline in third-party candidate support as the election approached. Early in the election cycle, voters may entertain the idea of a viable third-party candidate, but as the election nears, interest in third-party options diminishes. This trend may be worsened by decreased participation in polls as the election date approaches. As a result, the people who do participate in those earlier polls are likely to be more informed and passionate, which are qualities that may be associated with support for third-party candidates. Additionally, the withdrawal of a prominent third-party candidate, Robert F. Kennedy Jr., on August 23, 2024 (74 days from the election), could influence this dynamic. However, we find the earlier reasons more compelling, as the data in Figure @fig-polldate-canidate-pct do not indicate a significant drop in third-party support at that time, but rather a gradual decline. 
+From @fig-polldate-canidate-pct, the team observed a decline in third-party candidate support as the election approached. Early in the election cycle, voters may entertain the idea of a viable third-party candidate, but as the election nears, interest in third-party options diminishes. This trend may be worsened by decreased participation in polls further from the election day. As a result, the people who do participate in those earlier polls are likely to be more informed and passionate, which are qualities that may be associated with support for third-party candidates. Additionally, the withdrawal of a prominent third-party candidate, Robert F. Kennedy Jr., on August 23, 2024 (74 days from the election), could influence this dynamic. However, we find the earlier reasons more compelling, as the data in Figure @fig-polldate-canidate-pct do not indicate a significant drop in third-party support at that time, but rather a gradual decline. 
 
  
 
-Finally, as illustrated in Figure @fig-pollscore-candidate-pct, more reliable polls tend to show a bias favoring Trump over Harris—not necessarily indicating a guaranteed victory for Trump, but rather suggesting he may outperform expectations in many polls. It is important to note that the FiveThirtyEight poll score system is partly based on historical accuracy. Given Trump's overperformance in the polls during the 2016 and 2020 elections, this scoring may be overcorrecting for past inaccuracies. This potential undervaluation of Trump’s support could be strategically beneficial for the Harris campaign, providing a warning to avoid repeating previous electoral mistakes. 
+Finally, as illustrated in Figure @fig-pollscore-candidate-pct, more reliable polls tend to show a bias favoring Trump over Harris—not necessarily indicating a guaranteed victory for Trump, but rather suggesting he may outperform expectations in many polls. It is important to note that the FiveThirtyEight poll score system is partly based on historical accuracy. Given Trump's overperformance in the polls during the 2016 and 2020 elections, this scoring may be overcorrecting for past inaccuracies. This potential undervaluation of Trump’s support could benefit the Harris campaign, by providing a warning to not repeat previous election mistakes.
 
- 
+
 
 ## Limitations of the Model {#sec-model-limitations} 
 
@@ -919,15 +874,17 @@ Second, the model only reflects current voting dynamics as it is based on histor
 
 On top of that, the results can be sensitive to the choice of priors. We choose Normal(0, 2.5) as we believe it could stabilize the estimates by being informative enough to guide the posterior distribution without overpowering the data. However, if the chosen prior does not align well with the true underlying distribution, it may lead to biased results or overly wide credible intervals. 
 
-Also, as it is a model based on a dataset, it is challenging to capture all the real-life features and dynamics. The model might not include all relevant predictors or interactions due to limitations in data availability or complexity, which can lead to incomplete representations of the factors influencing voting behavior. Additionally, without strong regularization techniques, the model may become prone to overfitting, particularly when using complex hierarchical structures or including numerous predictors. This overfitting can reduce the model’s generalizability to new or unseen data. 
+Also, as it is a model based on a dataset, it is challenging to capture all the real-life features and dynamics. The model might not include all relevant predictors or interactions due to limitations in data availability or complexity, which can lead to incomplete representations of the factors influencing voting behavior. Additionally, without strong regularization techniques, the model may become prone to overfitting, particularly when using complex hierarchical structures or including numerous predictors. This overfitting can reduce the model’s generalizability to new or unseen data.
+
+Furthermore, the incorporation of both poll score and sample size into the model may lead to the potential for double counting the sample size. This concern was raised in Nate Silver's article [@silver_polls_2008]. As illustrated in @fig-pollscore-samplesize, there is a positive correlation between poll score and sample size. However, this correlation is weak. Additionally, given that pollsters with negative poll scores are generally more reliable than those with positive scores, we would expect the opposite relationship to hold true for sample size to even have a possibility of being double counted.
 
 Moreover, errors and offsets inherent in polling data, such as response bias, nonresponse adjustments, and sampling variability, can propagate into the model’s results. These aspects introduce an additional layer of uncertainty that can affect the model's reliability and predictive performance. While Bayesian methods provide a robust framework to incorporate uncertainty, the final outputs must be interpreted cautiously, acknowledging these underlying limitations. 
 
 ## Limitation of the Prediction 
 
-In @sec-prediction, the team predicted that Kamala Harris would secure 298 delegates while Donald Trump would obtain 240 delegates. However, this prediction has several limitations. Firstly, the model used to generate these predictions inherits the constraints outlined in @sec-model-limitations. Additionally, the predictions are based on averaging results from polling data for each state, which can lead to propagated prediction errors. 
+In @sec-prediction, the team predicted that Kamala Harris would win 298 delegates while Donald Trump would get 240 delegates. However, this prediction has several limitations. First, the prediction will inherit all of the limitations of the model it (model limitations in @sec-model-limitations). Additionally, the predictions are based on averaging results from polling data for each state, which can lead to propagated prediction errors. 
 
-Each state has a limited number of polls available; while the overall analysis considered a substantial number of polls, individual states often had fewer than 20 polls, with even the largest states contributing only up to 27. Moreover, as noted in Section @sec-prediction, the analysis focused solely on contested races, specifically swing states. Consequently, many states were assigned to a candidate based on strong historical trends rather than direct predictions. Although this approach is reasonable, it may overlook emerging trends that could potentially shift a state's allegiance from Republican to Democrat or vice versa. 
+Also, each state has a limited number of polls available. While the overall analysis considered a substantial number of polls, individual states often had fewer than 20 polls, with even the largest states having only 27. Moreover, as noted in section @sec-prediction, the analysis focused solely on contested races, specifically swing states. Therefore, many states were assigned to a candidate based on strong historical trends and not from predictions. Although this approach is reasonable, it may overlook current trends that could potentially shift a state's vote from Republican to Democrat or vice versa. 
 
 ## Future Directions 
 
@@ -949,13 +906,13 @@ To enhance the reliability and robustness of this forecasting model, future work
 
 ## Brief Description of American Federal Government 
 
-The American federal or national government is split into three branches, executive., legislative, and judicial the executive branch includes the president and the military. The legislative branch includes two subgroups, the House of Representatives, and the Senate. These two subgroups create laws. Every state has two Senators and one Representative per approximately 750,000 people. The judicial branch is the court system. 
+The American federal or national government is split into three branches, executive, legislative, and judicial. The executive branch includes the president and the military. The legislative branch includes two subgroups, the House of Representatives, and the Senate. These two subgroups create laws. Every state has two Senators and one Representative per approximately 750,000 people. Finally, the judicial branch is the court system. 
 
 ## What is the Electoral College {#sec-electoral-college} 
 
-The Electoral College is the system used in the United States to elect the president and vice president. Instead of a direct popular vote, each state is allocated a certain number of electors based on its representation in Congress (the total of its Senators and Representatives). When voters vote, they are voting for a slate of electors pledged to a candidate. The candidate who receives the most electoral votes (270 out of 538) wins the presidency. This system means that winning the popular vote in a state result in winning all that state's electoral votes. The only exception are the states of Maine and Nebraska, who award electoral votes by congressional district, with two additional votes given to the statewide winner. 
+The Electoral College is the system used in the United States to elect the president and vice president. Instead of a direct popular vote, each state is allocated a certain number of electors based on its representation in Congress (the total of its Senators and Representatives). When voters vote, they are voting for what candidate they want their electors to vote for. The candidate who receives the most electoral votes (270 out of 538) wins the presidency. This system means that winning the popular vote in a state results in winning all that state's electoral votes. The only exception are the states of Maine and Nebraska, who award electoral votes by congressional district, with two additional votes given to the statewide winner. 
 
-The Electoral College results in some states being unnecessary to campaign in, as their strong historical voting pasterns towards either Democrats or Republicans make them unlikely to change, regardless of campaign efforts. Therefore, for statisticians, polling information from these states may not be that useful when trying to predict the outcome of an election. On the other hand, states that can vote either Democratic or Republican (swing states) are immensely important when predicting an election. As a result, campaigns spend hundreds of millions of dollars campaigning and understanding voters there. 
+The Electoral College results in some states being unnecessary to campaign in, as their strong historical voting patterns towards either Democrats or Republicans make them unlikely to change, regardless of campaign efforts. Therefore, for statisticians, polling information from these states may not be that useful when trying to predict the outcome of an election. On the other hand, states that can vote either Democratic or Republican (swing states) are immensely important when predicting an election. As a result, campaigns spend hundreds of millions of dollars campaigning and understanding voters there. 
 ```{r}
 #| label: fig-currentstateofelection
 #| fig-cap: 2024 U.S. Presidential Election State Forecast Map
@@ -1070,9 +1027,9 @@ ggplot(states_map, aes(x = long, y = lat, group = group, fill = status)) +
 
 The state statuses presented in this map are based on evaluations from @cnn_electoral_nodate, @fox_news_2024_2024, and @nbc_news_choose_nodate, which are agreed upon within the American political community. These organizations assessed historical voting patterns and recent polling data to derive their conclusions. 
 
-Notably, Nebraska and Maine are indicated in gray due to their delegates being split by district. In Nebraska, the state overall is projected to lean Republican, with the first and third districts also strongly favoring Republican candidates, while the second district leans Democratic. In Maine, the overall expectation is a Democratic leaning, consistent with its first district, though the second district leans Republican. Furthermore, Alaska and Hawaii are not on the map. Alaska is strongly favoring Republicans while Hawaii strongly favors democrats. 
+Notably, Nebraska and Maine are indicated in gray due to their delegates being split by district. In Nebraska, the state overall is projected to lean Republican, with the first and third districts also strongly favoring Republican candidates, while the second district leans Democratic. In Maine, the overall state is a Democratic leaning, and so is its first district, but the second district leans Republican. Furthermore, Alaska and Hawaii are not on the map. Alaska is strongly favoring Republicans while Hawaii strongly favors democrats. 
 
-The seven agreed upon swing states are Pennsylvania, North Carolina, Georgia, Arizona, Nevada, Wisconsin, and Michigan with Texas, Florida, Nebraska District Two, Maine District 2, and Minnesota as the next closest races. 
+The seven agreed upon swing states are Pennsylvania, North Carolina, Georgia, Arizona, Nevada, Wisconsin, and Michigan with Texas, Florida, Nebraska District Two, Maine District 2, Iowa, and Minnesota as the next closest races. 
 
 # States Poll Count
 
@@ -1102,7 +1059,98 @@ num_states_missing <- count(polls_per_state_tbl %>%
 
 ```
 
-#The Ideal Survey 
+# Trump Voter Prediction Model {#sec-trumpmodel}
+
+The multiple linear regression model (MLR) Bayesian hierarchical model for Donald Trump will use the same variables, formula, and Bayesian approach as the one for Harris. Likewise, the Trump dataset is also split into training and testing data. The model results are similar to that of Harris's MLR model. 
+
+```{r}
+#| echo: false
+#| warning: false
+set.seed(123)
+train_data_trump <- read_parquet(here("data/02-analysis_data/train_data_trump.parquet"))
+test_data_trump <- read_parquet(here("data/02-analysis_data/test_data_trump.parquet"))
+bayesian_model_train_trump <- readRDS(here("models/bayesian_model_train_trump.rds"))
+```
+
+```{r}
+#| label: fig-model-trumpmlr-res
+#| fig-cap: "Bayesian Hierarchical MLR Model of Trump Voting Percentage Captures Variability Without Overfitting"
+#| fig-subcap: ["Trump Predictions (Test Data)", "Residuals for Predictions"]
+#| echo: false
+#| warning: false
+#| layout-ncol: 2
+
+predictions2 = posterior_predict(bayesian_model_train_trump, newdata = test_data_trump)
+plot(test_data_trump$pct, colMeans(predictions2), 
+     xlab = "Actual Voter Percentage Values", 
+     ylab = "Predicted Voter Percentage Values")
+abline(0, 1, col = "red")
+
+residuals <- test_data$pct - colMeans(predictions)
+plot(colMeans(predictions), residuals, 
+     xlab = "Predicted Values", 
+     ylab = "Residuals")
+abline(h = 0, col = "red")
+```
+
+Based on @fig-model-trumpmlr-res, the test data predictions are also close to the actual values. This suggests that model has predictability strength. Similarly, the distance between the prediction and the actual values do not appear to follow a pattern, suggesting that the error is due to randomness and not model bias. 
+
+# Trump Model Results {#sec-trumpmodelresults}
+
+```{r}
+#| label: fig-trumpmodelci
+#| fig-cap: Donald Trump Expected to Recieve Approximatley 45% of the Vote
+#| echo: false
+#| warning: false
+plot(bayesian_model_train_trump, pars = "(Intercept)", prob = 0.95)
+```
+
+Based on @fig-trumpmodelci, the model expects Trump to win slight less than 45% of the popular vote and the 95% credible interval ranges from around 42.5% to 47.2%. This credible interval is slightly larger than the model for Harris, implying that the Trump polling data might be less reliable.
+
+```{r}
+#| label: fig-model-trumpmlr
+#| fig-cap: "Bayesian MLR Trump Model Accounts For A Large Amount of Variability in Voter Percentage"
+#| echo: false
+#| warning: false
+just_trump <- cleaned_data %>% filter(candidate_name == "Donald Trump")
+predictions2 = posterior_predict(bayesian_model_train_trump, newdata = just_trump)
+predicted_means = colMeans(predictions2)
+predicted_intervals = apply(predictions2, 2, quantile, probs = c(0.025, 0.975))
+result_summary = data.frame(
+  Actual_PCT = just_trump$pct,
+  Predicted_PCT = predicted_means,
+  Lower_CI = predicted_intervals[1, ],
+  Upper_CI = predicted_intervals[2, ]
+)
+ggplot(result_summary, aes(x = result_summary$Actual_PCT, y = result_summary$Predicted_PCT)) +
+  geom_point(alpha = 0.7) +
+  geom_errorbar(aes(ymin = Lower_CI, ymax = Upper_CI), width = 0.2, color = "blue") +
+  geom_abline(intercept = 0, slope = 1, color = "red", linetype = "dashed") +
+  labs(
+    title = "Actual vs Predicted Percentage For Trump MLR Model",
+    x = "Actual PCT",
+    y = "Predicted PCT"
+  )
+```
+
+```{r}
+#| label: tbl-model-trumpmlr
+#| tbl-cap: "Head of Bayesian Model Result Summary"
+#| echo: false
+#| warning: false
+
+kable(head(result_summary, 10), col.names = c("Acutal Harris Percentage", 
+                    "Predicted Percentage", 
+                    "Lower Bound Credible Interval",
+                    "Upper bound Credible Interval"))
+
+```
+
+From @fig-model-trumpmlr and @tbl-model-trumpmlr the model accounts for large amount of the variance in Trump's voter percentage as the data points appear close to the prediction (red line). Furthermore, the distance between the prediction and the actual values do not appear to follow a pattern, suggesting that the error is due to randomness and not model bias.
+
+\newpage
+
+# The Ideal Survey
 
 ## Objective 
 
@@ -1110,25 +1158,25 @@ The research team has developed a survey and distribution methodology with a hyp
 
 ## Sampling Frame 
 
-Given the monetary constraint, the team's first decision is to mostly include swing states and districts. These are Nevada, Arizona, Wisconsin, Michigan, Pennsylvania, North Carolina, and Georgia. Swing states are the primary focus of the poll because they disproportionately affect the outcome of the election based on the explanation in @sec-electoral-college. However, the poll will also include Texas, Florida, Minnesota, Nebraska District 2, and Maine District 2, as they have the potential to one by either party but are not as likely to change as the previously mentioned swing states. Nevertheless, it is important to note that to save costs, the team will focus on polling true swing states compared to Texas, Florida, and Minnesota. 
+Given the monetary constraint, the team's first decision is to mostly include swing states and districts. These are Nevada, Arizona, Wisconsin, Michigan, Pennsylvania, North Carolina, Georgia, Nebraska District 2, and Maine District 2. Swing states are the primary focus of the poll because they disproportionately affect the outcome of the election based on the explanation in @sec-electoral-college. However, the poll will also include other close races like Texas, Florida, and Minnesota, as they have the potential to be won by either party but are not as likely to change as the previously mentioned swing states. Nevertheless, it is important to note that to save costs, the team will focus on polling true swing states compared to states like Texas, Florida, and Minnesota. 
 
 ## Survey Sending Process 
 
-The team will then find and use multiple databases, such as @usps_customer_nodate, to find addresses, telephones, and emails of potential voters in those states. According to @pew_research_center_us_nodate, gathering this information reduces non-response and selection bias, as the team can contact the same individual through multiple mediums. Moreover, certain demographics may prefer specific communication forms; for instance, the elderly may prefer phone or paper mail polls over text or email. Additionally, to encourage individuals to complete the survey, one in every 50 participants will have a chance at winning $20. 
+The team will then find and use multiple databases, such as U.S. Postal Service’s residential address file [@usps_customer_nodate], to find addresses, telephones, and emails of potential voters in those states. According to @pew_research_center_us_nodate, gathering this information reduces non-response and selection bias, as the team can contact the same individual through multiple mediums. Moreover, certain demographics may prefer specific communication forms; for instance, the elderly may prefer phone or paper mail polls over text or email. Additionally, to encourage survey completion, one in every 50 participants will have a chance at winning $20. 
 
 ## Sampling Methodology 
 
-Each state will have its own poll, but the polling methodology and the survey given will remain the same. Specifically, the polls will use stratified random sampling to make sure that participants reflect each state's counties in proportion to their population sizes. Ideally, stratification would also ensure race, gender, age, and other socioeconomic factors are also accounted for. However, these factors are almost impossible to determine while sending the survey. Therefore, the research team decided to ask demographic questions directly inside the survey. After data collection, the team will weigh data based on demographics. For example, if a certain county has a 30% black population (this statistic will be determined from the US census), but only 15% of the survey participants are black, then the pollsters may decide to count each black participant's responses twice. 
+Each state will have its own poll, but the polling methodology and the survey given will remain the same. Specifically, the polls will use stratified random sampling to make sure that participants reflect each state's counties in proportion to their population sizes. County proportion is used as the stratification variable because that information is easily accessible. Additionally, counties possess inherent demographic and cultural characteristics that can influence their alignment with particular political parties. Ideally, stratification would also ensure race, gender, age, and other socioeconomic factors are also accounted for. However, these factors are almost impossible to determine while sending the survey. Therefore, the research team decided to ask demographic questions directly inside the survey. After data collection, the team will weigh data based on demographics. For example, if a certain county has a 30% black population (this statistic will be determined from the US census), but only 15% of the survey participants are black, then the pollsters may decide to count each black participant's responses twice. 
 
-Furthermore, the team will aim to sample approximately 1,000 people from each true swing state. This sample size is large enough to provide reliable conclusions but not so large that it resembles sampling with replacement. For true swing states, the team aims to survey 1,000 individuals. However, if the final sample size falls short of this target, it is not considered a significant issue. 
+Furthermore, the team will aim to sample approximately 1,000 people from each true swing state. This sample size is large enough to provide reliable conclusions but not so large that it resembles sampling with replacement. For true swing states and other close races, the team aims to survey 1,000 individuals. However, for non-swing states, if the final sample size is less than 1,000, it is not a significant issue. 
 
 ## Survey Implementation & Question Creation 
 
-The team's ideal survey will be made using @qualtrics_qualtrics_nodate. It will attempt to ensure four things: no leading questions, no question order bias, no answer order bias, and the survey should identify non-engaged participants. To identify participants who are not engaged, the research team has decided to add a worthless question. This question is extremely simple and clearly has one correct answer. Therefore, if a participant selects the wrong answer, they are not engaged with the survey and their responses should be removed from the final data. An example of this is question number 7. 
+The team's ideal survey will be made using @qualtrics_qualtrics_nodate. It will attempt to ensure four things: no leading questions, no question order bias, no answer order bias, and the survey should identify non-engaged participants. To identify participants who are not engaged, the research team has decided to add a worthless question. This question is extremely simple and clearly has one correct answer. Therefore, if a participant selects the wrong answer, they are not engaged with the survey and their responses should be removed from the final data. An example of this is question number 7. The idea to use a worthless question was inspired by @pew_research_center_us_nodate.
 
 Order bias occurs when the sequence of questions subconsciously influences participants' responses. To prevent this, many questions should be randomized upon entry to the survey. However, some questions must follow a specific order, such as question 11, while others like questions 1-4 can be randomized. The team's hypothetical survey has not implemented this feature, though it is available with the @qualtrics_qualtrics_nodate paid plan. 
 
-Answer bias, like order bias, occurs when the order of answer choices influences participants' selections, with the first option often chosen more frequently. To prevent this, answer choices should be randomized upon survey entry. Questions 8 & 9 could benefit from this. Likewise, the team's hypothetical survey has not implemented this feature, but it is available in the @qualtrics_qualtrics_nodate paid plan. 
+Answer bias, like order bias, occurs when the order of answer choices influences participants' selections. For instance, the first option can often be chosen more frequently. To prevent this, answer choices should be randomized upon survey entry. Questions 8 & 9 could benefit from this. Likewise, the team's hypothetical survey has not implemented this feature, but it is available in the @qualtrics_qualtrics_nodate paid plan. 
 
 A leading question occurs when a question is written in a way that suggests the user to give a certain answer. For example, "given that children are the future of our country, should we invest more money in their education". To prevent this, the researchers have ensured questions are written in a style where no unnecessary details or opinions are added. 
 
@@ -1201,7 +1249,7 @@ List of all of the questions:
 
 ## Potential Problems with the Methodology and Polls 
 
-While the team's methodology and survey create a robust system, there are potential issues. The reliance of weighting results based on a candidate's demographics can lead to error propagation. For instance, if a certain racial demographic population is only captured limitedly and that limited sample is far from representative, a few individuals in the population can have impact on the polls prediction of what candidate will win the state. There is also a selection bias in terms of the monetary reward. Potentially, people who like monetary rewards would be more likely to engage in the survey and could therefore exhibit certain voting or demographic characteristics that create an unrepresentative sample. 
+While the team's methodology and survey create a robust system, there are potential issues. The usage of weighting results based on a candidate's demographics can lead to error propagation. For instance, if a certain racial demographic population is only captured limitedly and that limited sample is far from representative, a few individuals in the population can have major impact on the polls prediction of what candidate will win the state. There is also a selection bias in terms of the monetary reward. Potentially, people who like monetary rewards would be more likely to engage in the survey and could therefore exhibit certain voting characteristics that create an unrepresentative sample.
 
 # Methodology of YouGov 
 
@@ -1231,7 +1279,7 @@ YouGov applied statistical weighting to adjust the differences between the sampl
 
 YouGov's surveys are conducted online, which is very efficient for the respondents, and responses are weighted to enhance representativeness. The pollster can recruit many panelists because of the online format. Combining with online tracking technologies, the metadata provided by their panelists can be verified easily. 
 
-As a non-probability sample, it might miss certain demographic groups not covered by the online population. While weighting improves accuracy, it cannot fully substitute the randomization found in probability sampling. Additionally, the categories in the survey are oversimplified with bias. For instance, in the poll result published by @yougov_say24_nodate, gender is divided into Male and Female. Race is divided into White, Black, Hispanic, and Other. This indicates a lack of representation. 
+As a non-probability sample, it might miss certain demographic groups not covered by the online population. While weighting improves accuracy, it cannot fully substitute the randomization found in probability sampling. Additionally, the categories in the survey are oversimplified with bias. For instance, in the poll result published by @yougov_say24_nodate, gender is divided into Male and Female. Race is divided into White, Black, Hispanic, and Other. This indicates a lack of representation.
 
 
 \newpage
