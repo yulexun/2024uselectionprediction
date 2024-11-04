@@ -1,4 +1,4 @@
-# Prediction of 2024 US election with ...
+# Forecasting the 2024 U.S. Presidential Election through Poll Aggregation and Adjustments for Poll Quality
 
 ## Overview
 This paper forecast the winner of the 2024 US presidential election using “poll-of-polls” by building a linear model.
@@ -32,7 +32,7 @@ The drafted outline and introduction were written with the help of ChatGPT 4. Th
 
 ## Note
 
-This R project is setup with Positron. The properties of this project is stored in `/renv/settings.json`.
+This R project is setup with [Positron](https://positron.posit.co/), the new IDE by Posit PBC. The properties of this project is stored in `/renv/settings.json`.
 You can run 
 ```sh
 renv::restore()
