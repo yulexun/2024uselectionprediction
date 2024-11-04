@@ -271,6 +271,13 @@ ggplot(states_map, aes(x = long, y = lat, group = group, fill = status)) +
 Maine CD-2	47.40416	49.31394	Trump
 Nebraska CD-2	49.90928	42.17853	Harris
 
+```{r}
+
+plot(bayesian_model_train_trump, pars = "(Intercept)", prob = 0.95)
+
+
+```
+
 \newpage
 
 
