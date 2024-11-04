@@ -73,23 +73,46 @@ These variables combined allow researchers to reliably analyze and predict the 2
 
 ## Data Exploration
 
-A list of column headings in the raw dataframe are shown as follows: 
+The raw data from FiveThirtyEight contains 52 columns, all of the column headers are displayed below: 
 ```{r}
 #| echo: false
 #| warning: false
 raw_data <- read_csv(here("data/01-raw_data/president_polls.csv"))
-print(colnames(raw_data))
+
+# Get the column names of your data
+column_names <- colnames(raw_data)
+
+# Reshape the column names into a matrix with, for example, 4 columns
+num_cols <- 3
+column_matrix <- matrix(column_names, ncol = num_cols, byrow = TRUE)
+
+# Convert the matrix to a data frame for kable
+column_df <- as.data.frame(column_matrix)
+
+# Display in multiple columns with kable
+kable(column_df, format = "latex", booktabs = TRUE, col.names = NULL)
 ```
 
-For the data we used in this analysis about the polling result for Kamala Harris and Donalad Trump in 2024 USA president election. \
-- **response variable:** `pct`(pct: The percentage of the vote or support that the candidate received in the poll) \
-- **numeric predictor:**\
- `sample size` (sample_size: The total number of respondents participating in the poll) \
- `days_taken_from_election` (the time gap between the poll start date and the real election date i.e days_taken_from_election = real US election date - poll start date) \
- `pollscore` (A numeric value representing the score or reliability of the pollster in question) \
-- **categorical predictor**
-`state` (The U.S. state where the poll was conducted or focused) \
-`methodology` (The method used to conduct the poll)\
+These columns can be categorized into three types, response variable, numeric predictors and categorical predictors.
+
+The response variable is:
+
+- pct: The percentage of support or vote share that each candidate (Kamala Harris or Donald Trump) received in the poll.
+
+Example of numeric predictors are:
+
+- sample_size: The total number of respondents in each poll.
+- pollscore: A numeric score representing the error and bias of the pollster. Negative numbers are better.
+- numeric_grade: A numeric grade assigned to each pollster, reflecting pollster quality or reliability.
+
+Example of categorical predictors are:
+
+- state: The U.S. state in which the poll was conducted or targeted.
+- methodology: The method used to conduct the poll (e.g., online, phone, in-person).
+- party: The political party of the candidate (e.g., DEM for Democrat, REP for Republican).
+- candidate_name: The name of the candidate, either Kamala Harris or Donald Trump.
+- pollster: The name of the polling organization that conducted the poll.
+- stage: The stage of the election (e.g., "general").
 
 
 
@@ -121,7 +144,7 @@ After the data cleaning process, 21 states had no polling data. A table showing 
 
 This absence of polling data is not a significant concern due to the structure of the United States Electoral College (explained in detail in the Appendix). The states lacking polling data have consistently followed historical voting patterns, so predicting the winning candidate in those states is unnecessary.
 
-### Cleaned data
+## Cleaned data
 
 The first 6 rows of the dataset is displayed in @tbl-cleaned-data.
 
@@ -140,7 +163,7 @@ cleaned_data |>
     ) 
 ```
 
-## Basic Statistics Summary for Data
+### Basic Statistics Summary for Cleaned Data
 
 ```{r}
 #| label: fig-avg-pct-state
@@ -201,7 +224,7 @@ cleaned_data %>%
 
 @fig-avg-pct-methodology shows that polls utilizing multiple communication methods to reach voters tend to have lower interquartile ranges (IQRs) in their boxplots compared to those that rely on only one or two communication methods.
 
-## Relationship Between Variables
+### Relationship Between Variables
 
 ```{r}
 #| label: fig-pollscore-samplesize
@@ -310,7 +333,7 @@ The Bayesian model is implemented in R [@citeR] using the rstanarm package as de
 We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
 us
 
-## Basic Model
+## Basic SLR Model
 ```{r}
 #| label: fig-model-pct-pollscore
 #| fig-cap: "Comparison of Actual vs Predicted Percentage Support for Kamala Harris (Single Predictor: Pollscore)"
@@ -344,6 +367,28 @@ In this SLR model, the response variable is pct and the only one predictor is th
 The primary concern lies in the evident dispersion of data points, which are widely spread and do not cluster closely around the line of perfect prediction (the dashed red line). This suggests that while pollscore may have some predictive capability, it does not adequately explain the variability in pct. The observed inconsistencies between actual and predicted values indicate that the relationship between pct and pollscore is likely not sufficiently captured by a linear model with just one predictor.
 
 ```{r}
+#| label: fig-model-pct-sample_size
+#| fig-cap: "Actual vs. Predicted Values for pct Using sample_size as Predictor"
+#| echo: false
+#| warning: false
+lm_model1 = lm(pct ~ sample_size, data = just_harris_data)
+predictions = predict(lm_model1, just_harris_data)
+# summary(lm_model1)
+
+ggplot(just_harris_data, aes(x = pct, y = predictions)) +
+  geom_point(color = 'blue') +
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "red") +
+  labs(title = "Actual vs Predicted Values",
+       x = "Actual pct",
+       y = "Predicted pct") +
+  theme_minimal()
+
+```
+
+In @fig-model-pct-sample_size, the distribution of the points suggests that the model might not capture much variability in pct when sample_size is the only predictor. This indicate that sample_size has limited impact on pct.
+
+## MLR model
+```{r}
 #| label: fig-model-pct-pollscore-etc
 #| echo: false
 #| warning: false
@@ -353,6 +398,8 @@ model_MLR = lm(pct ~ pollscore + days_taken_from_election + methodology + sample
 just_harris_data <- just_harris_data |> mutate(fitted_value = predict(model_MLR),  num_harris = round((pct / 100) * sample_size, 0))
 
 predictions = predict(model_MLR, just_harris_data)
+
+
 ```
 
 ```{r}

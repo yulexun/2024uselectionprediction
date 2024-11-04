@@ -11,7 +11,7 @@ library(tidyverse)
 library(rstanarm)
 library(arrow)
 #### Read data ####
-
+set.seed(123)
 cleaned_data <- read_parquet(here("data/02-analysis_data/cleaned_data.parquet"))
 baye_model_data <- cleaned_data[cleaned_data$candidate_name == "Kamala Harris", ]
 # Define the Bayesian model with brms
