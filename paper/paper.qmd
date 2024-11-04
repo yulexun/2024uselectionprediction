@@ -59,19 +59,64 @@ The estimand for this research paper is the predicted support percentages for Ka
 
 # Data {#sec-data}
 
-## Overview
+## Measurement
 
-For the data we used in this analysis about the polling result for Kamala Harris and Donalad Trump in 2024 USA president election. \
-- **response variable:** `pct`(pct: The percentage of the vote or support that the candidate received in the poll) \
-- **numeric predictor:**\
- `sample size` (sample_size: The total number of respondents participating in the poll) \
- `days_taken_from_election` (the time gap between the poll start date and the real election date i.e days_taken_from_election = real US election date - poll start date) \
- `pollscore` (A numeric value representing the score or reliability of the pollster in question) \
-- **categorical predictor**
-`state` (The U.S. state where the poll was conducted or focused) \
-`methodology` (The method used to conduct the poll)\
+The dataset we obtained from @fivethirtyeight is accumulated from multiple polls and surveys. According to FiveThirtyEight, they aggregate polling data conducted by other firms and organizations that meets their methodological and ethical standards [@morris_trump_2024]. The dataset contains a list of questions in polls and surveys and their results. When a new poll is conducted, the poll is appended to the dataset. FiveThirtyEight assign the poll a poll_id, and each question is assigned a question_id. 
+
+In each of the polls recorded by FiveThirtyEight, all options of each question are recorded in candidate_names, while the proportion of respondents choosing that option is recorded in pct as a percentage. The pct is our primary response variable. 
+
+There are limitations in these measurements. The differences in sampling methods, wording in survey questions and systematic biases are all reflected in the outcome [@radcliffe_538s_2023]. Thus, in the dataset, FiveThirtyEight includes other variables, such as pollscore and sample_size for their prediction model in addition to the polling results for transparency and accuracy. As an example, pollscore indicates the pollster’s reliability rating, a low pollscore indicates a higher reliability rating [@silver_polls_2008].
+
+In this dataset, each row represents a polling question that records the variables of interest. Each entry allows us to explore the real-world relationships between polling factors and the support percentage (`pct`) for the candidates Kamala Harris and Donald Trump. This dataset enables an analysis of how various polling characteristics influence the reported support levels for the candidates we are focused.
+
+These variables combined allow researchers to reliably analyze and predict the 2024 US election result over time.
 
 ## Data Exploration
+
+The raw data from FiveThirtyEight contains 52 columns, all of the column headers are displayed below: 
+```{r}
+#| echo: false
+#| warning: false
+raw_data <- read_csv(here("data/01-raw_data/president_polls.csv"))
+
+# Get the column names of your data
+column_names <- colnames(raw_data)
+
+# Reshape the column names into a matrix with, for example, 4 columns
+num_cols <- 3
+column_matrix <- matrix(column_names, ncol = num_cols, byrow = TRUE)
+
+# Convert the matrix to a data frame for kable
+column_df <- as.data.frame(column_matrix)
+
+# Display in multiple columns with kable
+kable(column_df, format = "latex", booktabs = TRUE, col.names = NULL)
+```
+
+These columns can be categorized into three types, response variable, numeric predictors and categorical predictors.
+
+The response variable is:
+
+- pct: The percentage of support or vote share that each candidate (Kamala Harris or Donald Trump) received in the poll.
+
+Example of numeric predictors are:
+
+- sample_size: The total number of respondents in each poll.
+- pollscore: A numeric score representing the error and bias of the pollster. Negative numbers are better.
+- numeric_grade: A numeric grade assigned to each pollster, reflecting pollster quality or reliability.
+
+Example of categorical predictors are:
+
+- state: The U.S. state in which the poll was conducted or targeted.
+- methodology: The method used to conduct the poll (e.g., online, phone, in-person).
+- party: The political party of the candidate (e.g., DEM for Democrat, REP for Republican).
+- candidate_name: The name of the candidate, either Kamala Harris or Donald Trump.
+- pollster: The name of the polling organization that conducted the poll.
+- stage: The stage of the election (e.g., "general").
+
+
+
+<!-- ## Data Exploration
 
 ```{r}
 #| label: fig-pairs
@@ -85,24 +130,21 @@ numeric_data = cleaned_data |> select(pct, sample_size, pollscore, days_taken_fr
 pairs(numeric_data)
 ```
 
-In @fig-pairs, the pairs plot displays scatter plots of four numeric variables (`pct`, `sample_size`, `pollscore`, and `days_taken_from_election`) to visualize their relationships. The data shows clustering, particularly in `pct` versus `sample_size`, suggesting potential heteroscedasticity. The `sample_size` variable is skewed towards lower values, while `pollscore` and `days_taken_from_election` have a more even spread, though `pollscore` shows central clustering. No strong linear relationships are immediately apparent between the variables, indicating that correlations are likely weak. 
+In @fig-pairs, the pairs plot displays scatter plots of four numeric variables (`pct`, `sample_size`, `pollscore`, and `days_taken_from_election`) to visualize their relationships. The data shows clustering, particularly in `pct` versus `sample_size`, suggesting potential heteroscedasticity. The `sample_size` variable is skewed towards lower values, while `pollscore` and `days_taken_from_election` have a more even spread, though `pollscore` shows central clustering. No strong linear relationships are immediately apparent between the variables, indicating that correlations are likely weak.  -->
 
-## Measurement
-
-The dataset we obtained from @fivethirtyeight is accumulated from multiple polls and surveys. According to FiveThirtyEight, they aggregate polling data conducted by other firms and organizations that meets their methodological and ethical standards [@morris_trump_2024]. The dataset contains a list of questions in polls and surveys and their results. When a new poll is conducted, the poll is appended to the dataset. FiveThirtyEight assign the poll a poll_id, and each question is assigned a question_id. 
-
-In each of the polls recorded by FiveThirtyEight, all options of each question are recorded in candidate_names, while the proportion of respondents choosing that option is recorded in pct as a percentage. The pct is our primary response variable. 
-
-There are limitations in these measurements. The differences in sampling methods, wording in survey questions and systematic biases are all reflected in the outcome [@radcliffe_538s_2023]. Thus, in the dataset, FiveThirtyEight includes other variables, such as pollscore and sample_size for their prediction model in addition to the polling results for transparency and accuracy. As an example, pollscore indicates the pollster’s reliability rating, a low pollscore indicates a higher reliability rating [@silver_polls_2008].
-
-In this dataset, each row represents a polling question that records the variables of interest. Each entry allows us to explore the real-world relationships between polling factors and the support percentage (`pct`) for the candidates Kamala Harris and Donald Trump. This dataset enables an analysis of how various polling characteristics influence the reported support levels for the candidates we are focused.
-
-These variables combined allow researchers to reliably analyze and predict the 2024 US election result over time.
 
 ## Clean Data
 The data cleaning process involves several steps to ensure the quality and relevance of the polling data. First, we filter the dataset to retain only poll results with a numeric grade of 2.7 or higher, indicating that the polls are considered reliable. Next, we address missing values in the state attribute: polls with NA in the state column are considered national polls.
 
 We then create a new attribute, days_taken_from_election, which represents the time gap between the poll's start date and the actual U.S. election date. Additionally, we filter the dataset to include only polls conducted after July 21, 2024, the date when Kamala Harris declared her candidacy. Finally, we remove any remaining rows that contain missing values to ensure a clean dataset.
+
+### States included in anaylsis
+
+After the data cleaning process, 21 states had no polling data. A table showing the number of polls for each state, including those without any polls, is provided in @tbl-state-polls-count.
+
+This absence of polling data is not a significant concern due to the structure of the United States Electoral College (explained in detail in the Appendix). The states lacking polling data have consistently followed historical voting patterns, so predicting the winning candidate in those states is unnecessary.
+
+## Cleaned data
 
 The first 6 rows of the dataset is displayed in @tbl-cleaned-data.
 
@@ -121,13 +163,7 @@ cleaned_data |>
     ) 
 ```
 
-### States included in anaylsis
-
-After the data cleaning process, 21 states had no polling data. A table showing the number of polls for each state, including those without any polls, is provided in @tbl-state-polls-count.
-
-This absence of polling data is not a significant concern due to the structure of the United States Electoral College (explained in detail in the Appendix). The states lacking polling data have consistently followed historical voting patterns, so predicting the winning candidate in those states is unnecessary.
-
-## Basic Statistics Summary for Data
+### Basic Statistics Summary for Cleaned Data
 
 ```{r}
 #| label: fig-avg-pct-state
@@ -188,7 +224,7 @@ cleaned_data %>%
 
 @fig-avg-pct-methodology shows that polls utilizing multiple communication methods to reach voters tend to have lower interquartile ranges (IQRs) in their boxplots compared to those that rely on only one or two communication methods.
 
-## Relationship Between Variables
+### Relationship Between Variables
 
 ```{r}
 #| label: fig-pollscore-samplesize
@@ -297,7 +333,7 @@ The Bayesian model is implemented in R [@citeR] using the rstanarm package as de
 We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
 us
 
-## Basic Model
+## Basic SLR Model
 ```{r}
 #| label: fig-model-pct-pollscore
 #| fig-cap: "Comparison of Actual vs Predicted Percentage Support for Kamala Harris (Single Predictor: Pollscore)"
@@ -331,6 +367,28 @@ In this SLR model, the response variable is pct and the only one predictor is th
 The primary concern lies in the evident dispersion of data points, which are widely spread and do not cluster closely around the line of perfect prediction (the dashed red line). This suggests that while pollscore may have some predictive capability, it does not adequately explain the variability in pct. The observed inconsistencies between actual and predicted values indicate that the relationship between pct and pollscore is likely not sufficiently captured by a linear model with just one predictor.
 
 ```{r}
+#| label: fig-model-pct-sample_size
+#| fig-cap: "Actual vs. Predicted Values for pct Using sample_size as Predictor"
+#| echo: false
+#| warning: false
+lm_model1 = lm(pct ~ sample_size, data = just_harris_data)
+predictions = predict(lm_model1, just_harris_data)
+# summary(lm_model1)
+
+ggplot(just_harris_data, aes(x = pct, y = predictions)) +
+  geom_point(color = 'blue') +
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "red") +
+  labs(title = "Actual vs Predicted Values",
+       x = "Actual pct",
+       y = "Predicted pct") +
+  theme_minimal()
+
+```
+
+In @fig-model-pct-sample_size, the distribution of the points suggests that the model might not capture much variability in pct when sample_size is the only predictor. This indicate that sample_size has limited impact on pct.
+
+## MLR model
+```{r}
 #| label: fig-model-pct-pollscore-etc
 #| echo: false
 #| warning: false
@@ -340,6 +398,8 @@ model_MLR = lm(pct ~ pollscore + days_taken_from_election + methodology + sample
 just_harris_data <- just_harris_data |> mutate(fitted_value = predict(model_MLR),  num_harris = round((pct / 100) * sample_size, 0))
 
 predictions = predict(model_MLR, just_harris_data)
+
+
 ```
 
 ```{r}
@@ -386,31 +446,9 @@ This hierarchical Bayesian model is designed to capture both the fixed effects o
 #| fig-cap: "Posterior Predictive Check for the Bayesian Model Predicting pct"
 #| echo: false
 #| warning: false
-baye_model_data = just_harris_data
-baye_model_data$pct = as.factor(baye_model_data$pct)
-baye_model_data$pollscore = as.factor(baye_model_data$pollscore)
-baye_model_data$days_taken_from_election = as.factor(baye_model_data$days_taken_from_election)
-baye_model_data$methodology = as.factor(baye_model_data$methodology)
-baye_model_data$pct <- as.numeric(baye_model_data$pct)
-# Define the Bayesian model with brms
-# test and train dataset
+bayesian_model_1 = readRDS(here("models/bayesian_model_1.rds"))
 
-formula <- pct ~ pollscore + days_taken_from_election + sample_size + (1 | methodology) + (1 | state)
-
-priors = normal(0, 2.5, autoscale = TRUE)
-
-bayesian_model_1 <- stan_glmer(
-  formula = formula,
-  data = just_harris_data,
-  family = gaussian(),
-  prior = priors,
-  prior_intercept = priors,
-  seed = 123,
-  cores = 4,
-  adapt_delta = 0.95
-)
 pp_check(bayesian_model_1)
-# summary(bayesian_model_1)
 ```
 
 
@@ -424,25 +462,28 @@ The fact that the y_rep curves closely match the overall pattern of the actual y
 ### Train Test Validation
 we implemented a train-test split validation approach to evaluate the performance of a Bayesian hierarchical model predicting percentage support (pct) for Kamala Harris. The dataset was divided into training (70%) and test (30%) sets to fit and validate the model, respectively. We used the stan_glmer function to fit the model on the training data, with predictors including pollscore, days_taken_from_election, sample_size, and random intercepts for methodology and state. After training, we generated predictions on the test set and calculated an R squared value to quantify the model's predictive accuracy. 
 ```{r}
-#| warning: false
 #| echo: false
+#| warning: false
 # Split data into training and test sets
 set.seed(123)
-train_indices <- sample(seq_len(nrow(just_harris_data)), size = 0.7 * nrow(just_harris_data))
-train_data <- just_harris_data[train_indices, ]
-test_data <- just_harris_data[-train_indices, ]
+# train_indices <- sample(seq_len(nrow(just_harris_data)), size = 0.7 * nrow(just_harris_data))
+# train_data <- just_harris_data[train_indices, ]
+# test_data <- just_harris_data[-train_indices, ]
+train_data = read_parquet(here("data/02-analysis_data/train_data.parquet"))
+test_data = read_parquet(here("data/02-analysis_data/test_data.parquet"))
 
 # Fit the model on the training data
-bayesian_model_train <- stan_glmer(
-  formula = formula,
-  data = train_data,
-  family = gaussian(),
-  prior = priors,
-  prior_intercept = priors,
-  seed = 123,
-  cores = 4,
-  adapt_delta = 0.95
-)
+bayesian_model_train = readRDS(here("models/bayesian_model_train.rds"))
+# bayesian_model_train <- stan_glmer(
+#   formula = formula,
+#   data = train_data,
+#   family = gaussian(),
+#   prior = priors,
+#   prior_intercept = priors,
+#   seed = 123,
+#   cores = 4,
+#   adapt_delta = 0.95
+# )
 
 # Predict on the test data and check performance
 predictions <- posterior_predict(bayesian_model_train, newdata = test_data)
@@ -514,6 +555,7 @@ To predict the support percentage (PCT) for Harris and Trump, we employed a comp
 # Result {#sec-result}
 ```{r}
 #| label: fig-bayesian-model-CI
+#| fig-cap: "Estimated Posterior Distribution for the Intercept Parameter in the Bayesian Model"
 #| echo: false
 #| warning: false
 # Plot random effects
@@ -529,22 +571,32 @@ In conclusion, the estimated intercept, which represents the baseline percentage
 
 
 ```{r}
+#| label: tbl-bayesian-model-result-summary
+#| tbl-cap: "Bayesian Model Result Summary"
 #| echo: false
 #| warning: false
 
-predictions2 <- posterior_predict(bayesian_model_1, newdata = just_harris_data)
+predictions2 = posterior_predict(bayesian_model_1, newdata = just_harris_data)
 
-predicted_means <- colMeans(predictions2)
-predicted_intervals <- apply(predictions2, 2, quantile, probs = c(0.025, 0.975))
+predicted_means = colMeans(predictions2)
+predicted_intervals = apply(predictions2, 2, quantile, probs = c(0.025, 0.975))
 
 # Combine the results with the actual data
-result_summary <- data.frame(
+result_summary = data.frame(
   Actual_PCT = just_harris_data$pct,
   Predicted_PCT = predicted_means,
   Lower_CI = predicted_intervals[1, ],
   Upper_CI = predicted_intervals[2, ]
 )
 
+kable(head(result_summary, 10))
+```
+
+```{r}
+#| label: fig-bayesian-model-result-CI
+#| fig-cap: "U.S. Election Prediction Results"
+#| echo: false
+#| warning: false
 ggplot(result_summary, aes(x = Actual_PCT, y = Predicted_PCT)) +
   geom_point() +
   geom_errorbar(aes(ymin = Lower_CI, ymax = Upper_CI), width = 0.2, color = "blue") +
@@ -554,10 +606,9 @@ ggplot(result_summary, aes(x = Actual_PCT, y = Predicted_PCT)) +
     x = "Actual PCT",
     y = "Predicted PCT"
   )
-
-print(head(result_summary))
-
 ```
+
+@fig-bayesian-model-result-CI shows that he model's predictive performance for Harris's election data appears generally robust, demonstrating a strong alignment between actual and predicted vote percentages. The majority of the data points cluster around the line, indicating reliable predictions, some variance is evident, particularly in the lower and higher actual percentage ranges. This suggests that while the model performs well on average, it may have larger uncertainty in its predictions at the extremes. @tbl-bayesian-model-result-summary also highlights that most predicted values align closely with actual values, supporting the model’s robustness in capturing the overall trend of election outcomes.
 
 
 # Discussion {#sec-discussion}
