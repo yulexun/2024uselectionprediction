@@ -29,3 +29,12 @@ The repo is structured as:
 ## Statement on LLM usage
 
 The drafted outline and introduction were written with the help of ChatGPT 4. The entire chat history is available in other/llm_usage/usage.txt.
+
+## Note
+
+This R project is setup with Positron, which is demonstrated in Lecture 1. The properties of this project is stored in `/renv/settings.json`.
+You can run 
+```sh
+renv::restore()
+```
+to restore the R project workspace in Positron. I also included a .Rproj file for RStudio users. For more information, see [this Github Issue](https://github.com/posit-dev/positron/discussions/3967)
