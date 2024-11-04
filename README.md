@@ -9,7 +9,7 @@ In the SLR model analysis, we find that while sample size has a limited effect o
 
 In the MLR model analysis, which incorporates predictors such as poll score, days taken from the election, methodology, sample size, and state, provides a more comprehensive view. This model captures a substantial portion of the variance in pct and offers a more accurate prediction. The results demonstrate that including multiple variables enhances the model's ability to predict candidate support effectively.
 
-According to our Bayesian model, the credible interval for Kamala Harris's pct ranges from approximately 50 to 54 percent. This finding suggests that Harris has a strong possibility of winning the election.
+According to our Bayesian model, the credible interval for Kamala Harris's pct ranges from approximately 49.5 to 53.5 percent. This finding suggests that Harris has a strong possibility of winning the election.
 
 This paper also discusses the strengths and limitations of using statistical models for election forecasting, enhancing our understanding of the role voting methods play in influencing public opinion during high-stakes elections.
 
