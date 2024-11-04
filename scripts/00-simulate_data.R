@@ -54,7 +54,6 @@ swing_states <- c(
 
 
 
-# Generate Poll IDs and States
 unique_poll_ids <- sample(10000:99999, length(states))
 unique_question_ids <- sample(10000:999999, length(states))
 poll_ids <- rep(unique_poll_ids, each = 4)
@@ -67,7 +66,6 @@ sample_size <- rep(sample_size, each = 4)
 pollster_column <- sample(pollster, length(states), replace = TRUE)
 pollster_column <- rep(pollster_column, each = 4)
 
-# Function to generate a set of 4 random percentages that sum to 100%
 generate_percentages <- function(state) {
   jill_pct <- max(rnorm(1, 0.02, 0.01), 0.0)
   rfk_pct <- max(rnorm(1, 0.02, 0.01), 0.0)
@@ -95,7 +93,6 @@ generate_percentages <- function(state) {
 }
 
 
-# Create a dataset by randomly assigning states and parties to divisions
 analysis_data <- tibble(
   pollster = pollster_column,
   poll_id = poll_ids,
