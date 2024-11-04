@@ -71,7 +71,7 @@ In this dataset, each row represents a polling question that records the variabl
 
 These variables combined allow researchers to reliably analyze and predict the 2024 US election result over time.
 
-## Data Exploration
+## Data Exploration {#sec-dataexplore}
 
 The raw data from FiveThirtyEight contains 52 columns, all of the column headers are displayed below: 
 ```{r}
@@ -115,23 +115,43 @@ Example of categorical predictors are:
 - stage: The stage of the election (e.g., "general").
 
 
-
-<!-- ## Data Exploration
-
 ```{r}
-#| label: fig-pairs
-#| fig-cap: "Pairs Plot of Key Numeric Variables Related to Percentage Support (pct)"
+#| label: fig-explore-data
+#| fig-cap: "Exploratory Analysis of Predictors and Candidate Support (pct)"
 #| echo: false
 #| warning: false
-# numeric_data <- cleaned_data[sapply(cleaned_data, is.numeric)]
-numeric_data = cleaned_data |> select(pct, sample_size, pollscore, days_taken_from_election)
+a <- ggplot(data=cleaned_data, aes(x=sample_size, y=pct)) + 
+  geom_point() + 
+  geom_smooth(method = lm, se = FALSE) + 
+  labs(x = 'sample size', y='pct', 
+       title = 'pct vs sample size')
 
-# Create the pairs plot
-pairs(numeric_data)
+b <- ggplot(data=cleaned_data, aes(x=pollscore, y=pct)) + 
+  geom_point() + 
+  geom_smooth(method = lm, se = FALSE) + 
+  labs(x = 'pollscore', y='pct', 
+       title = 'pct vs pollscore')
+
+c <- ggplot(data=cleaned_data, aes(x=methodology, y=pct)) + 
+  geom_boxplot() + 
+  labs(x = 'methodology', y='pct', 
+       title = 'pct vs methodology')
+
+d <- ggplot(data=cleaned_data, aes(x=days_taken_from_election, y=pct)) + 
+  geom_point() + 
+  geom_smooth(method = lm, se = FALSE) + 
+  labs(x = 'max gust speed', y='pct', 
+       title = 'pct vs days taken from election')
+
+e <- ggplot(data=cleaned_data, aes(x=state, y=pct)) + 
+  geom_boxplot() + 
+  labs(x = 'state', y='pct', 
+       title = 'pct vs state')
+
+grid.arrange(a, b, c, d, e, nrow=2)
 ```
 
-In @fig-pairs, the pairs plot displays scatter plots of four numeric variables (`pct`, `sample_size`, `pollscore`, and `days_taken_from_election`) to visualize their relationships. The data shows clustering, particularly in `pct` versus `sample_size`, suggesting potential heteroscedasticity. The `sample_size` variable is skewed towards lower values, while `pollscore` and `days_taken_from_election` have a more even spread, though `pollscore` shows central clustering. No strong linear relationships are immediately apparent between the variables, indicating that correlations are likely weak.  -->
-
+@fig-explore-data explores the relationship between candidate support percentage (pct) and various predictors in the dataset: (a) sample size of polls, (b) pollscore (an indicator of poll reliability), (c) polling methodology, (d) days taken from the election, and (e) state. 
 
 ## Clean Data
 The data cleaning process involves several steps to ensure the quality and relevance of the polling data. First, we filter the dataset to retain only poll results with a numeric grade of 2.7 or higher, indicating that the polls are considered reliable. Next, we address missing values in the state attribute: polls with NA in the state column are considered national polls.
@@ -547,6 +567,8 @@ In addition, the residual plot @fig-bayesian-model-residual are fairly centered 
 In conculsion, the visual checks from the predicted vs. actual plot and the residual plot, there is no strong evidence that the Bayesian model is overfitting. It appears to generalize well to the data it was trained on without showing signs of capturing noise or irrelevant patterns. 
 
 ### Model justification
+
+We chose sample size, poll score, and days taken from the election as predictors for building the model based on the visual trends observed in the plots. As shown in @fig-explore-data in @sec-dataexplore, The relationship between pct and sample size shows that larger sample sizes correspond to more stable percentages, indicating that sample size could significantly impact prediction accuracy. The plot of pct versus poll score reveals a negative trend, suggesting that poll scores are consistently influential in explaining variations in pct. Additionally, the pct versus days taken plot indicates that the proximity to the election affects the percentage, with a slight negative trend showing that time remaining has predictive value. These observed patterns imply that these variables can effectively capture key factors influencing pct and are suitable for model inclusion.
 
 To predict the support percentage (PCT) for Harris and Trump, we employed a comprehensive modeling strategy involving Simple Linear Regression (SLR), Multiple Linear Regression (MLR), and a Bayesian hierarchical model. The SLR model provided a foundational analysis of the relationship between PCT and pollscore, highlighting its limited predictive power due to a lack of complexity. The MLR model improved on this by incorporating additional predictors such as days taken from the election, sample size, methodology, and state, enhancing its predictive accuracy and capturing interactions among variables. The Bayesian hierarchical model further refined our approach, incorporating prior knowledge and accounting for variability at group levels (e.g., methodology and state) through random intercepts. This model provided robust uncertainty quantification through credible intervals and demonstrated strong predictive performance with an R-squared value around 0.70, indicating it effectively explained data variability. By leveraging the strengths of these models, particularly the Bayesian approach’s interpretability and robustness, we achieved reliable predictions and a deeper understanding of the factors influencing support percentages.
 
