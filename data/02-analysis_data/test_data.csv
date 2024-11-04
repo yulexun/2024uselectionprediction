@@ -1,157 +1,157 @@
 "","poll_id","pollster_id","pollster","question_id","sample_size","pollscore","methodology","days_taken_from_election","end_date","start_date","state","candidate_name","pct"
 "1",88794,1528,"AtlasIntel",213381,4180,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"National","Kamala Harris",48.1
-"2",88796,1528,"AtlasIntel",213385,1411,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Georgia","Kamala Harris",48.4
-"3",88799,1528,"AtlasIntel",213391,1674,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"North Carolina","Kamala Harris",50.5
-"4",88800,1528,"AtlasIntel",213393,2048,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Pennsylvania","Kamala Harris",47.4
-"5",88801,1528,"AtlasIntel",213394,932,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Wisconsin","Kamala Harris",48.9
-"6",88801,1528,"AtlasIntel",213395,932,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Wisconsin","Kamala Harris",49
-"7",88710,568,"YouGov",212851,1457,-1.1,"Online Panel",24,2024-10-15,2024-10-12,"National","Kamala Harris",48
-"8",88734,396,"Quinnipiac",212958,1328,-0.5,"Live Phone",26,2024-10-14,2024-10-10,"Georgia","Kamala Harris",45
-"9",88734,396,"Quinnipiac",212960,1328,-0.5,"Live Phone",26,2024-10-14,2024-10-10,"Georgia","Kamala Harris",46
-"10",88735,396,"Quinnipiac",212959,1031,-0.5,"Live Phone",26,2024-10-14,2024-10-10,"North Carolina","Kamala Harris",49
-"11",88735,396,"Quinnipiac",212961,1031,-0.5,"Live Phone",26,2024-10-14,2024-10-10,"North Carolina","Kamala Harris",50
-"12",88670,568,"YouGov",212487,2712,-1.1,"Online Panel",28,2024-10-11,2024-10-08,"National","Kamala Harris",51
-"13",88711,1205,"Marist",212860,1708,-0.9,"Online Panel/Text-to-Web",28,2024-10-10,2024-10-08,"National","Kamala Harris",51
-"14",88664,1424,"Siena/NYT",212458,857,-1.5,"Live Phone",29,2024-10-10,2024-10-07,"Pennsylvania","Kamala Harris",49
-"15",88768,568,"YouGov",213248,1091,-1.1,"Online Panel",34,2024-10-10,2024-10-02,"Texas","Kamala Harris",46
-"16",88712,1075,"Marquette Law School",212867,780,-1.1,"Probability Panel",35,2024-10-10,2024-10-01,"National","Kamala Harris",43
-"17",88712,1075,"Marquette Law School",212869,652,-1.1,"Probability Panel",35,2024-10-10,2024-10-01,"National","Kamala Harris",44
-"18",88608,1102,"Emerson",212187,950,-1.1,"IVR/Online Panel/Text-to-Web",31,2024-10-08,2024-10-05,"Michigan","Kamala Harris",49.7
-"19",88609,1102,"Emerson",212188,900,-1.1,"IVR/Online Panel/Text-to-Web",31,2024-10-08,2024-10-05,"Nevada","Kamala Harris",49.2
-"20",88611,1102,"Emerson",212190,1000,-1.1,"IVR/Online Panel/Text-to-Web",31,2024-10-08,2024-10-05,"Pennsylvania","Kamala Harris",49
-"21",88666,1292,"Hart/POS",212485,1000,-0.7,"Live Phone",32,2024-10-08,2024-10-04,"National","Kamala Harris",46
-"22",88667,241,"Ipsos",212480,2226,-0.9,"Probability Panel",32,2024-10-08,2024-10-04,"National","Kamala Harris",49
-"23",88667,241,"Ipsos",212482,2631,-0.9,"Probability Panel",32,2024-10-08,2024-10-04,"National","Kamala Harris",50
-"24",88590,568,"YouGov",212126,1414,-1.1,"Online Panel",30,2024-10-07,2024-10-06,"National","Kamala Harris",47
-"25",88558,241,"Ipsos",211855,1076,-0.9,"Probability Panel",32,2024-10-07,2024-10-04,"National","Kamala Harris",47
-"26",88558,241,"Ipsos",211857,1076,-0.9,"Probability Panel",32,2024-10-07,2024-10-04,"National","Kamala Harris",50
-"27",88558,241,"Ipsos",211858,1076,-0.9,"Probability Panel",32,2024-10-07,2024-10-04,"National","Kamala Harris",51
-"28",88591,396,"Quinnipiac",212154,1007,-0.5,"Live Phone",33,2024-10-07,2024-10-03,"Michigan","Kamala Harris",47
-"29",88592,396,"Quinnipiac",212155,1412,-0.5,"Live Phone",33,2024-10-07,2024-10-03,"Pennsylvania","Kamala Harris",49
-"30",88555,1424,"Siena/NYT",212201,622,-1.5,"Live Phone",37,2024-10-06,2024-09-29,"Florida","Kamala Harris",40
-"31",88551,458,"Suffolk",211845,500,-1,"Live Phone",35,2024-10-05,2024-10-01,"Massachusetts","Kamala Harris",61.2
-"32",88527,568,"YouGov",211691,1150,-1.1,"Online Panel",34,2024-10-04,2024-10-02,"National","Kamala Harris",46
-"33",88556,1424,"Siena/NYT",212203,617,-1.5,"Live Phone",37,2024-10-04,2024-09-29,"Texas","Kamala Harris",41
-"34",88541,94,"Christopher Newport U.",211817,800,-0.6,"Live Phone",38,2024-10-04,2024-09-28,"Virginia","Kamala Harris",52
-"35",88506,1205,"Marist",211548,1294,-0.9,"Live Phone/Online Panel/Text-to-Web",39,2024-10-01,2024-09-27,"National","Kamala Harris",50
-"36",88458,396,"Quinnipiac",211300,942,-0.5,"Live Phone",41,2024-09-29,2024-09-25,"Georgia","Kamala Harris",44
-"37",88458,396,"Quinnipiac",211302,942,-0.5,"Live Phone",41,2024-09-29,2024-09-25,"Georgia","Kamala Harris",45
-"38",88462,1102,"Emerson",211310,850,-1.1,"Online Panel/Text-to-Web",39,2024-09-28,2024-09-27,"North Carolina","Kamala Harris",49.1
-"39",88407,1424,"Siena/NYT",211042,680,-1.5,"Live Phone",42,2024-09-26,2024-09-24,"Nebraska CD-2","Kamala Harris",49
-"40",88407,1424,"Siena/NYT",211044,680,-1.5,"Live Phone",42,2024-09-26,2024-09-24,"Nebraska CD-2","Kamala Harris",51
-"41",88393,460,"SurveyUSA",210966,646,-1.3,"Online Panel",43,2024-09-26,2024-09-23,"Minnesota","Kamala Harris",50
-"42",88404,1424,"Siena/NYT",211030,688,-1.5,"Live Phone",45,2024-09-26,2024-09-21,"Michigan","Kamala Harris",43
-"43",88405,1424,"Siena/NYT",211033,687,-1.5,"Live Phone",45,2024-09-26,2024-09-21,"Ohio","Kamala Harris",45
-"44",88406,1424,"Siena/NYT",211039,680,-1.5,"Live Phone",45,2024-09-26,2024-09-21,"Wisconsin","Kamala Harris",49
-"45",88488,1075,"Marquette Law School",211434,882,-1.1,"Probability Panel",48,2024-09-26,2024-09-18,"Wisconsin","Kamala Harris",52
-"46",88488,1075,"Marquette Law School",211436,882,-1.1,"Probability Panel",48,2024-09-26,2024-09-18,"Wisconsin","Kamala Harris",48
-"47",88391,1102,"Emerson",210963,1000,-1.1,"Online Panel/Text-to-Web",43,2024-09-25,2024-09-23,"New York","Kamala Harris",55.5
-"48",88411,1528,"AtlasIntel",211067,918,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Michigan","Kamala Harris",46.6
-"49",88413,1528,"AtlasIntel",211073,1775,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Pennsylvania","Kamala Harris",48
-"50",88402,1597,"Beacon/Shaw",211015,787,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"North Carolina","Kamala Harris",47
-"51",88402,1597,"Beacon/Shaw",211016,991,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"North Carolina","Kamala Harris",48
-"52",88402,1597,"Beacon/Shaw",211017,787,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"North Carolina","Kamala Harris",49
-"53",88368,1205,"Marist",210786,1220,-0.9,"Live Phone/Online Panel/Text-to-Web",47,2024-09-24,2024-09-19,"Georgia","Kamala Harris",49
-"54",88362,1296,"University of Maryland/Washington Post",210780,1012,-0.3,"Live Phone/Text-to-Web",47,2024-09-23,2024-09-19,"Maryland","Kamala Harris",61
-"55",88325,1866,"CNN/SSRS",210545,2074,-0.6,"Probability Panel",47,2024-09-22,2024-09-19,"National","Kamala Harris",48
-"56",88325,1866,"CNN/SSRS",210546,2074,-0.6,"Probability Panel",47,2024-09-22,2024-09-19,"National","Kamala Harris",47
-"57",88276,1424,"Siena/NYT",210334,713,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"Arizona","Kamala Harris",42
-"58",88278,1424,"Siena/NYT",210340,682,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"North Carolina","Kamala Harris",47
-"59",88278,1424,"Siena/NYT",210341,682,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"North Carolina","Kamala Harris",47
-"60",88371,1847,"University of Massachusetts Lowell/YouGov",210793,650,-1,"Online Panel",55,2024-09-19,2024-09-11,"Michigan","Kamala Harris",48
-"61",88372,1847,"University of Massachusetts Lowell/YouGov",210794,800,-1,"Online Panel",55,2024-09-19,2024-09-11,"Pennsylvania","Kamala Harris",48
-"62",88235,1102,"Emerson",210076,868,-1.1,"IVR/Online Panel/Text-to-Web",51,2024-09-18,2024-09-15,"Arizona","Kamala Harris",48.7
-"63",88237,1102,"Emerson",210078,875,-1.1,"IVR/Online Panel/Text-to-Web",51,2024-09-18,2024-09-15,"Michigan","Kamala Harris",50
+"2",88795,1528,"AtlasIntel",213382,1440,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Arizona","Kamala Harris",48.6
+"3",88795,1528,"AtlasIntel",213383,1440,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Arizona","Kamala Harris",49.3
+"4",88799,1528,"AtlasIntel",213390,1674,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"North Carolina","Kamala Harris",49.5
+"5",88800,1528,"AtlasIntel",213392,2048,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Pennsylvania","Kamala Harris",46.5
+"6",88800,1528,"AtlasIntel",213393,2048,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Pennsylvania","Kamala Harris",47.4
+"7",88801,1528,"AtlasIntel",213394,932,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Wisconsin","Kamala Harris",48.9
+"8",88710,568,"YouGov",212851,1457,-1.1,"Online Panel",24,2024-10-15,2024-10-12,"National","Kamala Harris",48
+"9",88776,1516,"East Carolina University",213298,701,-0.5,"IVR/Text-to-Web",27,2024-10-14,2024-10-09,"Georgia","Kamala Harris",45.8
+"10",88703,241,"Ipsos",212604,807,-0.9,"Probability Panel",25,2024-10-13,2024-10-11,"National","Kamala Harris",45
+"11",88711,1205,"Marist",212860,1708,-0.9,"Online Panel/Text-to-Web",28,2024-10-10,2024-10-08,"National","Kamala Harris",51
+"12",88665,1424,"Siena/NYT",212461,808,-1.5,"Live Phone",29,2024-10-10,2024-10-07,"Arizona","Kamala Harris",46
+"13",88712,1075,"Marquette Law School",212868,652,-1.1,"Probability Panel",35,2024-10-10,2024-10-01,"National","Kamala Harris",50
+"14",88737,1847,"University of Massachusetts Lowell/YouGov",213056,800,-1,"Online Panel",34,2024-10-09,2024-10-02,"Pennsylvania","Kamala Harris",46
+"15",88609,1102,"Emerson",212188,900,-1.1,"IVR/Online Panel/Text-to-Web",31,2024-10-08,2024-10-05,"Nevada","Kamala Harris",49.2
+"16",88611,1102,"Emerson",212190,1000,-1.1,"IVR/Online Panel/Text-to-Web",31,2024-10-08,2024-10-05,"Pennsylvania","Kamala Harris",49
+"17",88612,1102,"Emerson",212191,1000,-1.1,"IVR/Online Panel/Text-to-Web",31,2024-10-08,2024-10-05,"Wisconsin","Kamala Harris",49.2
+"18",88617,1424,"Siena/NYT",212207,656,-1.5,"Live Phone",31,2024-10-08,2024-10-05,"Montana","Kamala Harris",39
+"19",88666,1292,"Hart/POS",212486,1000,-0.7,"Live Phone",32,2024-10-08,2024-10-04,"National","Kamala Harris",48
+"20",88667,241,"Ipsos",212480,2226,-0.9,"Probability Panel",32,2024-10-08,2024-10-04,"National","Kamala Harris",49
+"21",88667,241,"Ipsos",212481,1714,-0.9,"Probability Panel",32,2024-10-08,2024-10-04,"National","Kamala Harris",50
+"22",88558,241,"Ipsos",211854,1076,-0.9,"Probability Panel",32,2024-10-07,2024-10-04,"National","Kamala Harris",46
+"23",88558,241,"Ipsos",211855,1076,-0.9,"Probability Panel",32,2024-10-07,2024-10-04,"National","Kamala Harris",47
+"24",88558,241,"Ipsos",211857,1076,-0.9,"Probability Panel",32,2024-10-07,2024-10-04,"National","Kamala Harris",50
+"25",88592,396,"Quinnipiac",212158,1412,-0.5,"Live Phone",33,2024-10-07,2024-10-03,"Pennsylvania","Kamala Harris",49
+"26",88616,486,"The Washington Post",212198,1002,-1.2,"Live Phone/Text-to-Web",33,2024-10-07,2024-10-03,"Ohio","Kamala Harris",45
+"27",88527,568,"YouGov",211790,1151,-1.1,"Online Panel",34,2024-10-04,2024-10-02,"National","Kamala Harris",48
+"28",88556,1424,"Siena/NYT",211850,617,-1.5,"Live Phone",37,2024-10-04,2024-09-29,"Texas","Kamala Harris",44
+"29",88482,568,"YouGov",211402,1261,-1.1,"Online Panel",37,2024-10-01,2024-09-29,"National","Kamala Harris",49
+"30",88496,1102,"Emerson",211489,1000,-1.1,"IVR/Online Panel/Text-to-Web",37,2024-10-01,2024-09-29,"National","Kamala Harris",50.2
+"31",88457,396,"Quinnipiac",211301,953,-0.5,"Live Phone",41,2024-09-29,2024-09-25,"North Carolina","Kamala Harris",47
+"32",88457,396,"Quinnipiac",211303,953,-0.5,"Live Phone",41,2024-09-29,2024-09-25,"North Carolina","Kamala Harris",48
+"33",88458,396,"Quinnipiac",211300,942,-0.5,"Live Phone",41,2024-09-29,2024-09-25,"Georgia","Kamala Harris",44
+"34",88458,396,"Quinnipiac",211302,942,-0.5,"Live Phone",41,2024-09-29,2024-09-25,"Georgia","Kamala Harris",45
+"35",88503,217,"High Point University",211537,589,-0.4,"Online Panel",46,2024-09-29,2024-09-20,"North Carolina","Kamala Harris",48
+"36",88554,1700,"McCourtney Institute/YouGov",211844,848,-1.1,"Online Panel",43,2024-09-27,2024-09-23,"National","Kamala Harris",48
+"37",88407,1424,"Siena/NYT",211042,680,-1.5,"Live Phone",42,2024-09-26,2024-09-24,"Nebraska CD-2","Kamala Harris",49
+"38",88393,460,"SurveyUSA",210966,646,-1.3,"Online Panel",43,2024-09-26,2024-09-23,"Minnesota","Kamala Harris",50
+"39",88423,1516,"East Carolina University",211109,1005,-0.5,"IVR/Text-to-Web",43,2024-09-26,2024-09-23,"North Carolina","Kamala Harris",47.1
+"40",88405,1424,"Siena/NYT",211036,687,-1.5,"Live Phone",45,2024-09-26,2024-09-21,"Ohio","Kamala Harris",43
+"41",88406,1424,"Siena/NYT",211037,680,-1.5,"Live Phone",45,2024-09-26,2024-09-21,"Wisconsin","Kamala Harris",49
+"42",88488,1075,"Marquette Law School",211436,882,-1.1,"Probability Panel",48,2024-09-26,2024-09-18,"Wisconsin","Kamala Harris",48
+"43",88374,1302,"Echelon Insights",210847,1005,-0.8,"Online Panel",43,2024-09-25,2024-09-23,"National","Kamala Harris",52
+"44",88410,1528,"AtlasIntel",211063,946,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Arizona","Kamala Harris",48.6
+"45",88411,1528,"AtlasIntel",211068,918,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Michigan","Kamala Harris",47.2
+"46",88412,1528,"AtlasIntel",211069,858,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Nevada","Kamala Harris",50.6
+"47",88412,1528,"AtlasIntel",211070,858,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Nevada","Kamala Harris",50.5
+"48",88416,1528,"AtlasIntel",211065,1200,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Georgia","Kamala Harris",49
+"49",88365,1102,"Emerson",210790,860,-1.1,"Online Panel/Text-to-Web",44,2024-09-24,2024-09-22,"Virginia","Kamala Harris",52.7
+"50",88380,1597,"Beacon/Shaw",210904,764,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"Arizona","Kamala Harris",47
+"51",88381,1597,"Beacon/Shaw",210910,707,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"Georgia","Kamala Harris",51
+"52",88402,1597,"Beacon/Shaw",211015,787,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"North Carolina","Kamala Harris",47
+"53",88403,1597,"Beacon/Shaw",211022,1021,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"Pennsylvania","Kamala Harris",50
+"54",88366,1205,"Marist",210788,1348,-0.9,"Live Phone/Online Panel/Text-to-Web",47,2024-09-24,2024-09-19,"North Carolina","Kamala Harris",49
+"55",88390,458,"Suffolk",210964,500,-1,"Live Phone",47,2024-09-24,2024-09-19,"Arizona","Kamala Harris",42.4
+"56",88338,460,"SurveyUSA",210620,558,-1.3,"IVR/Online Panel/Text-to-Web",46,2024-09-23,2024-09-20,"Nebraska","Kamala Harris",40
+"57",88362,1296,"University of Maryland/Washington Post",210781,1012,-0.3,"Live Phone/Text-to-Web",47,2024-09-23,2024-09-19,"Maryland","Kamala Harris",62
+"58",88325,1866,"CNN/SSRS",210546,2074,-0.6,"Probability Panel",47,2024-09-22,2024-09-19,"National","Kamala Harris",47
+"59",88328,396,"Quinnipiac",210569,1728,-0.5,"Live Phone",47,2024-09-22,2024-09-19,"National","Kamala Harris",48
+"60",88277,1424,"Siena/NYT",210336,682,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"Georgia","Kamala Harris",44
+"61",88277,1424,"Siena/NYT",210337,682,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"Georgia","Kamala Harris",45
+"62",88277,1424,"Siena/NYT",210339,682,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"Georgia","Kamala Harris",44
+"63",88278,1424,"Siena/NYT",210343,682,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"North Carolina","Kamala Harris",45
 "64",88238,1102,"Emerson",210079,895,-1.1,"IVR/Online Panel/Text-to-Web",51,2024-09-18,2024-09-15,"Nevada","Kamala Harris",48.8
-"65",88241,1102,"Emerson",210082,1000,-1.1,"IVR/Online Panel/Text-to-Web",51,2024-09-18,2024-09-15,"Wisconsin","Kamala Harris",48.7
-"66",88267,290,"MassINC Polling Group",210291,800,-0.8,"Live Phone/Text-to-Web",54,2024-09-18,2024-09-12,"Pennsylvania","Kamala Harris",52
-"67",88275,290,"MassINC Polling Group",210331,800,-0.8,"Live Phone/Text-to-Web",54,2024-09-18,2024-09-12,"Massachusetts","Kamala Harris",63
-"68",88298,290,"MassINC Polling Group",210387,800,-0.8,"Live Phone/Text-to-Web",54,2024-09-18,2024-09-12,"Connecticut","Kamala Harris",53
-"69",88311,290,"MassINC Polling Group",210413,800,-0.8,"Live Phone/Text-to-Web",54,2024-09-18,2024-09-12,"Rhode Island","Kamala Harris",53
-"70",88311,290,"MassINC Polling Group",210422,800,-0.8,"Live Phone/Text-to-Web",54,2024-09-18,2024-09-12,"Rhode Island","Kamala Harris",56
-"71",88271,1292,"Hart/POS",210305,1000,-0.7,"Live Phone",53,2024-09-17,2024-09-13,"National","Kamala Harris",49
-"72",88631,1515,"Data for Progress",212252,6152,-1.2,"Online Panel",54,2024-09-17,2024-09-12,"National","Kamala Harris",50
+"65",88239,1102,"Emerson",210080,880,-1.1,"IVR/Online Panel/Text-to-Web",51,2024-09-18,2024-09-15,"Pennsylvania","Kamala Harris",49.6
+"66",88280,460,"SurveyUSA",210414,619,-1.3,"Online Panel",54,2024-09-18,2024-09-12,"New Mexico","Kamala Harris",50
+"67",88286,290,"MassINC Polling Group",210360,800,-0.8,"Live Phone/Text-to-Web",54,2024-09-18,2024-09-12,"Wisconsin","Kamala Harris",51
+"68",88208,568,"YouGov",209883,1445,-1.1,"Online Panel",51,2024-09-17,2024-09-15,"National","Kamala Harris",49
+"69",88232,1205,"Marist",210071,1476,-0.9,"Live Phone/Online Panel/Text-to-Web",54,2024-09-17,2024-09-12,"Pennsylvania","Kamala Harris",49
+"70",88233,1205,"Marist",210072,1312,-0.9,"Live Phone/Online Panel/Text-to-Web",54,2024-09-17,2024-09-12,"Wisconsin","Kamala Harris",50
+"71",88233,1205,"Marist",210073,1194,-0.9,"Live Phone/Online Panel/Text-to-Web",54,2024-09-17,2024-09-12,"Wisconsin","Kamala Harris",50
+"72",88234,1205,"Marist",210074,1282,-0.9,"Live Phone/Online Panel/Text-to-Web",54,2024-09-17,2024-09-12,"Michigan","Kamala Harris",50
 "73",88223,1597,"Beacon/Shaw",209979,1102,-1.1,"Live Phone/Text-to-Web",53,2024-09-16,2024-09-13,"National","Kamala Harris",50
 "74",88211,396,"Quinnipiac",209902,1331,-0.5,"Live Phone",54,2024-09-16,2024-09-12,"Pennsylvania","Kamala Harris",51
-"75",88212,396,"Quinnipiac",209903,905,-0.5,"Live Phone",54,2024-09-16,2024-09-12,"Michigan","Kamala Harris",50
-"76",88228,1424,"Siena/NYT",210085,2437,-1.5,"Live Phone",55,2024-09-16,2024-09-11,"National","Kamala Harris",45
-"77",88242,1424,"Siena/NYT",210087,1082,-1.5,"Live Phone",55,2024-09-16,2024-09-11,"Pennsylvania","Kamala Harris",50
-"78",88242,1424,"Siena/NYT",210088,1082,-1.5,"Live Phone",55,2024-09-16,2024-09-11,"Pennsylvania","Kamala Harris",50
-"79",88184,458,"Suffolk",209630,500,-1,"Live Phone",55,2024-09-14,2024-09-11,"Pennsylvania","Kamala Harris",48.6
+"75",88213,396,"Quinnipiac",209907,1075,-0.5,"Live Phone",54,2024-09-16,2024-09-12,"Wisconsin","Kamala Harris",49
+"76",88217,525,"U. New Hampshire",209936,683,-0.3,"Probability Panel",54,2024-09-16,2024-09-12,"Rhode Island","Kamala Harris",58
+"77",88231,486,"The Washington Post",210067,1003,-1.2,"Live Phone/Text-to-Web",54,2024-09-16,2024-09-12,"Pennsylvania","Kamala Harris",48
+"78",88228,1424,"Siena/NYT",210086,2437,-1.5,"Live Phone",55,2024-09-16,2024-09-11,"National","Kamala Harris",46
+"79",88242,1424,"Siena/NYT",210088,1082,-1.5,"Live Phone",55,2024-09-16,2024-09-11,"Pennsylvania","Kamala Harris",50
 "80",88187,1102,"Emerson",209627,890,-1.1,"Online Panel/Text-to-Web",54,2024-09-13,2024-09-12,"Maryland","Kamala Harris",65.3
-"81",88188,1102,"Emerson",209628,850,-1.1,"Online Panel/Text-to-Web",54,2024-09-13,2024-09-12,"Missouri","Kamala Harris",43.4
-"82",88189,1102,"Emerson",209629,1000,-1.1,"Online Panel/Text-to-Web",54,2024-09-13,2024-09-12,"Indiana","Kamala Harris",40.7
-"83",88170,568,"YouGov",209373,1177,-1.1,"Online Panel",55,2024-09-13,2024-09-11,"National","Kamala Harris",50
-"84",88170,568,"YouGov",209374,1090,-1.1,"Online Panel",55,2024-09-13,2024-09-11,"National","Kamala Harris",50
-"85",88170,568,"YouGov",209430,1090,-1.1,"Online Panel",55,2024-09-13,2024-09-11,"National","Kamala Harris",49
-"86",88177,241,"Ipsos",209515,3276,-0.9,"Probability Panel",55,2024-09-13,2024-09-11,"National","Kamala Harris",51
-"87",88144,241,"Ipsos",209239,1405,-0.9,"Probability Panel",55,2024-09-12,2024-09-11,"National","Kamala Harris",47
-"88",88179,437,"Selzer",209514,656,-1.2,"Live Phone",58,2024-09-11,2024-09-08,"Iowa","Kamala Harris",43
-"89",88101,396,"Quinnipiac",208324,969,-0.5,"Live Phone",62,2024-09-08,2024-09-04,"Georgia","Kamala Harris",45
-"90",88101,396,"Quinnipiac",208326,969,-0.5,"Live Phone",62,2024-09-08,2024-09-04,"Georgia","Kamala Harris",46
-"91",88105,1460,"Washington Post/George Mason University",208349,1005,-0.8,"Live Phone/Text-to-Web",62,2024-09-08,2024-09-04,"Virginia","Kamala Harris",51
-"92",88070,568,"YouGov",207965,1077,-1.1,"Online Panel",63,2024-09-06,2024-09-03,"Michigan","Kamala Harris",50
-"93",88071,568,"YouGov",207966,1078,-1.1,"Online Panel",63,2024-09-06,2024-09-03,"Pennsylvania","Kamala Harris",50
-"94",88073,1424,"Siena/NYT",207971,1695,-1.5,"Live Phone",63,2024-09-06,2024-09-03,"National","Kamala Harris",44
-"95",88064,1102,"Emerson",207932,815,-1.1,"Online Panel/Text-to-Web",63,2024-09-05,2024-09-03,"Florida","Kamala Harris",47.6
-"96",88135,1075,"Marquette Law School",209224,738,-1.1,"Live Phone/Email",69,2024-09-05,2024-08-28,"Wisconsin","Kamala Harris",52
-"97",88135,1075,"Marquette Law School",209225,822,-1.1,"Live Phone/Email",69,2024-09-05,2024-08-28,"Wisconsin","Kamala Harris",47
-"98",88035,1102,"Emerson",207867,1000,-1.1,"IVR/Online Panel/Text-to-Web",63,2024-09-04,2024-09-03,"National","Kamala Harris",51.3
-"99",88016,1866,"CNN/SSRS",207692,617,-0.6,"Probability Panel",74,2024-08-29,2024-08-23,"Georgia","Kamala Harris",48
-"100",88020,1866,"CNN/SSRS",207696,976,-0.6,"Probability Panel",74,2024-08-29,2024-08-23,"Wisconsin","Kamala Harris",50
-"101",87935,1102,"Emerson",207317,720,-1.1,"IVR/Online Panel/Text-to-Web",72,2024-08-28,2024-08-25,"Arizona","Kamala Harris",47.5
-"102",87936,1102,"Emerson",207319,800,-1.1,"IVR/Online Panel/Text-to-Web",72,2024-08-28,2024-08-25,"Michigan","Kamala Harris",51.2
-"103",87938,1102,"Emerson",207320,950,-1.1,"IVR/Online Panel/Text-to-Web",72,2024-08-28,2024-08-25,"Pennsylvania","Kamala Harris",49.4
-"104",87943,1102,"Emerson",207322,775,-1.1,"IVR/Online Panel/Text-to-Web",72,2024-08-28,2024-08-25,"North Carolina","Kamala Harris",49
-"105",87946,241,"Ipsos",207331,3562,-0.9,"Probability Panel",76,2024-08-28,2024-08-21,"National","Kamala Harris",44
-"106",87946,241,"Ipsos",207534,4253,-0.9,"Probability Panel",76,2024-08-28,2024-08-21,"National","Kamala Harris",40
-"107",87949,396,"Quinnipiac",207361,1611,-0.5,"Live Phone",74,2024-08-27,2024-08-23,"National","Kamala Harris",49
-"108",87999,241,"Ipsos",207598,2496,-0.9,"Probability Panel",74,2024-08-27,2024-08-23,"National","Kamala Harris",50
-"109",87931,1597,"Beacon/Shaw",207245,1014,-1.1,"Live Phone/Text-to-Web",74,2024-08-26,2024-08-23,"Georgia","Kamala Harris",48
+"81",88170,568,"YouGov",209373,1177,-1.1,"Online Panel",55,2024-09-13,2024-09-11,"National","Kamala Harris",50
+"82",88170,568,"YouGov",209430,1090,-1.1,"Online Panel",55,2024-09-13,2024-09-11,"National","Kamala Harris",49
+"83",88177,241,"Ipsos",209515,3276,-0.9,"Probability Panel",55,2024-09-13,2024-09-11,"National","Kamala Harris",51
+"84",88177,241,"Ipsos",209516,2772,-0.9,"Probability Panel",55,2024-09-13,2024-09-11,"National","Kamala Harris",51
+"85",88177,241,"Ipsos",209517,2196,-0.9,"Probability Panel",55,2024-09-13,2024-09-11,"National","Kamala Harris",52
+"86",88177,241,"Ipsos",209518,3276,-0.9,"Probability Panel",55,2024-09-13,2024-09-11,"National","Kamala Harris",51
+"87",88302,978,"Elon U.",210420,800,-0.6,"Online Panel",62,2024-09-13,2024-09-04,"North Carolina","Kamala Harris",46
+"88",88144,241,"Ipsos",209239,1405,-0.9,"Probability Panel",55,2024-09-12,2024-09-11,"National","Kamala Harris",47
+"89",88144,241,"Ipsos",209263,1690,-0.9,"Probability Panel",55,2024-09-12,2024-09-11,"National","Kamala Harris",43
+"90",88179,437,"Selzer",209514,656,-1.2,"Live Phone",58,2024-09-11,2024-09-08,"Iowa","Kamala Harris",43
+"91",88130,568,"YouGov",209155,1464,-1.1,"Online Panel",58,2024-09-10,2024-09-08,"National","Kamala Harris",45
+"92",88225,382,"PPIC",210069,1071,-0.4,"Probability Panel",68,2024-09-09,2024-08-29,"California","Kamala Harris",60
+"93",88105,1460,"Washington Post/George Mason University",208349,1005,-0.8,"Live Phone/Text-to-Web",62,2024-09-08,2024-09-04,"Virginia","Kamala Harris",51
+"94",88083,460,"SurveyUSA",208275,676,-1.3,"Online Panel",62,2024-09-07,2024-09-04,"North Carolina","Kamala Harris",49
+"95",88071,568,"YouGov",207966,1078,-1.1,"Online Panel",63,2024-09-06,2024-09-03,"Pennsylvania","Kamala Harris",50
+"96",88073,1424,"Siena/NYT",207968,1695,-1.5,"Live Phone",63,2024-09-06,2024-09-03,"National","Kamala Harris",47
+"97",88073,1424,"Siena/NYT",207969,1695,-1.5,"Live Phone",63,2024-09-06,2024-09-03,"National","Kamala Harris",45
+"98",88063,1102,"Emerson",207931,815,-1.1,"Online Panel/Text-to-Web",63,2024-09-05,2024-09-03,"California","Kamala Harris",60.8
+"99",88065,1102,"Emerson",207933,845,-1.1,"Online Panel/Text-to-Web",63,2024-09-05,2024-09-03,"Texas","Kamala Harris",48
+"100",88066,1102,"Emerson",207934,945,-1.1,"Online Panel/Text-to-Web",63,2024-09-05,2024-09-03,"Ohio","Kamala Harris",44.7
+"101",88135,1075,"Marquette Law School",209223,822,-1.1,"Live Phone/Email",69,2024-09-05,2024-08-28,"Wisconsin","Kamala Harris",52
+"102",88123,800,"Kaiser Family Foundation",208945,1084,-0.3,"Live Phone/Probability Panel",71,2024-09-04,2024-08-26,"National","Kamala Harris",48
+"103",88021,568,"YouGov",207698,1389,-1.1,"Online Panel",65,2024-09-03,2024-09-01,"National","Kamala Harris",47
+"104",88018,1866,"CNN/SSRS",207694,626,-0.6,"Probability Panel",74,2024-08-29,2024-08-23,"Nevada","Kamala Harris",48
+"105",87938,1102,"Emerson",207320,950,-1.1,"IVR/Online Panel/Text-to-Web",72,2024-08-28,2024-08-25,"Pennsylvania","Kamala Harris",49.4
+"106",87946,241,"Ipsos",207331,3562,-0.9,"Probability Panel",76,2024-08-28,2024-08-21,"National","Kamala Harris",44
+"107",87946,241,"Ipsos",207532,4253,-0.9,"Probability Panel",76,2024-08-28,2024-08-21,"National","Kamala Harris",41
+"108",87946,241,"Ipsos",207533,3562,-0.9,"Probability Panel",76,2024-08-28,2024-08-21,"National","Kamala Harris",45
+"109",87949,396,"Quinnipiac",207361,1611,-0.5,"Live Phone",74,2024-08-27,2024-08-23,"National","Kamala Harris",49
 "110",87932,1597,"Beacon/Shaw",207248,1026,-1.1,"Live Phone/Text-to-Web",74,2024-08-26,2024-08-23,"Nevada","Kamala Harris",50
-"111",88080,568,"YouGov",208263,500,-1.1,"Online Panel",82,2024-08-23,2024-08-15,"Pennsylvania","Kamala Harris",43
-"112",87870,1050,"SurveyUSA/High Point University",206654,1053,-1.3,"Online Panel",78,2024-08-21,2024-08-19,"North Carolina","Kamala Harris",46
-"113",87886,149,"Fairleigh Dickinson",206737,801,-0.6,"Live Phone/Text-to-Web",80,2024-08-20,2024-08-17,"National","Kamala Harris",50
-"114",87858,525,"U. New Hampshire",206553,951,-0.3,"Probability Panel",82,2024-08-19,2024-08-15,"Maine","Kamala Harris",58
-"115",87810,568,"YouGov",206219,3253,-1.1,"Online Panel",83,2024-08-16,2024-08-14,"National","Kamala Harris",51
-"116",87845,415,"Roanoke College",206471,691,-0.4,"Live Phone/Online Panel",85,2024-08-16,2024-08-12,"Virginia","Kamala Harris",47
-"117",87807,1424,"Siena/NYT",206206,677,-1.5,"Live Phone",85,2024-08-15,2024-08-12,"Nevada","Kamala Harris",47
-"118",87806,1424,"Siena/NYT",206203,677,-1.5,"Live Phone",89,2024-08-15,2024-08-08,"Arizona","Kamala Harris",50
-"119",87806,1424,"Siena/NYT",206211,677,-1.5,"Live Phone",89,2024-08-15,2024-08-08,"Arizona","Kamala Harris",47
-"120",87808,1424,"Siena/NYT",206209,655,-1.5,"Live Phone",88,2024-08-14,2024-08-09,"North Carolina","Kamala Harris",45
-"121",87780,1597,"Beacon/Shaw",205944,1105,-1.1,"Live Phone",88,2024-08-12,2024-08-09,"National","Kamala Harris",45
-"122",87780,1597,"Beacon/Shaw",205945,1105,-1.1,"Live Phone",88,2024-08-12,2024-08-09,"National","Kamala Harris",49
-"123",87778,370,"Pew",205903,7569,-0.4,"Probability Panel",92,2024-08-11,2024-08-05,"National","Kamala Harris",46
-"124",87721,1424,"Siena/NYT",205625,693,-1.5,"Live Phone",91,2024-08-09,2024-08-06,"Pennsylvania","Kamala Harris",49
-"125",87721,1424,"Siena/NYT",205628,693,-1.5,"Live Phone",91,2024-08-09,2024-08-06,"Pennsylvania","Kamala Harris",50
-"126",87721,1424,"Siena/NYT",205631,693,-1.5,"Live Phone",91,2024-08-09,2024-08-06,"Pennsylvania","Kamala Harris",45
-"127",87719,1424,"Siena/NYT",205626,619,-1.5,"Live Phone",92,2024-08-08,2024-08-05,"Michigan","Kamala Harris",50
-"128",87720,1424,"Siena/NYT",205627,661,-1.5,"Live Phone",92,2024-08-08,2024-08-05,"Wisconsin","Kamala Harris",50
-"129",87720,1424,"Siena/NYT",205630,661,-1.5,"Live Phone",92,2024-08-08,2024-08-05,"Wisconsin","Kamala Harris",49
-"130",87720,1424,"Siena/NYT",205633,661,-1.5,"Live Phone",92,2024-08-08,2024-08-05,"Wisconsin","Kamala Harris",49
-"131",87709,241,"Ipsos",205592,1342,-0.9,"Probability Panel",95,2024-08-07,2024-08-02,"National","Kamala Harris",42
-"132",87663,568,"YouGov",205200,3092,-1.1,"Online Panel",98,2024-08-02,2024-07-30,"National","Kamala Harris",50
-"133",87678,438,"Siena",205261,1199,-0.8,"Live Phone",100,2024-08-01,2024-07-28,"New York","Kamala Harris",49
-"134",87698,1075,"Marquette Law School",205425,877,-1.1,"Live Phone/Email",104,2024-08-01,2024-07-24,"Wisconsin","Kamala Harris",49
-"135",87698,1075,"Marquette Law School",205427,877,-1.1,"Live Phone/Email",104,2024-08-01,2024-07-24,"Wisconsin","Kamala Harris",45
-"136",87630,241,"Ipsos",204846,876,-0.9,"Probability Panel",102,2024-07-28,2024-07-26,"National","Kamala Harris",43
-"137",87635,1102,"Emerson",204852,1000,-1.1,"Online Panel/Text-to-Web",102,2024-07-28,2024-07-26,"New Hampshire","Kamala Harris",52.4
-"138",87635,1102,"Emerson",204853,1000,-1.1,"Online Panel/Text-to-Web",102,2024-07-28,2024-07-26,"New Hampshire","Kamala Harris",47.7
-"139",87559,525,"U. New Hampshire",204335,2875,-0.3,"Online Panel/Text-to-Web",105,2024-07-25,2024-07-23,"New Hampshire","Kamala Harris",49
-"140",87559,525,"U. New Hampshire",204336,2875,-0.3,"Online Panel/Text-to-Web",105,2024-07-25,2024-07-23,"New Hampshire","Kamala Harris",53
-"141",87590,1528,"AtlasIntel",204552,1980,-0.8,"Online Ad",105,2024-07-25,2024-07-23,"National","Kamala Harris",48
-"142",87724,525,"U. New Hampshire",205674,732,-0.3,"Online Panel/Text-to-Web",105,2024-07-25,2024-07-23,"Maine CD-1","Kamala Harris",60
-"143",87557,1424,"Siena/NYT",204205,1142,-1.5,"Live Phone",106,2024-07-24,2024-07-22,"National","Kamala Harris",42
-"144",87557,1424,"Siena/NYT",204206,1142,-1.5,"Live Phone",106,2024-07-24,2024-07-22,"National","Kamala Harris",44
-"145",87582,1597,"Beacon/Shaw",204503,1046,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Wisconsin","Kamala Harris",46
-"146",87584,1597,"Beacon/Shaw",204511,1071,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Minnesota","Kamala Harris",47
-"147",87585,1597,"Beacon/Shaw",204516,1012,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Michigan","Kamala Harris",49
-"148",87530,241,"Ipsos",203948,1241,-0.9,"Probability Panel",106,2024-07-23,2024-07-22,"National","Kamala Harris",39
-"149",87530,241,"Ipsos",203949,1018,-0.9,"Probability Panel",106,2024-07-23,2024-07-22,"National","Kamala Harris",44
-"150",87530,241,"Ipsos",203951,1018,-0.9,"Probability Panel",106,2024-07-23,2024-07-22,"National","Kamala Harris",42
-"151",87542,1102,"Emerson",204148,800,-1.1,"IVR/Online Panel/Text-to-Web",106,2024-07-23,2024-07-22,"Arizona","Kamala Harris",47.4
-"152",87542,1102,"Emerson",204153,800,-1.1,"IVR/Online Panel/Text-to-Web",106,2024-07-23,2024-07-22,"Arizona","Kamala Harris",39.8
-"153",87545,1102,"Emerson",204151,845,-1.1,"IVR/Online Panel/Text-to-Web",106,2024-07-23,2024-07-22,"Wisconsin","Kamala Harris",50.6
-"154",87545,1102,"Emerson",204156,845,-1.1,"IVR/Online Panel/Text-to-Web",106,2024-07-23,2024-07-22,"Wisconsin","Kamala Harris",45.4
-"155",87555,568,"YouGov",204188,1155,-1.1,"Online Panel",106,2024-07-23,2024-07-22,"National","Kamala Harris",44
-"156",87531,1205,"Marist",203980,1117,-0.9,"Online Panel",106,2024-07-22,2024-07-22,"National","Kamala Harris",42
+"111",87899,1302,"Echelon Insights",206912,1031,-0.8,"Online Panel",74,2024-08-25,2024-08-23,"National","Kamala Harris",48
+"112",88080,568,"YouGov",208269,500,-1.1,"Online Panel",82,2024-08-23,2024-08-15,"Pennsylvania","Kamala Harris",43
+"113",87882,1102,"Emerson",206739,965,-1.1,"IVR/Online Panel/Text-to-Web",77,2024-08-22,2024-08-20,"New Mexico","Kamala Harris",51
+"114",87870,1050,"SurveyUSA/High Point University",206654,1053,-1.3,"Online Panel",78,2024-08-21,2024-08-19,"North Carolina","Kamala Harris",46
+"115",87853,568,"YouGov",206527,1371,-1.1,"Online Panel",80,2024-08-20,2024-08-17,"National","Kamala Harris",46
+"116",87856,525,"U. New Hampshire",206547,2048,-0.3,"Probability Panel",82,2024-08-19,2024-08-15,"New Hampshire","Kamala Harris",52
+"117",87858,525,"U. New Hampshire",206550,951,-0.3,"Probability Panel",82,2024-08-19,2024-08-15,"Maine","Kamala Harris",55
+"118",87859,525,"U. New Hampshire",206551,490,-0.3,"Probability Panel",82,2024-08-19,2024-08-15,"Maine CD-1","Kamala Harris",62
+"119",87845,415,"Roanoke College",206471,691,-0.4,"Live Phone/Online Panel",85,2024-08-16,2024-08-12,"Virginia","Kamala Harris",47
+"120",87934,568,"YouGov",207316,900,-1.1,"Online Panel",89,2024-08-16,2024-08-08,"Missouri","Kamala Harris",41
+"121",87807,1424,"Siena/NYT",206210,677,-1.5,"Live Phone",85,2024-08-15,2024-08-12,"Nevada","Kamala Harris",42
+"122",87807,1424,"Siena/NYT",206214,677,-1.5,"Live Phone",85,2024-08-15,2024-08-12,"Nevada","Kamala Harris",44
+"123",87806,1424,"Siena/NYT",206199,677,-1.5,"Live Phone",89,2024-08-15,2024-08-08,"Arizona","Kamala Harris",49
+"124",87806,1424,"Siena/NYT",206211,677,-1.5,"Live Phone",89,2024-08-15,2024-08-08,"Arizona","Kamala Harris",47
+"125",87808,1424,"Siena/NYT",206201,655,-1.5,"Live Phone",88,2024-08-14,2024-08-09,"North Carolina","Kamala Harris",49
+"126",87808,1424,"Siena/NYT",206205,655,-1.5,"Live Phone",88,2024-08-14,2024-08-09,"North Carolina","Kamala Harris",49
+"127",87794,241,"Ipsos",206222,1975,-0.9,"Probability Panel",88,2024-08-13,2024-08-09,"National","Kamala Harris",49
+"128",87794,241,"Ipsos",206224,2336,-0.9,"Probability Panel",88,2024-08-13,2024-08-09,"National","Kamala Harris",47
+"129",87780,1597,"Beacon/Shaw",205944,1105,-1.1,"Live Phone",88,2024-08-12,2024-08-09,"National","Kamala Harris",45
+"130",87777,396,"Quinnipiac",205900,1738,-0.5,"Live Phone",89,2024-08-12,2024-08-08,"Pennsylvania","Kamala Harris",48
+"131",87778,370,"Pew",205903,7569,-0.4,"Probability Panel",92,2024-08-11,2024-08-05,"National","Kamala Harris",46
+"132",87721,1424,"Siena/NYT",205631,693,-1.5,"Live Phone",91,2024-08-09,2024-08-06,"Pennsylvania","Kamala Harris",45
+"133",87719,1424,"Siena/NYT",205623,619,-1.5,"Live Phone",92,2024-08-08,2024-08-05,"Michigan","Kamala Harris",45
+"134",87719,1424,"Siena/NYT",205626,619,-1.5,"Live Phone",92,2024-08-08,2024-08-05,"Michigan","Kamala Harris",50
+"135",87720,1424,"Siena/NYT",205624,661,-1.5,"Live Phone",92,2024-08-08,2024-08-05,"Wisconsin","Kamala Harris",50
+"136",87720,1424,"Siena/NYT",205633,661,-1.5,"Live Phone",92,2024-08-08,2024-08-05,"Wisconsin","Kamala Harris",49
+"137",87709,241,"Ipsos",205593,1342,-0.9,"Probability Panel",95,2024-08-07,2024-08-02,"National","Kamala Harris",49
+"138",87677,460,"SurveyUSA",205228,1510,-1.3,"Online Panel",95,2024-08-05,2024-08-02,"National","Kamala Harris",48
+"139",87701,1292,"Hart/POS",205460,1001,-0.7,"Live Phone",97,2024-08-04,2024-07-31,"National","Kamala Harris",46
+"140",87698,1075,"Marquette Law School",205425,877,-1.1,"Live Phone/Email",104,2024-08-01,2024-07-24,"Wisconsin","Kamala Harris",49
+"141",87699,1075,"Marquette Law School",205436,683,-1.1,"Probability Panel",104,2024-08-01,2024-07-24,"National","Kamala Harris",50
+"142",87612,509,"U. North Florida",204676,774,-0.6,"Live Phone/Text-to-Web",104,2024-07-27,2024-07-24,"Florida","Kamala Harris",42
+"143",87559,525,"U. New Hampshire",204335,2875,-0.3,"Online Panel/Text-to-Web",105,2024-07-25,2024-07-23,"New Hampshire","Kamala Harris",49
+"144",87559,525,"U. New Hampshire",204336,2875,-0.3,"Online Panel/Text-to-Web",105,2024-07-25,2024-07-23,"New Hampshire","Kamala Harris",53
+"145",87724,525,"U. New Hampshire",205674,732,-0.3,"Online Panel/Text-to-Web",105,2024-07-25,2024-07-23,"Maine CD-1","Kamala Harris",60
+"146",87725,525,"U. New Hampshire",205675,701,-0.3,"Online Panel/Text-to-Web",105,2024-07-25,2024-07-23,"Maine CD-2","Kamala Harris",49
+"147",87557,1424,"Siena/NYT",204204,1142,-1.5,"Live Phone",106,2024-07-24,2024-07-22,"National","Kamala Harris",47
+"148",87557,1424,"Siena/NYT",204205,1142,-1.5,"Live Phone",106,2024-07-24,2024-07-22,"National","Kamala Harris",42
+"149",87557,1424,"Siena/NYT",204206,1142,-1.5,"Live Phone",106,2024-07-24,2024-07-22,"National","Kamala Harris",44
+"150",87582,1597,"Beacon/Shaw",204504,1046,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Wisconsin","Kamala Harris",49
+"151",87583,1597,"Beacon/Shaw",204508,1034,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Pennsylvania","Kamala Harris",49
+"152",87585,1597,"Beacon/Shaw",204515,1012,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Michigan","Kamala Harris",43
+"153",87530,241,"Ipsos",203950,1241,-0.9,"Probability Panel",106,2024-07-23,2024-07-22,"National","Kamala Harris",37
+"154",87542,1102,"Emerson",204148,800,-1.1,"IVR/Online Panel/Text-to-Web",106,2024-07-23,2024-07-22,"Arizona","Kamala Harris",47.4
+"155",87545,1102,"Emerson",204151,845,-1.1,"IVR/Online Panel/Text-to-Web",106,2024-07-23,2024-07-22,"Wisconsin","Kamala Harris",50.6
+"156",87546,1102,"Emerson",204157,850,-1.1,"IVR/Online Panel/Text-to-Web",106,2024-07-23,2024-07-22,"Pennsylvania","Kamala Harris",44.3

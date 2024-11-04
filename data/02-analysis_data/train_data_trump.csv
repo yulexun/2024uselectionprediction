@@ -1,0 +1,369 @@
+"","poll_id","pollster_id","pollster","question_id","sample_size","pollscore","methodology","days_taken_from_election","end_date","start_date","state","candidate_name","pct"
+"1",88634,370,"Pew",212276,4025,-0.4,"Probability Panel",36,2024-10-06,2024-09-30,"National","Donald Trump",49
+"2",88801,1528,"AtlasIntel",213395,932,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Wisconsin","Donald Trump",48.4
+"3",87808,1424,"Siena/NYT",206205,655,-1.5,"Live Phone",88,2024-08-14,2024-08-09,"North Carolina","Donald Trump",47
+"4",88361,568,"YouGov",210760,1441,-1.1,"Online Panel",46,2024-09-24,2024-09-20,"Georgia","Donald Trump",51
+"5",87781,1102,"Emerson",206012,1000,-1.1,"IVR/Online Panel/Text-to-Web",85,2024-08-14,2024-08-12,"National","Donald Trump",47.7
+"6",87678,438,"Siena",205261,1199,-0.8,"Live Phone",100,2024-08-01,2024-07-28,"New York","Donald Trump",37
+"7",87806,1424,"Siena/NYT",206203,677,-1.5,"Live Phone",89,2024-08-15,2024-08-08,"Arizona","Donald Trump",45
+"8",88351,568,"YouGov",210699,1220,-1.1,"Online Panel",45,2024-09-24,2024-09-21,"National","Donald Trump",46
+"9",87744,458,"Suffolk",205739,500,-1,"Live Phone",90,2024-08-11,2024-08-07,"Florida","Donald Trump",46.8
+"10",88362,1296,"University of Maryland/Washington Post",210779,1012,-0.3,"Live Phone/Text-to-Web",47,2024-09-23,2024-09-19,"Maryland","Donald Trump",32
+"11",88365,1102,"Emerson",210790,860,-1.1,"Online Panel/Text-to-Web",44,2024-09-24,2024-09-22,"Virginia","Donald Trump",46.2
+"12",87918,568,"YouGov",207083,1200,-1.1,"Online Panel",75,2024-08-26,2024-08-22,"National","Donald Trump",42
+"13",87546,1102,"Emerson",204152,850,-1.1,"IVR/Online Panel/Text-to-Web",106,2024-07-23,2024-07-22,"Pennsylvania","Donald Trump",51.1
+"14",87882,1102,"Emerson",206738,965,-1.1,"IVR/Online Panel/Text-to-Web",77,2024-08-22,2024-08-20,"New Mexico","Donald Trump",46.4
+"15",88457,396,"Quinnipiac",211301,953,-0.5,"Live Phone",41,2024-09-29,2024-09-25,"North Carolina","Donald Trump",49
+"16",87860,525,"U. New Hampshire",206552,443,-0.3,"Probability Panel",82,2024-08-19,2024-08-15,"Maine CD-2","Donald Trump",44
+"17",87810,568,"YouGov",206220,3253,-1.1,"Online Panel",83,2024-08-16,2024-08-14,"National","Donald Trump",47
+"18",88072,568,"YouGov",207967,946,-1.1,"Online Panel",63,2024-09-06,2024-09-03,"Wisconsin","Donald Trump",49
+"19",88223,1597,"Beacon/Shaw",209979,1102,-1.1,"Live Phone/Text-to-Web",53,2024-09-16,2024-09-13,"National","Donald Trump",48
+"20",87582,1597,"Beacon/Shaw",204503,1046,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Wisconsin","Donald Trump",46
+"21",87946,241,"Ipsos",207533,3562,-0.9,"Probability Panel",76,2024-08-28,2024-08-21,"National","Donald Trump",41
+"22",88311,290,"MassINC Polling Group",210422,800,-0.8,"Live Phone/Text-to-Web",54,2024-09-18,2024-09-12,"Rhode Island","Donald Trump",43
+"23",88170,568,"YouGov",209429,1175,-1.1,"Online Panel",55,2024-09-13,2024-09-11,"National","Donald Trump",44
+"24",88712,1075,"Marquette Law School",212867,780,-1.1,"Probability Panel",35,2024-10-10,2024-10-01,"National","Donald Trump",39
+"25",88021,568,"YouGov",207698,1389,-1.1,"Online Panel",65,2024-09-03,2024-09-01,"National","Donald Trump",45
+"26",88555,1424,"Siena/NYT",212201,622,-1.5,"Live Phone",37,2024-10-06,2024-09-29,"Florida","Donald Trump",53
+"27",88556,1424,"Siena/NYT",211851,617,-1.5,"Live Phone",37,2024-10-04,2024-09-29,"Texas","Donald Trump",49
+"28",88130,568,"YouGov",209155,1464,-1.1,"Online Panel",58,2024-09-10,2024-09-08,"National","Donald Trump",45
+"29",88798,1528,"AtlasIntel",213389,1171,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Nevada","Donald Trump",48.3
+"30",88415,1528,"AtlasIntel",211071,1173,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"North Carolina","Donald Trump",47.3
+"31",88242,1424,"Siena/NYT",210089,1082,-1.5,"Live Phone",55,2024-09-16,2024-09-11,"Pennsylvania","Donald Trump",45
+"32",87943,1102,"Emerson",207322,775,-1.1,"IVR/Online Panel/Text-to-Web",72,2024-08-28,2024-08-25,"North Carolina","Donald Trump",49.9
+"33",87724,525,"U. New Hampshire",205674,732,-0.3,"Online Panel/Text-to-Web",105,2024-07-25,2024-07-23,"Maine CD-1","Donald Trump",39
+"34",87810,568,"YouGov",206219,3253,-1.1,"Online Panel",83,2024-08-16,2024-08-14,"National","Donald Trump",48
+"35",88358,241,"Ipsos",210761,1029,-0.9,"Probability Panel",46,2024-09-22,2024-09-20,"National","Donald Trump",38
+"36",87698,1075,"Marquette Law School",205428,801,-1.1,"Live Phone/Email",104,2024-08-01,2024-07-24,"Wisconsin","Donald Trump",45
+"37",87530,241,"Ipsos",203948,1241,-0.9,"Probability Panel",106,2024-07-23,2024-07-22,"National","Donald Trump",39
+"38",88393,460,"SurveyUSA",210966,646,-1.3,"Online Panel",43,2024-09-26,2024-09-23,"Minnesota","Donald Trump",44
+"39",88105,1460,"Washington Post/George Mason University",208349,1005,-0.8,"Live Phone/Text-to-Web",62,2024-09-08,2024-09-04,"Virginia","Donald Trump",43
+"40",87858,525,"U. New Hampshire",206550,951,-0.3,"Probability Panel",82,2024-08-19,2024-08-15,"Maine","Donald Trump",38
+"41",87583,1597,"Beacon/Shaw",204510,1034,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Pennsylvania","Donald Trump",44
+"42",88797,1528,"AtlasIntel",213387,1529,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Michigan","Donald Trump",50.2
+"43",88482,568,"YouGov",211401,1463,-1.1,"Online Panel",37,2024-10-01,2024-09-29,"National","Donald Trump",45
+"44",88211,396,"Quinnipiac",209902,1331,-0.5,"Live Phone",54,2024-09-16,2024-09-12,"Pennsylvania","Donald Trump",45
+"45",88776,1516,"East Carolina University",213298,701,-0.5,"IVR/Text-to-Web",27,2024-10-14,2024-10-09,"Georgia","Donald Trump",48.9
+"46",88101,396,"Quinnipiac",208324,969,-0.5,"Live Phone",62,2024-09-08,2024-09-04,"Georgia","Donald Trump",49
+"47",88135,1075,"Marquette Law School",209224,738,-1.1,"Live Phone/Email",69,2024-09-05,2024-08-28,"Wisconsin","Donald Trump",48
+"48",88558,241,"Ipsos",211854,1076,-0.9,"Probability Panel",32,2024-10-07,2024-10-04,"National","Donald Trump",43
+"49",88184,458,"Suffolk",209630,500,-1,"Live Phone",55,2024-09-14,2024-09-11,"Pennsylvania","Donald Trump",45.6
+"50",88558,241,"Ipsos",211853,1272,-0.9,"Probability Panel",32,2024-10-07,2024-10-04,"National","Donald Trump",38
+"51",88217,525,"U. New Hampshire",209936,683,-0.3,"Probability Panel",54,2024-09-16,2024-09-12,"Rhode Island","Donald Trump",38
+"52",87899,1302,"Echelon Insights",206913,1031,-0.8,"Online Panel",74,2024-08-25,2024-08-23,"National","Donald Trump",45
+"53",88211,396,"Quinnipiac",209905,1331,-0.5,"Live Phone",54,2024-09-16,2024-09-12,"Pennsylvania","Donald Trump",46
+"54",88278,1424,"Siena/NYT",210342,682,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"North Carolina","Donald Trump",46
+"55",87544,1102,"Emerson",204150,800,-1.1,"IVR/Online Panel/Text-to-Web",106,2024-07-23,2024-07-22,"Michigan","Donald Trump",50.9
+"56",88325,1866,"CNN/SSRS",210546,2074,-0.6,"Probability Panel",47,2024-09-22,2024-09-19,"National","Donald Trump",47
+"57",88277,1424,"Siena/NYT",210337,682,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"Georgia","Donald Trump",49
+"58",88381,1597,"Beacon/Shaw",210908,707,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"Georgia","Donald Trump",48
+"59",87946,241,"Ipsos",207532,4253,-0.9,"Probability Panel",76,2024-08-28,2024-08-21,"National","Donald Trump",38
+"60",88374,1302,"Echelon Insights",210847,1005,-0.8,"Online Panel",43,2024-09-25,2024-09-23,"National","Donald Trump",45
+"61",88514,1363,"UC Berkeley",212244,3045,-0.2,"Email",41,2024-10-01,2024-09-25,"California","Donald Trump",35
+"62",87709,241,"Ipsos",205592,1342,-0.9,"Probability Panel",95,2024-08-07,2024-08-02,"National","Donald Trump",37
+"63",87936,1102,"Emerson",207319,800,-1.1,"IVR/Online Panel/Text-to-Web",72,2024-08-28,2024-08-25,"Michigan","Donald Trump",47.6
+"64",87545,1102,"Emerson",204156,845,-1.1,"IVR/Online Panel/Text-to-Web",106,2024-07-23,2024-07-22,"Wisconsin","Donald Trump",44.9
+"65",88667,241,"Ipsos",212481,1714,-0.9,"Probability Panel",32,2024-10-08,2024-10-04,"National","Donald Trump",48
+"66",88556,1424,"Siena/NYT",212203,617,-1.5,"Live Phone",37,2024-10-04,2024-09-29,"Texas","Donald Trump",48
+"67",87809,1424,"Siena/NYT",206204,661,-1.5,"Live Phone",88,2024-08-14,2024-08-09,"Georgia","Donald Trump",50
+"68",88407,1424,"Siena/NYT",211042,680,-1.5,"Live Phone",42,2024-09-26,2024-09-24,"Nebraska CD-2","Donald Trump",41
+"69",88711,1205,"Marist",212860,1708,-0.9,"Online Panel/Text-to-Web",28,2024-10-10,2024-10-08,"National","Donald Trump",48
+"70",88609,1102,"Emerson",212188,900,-1.1,"IVR/Online Panel/Text-to-Web",31,2024-10-08,2024-10-05,"Nevada","Donald Trump",48.1
+"71",88267,290,"MassINC Polling Group",210291,800,-0.8,"Live Phone/Text-to-Web",54,2024-09-18,2024-09-12,"Pennsylvania","Donald Trump",47
+"72",88080,568,"YouGov",208269,500,-1.1,"Online Panel",82,2024-08-23,2024-08-15,"Pennsylvania","Donald Trump",41
+"73",88431,486,"The Washington Post",211143,1001,-1.2,"Live Phone/Text-to-Web",41,2024-09-29,2024-09-25,"North Carolina","Donald Trump",50
+"74",87945,458,"Suffolk",207330,1000,-1,"Live Phone",72,2024-08-28,2024-08-25,"National","Donald Trump",43.3
+"75",88095,396,"Quinnipiac",208325,940,-0.5,"Live Phone",62,2024-09-08,2024-09-04,"North Carolina","Donald Trump",46
+"76",87583,1597,"Beacon/Shaw",204508,1034,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Pennsylvania","Donald Trump",49
+"77",88488,1075,"Marquette Law School",211436,882,-1.1,"Probability Panel",48,2024-09-26,2024-09-18,"Wisconsin","Donald Trump",44
+"78",87808,1424,"Siena/NYT",206213,655,-1.5,"Live Phone",88,2024-08-14,2024-08-09,"North Carolina","Donald Trump",44
+"79",87584,1597,"Beacon/Shaw",204511,1071,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Minnesota","Donald Trump",41
+"80",88527,568,"YouGov",211791,1033,-1.1,"Online Panel",34,2024-10-04,2024-10-02,"National","Donald Trump",47
+"81",88242,1424,"Siena/NYT",210090,1082,-1.5,"Live Phone",55,2024-09-16,2024-09-11,"Pennsylvania","Donald Trump",45
+"82",87870,1050,"SurveyUSA/High Point University",206735,941,-1.3,"Online Panel",78,2024-08-21,2024-08-19,"North Carolina","Donald Trump",47
+"83",88380,1597,"Beacon/Shaw",210904,764,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"Arizona","Donald Trump",50
+"84",88242,1424,"Siena/NYT",210087,1082,-1.5,"Live Phone",55,2024-09-16,2024-09-11,"Pennsylvania","Donald Trump",46
+"85",87543,1102,"Emerson",204149,800,-1.1,"IVR/Online Panel/Text-to-Web",106,2024-07-23,2024-07-22,"Georgia","Donald Trump",51.1
+"86",88275,290,"MassINC Polling Group",210330,800,-0.8,"Live Phone/Text-to-Web",54,2024-09-18,2024-09-12,"Massachusetts","Donald Trump",32
+"87",88734,396,"Quinnipiac",212958,1328,-0.5,"Live Phone",26,2024-10-14,2024-10-10,"Georgia","Donald Trump",52
+"88",88413,1528,"AtlasIntel",211074,1775,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Pennsylvania","Donald Trump",51
+"89",88712,1075,"Marquette Law School",212866,780,-1.1,"Probability Panel",35,2024-10-10,2024-10-01,"National","Donald Trump",50
+"90",88403,1597,"Beacon/Shaw",211019,775,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"Pennsylvania","Donald Trump",48
+"91",88664,1424,"Siena/NYT",212457,857,-1.5,"Live Phone",29,2024-10-10,2024-10-07,"Pennsylvania","Donald Trump",47
+"92",88364,1102,"Emerson",210789,950,-1.1,"Online Panel/Text-to-Web",44,2024-09-24,2024-09-22,"Texas","Donald Trump",52.3
+"93",88608,1102,"Emerson",212187,950,-1.1,"IVR/Online Panel/Text-to-Web",31,2024-10-08,2024-10-05,"Michigan","Donald Trump",49.6
+"94",88225,382,"PPIC",210069,1071,-0.4,"Probability Panel",68,2024-09-09,2024-08-29,"California","Donald Trump",29
+"95",88358,241,"Ipsos",210599,871,-0.9,"Probability Panel",46,2024-09-22,2024-09-20,"National","Donald Trump",40.48
+"96",87860,525,"U. New Hampshire",206555,432,-0.3,"Probability Panel",82,2024-08-19,2024-08-15,"Maine CD-2","Donald Trump",47
+"97",88710,568,"YouGov",212851,1457,-1.1,"Online Panel",24,2024-10-15,2024-10-12,"National","Donald Trump",45
+"98",88368,1205,"Marist",210786,1220,-0.9,"Live Phone/Online Panel/Text-to-Web",47,2024-09-24,2024-09-19,"Georgia","Donald Trump",50
+"99",88397,1866,"CNN/SSRS",210987,749,-0.6,"Live Phone/Text-to-Web/Email/Mail-to-Web/Mail-to-Phone",46,2024-09-25,2024-09-20,"Nebraska CD-2","Donald Trump",42
+"100",88080,568,"YouGov",208263,500,-1.1,"Online Panel",82,2024-08-23,2024-08-15,"Pennsylvania","Donald Trump",42.5
+"101",87544,1102,"Emerson",204155,800,-1.1,"IVR/Online Panel/Text-to-Web",106,2024-07-23,2024-07-22,"Michigan","Donald Trump",44.1
+"102",88527,568,"YouGov",211692,1032,-1.1,"Online Panel",34,2024-10-04,2024-10-02,"National","Donald Trump",47
+"103",88286,290,"MassINC Polling Group",210360,800,-0.8,"Live Phone/Text-to-Web",54,2024-09-18,2024-09-12,"Wisconsin","Donald Trump",45
+"104",87584,1597,"Beacon/Shaw",204513,1071,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Minnesota","Donald Trump",46
+"105",88402,1597,"Beacon/Shaw",211016,991,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"North Carolina","Donald Trump",47
+"106",87857,525,"U. New Hampshire",206548,924,-0.3,"Probability Panel",82,2024-08-19,2024-08-15,"Vermont","Donald Trump",27
+"107",88404,1424,"Siena/NYT",211029,688,-1.5,"Live Phone",45,2024-09-26,2024-09-21,"Michigan","Donald Trump",47
+"108",88144,241,"Ipsos",209263,1690,-0.9,"Probability Panel",55,2024-09-12,2024-09-11,"National","Donald Trump",39
+"109",87918,568,"YouGov",207081,1197,-1.1,"Online Panel",75,2024-08-26,2024-08-22,"National","Donald Trump",46
+"110",88395,1866,"CNN/SSRS",210986,931,-0.6,"Live Phone/Text-to-Web/Email/Mail-to-Web/Mail-to-Phone",46,2024-09-25,2024-09-20,"North Carolina","Donald Trump",48
+"111",88402,1597,"Beacon/Shaw",211017,787,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"North Carolina","Donald Trump",50
+"112",88105,1460,"Washington Post/George Mason University",208351,1005,-0.8,"Live Phone/Text-to-Web",62,2024-09-08,2024-09-04,"Virginia","Donald Trump",43
+"113",87546,1102,"Emerson",204157,850,-1.1,"IVR/Online Panel/Text-to-Web",106,2024-07-23,2024-07-22,"Pennsylvania","Donald Trump",46.1
+"114",88611,1102,"Emerson",212190,1000,-1.1,"IVR/Online Panel/Text-to-Web",31,2024-10-08,2024-10-05,"Pennsylvania","Donald Trump",49.7
+"115",88082,568,"YouGov",208265,500,-1.1,"Online Panel",82,2024-08-23,2024-08-15,"Michigan","Donald Trump",43.5
+"116",88664,1424,"Siena/NYT",212458,857,-1.5,"Live Phone",29,2024-10-10,2024-10-07,"Pennsylvania","Donald Trump",45
+"117",88593,396,"Quinnipiac",212159,1073,-0.5,"Live Phone",33,2024-10-07,2024-10-03,"Wisconsin","Donald Trump",49
+"118",88073,1424,"Siena/NYT",207971,1695,-1.5,"Live Phone",63,2024-09-06,2024-09-03,"National","Donald Trump",46
+"119",87777,396,"Quinnipiac",205901,1738,-0.5,"Live Phone",89,2024-08-12,2024-08-08,"Pennsylvania","Donald Trump",47
+"120",88067,568,"YouGov",207936,1200,-1.1,"Online Panel",74,2024-08-31,2024-08-23,"Texas","Donald Trump",49
+"121",87559,525,"U. New Hampshire",204335,2875,-0.3,"Online Panel/Text-to-Web",105,2024-07-25,2024-07-23,"New Hampshire","Donald Trump",43
+"122",87585,1597,"Beacon/Shaw",204517,1012,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Michigan","Donald Trump",46
+"123",88462,1102,"Emerson",211310,850,-1.1,"Online Panel/Text-to-Web",39,2024-09-28,2024-09-27,"North Carolina","Donald Trump",49.9
+"124",87700,1102,"Emerson",205438,1000,-1.1,"Online Panel/Text-to-Web",92,2024-08-06,2024-08-05,"Montana","Donald Trump",53.5
+"125",87794,241,"Ipsos",206223,1505,-0.9,"Probability Panel",88,2024-08-13,2024-08-09,"National","Donald Trump",45
+"126",87584,1597,"Beacon/Shaw",204512,1071,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Minnesota","Donald Trump",46
+"127",88721,1102,"Emerson",212897,1000,-1.1,"IVR/Online Panel",24,2024-10-14,2024-10-12,"California","Donald Trump",36.6
+"128",88368,1205,"Marist",210785,1420,-0.9,"Live Phone/Online Panel/Text-to-Web",47,2024-09-24,2024-09-19,"Georgia","Donald Trump",48
+"129",88614,1205,"Marist",212194,1365,-0.9,"Live Phone/Online Panel/Text-to-Web",33,2024-10-07,2024-10-03,"Texas","Donald Trump",52
+"130",88590,568,"YouGov",212127,1230,-1.1,"Online Panel",30,2024-10-07,2024-10-06,"National","Donald Trump",45
+"131",87557,1424,"Siena/NYT",204204,1142,-1.5,"Live Phone",106,2024-07-24,2024-07-22,"National","Donald Trump",48
+"132",88338,460,"SurveyUSA",210620,558,-1.3,"IVR/Online Panel/Text-to-Web",46,2024-09-23,2024-09-20,"Nebraska","Donald Trump",56
+"133",88412,1528,"AtlasIntel",211070,858,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Nevada","Donald Trump",47.7
+"134",88592,396,"Quinnipiac",212155,1412,-0.5,"Live Phone",33,2024-10-07,2024-10-03,"Pennsylvania","Donald Trump",46
+"135",87679,1205,"Marist",205296,1513,-0.9,"Live Phone/Online Panel/Text-to-Web",96,2024-08-04,2024-08-01,"National","Donald Trump",48
+"136",87701,1292,"Hart/POS",205460,1001,-0.7,"Live Phone",97,2024-08-04,2024-07-31,"National","Donald Trump",48
+"137",87809,1424,"Siena/NYT",206208,661,-1.5,"Live Phone",88,2024-08-14,2024-08-09,"Georgia","Donald Trump",47
+"138",88796,1528,"AtlasIntel",213385,1411,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Georgia","Donald Trump",50.1
+"139",88503,217,"High Point University",211537,589,-0.4,"Online Panel",46,2024-09-29,2024-09-20,"North Carolina","Donald Trump",48
+"140",87932,1597,"Beacon/Shaw",207248,1026,-1.1,"Live Phone/Text-to-Web",74,2024-08-26,2024-08-23,"Nevada","Donald Trump",48
+"141",88374,1302,"Echelon Insights",210848,1005,-0.8,"Online Panel",43,2024-09-25,2024-09-23,"National","Donald Trump",44
+"142",88170,568,"YouGov",209374,1090,-1.1,"Online Panel",55,2024-09-13,2024-09-11,"National","Donald Trump",46
+"143",88712,1075,"Marquette Law School",212868,652,-1.1,"Probability Panel",35,2024-10-10,2024-10-01,"National","Donald Trump",50
+"144",88339,329,"Muhlenberg",210621,450,-1,"Live Phone",50,2024-09-19,2024-09-16,"Pennsylvania","Donald Trump",48
+"145",88267,290,"MassINC Polling Group",210290,800,-0.8,"Live Phone/Text-to-Web",54,2024-09-18,2024-09-12,"Pennsylvania","Donald Trump",46
+"146",88019,1866,"CNN/SSRS",207695,789,-0.6,"Probability Panel",74,2024-08-29,2024-08-23,"Pennsylvania","Donald Trump",47
+"147",88403,1597,"Beacon/Shaw",211021,775,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"Pennsylvania","Donald Trump",49
+"148",88366,1205,"Marist",210787,1507,-0.9,"Live Phone/Online Panel/Text-to-Web",47,2024-09-24,2024-09-19,"North Carolina","Donald Trump",48
+"149",87780,1597,"Beacon/Shaw",205945,1105,-1.1,"Live Phone",88,2024-08-12,2024-08-09,"National","Donald Trump",50
+"150",88406,1424,"Siena/NYT",211038,680,-1.5,"Live Phone",45,2024-09-26,2024-09-21,"Wisconsin","Donald Trump",45
+"151",88402,1597,"Beacon/Shaw",211018,991,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"North Carolina","Donald Trump",48
+"152",88515,1515,"Data for Progress",211650,1211,-1.2,"Online Panel",34,2024-10-03,2024-10-02,"National","Donald Trump",46
+"153",87778,370,"Pew",205903,7569,-0.4,"Probability Panel",92,2024-08-11,2024-08-05,"National","Donald Trump",45
+"154",87698,1075,"Marquette Law School",205427,877,-1.1,"Live Phone/Email",104,2024-08-01,2024-07-24,"Wisconsin","Donald Trump",43
+"155",88482,568,"YouGov",211402,1261,-1.1,"Online Panel",37,2024-10-01,2024-09-29,"National","Donald Trump",46
+"156",87698,1075,"Marquette Law School",205426,801,-1.1,"Live Phone/Email",104,2024-08-01,2024-07-24,"Wisconsin","Donald Trump",49
+"157",87723,1492,"YouGov Blue",205658,802,-1.1,"Online Panel",92,2024-08-09,2024-08-05,"North Carolina","Donald Trump",46
+"158",88617,1424,"Siena/NYT",212204,656,-1.5,"Live Phone",31,2024-10-08,2024-10-05,"Montana","Donald Trump",57
+"159",88095,396,"Quinnipiac",208327,940,-0.5,"Live Phone",62,2024-09-08,2024-09-04,"North Carolina","Donald Trump",47
+"160",88617,1424,"Siena/NYT",212206,656,-1.5,"Live Phone",31,2024-10-08,2024-10-05,"Montana","Donald Trump",57
+"161",87582,1597,"Beacon/Shaw",204504,1046,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Wisconsin","Donald Trump",50
+"162",88177,241,"Ipsos",209516,2772,-0.9,"Probability Panel",55,2024-09-13,2024-09-11,"National","Donald Trump",47
+"163",88736,1597,"Beacon/Shaw",212990,870,-1.1,"Live Phone/Text-to-Web",25,2024-10-14,2024-10-11,"National","Donald Trump",50
+"164",87808,1424,"Siena/NYT",206201,655,-1.5,"Live Phone",88,2024-08-14,2024-08-09,"North Carolina","Donald Trump",46
+"165",88614,1205,"Marist",212195,1186,-0.9,"Live Phone/Online Panel/Text-to-Web",33,2024-10-07,2024-10-03,"Texas","Donald Trump",53
+"166",88554,1700,"McCourtney Institute/YouGov",211844,848,-1.1,"Online Panel",43,2024-09-27,2024-09-23,"National","Donald Trump",45
+"167",88381,1597,"Beacon/Shaw",210910,707,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"Georgia","Donald Trump",48
+"168",88271,1292,"Hart/POS",210306,1000,-0.7,"Live Phone",53,2024-09-17,2024-09-13,"National","Donald Trump",41
+"169",88362,1296,"University of Maryland/Washington Post",210778,1012,-0.3,"Live Phone/Text-to-Web",47,2024-09-23,2024-09-19,"Maryland","Donald Trump",31
+"170",88298,290,"MassINC Polling Group",210387,800,-0.8,"Live Phone/Text-to-Web",54,2024-09-18,2024-09-12,"Connecticut","Donald Trump",37
+"171",87999,241,"Ipsos",207598,2496,-0.9,"Probability Panel",74,2024-08-27,2024-08-23,"National","Donald Trump",46
+"172",87555,568,"YouGov",204188,1155,-1.1,"Online Panel",106,2024-07-23,2024-07-22,"National","Donald Trump",46
+"173",88000,460,"SurveyUSA",207603,1293,-1.3,"IVR/Online Panel/Text-to-Web",74,2024-08-27,2024-08-23,"Nebraska","Donald Trump",54
+"174",87663,568,"YouGov",205200,3092,-1.1,"Online Panel",98,2024-08-02,2024-07-30,"National","Donald Trump",49
+"175",88465,1102,"Emerson",211323,1000,-1.1,"Online Panel/Text-to-Web",39,2024-09-28,2024-09-27,"Pennsylvania","Donald Trump",48.8
+"176",88703,241,"Ipsos",213034,938,-0.9,"Probability Panel",25,2024-10-13,2024-10-11,"National","Donald Trump",37
+"177",88411,1528,"AtlasIntel",211067,918,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Michigan","Donald Trump",50.4
+"178",88065,1102,"Emerson",207933,845,-1.1,"Online Panel/Text-to-Web",63,2024-09-05,2024-09-03,"Texas","Donald Trump",50.9
+"179",88666,1292,"Hart/POS",212486,1000,-0.7,"Live Phone",32,2024-10-08,2024-10-04,"National","Donald Trump",48
+"180",88414,1528,"AtlasIntel",211075,1077,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Wisconsin","Donald Trump",49.6
+"181",88229,438,"Siena",210092,1003,-0.8,"Live Phone/Text-to-Web",55,2024-09-16,2024-09-11,"New York","Donald Trump",40
+"182",88558,241,"Ipsos",211858,1076,-0.9,"Probability Panel",32,2024-10-07,2024-10-04,"National","Donald Trump",49
+"183",87720,1424,"Siena/NYT",205633,661,-1.5,"Live Phone",92,2024-08-08,2024-08-05,"Wisconsin","Donald Trump",43
+"184",87794,241,"Ipsos",206254,1975,-0.9,"Probability Panel",88,2024-08-13,2024-08-09,"National","Donald Trump",44
+"185",88550,1424,"Siena/NYT",211846,3385,-1.5,"Live Phone",37,2024-10-06,2024-09-29,"National","Donald Trump",46
+"186",88011,1516,"East Carolina University",207685,920,-0.5,"IVR/Text-to-Web",71,2024-08-28,2024-08-26,"North Carolina","Donald Trump",47.6
+"187",88277,1424,"Siena/NYT",210339,682,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"Georgia","Donald Trump",47
+"188",87699,1075,"Marquette Law School",205434,683,-1.1,"Probability Panel",104,2024-08-01,2024-07-24,"National","Donald Trump",47
+"189",88410,1528,"AtlasIntel",211064,946,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Arizona","Donald Trump",49.8
+"190",87719,1424,"Siena/NYT",205629,619,-1.5,"Live Phone",92,2024-08-08,2024-08-05,"Michigan","Donald Trump",43
+"191",88275,290,"MassINC Polling Group",210331,800,-0.8,"Live Phone/Text-to-Web",54,2024-09-18,2024-09-12,"Massachusetts","Donald Trump",35
+"192",88380,1597,"Beacon/Shaw",210905,1021,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"Arizona","Donald Trump",50
+"193",88203,1308,"Data Orbital",209816,550,-0.9,"Live Phone/Text-to-Web",59,2024-09-09,2024-09-07,"Arizona","Donald Trump",46.2
+"194",87721,1424,"Siena/NYT",205631,693,-1.5,"Live Phone",91,2024-08-09,2024-08-06,"Pennsylvania","Donald Trump",43
+"195",88073,1424,"Siena/NYT",207968,1695,-1.5,"Live Phone",63,2024-09-06,2024-09-03,"National","Donald Trump",48
+"196",88372,1847,"University of Massachusetts Lowell/YouGov",210794,800,-1,"Online Panel",55,2024-09-19,2024-09-11,"Pennsylvania","Donald Trump",46
+"197",87630,241,"Ipsos",204846,876,-0.9,"Probability Panel",102,2024-07-28,2024-07-26,"National","Donald Trump",42
+"198",88228,1424,"Siena/NYT",210084,2437,-1.5,"Live Phone",55,2024-09-16,2024-09-11,"National","Donald Trump",47
+"199",88402,1597,"Beacon/Shaw",211015,787,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"North Carolina","Donald Trump",49
+"200",88415,1528,"AtlasIntel",211072,1173,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"North Carolina","Donald Trump",48.1
+"201",87931,1597,"Beacon/Shaw",207246,1014,-1.1,"Live Phone/Text-to-Web",74,2024-08-26,2024-08-23,"Georgia","Donald Trump",48
+"202",88277,1424,"Siena/NYT",210336,682,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"Georgia","Donald Trump",48
+"203",87583,1597,"Beacon/Shaw",204509,1034,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Pennsylvania","Donald Trump",49
+"204",88407,1424,"Siena/NYT",211044,680,-1.5,"Live Phone",42,2024-09-26,2024-09-24,"Nebraska CD-2","Donald Trump",42
+"205",88591,396,"Quinnipiac",212154,1007,-0.5,"Live Phone",33,2024-10-07,2024-10-03,"Michigan","Donald Trump",50
+"206",88412,1528,"AtlasIntel",211069,858,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Nevada","Donald Trump",47.7
+"207",88240,1102,"Emerson",210081,1000,-1.1,"IVR/Online Panel/Text-to-Web",51,2024-09-18,2024-09-15,"North Carolina","Donald Trump",49.3
+"208",87678,438,"Siena",205260,1199,-0.8,"Live Phone",100,2024-08-01,2024-07-28,"New York","Donald Trump",39
+"209",88177,241,"Ipsos",209519,2772,-0.9,"Probability Panel",55,2024-09-13,2024-09-11,"National","Donald Trump",46
+"210",87807,1424,"Siena/NYT",206202,677,-1.5,"Live Phone",85,2024-08-15,2024-08-12,"Nevada","Donald Trump",48
+"211",88187,1102,"Emerson",209627,890,-1.1,"Online Panel/Text-to-Web",54,2024-09-13,2024-09-12,"Maryland","Donald Trump",33.3
+"212",87557,1424,"Siena/NYT",204206,1142,-1.5,"Live Phone",106,2024-07-24,2024-07-22,"National","Donald Trump",43
+"213",87530,241,"Ipsos",203950,1241,-0.9,"Probability Panel",106,2024-07-23,2024-07-22,"National","Donald Trump",34
+"214",88015,1866,"CNN/SSRS",207691,682,-0.6,"Probability Panel",74,2024-08-29,2024-08-23,"Arizona","Donald Trump",49
+"215",88423,1516,"East Carolina University",211109,1005,-0.5,"IVR/Text-to-Web",43,2024-09-26,2024-09-23,"North Carolina","Donald Trump",49.4
+"216",88665,1424,"Siena/NYT",212461,808,-1.5,"Live Phone",29,2024-10-10,2024-10-07,"Arizona","Donald Trump",51
+"217",88461,1102,"Emerson",211311,920,-1.1,"Online Panel/Text-to-Web",39,2024-09-28,2024-09-27,"Arizona","Donald Trump",51.7
+"218",88235,1102,"Emerson",210076,868,-1.1,"IVR/Online Panel/Text-to-Web",51,2024-09-18,2024-09-15,"Arizona","Donald Trump",49.8
+"219",88073,1424,"Siena/NYT",207970,1695,-1.5,"Live Phone",63,2024-09-06,2024-09-03,"National","Donald Trump",48
+"220",88503,217,"High Point University",211536,814,-0.4,"Online Panel",46,2024-09-29,2024-09-20,"North Carolina","Donald Trump",46
+"221",88083,460,"SurveyUSA",208275,676,-1.3,"Online Panel",62,2024-09-07,2024-09-04,"North Carolina","Donald Trump",46
+"222",88212,396,"Quinnipiac",209906,905,-0.5,"Live Phone",54,2024-09-16,2024-09-12,"Michigan","Donald Trump",46
+"223",88381,1597,"Beacon/Shaw",210909,1006,-1.1,"Live Phone/Text-to-Web",46,2024-09-24,2024-09-20,"Georgia","Donald Trump",48
+"224",88390,458,"Suffolk",210964,500,-1,"Live Phone",47,2024-09-24,2024-09-19,"Arizona","Donald Trump",48.4
+"225",88606,1102,"Emerson",212185,1000,-1.1,"IVR/Online Panel/Text-to-Web",31,2024-10-08,2024-10-05,"Arizona","Donald Trump",50.5
+"226",88278,1424,"Siena/NYT",210343,682,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"North Carolina","Donald Trump",47
+"227",88063,1102,"Emerson",207931,815,-1.1,"Online Panel/Text-to-Web",63,2024-09-05,2024-09-03,"California","Donald Trump",38
+"228",87582,1597,"Beacon/Shaw",204505,1046,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Wisconsin","Donald Trump",50
+"229",88631,1515,"Data for Progress",212252,6152,-1.2,"Online Panel",54,2024-09-17,2024-09-12,"National","Donald Trump",45
+"230",88667,241,"Ipsos",212479,2631,-0.9,"Probability Panel",32,2024-10-08,2024-10-04,"National","Donald Trump",48
+"231",87581,460,"SurveyUSA",204502,656,-1.3,"Online Panel",105,2024-07-25,2024-07-23,"Minnesota","Donald Trump",40
+"232",88710,568,"YouGov",212852,1314,-1.1,"Online Panel",24,2024-10-15,2024-10-12,"National","Donald Trump",45
+"233",88362,1296,"University of Maryland/Washington Post",210781,1012,-0.3,"Live Phone/Text-to-Web",47,2024-09-23,2024-09-19,"Maryland","Donald Trump",32
+"234",88458,396,"Quinnipiac",211300,942,-0.5,"Live Phone",41,2024-09-29,2024-09-25,"Georgia","Donald Trump",50
+"235",88591,396,"Quinnipiac",212157,1007,-0.5,"Live Phone",33,2024-10-07,2024-10-03,"Michigan","Donald Trump",51
+"236",88212,396,"Quinnipiac",209903,905,-0.5,"Live Phone",54,2024-09-16,2024-09-12,"Michigan","Donald Trump",45
+"237",88371,1847,"University of Massachusetts Lowell/YouGov",210793,650,-1,"Online Panel",55,2024-09-19,2024-09-11,"Michigan","Donald Trump",43
+"238",88738,1847,"University of Massachusetts Lowell/YouGov",213057,600,-1,"Online Panel",34,2024-10-10,2024-10-02,"New Hampshire","Donald Trump",41
+"239",87719,1424,"Siena/NYT",205632,619,-1.5,"Live Phone",92,2024-08-08,2024-08-05,"Michigan","Donald Trump",43
+"240",88616,486,"The Washington Post",212198,1002,-1.2,"Live Phone/Text-to-Web",33,2024-10-07,2024-10-03,"Ohio","Donald Trump",51
+"241",88404,1424,"Siena/NYT",211031,688,-1.5,"Live Phone",45,2024-09-26,2024-09-21,"Michigan","Donald Trump",47
+"242",88070,568,"YouGov",207965,1077,-1.1,"Online Panel",63,2024-09-06,2024-09-03,"Michigan","Donald Trump",49
+"243",87531,1205,"Marist",203980,1117,-0.9,"Online Panel",106,2024-07-22,2024-07-22,"National","Donald Trump",42
+"244",88105,1460,"Washington Post/George Mason University",208348,1005,-0.8,"Live Phone/Text-to-Web",62,2024-09-08,2024-09-04,"Virginia","Donald Trump",42
+"245",88218,525,"U. New Hampshire",209937,564,-0.3,"Probability Panel",54,2024-09-16,2024-09-12,"Massachusetts","Donald Trump",31
+"246",87724,525,"U. New Hampshire",205660,732,-0.3,"Online Panel/Text-to-Web",105,2024-07-25,2024-07-23,"Maine CD-1","Donald Trump",36
+"247",88231,486,"The Washington Post",210067,1003,-1.2,"Live Phone/Text-to-Web",54,2024-09-16,2024-09-12,"Pennsylvania","Donald Trump",48
+"248",88593,396,"Quinnipiac",212156,1073,-0.5,"Live Phone",33,2024-10-07,2024-10-03,"Wisconsin","Donald Trump",48
+"249",88238,1102,"Emerson",210079,895,-1.1,"IVR/Online Panel/Text-to-Web",51,2024-09-18,2024-09-15,"Nevada","Donald Trump",49
+"250",87721,1424,"Siena/NYT",205628,693,-1.5,"Live Phone",91,2024-08-09,2024-08-06,"Pennsylvania","Donald Trump",46
+"251",88233,1205,"Marist",210073,1194,-0.9,"Live Phone/Online Panel/Text-to-Web",54,2024-09-17,2024-09-12,"Wisconsin","Donald Trump",49
+"252",87859,525,"U. New Hampshire",206551,490,-0.3,"Probability Panel",82,2024-08-19,2024-08-15,"Maine CD-1","Donald Trump",33
+"253",87530,241,"Ipsos",203951,1018,-0.9,"Probability Panel",106,2024-07-23,2024-07-22,"National","Donald Trump",38
+"254",88590,568,"YouGov",212126,1414,-1.1,"Online Panel",30,2024-10-07,2024-10-06,"National","Donald Trump",44
+"255",88223,1597,"Beacon/Shaw",209980,876,-1.1,"Live Phone/Text-to-Web",53,2024-09-16,2024-09-13,"National","Donald Trump",48
+"256",87857,525,"U. New Hampshire",206549,924,-0.3,"Probability Panel",82,2024-08-19,2024-08-15,"Vermont","Donald Trump",29
+"257",87559,525,"U. New Hampshire",204336,2875,-0.3,"Online Panel/Text-to-Web",105,2024-07-25,2024-07-23,"New Hampshire","Donald Trump",46
+"258",88135,1075,"Marquette Law School",209223,822,-1.1,"Live Phone/Email",69,2024-09-05,2024-08-28,"Wisconsin","Donald Trump",48
+"259",88241,1102,"Emerson",210082,1000,-1.1,"IVR/Online Panel/Text-to-Web",51,2024-09-18,2024-09-15,"Wisconsin","Donald Trump",50.3
+"260",87856,525,"U. New Hampshire",206547,2048,-0.3,"Probability Panel",82,2024-08-19,2024-08-15,"New Hampshire","Donald Trump",47
+"261",87557,1424,"Siena/NYT",204203,1142,-1.5,"Live Phone",106,2024-07-24,2024-07-22,"National","Donald Trump",48
+"262",88018,1866,"CNN/SSRS",207694,626,-0.6,"Probability Panel",74,2024-08-29,2024-08-23,"Nevada","Donald Trump",47
+"263",88496,1102,"Emerson",211489,1000,-1.1,"IVR/Online Panel/Text-to-Web",37,2024-10-01,2024-09-29,"National","Donald Trump",48.6
+"264",88768,568,"YouGov",213248,1091,-1.1,"Online Panel",34,2024-10-10,2024-10-02,"Texas","Donald Trump",51
+"265",87944,1102,"Emerson",207318,800,-1.1,"IVR/Online Panel/Text-to-Web",72,2024-08-28,2024-08-25,"Georgia","Donald Trump",49
+"266",87794,241,"Ipsos",206224,2336,-0.9,"Probability Panel",88,2024-08-13,2024-08-09,"National","Donald Trump",44
+"267",88079,370,"Pew",208240,8044,-0.4,"Probability Panel",71,2024-09-02,2024-08-26,"National","Donald Trump",49
+"268",88555,1424,"Siena/NYT",211849,622,-1.5,"Live Phone",37,2024-10-06,2024-09-29,"Florida","Donald Trump",53
+"269",87797,1102,"Emerson",206164,1000,-1.1,"IVR/Online Panel/Text-to-Web",84,2024-08-14,2024-08-13,"Pennsylvania","Donald Trump",47.4
+"270",88277,1424,"Siena/NYT",210338,682,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"Georgia","Donald Trump",46
+"271",87719,1424,"Siena/NYT",205626,619,-1.5,"Live Phone",92,2024-08-08,2024-08-05,"Michigan","Donald Trump",46
+"272",88278,1424,"Siena/NYT",210340,682,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"North Carolina","Donald Trump",48
+"273",88667,241,"Ipsos",212482,2631,-0.9,"Probability Panel",32,2024-10-08,2024-10-04,"National","Donald Trump",49
+"274",87920,568,"YouGov",207186,1368,-1.1,"Online Panel",72,2024-08-27,2024-08-25,"National","Donald Trump",45
+"275",88615,1205,"Marist",212197,1327,-0.9,"Live Phone/Online Panel/Text-to-Web",33,2024-10-07,2024-10-03,"Ohio","Donald Trump",52
+"276",88228,1424,"Siena/NYT",210086,2437,-1.5,"Live Phone",55,2024-09-16,2024-09-11,"National","Donald Trump",46
+"277",88558,241,"Ipsos",211855,1076,-0.9,"Probability Panel",32,2024-10-07,2024-10-04,"National","Donald Trump",45
+"278",88407,1424,"Siena/NYT",211041,680,-1.5,"Live Phone",42,2024-09-26,2024-09-24,"Nebraska CD-2","Donald Trump",42
+"279",87949,396,"Quinnipiac",207361,1611,-0.5,"Live Phone",74,2024-08-27,2024-08-23,"National","Donald Trump",48
+"280",88177,241,"Ipsos",209515,3276,-0.9,"Probability Panel",55,2024-09-13,2024-09-11,"National","Donald Trump",46
+"281",87635,1102,"Emerson",204852,1000,-1.1,"Online Panel/Text-to-Web",102,2024-07-28,2024-07-26,"New Hampshire","Donald Trump",47.6
+"282",88711,1205,"Marist",212859,1401,-0.9,"Online Panel/Text-to-Web",28,2024-10-10,2024-10-08,"National","Donald Trump",47
+"283",88213,396,"Quinnipiac",209907,1075,-0.5,"Live Phone",54,2024-09-16,2024-09-12,"Wisconsin","Donald Trump",48
+"284",88301,458,"Suffolk",210415,500,-1,"Live Phone",50,2024-09-18,2024-09-16,"Michigan","Donald Trump",45.4
+"285",88081,568,"YouGov",208264,500,-1.1,"Online Panel",82,2024-08-23,2024-08-15,"Wisconsin","Donald Trump",42
+"286",87933,1597,"Beacon/Shaw",207249,999,-1.1,"Live Phone/Text-to-Web",74,2024-08-26,2024-08-23,"North Carolina","Donald Trump",48
+"287",88488,1075,"Marquette Law School",211434,882,-1.1,"Probability Panel",48,2024-09-26,2024-09-18,"Wisconsin","Donald Trump",48
+"288",88414,1528,"AtlasIntel",211076,1077,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Wisconsin","Donald Trump",49.7
+"289",88276,1424,"Siena/NYT",210335,713,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"Arizona","Donald Trump",48
+"290",87635,1102,"Emerson",204853,1000,-1.1,"Online Panel/Text-to-Web",102,2024-07-28,2024-07-26,"New Hampshire","Donald Trump",41.4
+"291",87882,1102,"Emerson",206739,965,-1.1,"IVR/Online Panel/Text-to-Web",77,2024-08-22,2024-08-20,"New Mexico","Donald Trump",40.2
+"292",88613,1205,"Marist",212192,1257,-0.9,"Live Phone/Online Panel/Text-to-Web",33,2024-10-07,2024-10-03,"Florida","Donald Trump",51
+"293",88667,241,"Ipsos",212483,2226,-0.9,"Probability Panel",32,2024-10-08,2024-10-04,"National","Donald Trump",49
+"294",87932,1597,"Beacon/Shaw",207247,1026,-1.1,"Live Phone/Text-to-Web",74,2024-08-26,2024-08-23,"Nevada","Donald Trump",46
+"295",88558,241,"Ipsos",211856,1272,-0.9,"Probability Panel",32,2024-10-07,2024-10-04,"National","Donald Trump",47
+"296",88794,1528,"AtlasIntel",213381,4180,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"National","Donald Trump",50.8
+"297",88506,1205,"Marist",211549,1514,-0.9,"Live Phone/Online Panel/Text-to-Web",39,2024-10-01,2024-09-27,"National","Donald Trump",47
+"298",88762,568,"YouGov",213103,1435,-1.1,"Online Panel",25,2024-10-16,2024-10-11,"Arizona","Donald Trump",51
+"299",88795,1528,"AtlasIntel",213383,1440,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Arizona","Donald Trump",49.2
+"300",88669,289,"Mason-Dixon",212488,625,-1.1,"Live Phone",35,2024-10-04,2024-10-01,"Florida","Donald Trump",49
+"301",88541,94,"Christopher Newport U.",211817,800,-0.6,"Live Phone",38,2024-10-04,2024-09-28,"Virginia","Donald Trump",41
+"302",87939,1102,"Emerson",207323,850,-1.1,"IVR/Online Panel/Text-to-Web",72,2024-08-28,2024-08-25,"Wisconsin","Donald Trump",49.8
+"303",87856,525,"U. New Hampshire",206546,2048,-0.3,"Probability Panel",82,2024-08-19,2024-08-15,"New Hampshire","Donald Trump",43
+"304",87859,525,"U. New Hampshire",206554,476,-0.3,"Probability Panel",82,2024-08-19,2024-08-15,"Maine CD-1","Donald Trump",36
+"305",88081,568,"YouGov",208270,500,-1.1,"Online Panel",82,2024-08-23,2024-08-15,"Wisconsin","Donald Trump",40
+"306",87845,415,"Roanoke College",206471,691,-0.4,"Live Phone/Online Panel",85,2024-08-16,2024-08-12,"Virginia","Donald Trump",44
+"307",87999,241,"Ipsos",207601,2496,-0.9,"Probability Panel",74,2024-08-27,2024-08-23,"National","Donald Trump",45
+"308",88799,1528,"AtlasIntel",213390,1674,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"North Carolina","Donald Trump",48.8
+"309",87780,1597,"Beacon/Shaw",205944,1105,-1.1,"Live Phone",88,2024-08-12,2024-08-09,"National","Donald Trump",45
+"310",88066,1102,"Emerson",207934,945,-1.1,"Online Panel/Text-to-Web",63,2024-09-05,2024-09-03,"Ohio","Donald Trump",54.3
+"311",87933,1597,"Beacon/Shaw",207250,999,-1.1,"Live Phone/Text-to-Web",74,2024-08-26,2024-08-23,"North Carolina","Donald Trump",50
+"312",88610,1102,"Emerson",212189,1000,-1.1,"IVR/Online Panel/Text-to-Web",31,2024-10-08,2024-10-05,"North Carolina","Donald Trump",49.9
+"313",87585,1597,"Beacon/Shaw",204515,1012,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Michigan","Donald Trump",45
+"314",88801,1528,"AtlasIntel",213394,932,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Wisconsin","Donald Trump",48.2
+"315",87699,1075,"Marquette Law School",205435,879,-1.1,"Probability Panel",104,2024-08-01,2024-07-24,"National","Donald Trump",41
+"316",88234,1205,"Marist",210075,1138,-0.9,"Live Phone/Online Panel/Text-to-Web",54,2024-09-17,2024-09-12,"Michigan","Donald Trump",47
+"317",88017,1866,"CNN/SSRS",207693,708,-0.6,"Probability Panel",74,2024-08-29,2024-08-23,"Michigan","Donald Trump",43
+"318",87797,1102,"Emerson",206163,1000,-1.1,"IVR/Online Panel/Text-to-Web",84,2024-08-14,2024-08-13,"Pennsylvania","Donald Trump",50.7
+"319",88615,1205,"Marist",212196,1511,-0.9,"Live Phone/Online Panel/Text-to-Web",33,2024-10-07,2024-10-03,"Ohio","Donald Trump",52
+"320",87679,1205,"Marist",205297,1513,-0.9,"Live Phone/Online Panel/Text-to-Web",96,2024-08-04,2024-08-01,"National","Donald Trump",45
+"321",87585,1597,"Beacon/Shaw",204516,1012,-1.1,"Live Phone/Text-to-Web",106,2024-07-24,2024-07-22,"Michigan","Donald Trump",49
+"322",88797,1528,"AtlasIntel",213386,1529,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Michigan","Donald Trump",49.6
+"323",88229,438,"Siena",210093,1003,-0.8,"Live Phone/Text-to-Web",55,2024-09-16,2024-09-11,"New York","Donald Trump",42
+"324",88234,1205,"Marist",210074,1282,-0.9,"Live Phone/Online Panel/Text-to-Web",54,2024-09-17,2024-09-12,"Michigan","Donald Trump",47
+"325",88607,1102,"Emerson",212186,1000,-1.1,"IVR/Online Panel/Text-to-Web",31,2024-10-08,2024-10-05,"Georgia","Donald Trump",49.7
+"326",88551,458,"Suffolk",211845,500,-1,"Live Phone",35,2024-10-05,2024-10-01,"Massachusetts","Donald Trump",32.2
+"327",87807,1424,"Siena/NYT",206206,677,-1.5,"Live Phone",85,2024-08-15,2024-08-12,"Nevada","Donald Trump",48
+"328",88362,1296,"University of Maryland/Washington Post",210780,1012,-0.3,"Live Phone/Text-to-Web",47,2024-09-23,2024-09-19,"Maryland","Donald Trump",31
+"329",88231,486,"The Washington Post",210066,1003,-1.2,"Live Phone/Text-to-Web",54,2024-09-16,2024-09-12,"Pennsylvania","Donald Trump",47
+"330",87536,568,"YouGov",204062,1435,-1.1,"Online Panel",107,2024-07-23,2024-07-21,"National","Donald Trump",44
+"331",87558,525,"U. New Hampshire",204334,1445,-0.3,"Online Panel/Text-to-Web",105,2024-07-25,2024-07-23,"Maine","Donald Trump",45
+"332",88634,370,"Pew",212275,4025,-0.4,"Probability Panel",36,2024-10-06,2024-09-30,"National","Donald Trump",47
+"333",88271,1292,"Hart/POS",210305,1000,-0.7,"Live Phone",53,2024-09-17,2024-09-13,"National","Donald Trump",44
+"334",87930,1597,"Beacon/Shaw",207244,1014,-1.1,"Live Phone/Text-to-Web",74,2024-08-26,2024-08-23,"Arizona","Donald Trump",49
+"335",88410,1528,"AtlasIntel",211063,946,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Arizona","Donald Trump",49.7
+"336",88067,568,"YouGov",207935,1200,-1.1,"Online Panel",74,2024-08-31,2024-08-23,"Texas","Donald Trump",49
+"337",88366,1205,"Marist",210788,1348,-0.9,"Live Phone/Online Panel/Text-to-Web",47,2024-09-24,2024-09-19,"North Carolina","Donald Trump",49
+"338",88280,460,"SurveyUSA",210414,619,-1.3,"Online Panel",54,2024-09-18,2024-09-12,"New Mexico","Donald Trump",42
+"339",87809,1424,"Siena/NYT",206200,661,-1.5,"Live Phone",88,2024-08-14,2024-08-09,"Georgia","Donald Trump",51
+"340",88703,241,"Ipsos",212604,807,-0.9,"Probability Panel",25,2024-10-13,2024-10-11,"National","Donald Trump",42
+"341",87899,1302,"Echelon Insights",206915,1031,-0.8,"Online Panel",74,2024-08-25,2024-08-23,"National","Donald Trump",50
+"342",88416,1528,"AtlasIntel",211066,1200,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Georgia","Donald Trump",49.6
+"343",87918,568,"YouGov",207080,1194,-1.1,"Online Panel",75,2024-08-26,2024-08-22,"National","Donald Trump",45
+"344",87709,241,"Ipsos",205593,1342,-0.9,"Probability Panel",95,2024-08-07,2024-08-02,"National","Donald Trump",47
+"345",88208,568,"YouGov",209883,1445,-1.1,"Online Panel",51,2024-09-17,2024-09-15,"National","Donald Trump",45
+"346",87918,568,"YouGov",207082,1788,-1.1,"Online Panel",75,2024-08-26,2024-08-22,"National","Donald Trump",36
+"347",88237,1102,"Emerson",210078,875,-1.1,"IVR/Online Panel/Text-to-Web",51,2024-09-18,2024-09-15,"Michigan","Donald Trump",49.1
+"348",87934,568,"YouGov",207316,900,-1.1,"Online Panel",89,2024-08-16,2024-08-08,"Missouri","Donald Trump",54
+"349",88416,1528,"AtlasIntel",211065,1200,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Georgia","Donald Trump",49.3
+"350",88665,1424,"Siena/NYT",212462,808,-1.5,"Live Phone",29,2024-10-10,2024-10-07,"Arizona","Donald Trump",50
+"351",88278,1424,"Siena/NYT",210341,682,-1.5,"Live Phone",49,2024-09-21,2024-09-17,"North Carolina","Donald Trump",49
+"352",87719,1424,"Siena/NYT",205623,619,-1.5,"Live Phone",92,2024-08-08,2024-08-05,"Michigan","Donald Trump",48
+"353",88407,1424,"Siena/NYT",211043,680,-1.5,"Live Phone",42,2024-09-26,2024-09-24,"Nebraska CD-2","Donald Trump",43
+"354",88413,1528,"AtlasIntel",211073,1775,-0.8,"Online Ad",46,2024-09-25,2024-09-20,"Pennsylvania","Donald Trump",50.6
+"355",88765,1102,"Emerson",213123,1000,-1.1,"IVR/Online Panel/Text-to-Web",22,2024-10-16,2024-10-14,"National","Donald Trump",49.2
+"356",87853,568,"YouGov",206527,1371,-1.1,"Online Panel",80,2024-08-20,2024-08-17,"National","Donald Trump",43
+"357",88286,290,"MassINC Polling Group",210361,800,-0.8,"Live Phone/Text-to-Web",54,2024-09-18,2024-09-12,"Wisconsin","Donald Trump",46
+"358",88556,1424,"Siena/NYT",212202,617,-1.5,"Live Phone",37,2024-10-04,2024-09-29,"Texas","Donald Trump",50
+"359",87845,415,"Roanoke College",206472,691,-0.4,"Live Phone/Online Panel",85,2024-08-16,2024-08-12,"Virginia","Donald Trump",42
+"360",87725,525,"U. New Hampshire",205675,701,-0.3,"Online Panel/Text-to-Web",105,2024-07-25,2024-07-23,"Maine CD-2","Donald Trump",51
+"361",87542,1102,"Emerson",204148,800,-1.1,"IVR/Online Panel/Text-to-Web",106,2024-07-23,2024-07-22,"Arizona","Donald Trump",52.6
+"362",88667,241,"Ipsos",212480,2226,-0.9,"Probability Panel",32,2024-10-08,2024-10-04,"National","Donald Trump",47
+"363",88667,241,"Ipsos",212484,1714,-0.9,"Probability Panel",32,2024-10-08,2024-10-04,"National","Donald Trump",48
+"364",87663,568,"YouGov",205201,3092,-1.1,"Online Panel",98,2024-08-02,2024-07-30,"National","Donald Trump",47
+"365",88082,568,"YouGov",208271,500,-1.1,"Online Panel",82,2024-08-23,2024-08-15,"Michigan","Donald Trump",41.5
+"366",88798,1528,"AtlasIntel",213388,1171,-0.8,"Online Ad",24,2024-10-17,2024-10-12,"Nevada","Donald Trump",48.4
+"367",88135,1075,"Marquette Law School",209225,822,-1.1,"Live Phone/Email",69,2024-09-05,2024-08-28,"Wisconsin","Donald Trump",43
+"368",88734,396,"Quinnipiac",212960,1328,-0.5,"Live Phone",26,2024-10-14,2024-10-10,"Georgia","Donald Trump",52
