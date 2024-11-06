@@ -6,7 +6,7 @@ author:
   - Lexun Yu
   - Siddharth Gowda
 thanks: "Code and data are available at: [https://github.com/yulexun/uselection](https://github.com/yulexun/uselection)."
-date: today
+date: November 4, 2024
 date-format: long
 abstract: "This paper develops a hybrid model to forecast the 2024 U.S. presidential election by combining poll aggregation techniques with additional variables, including pollster reliability, sample size, timing relative to the election, geographic region, and polling methodology. By integrating these factors, our model accounts for variations in poll quality and regional differences in voter sentiment, providing a more stable and accurate prediction compared to traditional poll aggregation alone. Our results show that Kamala Harris holds a slight lead over Donald Trump in most swing states, with support levels stabilizing closer to election day. This approach reveals how poll quality and timing can significantly influence support predictions. This model offers a comprehensive tool for understanding the dynamics of voter sentiment and improving the accuracy of election predictions. "
 format: pdf
