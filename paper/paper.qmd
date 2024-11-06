@@ -119,7 +119,7 @@ The data cleaning process involves several steps to ensure the quality and relev
 
 We then create a new attribute, days taken from election, which represents the time gap between the poll's start date and the actual U.S. election date. Additionally, we filter the dataset to include only polls conducted after July 21, 2024, the date when Kamala Harris declared her candidacy. Finally, we remove any remaining rows that contain missing values to ensure a clean dataset.
 
-### States included in anaylsis
+### States included in Analysis
 
 After the data cleaning process, 21 states had no polling data. A table showing the number of polls for each state, including those without any polls, is provided in @tbl-state-polls-count.
 
@@ -150,7 +150,7 @@ cleaned_data |>
 
 ```{r}
 #| label: fig-avg-pct-state
-#| fig-cap: Historical State Voting Trends Are Maintined in 2024
+#| fig-cap: Historical State Voting Trends Are Maintained in 2024
 #| echo: false
 #| warning: false
 #| 
@@ -289,7 +289,7 @@ cleaned_data %>%
 
 ```{r}
 #| label: fig-polldate-canidate-pct
-#| fig-cap: Both Canidate Percentages Are Gaining Support Closer to the Election
+#| fig-cap: Both Candidate Percentages Are Gaining Support Closer to the Election
 #| echo: false
 #| warning: false
 
@@ -417,7 +417,7 @@ The overall distribution of points suggests that the MLR model has captured a su
 
 ## Bayesian Model
 
-Next, we set up a bayesian model as the following in accordance to @sec-modelsetup: 
+Next, we set up a Bayesian model as the following in accordance to @sec-modelsetup: 
 
 \begin{align*}
 \text{pct}_i &\sim \mathcal{N}(\mu_i, \sigma) \\
@@ -509,7 +509,7 @@ We could see that the R squared value equal to the 0.700563202695799 suggesting 
 
 ```{r}
 #| label: fig-bayesian-model-actual-predict
-#| fig-cap: "The MLR Model Accruatley Predicts the Testing Dataset"
+#| fig-cap: "The MLR Model Accurately Predicts the Testing Dataset"
 #| echo: false
 #| warning: false
 plot(test_data$pct, colMeans(predictions), 
@@ -552,7 +552,7 @@ The team also built a Bayesian MLR using the same approach and formula for Trump
 ## Harris Voter Prediction Model 
 ```{r}
 #| label: fig-bayesian-model-CI
-#| fig-cap: "Kamala Harris is Predicted to get Approximatley 52% of Popular Vote"
+#| fig-cap: "Kamala Harris is Predicted to get Approximately 52% of the Popular Vote"
 #| echo: false
 #| warning: false
 # Plot random effects
@@ -574,8 +574,8 @@ The estimated intercept, which represents the baseline percentage of support for
 
 predictions2 = posterior_predict(bayesian_model_1, newdata = just_harris_data)
 
-predicted_means = colMeans(predictions2)
-predicted_intervals = apply(predictions2, 2, quantile, probs = c(0.025, 0.975))
+predicted_means = round(colMeans(predictions2), 2)
+predicted_intervals = round(apply(predictions2, 2, quantile, probs = c(0.025, 0.975)), 2)
 
 # Combine the results with the actual data
 result_summary = data.frame(
@@ -660,8 +660,8 @@ for(state in relevant_states) {
   predictions_state_harris <- posterior_predict(bayesian_model_train_harris, newdata = test_data_state_harris)
   predictions_state_trump <- posterior_predict(bayesian_model_train_trump, newdata = test_data_state_trump)
   
-  avg_predicted_pct_state_harris <- mean(predictions_state_harris)
-  avg_predicted_pct_state_trump <- mean(predictions_state_trump)
+  avg_predicted_pct_state_harris <- round(mean(predictions_state_harris), 2)
+  avg_predicted_pct_state_trump <- round(mean(predictions_state_trump), 2)
   
   # Add a new row to the results tibble
   new_row <- tibble(
@@ -904,7 +904,7 @@ To enhance the reliability and robustness of this forecasting model, future work
 
 
 
-# Overview of American Electon System
+# Overview of American Election System
 
 ## Brief Description of American Federal Government 
 
@@ -1101,7 +1101,7 @@ Based on @fig-model-trumpmlr-res, the test data predictions are also close to th
 
 ```{r}
 #| label: fig-trumpmodelci
-#| fig-cap: Donald Trump Expected to Recieve Approximatley 45% of the Vote
+#| fig-cap: "Donald Trump Expected to Receive Approximately 45% of the Vote"
 #| echo: false
 #| warning: false
 plot(bayesian_model_train_trump, pars = "(Intercept)", prob = 0.95)
@@ -1116,8 +1116,8 @@ Based on @fig-trumpmodelci, the model expects Trump to win slight less than 45% 
 #| warning: false
 just_trump <- cleaned_data %>% filter(candidate_name == "Donald Trump")
 predictions2 = posterior_predict(bayesian_model_train_trump, newdata = just_trump)
-predicted_means = colMeans(predictions2)
-predicted_intervals = apply(predictions2, 2, quantile, probs = c(0.025, 0.975))
+predicted_means = round(colMeans(predictions2), 2)
+predicted_intervals = round(apply(predictions2, 2, quantile, probs = c(0.025, 0.975)), 2)
 result_summary = data.frame(
   Actual_PCT = just_trump$pct,
   Predicted_PCT = predicted_means,
@@ -1141,11 +1141,11 @@ ggplot(result_summary, aes(x = result_summary$Actual_PCT, y = result_summary$Pre
 #| echo: false
 #| warning: false
 
-kable(head(result_summary, 10), col.names = c("Acutal Harris Percentage", 
+kable(head(result_summary, 10), 
+      col.names = c("Actual Trump Percentage", 
                     "Predicted Percentage", 
                     "Lower Bound Credible Interval",
-                    "Upper bound Credible Interval"))
-
+                    "Upper Bound Credible Interval"))
 ```
 
 From @fig-model-trumpmlr and @tbl-model-trumpmlr the model accounts for large amount of the variance in Trump's voter percentage as the data points appear close to the prediction (red line). Furthermore, the distance between the prediction and the actual values do not appear to follow a pattern, suggesting that the error is due to randomness and not model bias.
